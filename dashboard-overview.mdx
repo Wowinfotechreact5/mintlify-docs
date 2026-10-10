@@ -1,0 +1,1013 @@
+---
+title: "Dashboard Overview"
+sidebarTitle: "Dashboard Overview"
+description: "Understand the Valuez AI dashboard, performance metrics, voice-agent activity, campaign analytics, lead outcomes, filters, and operational workflows."
+---
+
+The **Valuez AI Dashboard** is the central monitoring area for your workspace. It combines voice-agent activity, campaign performance, lead outcomes, language distribution, and operational insights on one screen.
+
+Use the dashboard to answer questions such as:
+
+- How many AI agents are active in the workspace?
+- How many calls or interactions occurred during a selected period?
+- Which agents are handling the most calls?
+- How successfully are agents completing interactions?
+- Which languages are being used?
+- How are outbound campaigns performing?
+- How many interested or qualified leads have been identified?
+- Are any campaigns currently processing calls?
+
+<Frame caption="Valuez AI dashboard showing workspace-level performance and activity">
+  ![Valuez AI dashboard overview with agent and campaign analytics](/images/dashbard.png)
+</Frame>
+
+<Info>
+  Dashboard data belongs to the currently selected Valuez AI workspace. If your account belongs to multiple workspaces, confirm that you have selected the correct workspace before interpreting the metrics.
+</Info>
+
+---
+
+## Access the Dashboard
+
+<Steps>
+  <Step title="Sign in to Valuez AI">
+    Sign in to your Valuez AI account using your registered email and password or the **Sign in with Google** option.
+  </Step>
+  <Step title="Select the correct workspace">
+    If you belong to more than one workspace, select the organization whose agents, calls, campaigns, and billing information you want to review.
+  </Step>
+  <Step title="Open Dashboard">
+    Select **Dashboard** from the main navigation menu. The **Overview** page opens by default.
+  </Step>
+  <Step title="Choose your reporting scope">
+    Use the agent and date-range filters at the top of the page before reviewing the analytics.
+  </Step>
+</Steps>
+
+---
+
+## Dashboard Layout
+
+The dashboard is organized into the following areas:
+
+| Area | Purpose |
+| --- | --- |
+| **Greeting and filters** | Identifies the signed-in user and controls the analytics scope |
+| **Summary cards** | Displays headline agent, call, campaign, and lead metrics |
+| **Live Campaign Flow** | Displays live or recent campaign call-processing activity when available |
+| **Interactions chart** | Shows interaction volume over time |
+| **Overall Success Rate** | Compares successful and failed agent interactions |
+| **Campaign Call Outcomes** | Breaks campaign calls down by outcome |
+| **Campaign Call Volume by Time** | Compares total campaign calls with qualified leads over time |
+| **Language Distribution** | Shows how call activity is distributed across configured languages |
+| **Most Called Agents** | Ranks agents by call volume |
+| **Top Performing Campaigns** | Compares campaign calls, connections, qualified leads, and conversion rates |
+
+<Note>
+  Some dashboard analytics may depend on your subscription plan and assigned workspace permissions. If an analytics area is locked, contact your workspace administrator or review your subscription.
+</Note>
+
+---
+
+## Greeting and Workspace Context
+
+At the top of the dashboard, Valuez AI displays a time-based greeting and the signed-in user's name.
+
+Depending on the current local time, the greeting may show:
+
+- **Good Morning**
+- **Good Afternoon**
+- **Good Evening**
+
+The subtitle identifies the dashboard's purpose as:
+
+> Performance analytics and real-time voice operations
+
+This area also contains the two main dashboard filters:
+
+1. **Agent filter**
+2. **Date-range filter**
+
+---
+
+## Dashboard Filters
+
+Always review the selected filters before comparing dashboard figures or preparing a report.
+
+### Agent Filter
+
+The agent selector controls which AI agent is included in agent-related dashboard analytics.
+
+| Selection | Behavior |
+| --- | --- |
+| **All Agents** | Combines activity across all available agents |
+| **Specific agent** | Limits supported agent analytics to the selected agent |
+
+The available options are loaded from the agents accessible within your workspace.
+
+<Warning>
+  The agent filter applies to agent-level dashboard data. Campaign analytics are loaded separately and may continue to represent all outbound campaigns in the workspace.
+</Warning>
+
+Use a specific agent when you need to:
+
+- Investigate an individual agent's performance
+- Compare call activity before and after changing an agent
+- Review the impact of prompt or knowledge-base updates
+- Identify an agent with an unusual success or failure pattern
+- Validate whether a recently activated agent is receiving calls
+
+### Date-Range Filter
+
+The date-range selector controls the period represented by the dashboard analytics.
+
+Available ranges are:
+
+| Range | Intended Use |
+| --- | --- |
+| **1 Day** | Review recent or current-day operational activity |
+| **1 Week** | Identify short-term trends and daily variation |
+| **1 Month** | Review broader adoption and performance patterns |
+| **6 Months** | Analyze long-term usage and campaign trends |
+
+The default selection is **1 Day**.
+
+When you change the date range, Valuez AI reloads the supported agent and campaign analytics for that period.
+
+<Tip>
+  If a dashboard section contains no data, select a wider date range before troubleshooting the underlying agent or campaign.
+</Tip>
+
+### How Chart Labels Change
+
+Chart grouping changes according to the selected range:
+
+| Selected range | Typical chart grouping |
+| --- | --- |
+| **1 Day** | Time-based labels |
+| **1 Week** | Daily labels |
+| **1 Month** | Daily labels |
+| **6 Months** | Monthly labels |
+
+---
+
+## Summary Cards
+
+The dashboard begins with five summary cards. These cards provide a quick workspace-level overview before you examine individual charts.
+
+### Summary Card Reference
+
+| Card | What it represents |
+| --- | --- |
+| **Total Agents** | Number of agents returned for the current workspace |
+| **Total Requests** | Total call requests or interactions counted for the selected period |
+| **Campaigns** | Number of outbound campaigns included in campaign analytics |
+| **Qualified Leads** | Leads classified as qualified by the campaign workflow |
+| **Interested Leads** | Leads classified as interested during campaign processing |
+
+---
+
+### Total Agents
+
+The **Total Agents** card displays the total number of AI agents available in the workspace analytics response.
+
+The card includes an **Active** label. This label is part of the summary presentation; use the **AI Voice Agents** section when you need to verify the individual configuration or operational state of a particular agent.
+
+A value of `0` can mean:
+
+- No agent has been created
+- No agent is accessible to the signed-in workspace member
+- The current workspace is not the intended workspace
+- Dashboard data could not be loaded
+- The workspace has only recently been created
+
+<Card title="Manage AI Voice Agents" icon="robot" href="/guides/core-concepts/agents">
+  Create an agent or review existing agent configuration.
+</Card>
+
+---
+
+### Total Requests
+
+The **Total Requests** card displays the total number of calls counted by dashboard analytics for the selected period.
+
+Use this metric as a high-level activity indicator. For detailed investigation, open the corresponding conversation or call-history area to review individual records.
+
+<Info>
+  A request count is an activity metric. It should not automatically be interpreted as the number of unique customers, successful calls, qualified leads, or completed business outcomes.
+</Info>
+
+When analyzing request volume, compare it with:
+
+- Overall success rate
+- Campaign outcomes
+- Qualified leads
+- Agent ranking
+- Date-range trends
+- Call logs and conversation records
+
+---
+
+### Campaigns
+
+The **Campaigns** card shows the number of outbound campaigns included in the campaign dashboard response.
+
+Use the **Call Campaigns** area for campaign-level configuration and operational status, including campaign setup, contacts, launch settings, and campaign details.
+
+<Card title="Open Call Campaigns" icon="megaphone" href="/guides/voice-calling/outbound-calls">
+  Learn how outbound calling campaigns are configured and operated.
+</Card>
+
+---
+
+### Qualified Leads
+
+The **Qualified Leads** card displays the number of leads classified as qualified by campaign analytics.
+
+A qualified lead typically represents a contact that satisfied the qualification criteria defined by your campaign configuration, prompts, conversation logic, or lead-capture workflow.
+
+<Warning>
+  The exact business meaning of “qualified” depends on how your campaign and agent are configured. Define qualification criteria clearly before using this number for sales reporting.
+</Warning>
+
+Recommended validation steps:
+
+1. Review the campaign objective.
+2. Review the agent's system prompt.
+3. Confirm which questions or conditions determine qualification.
+4. Inspect a sample of qualified call transcripts.
+5. Compare the dashboard count with campaign lead records.
+
+---
+
+### Interested Leads
+
+The **Interested Leads** card displays contacts classified as interested during campaign activity.
+
+An interested contact is not necessarily a qualified lead. For example, a contact may express interest but still require:
+
+- Eligibility verification
+- Budget confirmation
+- Geographic validation
+- Follow-up scheduling
+- Human review
+- Additional product or service information
+
+Use this metric to estimate the pool of warm contacts requiring further action.
+
+---
+
+## Live Campaign Flow
+
+When supported by your subscription and current campaign activity, the dashboard can display a **Live Campaign Flow** section.
+
+This area is intended to provide an operational view of campaign processing and may help your team monitor:
+
+- Campaign calls being processed
+- Recent campaign activity
+- Call progression
+- Campaign call logs
+- Operational changes during an active campaign
+
+Use **View Logs** to open campaign call history when you need record-level information.
+
+<Note>
+  The Live Campaign Flow section may not appear when dashboard analytics are restricted by the current plan.
+</Note>
+
+---
+
+## Total Interactions and Average Duration
+
+The main interaction chart provides a time-based view of voice-agent activity.
+
+<Frame caption="Interaction analytics showing total interactions and activity over time">
+  ![Valuez AI interaction analytics chart](/images/Screenshot-from-2026-07-09-16-16-11.png)
+</Frame>
+
+The chart contains two selectable tabs:
+
+| Tab | Purpose |
+| --- | --- |
+| **Total Interactions** | Displays the number of calls or interactions over time |
+| **Average Duration** | Displays duration-related analytics when duration data is available |
+
+### Total Interactions
+
+The **Total Interactions** total is calculated from the activity points returned for the selected reporting range.
+
+The chart can help you identify:
+
+- High-volume periods
+- Low-volume periods
+- Sudden traffic increases
+- Unexpected activity drops
+- The impact of launching a new campaign
+- Changes after activating or updating an agent
+
+### Reading the Chart
+
+| Chart element | Meaning |
+| --- | --- |
+| **Horizontal axis** | Time period determined by the selected range |
+| **Vertical axis** | Number of interactions |
+| **Area line** | Changes in interaction volume |
+| **Hover tooltip** | Exact value for an individual time point |
+
+<Tip>
+  Hover over the chart to inspect exact values. A visual spike should be confirmed against call logs before you treat it as an operational incident.
+</Tip>
+
+### Average Duration
+
+The **Average Duration** tab is available in the dashboard interface for duration analysis.
+
+If duration data is unavailable or not populated for the selected reporting period, the value may show no measurable duration.
+
+For authoritative call-duration analysis, review the detailed call or conversation records.
+
+### If the Interaction Chart Is Empty
+
+An empty chart does not always mean the system is malfunctioning. Check the following:
+
+<Steps>
+  <Step title="Increase the date range">
+    Change **1 Day** to **1 Week**, **1 Month**, or **6 Months**.
+  </Step>
+  <Step title="Select All Agents">
+    A specific agent may not have handled calls during the selected period.
+  </Step>
+  <Step title="Verify the workspace">
+    Confirm that the correct organization or workspace is selected.
+  </Step>
+  <Step title="Check agent call records">
+    Open **Agent Conversations** and confirm whether calls exist.
+  </Step>
+  <Step title="Check campaign call history">
+    If you expected campaign activity, review **Campaign Call History**.
+  </Step>
+  <Step title="Confirm access">
+    Verify that your role and subscription include dashboard analytics.
+  </Step>
+</Steps>
+
+---
+
+## Overall Success Rate
+
+The **Overall Success Rate** card shows how the success percentage changes over the selected reporting period.
+
+The chart separates:
+
+- **Success**
+- **Failure**
+
+The vertical axis represents percentages from `0%` to `100%`.
+
+### What the Chart Helps You Monitor
+
+Use the success-rate chart to:
+
+- Detect a decline after an agent configuration change
+- Compare performance before and after prompt updates
+- Identify periods with elevated failures
+- Determine whether a specific agent requires investigation
+- Correlate performance changes with call-volume spikes
+- Decide which call records should be audited
+
+### View Supporting Logs
+
+Select **View Logs** to open detailed conversation history. Use the logs to inspect:
+
+- Individual conversations
+- Transcripts
+- Call results
+- Available recordings
+- Agent and session details
+- Failure indicators
+- Captured information
+
+<Warning>
+  A low success rate should not automatically be attributed to the AI model. Possible causes include telephony failures, unreachable recipients, incorrect phone-number configuration, unclear prompts, missing knowledge, provider errors, or incomplete outcome classification.
+</Warning>
+
+### Recommended Investigation Workflow
+
+<Steps>
+  <Step title="Confirm the reporting scope">
+    Record the selected agent and date range.
+  </Step>
+  <Step title="Locate the affected period">
+    Hover over the chart and identify when the success rate changed.
+  </Step>
+  <Step title="Open the logs">
+    Review successful and failed records from the same period.
+  </Step>
+  <Step title="Separate technical and conversational failures">
+    Determine whether the issue occurred before connection, during audio processing, or during the conversation.
+  </Step>
+  <Step title="Review recent changes">
+    Check whether the prompt, voice, transcriber, language, phone configuration, knowledge base, or campaign was recently changed.
+  </Step>
+  <Step title="Test before republishing">
+    Use the agent testing tools to validate any corrective change.
+  </Step>
+</Steps>
+
+---
+
+## Campaign Call Outcomes
+
+The **Campaign Call Outcomes** chart provides a distribution of campaign call dispositions and results.
+
+The center of the chart displays the total number of campaign calls, while the legend displays the count and percentage for each available outcome.
+
+Possible outcome categories handled by the dashboard presentation include:
+
+| Outcome | General interpretation |
+| --- | --- |
+| **Connected** | A campaign call connected successfully |
+| **Qualified** | The contact met the campaign's qualification criteria |
+| **Interested** | The contact expressed interest |
+| **Busy** | The destination was busy |
+| **No Answer** | The destination did not answer |
+| **Failed** | The call could not be completed |
+| **Voicemail** | The call reached voicemail |
+
+<Note>
+  Only outcomes returned by your campaign data are displayed. The exact labels available in your workspace may depend on campaign processing and disposition data.
+</Note>
+
+### Using Outcome Data
+
+Outcome distribution helps you distinguish between:
+
+- Contactability problems
+- Technical call failures
+- Successful connections
+- Customer interest
+- Lead qualification
+- Follow-up opportunities
+
+For example:
+
+- A high **No Answer** percentage may suggest calling at a different time.
+- A high **Busy** percentage may justify a controlled retry strategy.
+- A high **Connected** but low **Interested** percentage may indicate an offer, audience, or prompt-alignment problem.
+- A high **Interested** but low **Qualified** percentage may indicate strict qualification criteria or incomplete lead data.
+- A high **Failed** percentage may require investigation of phone numbers, providers, or campaign configuration.
+
+---
+
+## Campaign Call Volume by Time
+
+The **Campaign Call Volume by Time** chart compares two series:
+
+| Series | Meaning |
+| --- | --- |
+| **Total Calls** | Campaign calls processed during each time interval |
+| **Qualified Leads** | Qualified leads produced during the same interval |
+
+This comparison helps you understand whether increased campaign activity is producing useful outcomes.
+
+### Questions This Chart Can Answer
+
+- Did higher call volume generate more qualified leads?
+- Which period produced the strongest lead results?
+- Did a campaign produce calls without meaningful conversions?
+- Did qualified-lead volume fall even though calling volume remained stable?
+- Did a prompt or campaign update improve qualification performance?
+
+<Info>
+  Call volume and lead quality should be reviewed together. A campaign with fewer calls can outperform a higher-volume campaign when its qualification or conversion rate is stronger.
+</Info>
+
+### No Campaign Activity
+
+If the chart contains no activity:
+
+1. Confirm that an outbound campaign exists.
+2. Verify that the campaign was launched.
+3. Confirm that contacts were added successfully.
+4. Check campaign scheduling and launch settings.
+5. Review the selected date range.
+6. Open campaign call history for individual records.
+7. Confirm that dashboard analytics are included in your plan.
+
+---
+
+## Language Distribution
+
+The **Language Distribution** panel summarizes calls by language.
+
+For each language, the dashboard displays:
+
+- Language name
+- Language abbreviation
+- Number of calls
+- Percentage of represented language activity
+
+The panel displays up to four language entries and calculates their contribution to the displayed call total.
+
+The footer displays the **Total Audio Calls** used for the distribution.
+
+### How to Use Language Analytics
+
+Language distribution can help you:
+
+- Understand the languages used by your audience
+- Identify demand for multilingual agents
+- Verify whether agents are using the expected language
+- Decide whether to create a dedicated language-specific agent
+- Compare language volume before expanding a campaign
+- Detect an unexpected language configuration
+
+<Warning>
+  Language Distribution is based on the language information associated with dashboard call data. It should not be treated as automatic proof of the caller's preferred language without reviewing the underlying conversations.
+</Warning>
+
+### Example Interpretation
+
+Suppose the panel shows:
+
+| Language | Calls | Share |
+| --- | --: | --: |
+| English | 800 | 80% |
+| Hindi | 150 | 15% |
+| Marathi | 50 | 5% |
+
+This indicates that most recorded calls are associated with English, while Hindi and Marathi represent smaller shares.
+
+Before creating additional agents, also consider:
+
+- Customer location
+- Campaign target audience
+- Existing agent language configuration
+- Speech-to-text language support
+- Text-to-speech voice availability
+- Business support capacity
+
+---
+
+## Most Called Agents
+
+The **Most Called Agents** panel ranks agents by the number of calls they handled during the selected reporting period.
+
+Each row displays:
+
+| Field | Description |
+| --- | --- |
+| **Rank** | Position based on call volume |
+| **Agent name** | Configured name of the AI agent |
+| **Calls** | Number of calls associated with the agent |
+| **Share** | Agent's percentage of the calls represented in the panel |
+
+The panel shows the leading agents and provides a **View All Agents** action.
+
+### Operational Uses
+
+Use this panel to:
+
+- Identify your most heavily used agent
+- Find agents with no or low activity
+- Detect unexpected call distribution
+- Prioritize agents for quality review
+- Compare usage after routing changes
+- Decide which agent logs to inspect first
+
+<Warning>
+  High call volume does not necessarily mean high performance. Compare agent call volume with success rate, conversation quality, customer outcomes, and campaign results.
+</Warning>
+
+### Investigating an Unexpected Ranking
+
+If an agent is receiving more or fewer calls than expected:
+
+1. Review its assigned phone-number routing.
+2. Check active outbound campaigns.
+3. Confirm website or API integrations using the agent.
+4. Review recently created API keys.
+5. Check whether another agent was disabled or replaced.
+6. Confirm the dashboard's selected date range.
+7. Inspect the agent's conversation history.
+
+---
+
+## Top Performing Campaigns
+
+The **Top Performing Campaigns** table compares outbound campaign performance.
+
+The table can contain the following columns:
+
+| Column | Meaning |
+| --- | --- |
+| **Campaign** | Configured campaign name |
+| **Type** | Campaign type, such as outbound or inbound when supplied |
+| **Calls** | Total campaign calls |
+| **Connected** | Calls that connected |
+| **Qualified Leads** | Leads classified as qualified |
+| **Conversion** | Conversion percentage reported or calculated from calls and qualified leads |
+
+The dashboard requests a limited list of leading campaigns and provides a **View All** action that opens the complete campaign area.
+
+### Conversion Calculation
+
+When the backend does not provide a conversion rate directly, the interface can derive it from:
+
+```text
+Conversion Rate = Qualified Leads ÷ Total Calls × 100
+```
+
+For example:
+
+```text
+Qualified Leads = 24
+Total Calls = 200
+
+Conversion Rate = 24 ÷ 200 × 100
+Conversion Rate = 12%
+```
+
+### Comparing Campaigns Correctly
+
+Do not compare campaigns using conversion rate alone. Also review:
+
+- Total contacts
+- Calls attempted
+- Connected calls
+- No-answer rate
+- Failed-call rate
+- Interested leads
+- Qualified leads
+- Campaign schedule
+- Target audience
+- Agent configuration
+- Prompt version
+- Call script
+- Product or service represented
+
+<Tip>
+  A campaign with a strong conversion rate but very few calls may not yet have enough data for a reliable business decision.
+</Tip>
+
+---
+
+## Dashboard Navigation
+
+The current Valuez AI platform groups features into major navigation suites.
+
+### Dashboard
+
+| Page | Purpose |
+| --- | --- |
+| **Overview** | Workspace performance and recent activity |
+| **AI Voice Agents** | Create and manage agents |
+| **Call Campaigns** | Manage outbound calling campaigns |
+| **Sales Team** | Review sales-team activity and performance |
+| **Agent Conversations** | Review agent calls, chats, transcripts, and results |
+| **Speech API History** | Review speech-to-text and text-to-speech requests |
+| **Credit Usage** | Review credit consumption and balance changes |
+| **Documentation** | Open Valuez AI product and API documentation |
+| **Notifications** | Review product, account, and workspace notifications |
+
+### AI Voice Agents
+
+The **AI Voice Agents** section is used to:
+
+- Create agents
+- Update agent configuration
+- Configure prompts
+- Configure voice and transcription
+- Manage knowledge
+- Test agents
+- Review analytics
+- Review conversations
+- Work with supported agent-chain functionality
+
+### Call Campaigns
+
+The **Call Campaigns** section includes:
+
+- All campaigns
+- Campaign creation
+- Campaign leads
+- Campaign call history
+- Campaign details
+- Campaign configuration
+
+### APIs & Integrations
+
+The **APIs & Integrations** section includes:
+
+- Integrations
+- API-key management
+- Speech-to-Text testing
+- Text-to-Speech testing
+- Phone-number management
+- Speech API history
+
+### Settings & Billing
+
+The **Settings & Billing** section includes:
+
+- Workspace members
+- Account activity
+- User profile
+- Subscription and plans
+- Billing
+- Credit usage
+- Problem reporting
+
+<Info>
+  Navigation visibility can vary according to your permissions, workspace configuration, and subscription.
+</Info>
+
+---
+
+## Recommended Daily Operations Workflow
+
+For teams actively running voice agents or calling campaigns, use the following daily review process.
+
+<Steps>
+  <Step title="Confirm workspace and filters">
+    Verify the selected workspace, choose **All Agents**, and start with **1 Day**.
+  </Step>
+  <Step title="Review headline metrics">
+    Check total requests, campaigns, interested leads, and qualified leads.
+  </Step>
+  <Step title="Check the success rate">
+    Investigate any unusual decrease compared with your normal operating range.
+  </Step>
+  <Step title="Review campaign outcomes">
+    Look for increases in failed, busy, or no-answer calls.
+  </Step>
+  <Step title="Inspect campaign volume">
+    Compare total calls with qualified leads to understand campaign efficiency.
+  </Step>
+  <Step title="Review agent distribution">
+    Confirm that calls are being routed to the expected agents.
+  </Step>
+  <Step title="Open supporting logs">
+    Investigate unusual records in Agent Conversations or Campaign Call History.
+  </Step>
+  <Step title="Document corrective actions">
+    Record any routing, prompt, campaign, or knowledge-base changes made in response.
+  </Step>
+</Steps>
+
+---
+
+## Recommended Weekly Review
+
+A weekly review should cover:
+
+| Review area | Recommended action |
+| --- | --- |
+| **Agent usage** | Compare the most-called agents and identify inactive agents |
+| **Success rate** | Investigate repeated failure periods |
+| **Campaign outcomes** | Compare connected, interested, qualified, and failed calls |
+| **Conversion** | Review campaign conversion trends |
+| **Language demand** | Identify changes in language distribution |
+| **Call logs** | Audit a sample of successful and unsuccessful conversations |
+| **Prompt quality** | Refine prompts based on observed conversations |
+| **Knowledge quality** | Add or correct information the agent could not answer |
+| **Credits** | Review usage and remaining balance |
+| **Access** | Confirm workspace members still require their assigned access |
+
+---
+
+## Troubleshooting
+
+### Dashboard Shows No Data
+
+Possible causes include:
+
+- The selected period contains no activity
+- A specific agent with no activity is selected
+- The wrong workspace is active
+- No agents or campaigns have been configured
+- The current user lacks access
+- Analytics are restricted by the subscription plan
+- A dashboard request failed
+
+Recommended actions:
+
+1. Select **All Agents**.
+2. Change the range to **1 Month** or **6 Months**.
+3. Confirm that the correct workspace is selected.
+4. Open Agent Conversations and Campaign Call History.
+5. Refresh the browser.
+6. Sign out and sign in again.
+7. Ask a workspace administrator to confirm your permissions and plan.
+
+---
+
+### Total Requests Does Not Match Campaign Calls
+
+These figures may represent different analytics scopes.
+
+The agent dashboard can include activity associated with agents, while campaign analytics are loaded separately for outbound campaigns.
+
+Check:
+
+- The selected agent
+- The selected date range
+- Whether calls came from a campaign, API, website integration, or another channel
+- Whether campaign filters differ from agent filters
+- Whether the same time interval is being compared
+
+---
+
+### Agent Filter Does Not Change Campaign Metrics
+
+The agent filter controls agent-level dashboard analytics. Campaign analytics are retrieved separately for outbound campaigns.
+
+Therefore, campaign cards and charts may not be limited to the selected agent.
+
+---
+
+### Average Duration Shows No Meaningful Value
+
+Duration information may not be populated in the dashboard chart for the selected period.
+
+Use individual conversation or call records when exact duration is required for auditing or reporting.
+
+---
+
+### Campaign Analytics Are Locked
+
+Dashboard analytics can be restricted according to the workspace plan.
+
+If you see an upgrade message:
+
+1. Open **Settings & Billing**.
+2. Select **Subscription & Plans**.
+3. Review the current plan and available analytics features.
+4. Contact the workspace owner if you cannot manage the subscription.
+
+---
+
+### A Chart Is Empty but Calls Exist
+
+Check whether:
+
+- The calls occurred outside the selected date range
+- A different agent is selected
+- The records belong to campaign history rather than general agent analytics
+- The calls have not yet been processed into analytics
+- The page needs to be refreshed
+- Your account can access the relevant data
+
+---
+
+### Data Appears Outdated
+
+Try the following:
+
+1. Refresh the page.
+2. Re-select the date range.
+3. Select another agent, then return to **All Agents**.
+4. Compare the dashboard with detailed logs.
+5. Confirm that the latest calls reached a completed or reportable state.
+6. Report the issue if the inconsistency continues.
+
+---
+
+## Reporting Guidelines
+
+When using dashboard data in internal or customer reports, always record:
+
+- Workspace name
+- Date and time of report generation
+- Selected date range
+- Selected agent
+- Campaign scope
+- Time zone used
+- Whether figures came from summary cards, charts, or detailed logs
+- Any known delayed or incomplete records
+
+<Warning>
+  Dashboard analytics are designed for operational visibility. For formal auditing, billing reconciliation, or case investigation, use detailed call, conversation, campaign, and credit records.
+</Warning>
+
+---
+
+## Metric Interpretation Reference
+
+| Metric | Use it for | Do not assume |
+| --- | --- | --- |
+| **Total Agents** | Understanding workspace agent count | Every agent handled calls |
+| **Total Requests** | Measuring overall call activity | Every request was successful |
+| **Campaigns** | Understanding campaign presence | Every campaign is currently running |
+| **Interested Leads** | Identifying warm contacts | Every interested contact is qualified |
+| **Qualified Leads** | Measuring qualification output | Every qualified lead became a customer |
+| **Success Rate** | Monitoring outcome trends | Every failure was caused by the AI model |
+| **Connected Calls** | Measuring contactability | Every connected call achieved its objective |
+| **Conversion Rate** | Comparing lead efficiency | A high rate is statistically reliable with very low volume |
+| **Language Distribution** | Understanding configured language activity | It always represents a customer's preferred language |
+| **Most Called Agents** | Understanding workload distribution | The busiest agent is the best-performing agent |
+
+---
+
+## Access and Permissions
+
+Dashboard visibility is affected by workspace access controls.
+
+A user may need permission to access:
+
+- Dashboard analytics
+- AI Voice Agents
+- Agent Conversations
+- Call Campaigns
+- Campaign Leads
+- Campaign Call History
+- Integrations
+- Billing and credit usage
+- Workspace administration
+
+If a user can sign in but cannot access a dashboard feature, ask a workspace administrator to review the user's role and permissions.
+
+---
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Set the reporting scope before interpreting data">
+    Always confirm the workspace, selected agent, and date range. Incorrect filters are one of the most common causes of unexpected dashboard figures.
+  </Accordion>
+
+  <Accordion title="Use logs to validate charts">
+    Charts show trends and aggregates. Use conversation and campaign call history for record-level investigation.
+  </Accordion>
+
+  <Accordion title="Compare volume with quality">
+    High call volume is useful only when it produces acceptable conversation quality, outcomes, and lead results.
+  </Accordion>
+
+  <Accordion title="Review both successful and failed calls">
+    Successful calls reveal what is working. Failed calls reveal where routing, prompts, knowledge, audio, or campaign configuration may need improvement.
+  </Accordion>
+
+  <Accordion title="Document important configuration changes">
+    Record when prompts, voices, phone numbers, routing, knowledge, or campaign settings are changed. This makes later dashboard changes easier to explain.
+  </Accordion>
+
+  <Accordion title="Avoid changing multiple variables simultaneously">
+    When improving an agent, change one major configuration area at a time and compare the results over a meaningful period.
+  </Accordion>
+
+  <Accordion title="Use a wider range for trend analysis">
+    A one-day period is useful for operations, but weekly or monthly ranges are usually more reliable for strategic decisions.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Dashboard Quick Reference
+
+| Dashboard section | Primary question answered |
+| --- | --- |
+| **Total Agents** | How many agents are available? |
+| **Total Requests** | How much call activity occurred? |
+| **Campaigns** | How many campaigns are represented? |
+| **Qualified Leads** | How many contacts met qualification criteria? |
+| **Interested Leads** | How many contacts expressed interest? |
+| **Live Campaign Flow** | What campaign activity is currently being processed? |
+| **Total Interactions** | When did call activity occur? |
+| **Average Duration** | What duration information is available? |
+| **Overall Success Rate** | How did agent success and failure change over time? |
+| **Campaign Call Outcomes** | What happened to campaign calls? |
+| **Campaign Call Volume by Time** | Did call volume generate qualified leads? |
+| **Language Distribution** | Which configured languages handled calls? |
+| **Most Called Agents** | Which agents handled the most volume? |
+| **Top Performing Campaigns** | Which campaigns produced stronger results? |
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Manage AI Voice Agents" icon="robot" href="/guides/core-concepts/agents">
+    Create, configure, test, and manage your Valuez AI agents.
+  </Card>
+
+  <Card title="Review Agent Conversations" icon="messages" href="/guides/platform/call-logs">
+    Review transcripts, recordings, call results, and conversation details.
+  </Card>
+
+  <Card title="Configure Inbound Calling" icon="phone-arrow-down-left" href="/guides/voice-calling/inbound-calls">
+    Route inbound phone calls to the correct AI agent.
+  </Card>
+
+  <Card title="Run Outbound Campaigns" icon="phone-arrow-up-right" href="/guides/voice-calling/outbound-calls">
+    Create and operate AI-powered outbound calling campaigns.
+  </Card>
+
+  <Card title="Manage Integrations" icon="plug" href="/guides/platform/integrations">
+    Configure API keys, website integrations, providers, and external connections.
+  </Card>
+
+  <Card title="Troubleshooting" icon="screwdriver-wrench" href="/guides/platform/troubleshooting">
+    Diagnose common agent, calling, integration, and dashboard problems.
+  </Card>
+</CardGroup>

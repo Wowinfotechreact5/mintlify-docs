@@ -1,0 +1,735 @@
+---
+title: "Text to Speech"
+sidebarTitle: "Text to Speech"
+description: "Convert written text into natural spoken audio using configurable languages, voices, speeds, and audio settings."
+---
+
+Text to Speech converts written content into natural spoken audio.
+
+The Valuez AI Text to Speech playground lets you select a language and voice, enter text, adjust speaking speed and audio quality, generate speech, listen to the result, and download it as a WAV file.
+
+<Frame caption="Text to Speech playground">
+  ![Text to Speech playground showing language, voice, text, speed, and audio settings](/images/text-to-speech.png)
+</Frame>
+
+<Info>
+  You do not need programming experience to use the dashboard playground. The Code Example tab is optional and intended for developers integrating Text to Speech into another application.
+</Info>
+
+---
+
+## Open Text to Speech
+
+<Steps>
+  <Step title="Sign in to Valuez AI">
+    Sign in to your Valuez AI workspace.
+  </Step>
+  <Step title="Open APIs & Integrations">
+    Select **APIs & Integrations** from the main navigation.
+  </Step>
+  <Step title="Select Text to Speech">
+    Click **Text to Speech** under API Testing.
+  </Step>
+</Steps>
+
+The dashboard route is:
+
+```text
+/api-playground/text-to-speech
+```
+
+---
+
+## What You Can Do
+
+The Text to Speech playground lets you:
+
+- Convert up to 5,000 characters into speech
+- Select a supported voice language
+- Choose an available speaker
+- Adjust speaking speed
+- Select an audio sample rate
+- Generate standard or streaming audio
+- Listen to generated audio in the browser
+- Download the result as a WAV file
+- Review audio duration and processed characters
+- Review estimated and actual credit usage
+- View optional JavaScript, Python, and cURL examples
+
+---
+
+## Understanding the Playground
+
+The page contains two main panels:
+
+| Panel | Purpose |
+| --- | --- |
+| **Text to Speech settings** | Configure the request mode, language, voice, text, speed, and audio quality |
+| **Preview panel** | View a code example or listen to the generated result |
+
+You can drag the divider between the panels to resize them.
+
+Double-click the divider to return to the default panel sizes.
+
+---
+
+## Generate Speech
+
+<Steps>
+  <Step title="Select a request mode">
+    Keep **Standard API** selected for a normal dashboard test.
+  </Step>
+  <Step title="Choose a voice language">
+    Select the language in which your text is written.
+  </Step>
+  <Step title="Choose a voice">
+    Select one of the available voices for the chosen language.
+  </Step>
+  <Step title="Enter your text">
+    Type or paste the content you want Valuez AI to speak.
+  </Step>
+  <Step title="Adjust the speaking speed">
+    Keep the default speed or make the generated speech slower or faster.
+  </Step>
+  <Step title="Select a sample rate">
+    Choose the audio quality required for your destination.
+  </Step>
+  <Step title="Generate speech">
+    Click **Generate Speech**.
+  </Step>
+  <Step title="Listen to the result">
+    Open the Audio Result tab and play the generated audio.
+  </Step>
+  <Step title="Download the audio">
+    Click **Download WAV** if you need to save the result.
+  </Step>
+</Steps>
+
+---
+
+## Request Modes
+
+The Request Mode determines how generated audio is delivered.
+
+| Mode | Best For | Behavior |
+| --- | --- | --- |
+| **Standard API** | Normal dashboard testing | Returns the completed WAV audio |
+| **Streaming API** | Progressive audio playback | Delivers generated audio in multiple chunks |
+| **Live WebSocket** | Real-time technical integrations | Streams generated audio through a secure WebSocket connection |
+
+---
+
+## Standard API
+
+Standard API is the recommended mode for most dashboard users.
+
+It:
+
+- Processes the complete submitted text
+- Returns a completed WAV file
+- Supports browser playback
+- Supports WAV download
+- Reports duration and credit information when available
+- Charges after successful audio generation
+
+---
+
+## Streaming API
+
+Streaming API returns audio progressively while generation is taking place.
+
+During generation, the Audio Result panel can display the number of audio chunks received.
+
+Example:
+
+```text
+5 audio chunks received. Audio plays as it arrives.
+```
+
+Streaming API is useful for:
+
+- Longer messages
+- Interactive customer experiences
+- Applications that should start playback sooner
+- Testing progressive audio generation
+
+The received chunks are assembled into a playable WAV result.
+
+---
+
+## Live WebSocket
+
+Live WebSocket uses a persistent connection to receive generated audio.
+
+It is mainly intended for:
+
+- Conversational applications
+- Interactive voice assistants
+- Low-latency voice experiences
+- Real-time application integrations
+
+Nontechnical users should generally use Standard API.
+
+---
+
+## Provider and Model
+
+The current playground uses:
+
+| Setting | Value |
+| --- | --- |
+| **Provider** | Ganas |
+| **Model** | Ganas Speech |
+| **Model identifier** | `speech` |
+
+These settings are fixed in the current interface.
+
+---
+
+## Load Available Voices
+
+The page loads the Ganas voice catalog when it opens.
+
+While loading, it displays:
+
+```text
+Loading Ganas voices...
+```
+
+If the catalog cannot be loaded, click **Retry voices**.
+
+After it loads, you can click **Refresh voices** to retrieve the latest available voice list.
+
+<Info>
+  Language and voice options come from the current voice catalog. The available options may change as the catalog is updated.
+</Info>
+
+---
+
+## Select a Voice Language
+
+Use **Voice Language** to select the language in which the text should be spoken.
+
+The available language options are generated from the current voice catalog.
+
+After selecting a language, the Voice menu displays the speakers available for that language.
+
+<Warning>
+  Write your input text in the same language as the selected voice. A language mismatch can produce incorrect pronunciation or unnatural audio.
+</Warning>
+
+---
+
+## Select a Voice
+
+The Voice menu displays the speakers available for the selected language.
+
+A voice option can include:
+
+- Voice name
+- Gender information, when available
+
+If no language has been selected, the menu displays:
+
+```text
+Select a language first
+```
+
+### Compare voices
+
+1. Enter a short representative sentence.
+2. Select a voice.
+3. Generate the audio.
+4. Listen to the complete result.
+5. Repeat the test using other available voices.
+6. Compare clarity, pronunciation, tone, and pace.
+7. Select the voice that best matches your use case.
+
+---
+
+## Enter Input Text
+
+The **Input text** field is required.
+
+The accepted length is:
+
+```text
+1 to 5,000 characters
+```
+
+A character counter appears below the field.
+
+Example:
+
+```text
+250 / 5,000 characters
+```
+
+### Example input
+
+```text
+Hello and welcome to Valuez AI. Thank you for contacting our customer support team. How may we assist you today?
+```
+
+### Write natural voice content
+
+For better output:
+
+- Use complete sentences
+- Include punctuation
+- Keep sentences reasonably short
+- Use commas to create natural pauses
+- Expand uncommon abbreviations
+- Check spelling
+- Write numbers in the form you want spoken
+- Use the selected voice's language
+
+---
+
+## Punctuation and Pauses
+
+Punctuation can affect the generated delivery.
+
+| Punctuation | Typical Effect |
+| --- | --- |
+| Period (`.`) | Ends a sentence and creates a stronger pause |
+| Comma (`,`) | Creates a short pause |
+| Question mark (`?`) | Indicates a question |
+| Exclamation mark (`!`) | Adds emphasis |
+| Colon (`:`) | Introduces information with a pause |
+| Semicolon (`;`) | Separates related statements |
+
+Example:
+
+```text
+Welcome to Valuez AI. Please wait while we connect your call.
+```
+
+This will generally sound more natural than:
+
+```text
+Welcome to Valuez AI please wait while we connect your call
+```
+
+---
+
+## Names, Numbers, and Abbreviations
+
+Always test text containing:
+
+- Customer names
+- Company names
+- Product names
+- Telephone numbers
+- Currency amounts
+- Dates and times
+- Addresses
+- Abbreviations
+- Technical terminology
+
+If an abbreviation is pronounced incorrectly, write it in a more readable form.
+
+For example:
+
+```text
+C R M
+```
+
+may work better than:
+
+```text
+CRM
+```
+
+Pronunciation can vary by language and voice, so listen to every important customer-facing message.
+
+---
+
+## Speaking Speed
+
+Use **Speaking Speed** to make the voice slower or faster.
+
+The supported range is:
+
+```text
+0.70x to 1.20x
+```
+
+The default is:
+
+```text
+1.00x
+```
+
+| Speed | Suggested Use |
+| --- | --- |
+| **0.70x–0.85x** | Detailed instructions or complex information |
+| **0.90x–1.05x** | General customer communication |
+| **1.10x–1.20x** | Short announcements and brief confirmations |
+
+<Tip>
+  Start with `1.00x`. Adjust the speed only after listening to the complete message.
+</Tip>
+
+Use a slower pace for:
+
+- Telephone numbers
+- Addresses
+- Dates and times
+- Technical information
+- Safety instructions
+- Multiple-choice options
+
+---
+
+## Sample Rate
+
+Sample rate controls how many audio samples are generated per second.
+
+| Option | Sample Rate | Suggested Use |
+| --- | --: | --- |
+| **24k** | 24,000 Hz | Higher-quality website and application playback |
+| **16k** | 16,000 Hz | Voice assistants and supported telephony integrations |
+| **8k** | 8,000 Hz | Traditional narrowband telephone systems |
+
+The default is:
+
+```text
+24,000 Hz
+```
+
+<Warning>
+  Select a sample rate supported by your destination system. An incompatible rate can cause rejected audio or incorrect playback.
+</Warning>
+
+---
+
+## Audio Format
+
+Generated audio uses:
+
+```text
+WAV
+PCM16
+Mono
+```
+
+The displayed bitrate is calculated from the selected sample rate.
+
+| Sample Rate | Displayed Bitrate |
+| --- | --: |
+| 24,000 Hz | 384 kbps |
+| 16,000 Hz | 256 kbps |
+| 8,000 Hz | 128 kbps |
+
+---
+
+## Estimated Credit Usage
+
+Before generating audio, the playground can display estimated credit usage.
+
+Example:
+
+```text
+Estimated usage: 1.2500 credits
+```
+
+The estimate is based on:
+
+- Number of submitted characters
+- Current workspace speech-credit rate
+
+If an estimate is unavailable, the page displays:
+
+```text
+Usage is billed from your workspace credits
+```
+
+<Note>
+  The estimate is a planning aid. Use Credit Usage to review the final recorded charge.
+</Note>
+
+---
+
+## How Charging Works
+
+### Standard API
+
+In Standard API mode:
+
+- Credits are charged after successful audio generation
+- The completed result can display the credits used
+
+### Streaming API and Live WebSocket
+
+In streaming modes:
+
+- The submitted text is charged before the first audio chunk
+- Cancelling after audio begins does not automatically reverse the charge
+
+<Warning>
+  Use a short sample when comparing voices. Repeatedly generating long text can consume unnecessary credits.
+</Warning>
+
+---
+
+## Generate and Cancel
+
+Click **Generate Speech** to begin.
+
+While processing, the button changes to:
+
+```text
+Cancel request
+```
+
+The result panel can display:
+
+- Connecting to Ganas
+- Generating your speech
+- Streaming your speech
+- Speech generated
+- Speech generation failed
+- Request cancelled
+
+Cancellation stops the active request but does not guarantee that no credits were used.
+
+---
+
+## Reset the Playground
+
+Click the reset icon beside Generate Speech to restore the default configuration.
+
+Resetting clears:
+
+- Request-mode changes
+- Language and voice changes
+- Custom input text
+- Speaking-speed changes
+- Sample-rate changes
+- Generated audio
+- Result metadata
+- Error messages
+
+---
+
+## Listen to the Audio Result
+
+After successful generation, open **Audio Result**.
+
+<Frame caption="Generated Text to Speech audio">
+  ![Generated Text to Speech result with playback, duration, usage, and download controls](/images/text-to-speech-result.png)
+</Frame>
+
+The result can display:
+
+- Selected voice
+- Selected language
+- Audio player
+- Credits used
+- Audio duration
+- Number of processed characters
+- Download WAV button
+
+The result heading displays:
+
+```text
+Your audio is ready
+```
+
+Use the player to play, pause, seek through, and review the audio.
+
+---
+
+## Download the Audio
+
+Click **Download WAV** to save the result.
+
+The filename is:
+
+```text
+speech.wav
+```
+
+Before using the file:
+
+1. Listen to the complete audio.
+2. Confirm that all content is present.
+3. Verify names and numbers.
+4. Check the speaking speed.
+5. Confirm the selected language and voice.
+6. Verify compatibility with the destination system.
+
+---
+
+## Code Example
+
+The **Code Example** tab is an optional technical reference.
+
+Available languages are:
+
+| Request Mode | JavaScript | Python | cURL |
+| --- | --- | --- | --- |
+| **Standard API** | Available | Available | Available |
+| **Streaming API** | Available | Available | Available |
+| **Live WebSocket** | Available | Available | Not displayed |
+
+The code updates when you change:
+
+- Request mode
+- Language
+- Voice
+- Input text
+- Speaking speed
+- Sample rate
+
+Click **Copy Code** to copy the example.
+
+<Info>
+  Dashboard tests use your signed-in session. External code examples require a valid Speech API key.
+</Info>
+
+<Warning>
+  Never expose an API key in frontend code, public repositories, screenshots, or shared documents.
+</Warning>
+
+---
+
+## Text to Speech vs. Speech to Text
+
+| Capability | Text to Speech | Speech to Text |
+| --- | --- | --- |
+| Input | Written text | Audio recording or microphone |
+| Output | Spoken WAV audio | Written transcript |
+| Voice selection | Required | Not applicable |
+| Language selection | Selects the generated voice language | Provides a recognition hint |
+| Download | WAV audio | TXT transcript |
+| Common use | Announcements, assistants, and automated calls | Transcription, analysis, and searchable records |
+
+---
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Match the text and voice language">
+    Enter text in the same language as the selected voice.
+  </Accordion>
+
+  <Accordion title="Use punctuation">
+    Periods, commas, and question marks help produce natural pauses and phrasing.
+  </Accordion>
+
+  <Accordion title="Test before production">
+    Listen to all customer-facing audio before publishing or deploying it.
+  </Accordion>
+
+  <Accordion title="Test names and numbers">
+    Verify company names, product names, telephone numbers, dates, and amounts carefully.
+  </Accordion>
+
+  <Accordion title="Use short voice-selection samples">
+    Compare voices using a short sentence before generating longer content.
+  </Accordion>
+
+  <Accordion title="Choose the correct sample rate">
+    Use the audio rate required by the receiving application or telephony provider.
+  </Accordion>
+
+  <Accordion title="Monitor credit usage">
+    Check the estimate before generation and the recorded charge after completion.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The language list does not load">
+    Click Retry voices. If the issue continues, refresh the page and confirm your internet connection.
+  </Accordion>
+
+  <Accordion title="No voices are displayed">
+    Select a voice language first. Voices are filtered according to the selected language.
+  </Accordion>
+
+  <Accordion title="Generate Speech is unavailable">
+    Wait for the voice catalog to load, then select a language and voice.
+  </Accordion>
+
+  <Accordion title="The text is rejected">
+    Enter between 1 and 5,000 characters.
+  </Accordion>
+
+  <Accordion title="The pronunciation is incorrect">
+    Confirm that the text matches the selected language. Add punctuation or rewrite difficult words and abbreviations.
+  </Accordion>
+
+  <Accordion title="The voice is too fast or slow">
+    Adjust Speaking Speed between 0.70x and 1.20x and generate the audio again.
+  </Accordion>
+
+  <Accordion title="Speech generation failed">
+    Confirm that the language, voice, text, speed, and sample rate are valid. Refresh the voice catalog and retry.
+  </Accordion>
+
+  <Accordion title="The audio will not play">
+    Confirm that browser audio is not muted. Download the WAV file and test it in another media player.
+  </Accordion>
+
+  <Accordion title="The downloaded file is incompatible">
+    Check the destination system's WAV and sample-rate requirements.
+  </Accordion>
+
+  <Accordion title="Streaming ended before completion">
+    Check your network connection. Use Standard API if streaming remains unstable.
+  </Accordion>
+
+  <Accordion title="Credits were charged after cancellation">
+    Streaming requests can be charged once audio generation starts. Review Credit Usage for the transaction.
+  </Accordion>
+
+  <Accordion title="Your session has expired">
+    Sign in again and reopen Text to Speech.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Responsible Use
+
+Your organization should ensure that:
+
+- Generated audio is not used to impersonate a real person
+- Customers are not misled about automated communication
+- Generated messages are accurate and approved
+- Sensitive text is not submitted unnecessarily
+- Downloaded audio is stored securely
+- Audio is used only for authorized purposes
+- Applicable communication and calling requirements are followed
+
+<Warning>
+  Do not use generated voices for fraud, impersonation, deception, harassment, or unauthorized representation.
+</Warning>
+
+---
+
+## Related Pages
+
+<CardGroup cols={2}>
+  <Card title="Speech to Text" icon="microphone" href="/speech-to-text">
+    Convert uploaded or live speech into written text.
+  </Card>
+
+  <Card title="Integrations" icon="plug" href="/integrations">
+    Create and manage API keys and external connections.
+  </Card>
+
+  <Card title="Speech API History" icon="clock-rotate-left" href="/speech-api-history">
+    Review previous Speech to Text and Text to Speech requests.
+  </Card>
+
+  <Card title="Credit Usage" icon="coins" href="/credit-usage">
+    Review credits consumed by speech and other platform services.
+  </Card>
+</CardGroup>

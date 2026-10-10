@@ -1,0 +1,642 @@
+---
+title: "Agent Conversations"
+sidebarTitle: "Agent Conversations"
+description: "Review an AI agent's conversation history, call details, recordings, transcripts, summaries, outcomes, and credit usage."
+---
+
+Agent Conversations provides a detailed history of the interactions handled by an individual Valuez AI agent.
+
+Use this page to:
+
+- Find a specific conversation
+- Review when an interaction occurred
+- Identify the conversation channel
+- Check the conversation status
+- Listen to available call recordings
+- Read caller and AI agent messages
+- Review the reason, result, overview, resolution, and outcome
+- See how many credits the conversation consumed
+- Copy a conversation ID for support or investigation
+
+Each AI agent has its own conversation history. This makes it easier to review performance and investigate individual interactions without mixing records from unrelated agents.
+
+<Info>
+  Conversation information becomes available after the selected agent completes or records an interaction. The fields shown can differ depending on the conversation channel and the data captured during the interaction.
+</Info>
+
+---
+
+## Open Agent Conversations
+
+You can open an agent's conversation history from the AI Voice Agents area.
+
+<Steps>
+  <Step title="Open AI Voice Agents">
+    Select **AI Voice Agents** from the Valuez AI navigation.
+  </Step>
+  <Step title="Find the agent">
+    Search for or locate the agent whose conversations you want to review.
+  </Step>
+  <Step title="Open the agent's conversations">
+    Use the agent's conversation-history action to open **Agent Conversations**.
+  </Step>
+  <Step title="Review the records">
+    Use search, date filtering, sorting, and pagination to find the required conversation.
+  </Step>
+</Steps>
+
+The selected agent's name appears in the page header so that you can confirm which agent's activity you are reviewing.
+
+---
+
+## Agent Conversations Screen
+
+<Frame>
+  ![Valuez AI Agent Conversations screen](/images/agent-conversations.png)
+</Frame>
+
+The Agent Conversations screen displays a table of interactions for the selected agent.
+
+| Column | What It Shows |
+| --- | --- |
+| **Conversation ID** | The unique identifier assigned to the conversation |
+| **Direction** | The source or connection used for the conversation |
+| **Channel** | Whether the interaction used text, voice, or a speech API |
+| **Call Status** | The current or final status recorded for the interaction |
+| **Date** | The date on which the interaction occurred |
+| **Time** | The recorded time of the interaction |
+| **Actions** | Opens the complete conversation details |
+
+On smaller screens, some columns may be hidden or require horizontal scrolling.
+
+---
+
+## Conversation ID
+
+Every conversation has a unique conversation ID.
+
+Example:
+
+```text
+2fc47738-1ff7-4484-a0d7-a4db87d40ba8
+```
+
+Use the conversation ID when:
+
+- Searching for a specific interaction
+- Reporting a problem to support
+- Comparing an interaction with another system
+- Investigating an unexpected agent response
+- Reviewing associated operational records
+
+### Copy a conversation ID
+
+Move your pointer over the Conversation ID and select the copy icon.
+
+A confirmation appears after the ID is copied.
+
+<Tip>
+  Include the complete Conversation ID when reporting an interaction problem. It is more reliable than identifying a conversation only by date or caller details.
+</Tip>
+
+---
+
+## Search Conversations
+
+Use the search field at the top of the page to find an interaction.
+
+The current conversation search is designed primarily for conversation identifiers.
+
+<Steps>
+  <Step title="Select the search field">
+    Use the search box in the Agent Conversations header.
+  </Step>
+  <Step title="Enter the conversation ID">
+    Enter the full ID or the available identifying text.
+  </Step>
+  <Step title="Wait for the results">
+    Valuez AI applies the search after you stop typing.
+  </Step>
+  <Step title="Open the matching record">
+    Select the conversation row or its action button.
+  </Step>
+</Steps>
+
+If no result appears:
+
+- Check that the ID was copied correctly
+- Remove leading or trailing spaces
+- Confirm that you opened the correct AI agent
+- Review the selected date range
+- Try the complete Conversation ID
+
+---
+
+## Filter by Date
+
+Agent Conversations uses a date range to limit the displayed records.
+
+By default, the page initializes with approximately the previous month through the current date.
+
+Use the date selector to investigate:
+
+- Conversations from a specific day
+- Recent conversations
+- Interactions during a reported incident
+- Conversations before or after an agent configuration change
+- Activity during a campaign or testing period
+
+<Note>
+  If an older conversation is missing, expand the date range before assuming that the record does not exist.
+</Note>
+
+---
+
+## Sort Conversations
+
+You can sort the conversation list using supported date and time columns.
+
+Select a sortable column to alternate between:
+
+- Ascending order
+- Descending order
+
+Use descending order when you want to review the latest conversations first.
+
+Use ascending order when investigating events in chronological sequence.
+
+---
+
+## Conversation Sources
+
+The source badge helps explain where the conversation originated.
+
+Depending on the interaction type, Valuez AI can display labels such as:
+
+| Displayed source | Meaning |
+| --- | --- |
+| **Playground** | The interaction was started from an internal Valuez AI testing experience |
+| **Website Widget** | The interaction originated from a website widget |
+| **API** | The request was submitted through an API connection |
+| **Websocket** | The voice interaction used a WebSocket-based connection |
+
+The exact label depends on the underlying conversation mode and integration path.
+
+<Info>
+  The table currently labels this column as **Direction**, but the displayed value identifies the conversation's source or connection type.
+</Info>
+
+---
+
+## Conversation Channels
+
+The Channel column describes the interaction mode.
+
+| Channel | Description |
+| --- | --- |
+| **Text-Chat** | A text-to-text conversation between a user and the AI agent |
+| **Voice-Chat** | A speech-based interaction with the AI agent |
+| **API** | A speech-processing request such as text-to-speech or speech-to-text |
+
+Some fields are channel-specific.
+
+For example:
+
+- A text conversation may have a transcript without a call recording
+- A voice conversation may include both a transcript and recording
+- A speech API request may have different details from a full AI-agent conversation
+
+---
+
+## Call Status
+
+The Call Status column displays the status returned for the interaction.
+
+Use it to identify whether an interaction:
+
+- Completed normally
+- Is still being processed
+- Ended early
+- Failed
+- Has another recorded platform status
+
+The exact text depends on the result reported by the underlying conversation or calling service.
+
+<Warning>
+  A status alone may not explain why an interaction ended. Open the conversation details and review the transcript, summary, result, and recording when available.
+</Warning>
+
+---
+
+## Open Conversation Details
+
+To inspect an interaction:
+
+<Steps>
+  <Step title="Find the conversation">
+    Use search, date filters, sorting, or pagination.
+  </Step>
+  <Step title="Open the record">
+    Select the conversation row or the arrow button in the Actions column.
+  </Step>
+  <Step title="Review conversation information">
+    Check the Conversation Details panel for identity, timing, agent, industry, and credit information.
+  </Step>
+  <Step title="Review the summary">
+    Check the available reason, result, overview, resolution, and outcome.
+  </Step>
+  <Step title="Listen to the recording">
+    If a recording exists and you are authorized to access it, use the built-in audio player.
+  </Step>
+  <Step title="Read the transcript">
+    Review the caller and AI agent messages in sequence.
+  </Step>
+</Steps>
+
+---
+
+## Conversation Details Screen
+
+<Frame>
+  ![Valuez AI Conversation Details screen](/images/conversation-details.png)
+</Frame>
+
+The details screen organizes the interaction into three areas:
+
+1. Conversation information
+2. Call summary
+3. Recording and transcript
+
+On smaller displays, these sections appear vertically.
+
+---
+
+## Conversation Information
+
+The Conversation Details panel can display:
+
+| Field | Description |
+| --- | --- |
+| **Conversation ID** | Unique identifier for the interaction |
+| **Duration** | Recorded length of the conversation |
+| **Started At** | Date and time when the record was created |
+| **Industry** | Industry associated with the AI agent |
+| **Agent** | Name of the AI agent that handled the conversation |
+| **Credits Used** | Credits deducted for the interaction |
+
+Fields with unavailable data can appear as a dash or may be omitted.
+
+### Credits used
+
+Credits Used helps you understand the consumption associated with an individual conversation.
+
+The displayed value can be used alongside the Credit Usage page to:
+
+- Investigate unexpected usage
+- Compare different interaction types
+- Review high-volume periods
+- Estimate usage patterns
+- Confirm that a conversation generated a credit charge
+
+<Note>
+  Credits Used is an operational value, not a currency amount. Refer to your subscription and credit information for account-level usage and pricing.
+</Note>
+
+---
+
+## Call Summary
+
+When summary data is available, the center panel can include the following information.
+
+### Reason for Calling
+
+Explains why the user or caller started the interaction.
+
+Examples could include:
+
+- Product inquiry
+- Support request
+- Appointment request
+- Order question
+- Lead qualification
+
+The displayed content is generated from the information captured during the conversation.
+
+### Result
+
+Describes the immediate result of the interaction.
+
+For example, the result might indicate that information was provided, a question was answered, or additional action is required.
+
+### Overview
+
+Provides a concise summary of the interaction.
+
+Use the overview to understand the conversation without reading every transcript message.
+
+### Resolution
+
+Describes how the caller's request was addressed or whether the issue remains unresolved.
+
+### Call Outcome
+
+Displays the final disposition or categorized outcome recorded for the interaction.
+
+Possible values depend on the workflow and information produced during the conversation.
+
+<Warning>
+  AI-generated summaries can make mistakes or omit context. For important decisions, verify the summary against the full transcript and recording.
+</Warning>
+
+---
+
+## Call Recording
+
+Voice conversations can include a Call Recording section.
+
+When a recording is available, the built-in audio player allows authorized users to:
+
+- Play the recording
+- Pause playback
+- Move through the audio
+- Adjust the playback volume
+- Compare the audio with the transcript and summary
+
+The recording section is hidden when no recording source is available.
+
+### A recording may be unavailable when
+
+- The interaction was text-only
+- Recording was not generated
+- The external calling provider did not return a recording
+- The recording is still being processed
+- The recording file is unavailable
+- Your account does not have access to it
+
+<Warning>
+  Call recordings can contain personal, confidential, or regulated information. Access and use recordings only in accordance with your organization's privacy policy and applicable laws.
+</Warning>
+
+---
+
+## Call Transcript
+
+The transcript displays the conversation as a sequence of messages.
+
+Messages are identified as:
+
+- **Caller / User**
+- **AI Agent**
+
+Each transcript entry can include:
+
+- Speaker
+- Message content
+- Message time
+- Sentiment, when available
+- Emotion, when available
+
+The transcript header also shows the number of caller and agent messages detected in the conversation.
+
+### Transcript timestamps
+
+If message-level timestamps are available, they are shown beside the relevant transcript entries.
+
+These timestamps help you:
+
+- Match transcript text with the audio
+- Identify long pauses
+- Review the order of events
+- Locate where an unexpected response occurred
+
+### Sentiment and emotion
+
+Some transcript entries may include sentiment or emotion information.
+
+These labels appear only when the underlying conversation data contains them.
+
+Use them as supporting indicators rather than definitive conclusions.
+
+<Note>
+  Sentiment and emotion labels are automated interpretations. They may not fully represent the caller's intent, tone, or situation.
+</Note>
+
+---
+
+## When No Transcript Is Available
+
+The details screen displays:
+
+```text
+No transcript is available for this conversation.
+```
+
+This can occur when:
+
+- The interaction did not contain a supported transcript
+- The conversation ended before messages were captured
+- Speech processing did not produce transcript data
+- The transcript is still being processed
+- The external provider did not return the expected information
+
+If a recording is available, listen to it for additional context.
+
+---
+
+## Using Conversation Data to Improve an Agent
+
+Conversation history is most valuable when used as part of a regular review process.
+
+### Review unexpected answers
+
+When an agent gives an incorrect or incomplete response:
+
+1. Copy the Conversation ID
+2. Review the relevant transcript messages
+3. Check the call summary and outcome
+4. Identify whether the information was missing from the Knowledge Base
+5. Review the agent's prompt and instructions
+6. Update the relevant configuration
+7. Test the agent again
+
+### Review incomplete conversations
+
+For conversations that ended without resolution:
+
+- Check where the caller stopped responding
+- Review the agent's last question
+- Look for unclear instructions
+- Check whether the required information existed in the Knowledge Base
+- Confirm whether an integration or action failed
+- Determine whether human follow-up is required
+
+### Review successful conversations
+
+Successful conversations help you identify:
+
+- Effective prompt instructions
+- Useful Knowledge Base content
+- Common customer questions
+- Successful response patterns
+- Opportunities for additional automation
+
+---
+
+## Recommended Review Workflow
+
+<Steps>
+  <Step title="Choose an agent">
+    Open the AI agent whose performance you want to review.
+  </Step>
+  <Step title="Select a date range">
+    Choose a period relevant to your investigation.
+  </Step>
+  <Step title="Review statuses">
+    Look for failed, incomplete, or unexpected conversation statuses.
+  </Step>
+  <Step title="Open conversation details">
+    Review the summary, outcome, transcript, and recording.
+  </Step>
+  <Step title="Identify the cause">
+    Determine whether the issue relates to the prompt, Knowledge Base, integration, input data, or conversation channel.
+  </Step>
+  <Step title="Make a controlled improvement">
+    Update only the configuration related to the identified issue.
+  </Step>
+  <Step title="Test the updated agent">
+    Use Test Your AI before relying on the new behavior in customer interactions.
+  </Step>
+</Steps>
+
+---
+
+## Quality Review Checklist
+
+When reviewing a conversation, check whether the AI agent:
+
+- [ ] Correctly understood the caller's request
+- [ ] Used an appropriate greeting and tone
+- [ ] Asked relevant follow-up questions
+- [ ] Used accurate business information
+- [ ] Avoided unsupported claims
+- [ ] Followed its configured instructions
+- [ ] Reached an appropriate result
+- [ ] Clearly explained next steps
+- [ ] Used the correct language
+- [ ] Avoided unnecessary repetition
+- [ ] Handled sensitive information appropriately
+- [ ] Ended the conversation professionally
+
+---
+
+## Privacy and Access Control
+
+Conversation records can contain sensitive information.
+
+Follow these guidelines:
+
+<AccordionGroup>
+  <Accordion title="Limit conversation access">
+    Give conversation access only to team members who require it for support, quality assurance, operations, compliance, or agent improvement.
+  </Accordion>
+
+  <Accordion title="Protect conversation IDs">
+    A conversation ID is an operational identifier. Share it only with authorized team members or Valuez AI support.
+  </Accordion>
+
+  <Accordion title="Handle recordings carefully">
+    Recordings may include names, contact information, business details, or other sensitive content. Follow your organization's retention and privacy requirements.
+  </Accordion>
+
+  <Accordion title="Do not rely only on summaries">
+    Verify important findings using the transcript and recording. Automated summaries can omit details or interpret them incorrectly.
+  </Accordion>
+
+  <Accordion title="Use information only for approved purposes">
+    Do not use customer conversation information outside the purposes authorized by your organization and applicable law.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="No conversations are displayed">
+    Confirm that:
+
+    - You opened the correct AI agent
+    - The agent has completed at least one interaction
+    - The selected date range includes the interaction
+    - Your search field is empty
+    - Your account has permission to view conversations
+
+    If necessary, expand the date range and refresh the page.
+  </Accordion>
+
+  <Accordion title="An older conversation is missing">
+    The default date range begins approximately one month before the current date. Expand the range to include the expected conversation date.
+  </Accordion>
+
+  <Accordion title="Searching does not find the conversation">
+    Use the complete Conversation ID and confirm that the record belongs to the selected agent.
+  </Accordion>
+
+  <Accordion title="The conversation has no recording">
+    Recordings are available only when recording data exists for that interaction. Text conversations and some API interactions may not include audio.
+  </Accordion>
+
+  <Accordion title="The audio player does not work">
+    Refresh the page and try again. Also confirm that your browser can play audio and that the recording source is still available.
+  </Accordion>
+
+  <Accordion title="The transcript is empty">
+    The conversation may not have produced supported transcript data. Review the recording when available and confirm that the interaction completed normally.
+  </Accordion>
+
+  <Accordion title="The transcript and recording do not match exactly">
+    Speech recognition can interpret names, numbers, accents, or background noise incorrectly. Use the recording as the primary reference when exact wording matters.
+  </Accordion>
+
+  <Accordion title="The summary appears inaccurate">
+    Compare it with the complete transcript and recording. Update the agent prompt or Knowledge Base only after identifying the actual cause.
+  </Accordion>
+
+  <Accordion title="Credits Used is blank">
+    Credit information may be unavailable for some records or interaction types. Review Credit Usage for account-level information.
+  </Accordion>
+
+  <Accordion title="Conversation details fail to open">
+    Return to the conversation list and open the record again. If the problem continues, copy the Conversation ID and provide it when reporting the issue.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Related Pages
+
+<CardGroup cols={2}>
+  <Card title="AI Agents" icon="robot" href="/agents">
+    Create and configure the agent associated with these conversations.
+  </Card>
+
+  <Card title="Test Your AI" icon="flask" href="/test-your-ai">
+    Test changes before using the agent in customer conversations.
+  </Card>
+
+  <Card title="Train Your AI" icon="graduation-cap" href="/train-your-ai">
+    Improve the business information available to your agent.
+  </Card>
+
+  <Card title="Prompt Engineering" icon="message-square-code" href="/prompt-engineering">
+    Refine agent behavior, tone, boundaries, and conversation instructions.
+  </Card>
+
+  <Card title="Credit Usage" icon="coins" href="/credit-usage">
+    Review account-level credit consumption and usage activity.
+  </Card>
+
+  <Card title="Troubleshooting" icon="wrench" href="/troubleshooting">
+    Resolve common agent, calling, transcript, and recording problems.
+  </Card>
+</CardGroup>

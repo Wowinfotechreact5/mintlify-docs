@@ -1,0 +1,1283 @@
+---
+title: "Outbound Calls"
+sidebarTitle: "Outbound Calls"
+description: "Place controlled test calls and create outbound AI calling campaigns for approved contacts."
+---
+
+Outbound calling allows a Valuez AI agent to initiate telephone conversations with approved contacts.
+
+Valuez AI provides two outbound calling experiences:
+
+| Outbound option | Purpose | Best used for |
+| --- | --- | --- |
+| **Start Test Call** | Places one immediate call to a specified telephone number | Testing an agent over a real telephone connection |
+| **Call Campaigns** | Calls a selected list of contacts according to campaign settings | Sales, follow-up, qualification, outreach, and other approved business campaigns |
+
+Use **Start Test Call** while preparing an agent. Use **Call Campaigns** when the agent has been tested and you are ready to contact a managed list of people.
+
+<Warning>
+  Place outbound calls only to people your organization is legally permitted to contact. Follow all applicable consent, privacy, telemarketing, calling-hour, recording, and opt-out requirements.
+</Warning>
+
+---
+
+## Common Uses
+
+Outbound AI calls can support approved workflows such as:
+
+- Following up with interested customers
+- Qualifying sales leads
+- Contacting customers about products or services
+- Conducting approved customer surveys
+- Sharing appointment-related information
+- Following up on enquiries
+- Re-engaging existing customers
+- Running structured information campaigns
+- Collecting approved customer responses
+- Routing qualified opportunities to the appropriate team
+
+The agent should not make guarantees, promises, offers, or commitments that have not been approved by your organization.
+
+---
+
+## Before You Make Outbound Calls
+
+Complete the following preparation before placing a test call or launching a campaign.
+
+### Prepare the Agent
+
+Confirm that the selected agent has:
+
+- The correct name and purpose
+- The intended language
+- Approved agent instructions
+- A connected knowledge base
+- Accurate product and service information
+- Appropriate conversation settings
+- A configured voice
+- Completed speech-to-text settings
+- Clear fallback behavior
+- A professional ending message
+
+<Card title="Configure an Agent" icon="robot" href="/agents">
+  Create and configure the agent that will handle outbound conversations.
+</Card>
+
+---
+
+### Review the Knowledge Base
+
+Make sure the agent has accurate and current information about:
+
+- The organization
+- Products
+- Services
+- Prices and conditions
+- Contact information
+- Frequently asked questions
+- Relevant policies
+- Campaign-specific information
+- Approved next steps
+
+<Card title="Train Your AI" icon="book-open" href="/train-your-ai">
+  Prepare the business information your outbound agent is allowed to use.
+</Card>
+
+---
+
+### Test the Conversation
+
+Before launching a campaign, test:
+
+- The greeting
+- Business identification
+- Campaign purpose
+- Product and service answers
+- Follow-up questions
+- Customer objections
+- Unknown questions
+- Escalation wording
+- Opt-out requests
+- Conversation ending
+- Voice clarity
+- Pronunciation
+- Interruption handling
+
+Start with the browser test, followed by a real telephone test.
+
+<Card title="Test Your AI" icon="microphone" href="/test-your-ai">
+  Validate the agent before using it with campaign contacts.
+</Card>
+
+---
+
+### Check Your Plan, Number, and Credits
+
+Outbound campaigns can be restricted by your current subscription plan.
+
+Your plan can determine:
+
+- Whether Call Campaigns are available
+- The maximum number of simultaneous calls
+- The number of contacts allowed in a campaign file
+- Access to virtual phone numbers
+- Other campaign limits
+
+You also need:
+
+- A purchased virtual number
+- Sufficient credits
+- Permission to create or manage campaigns
+
+<Info>
+  If Call Campaigns are unavailable in your plan, Valuez AI displays an upgrade message.
+</Info>
+
+---
+
+## Quick Outbound Test Call
+
+A quick outbound test places one call from a selected AI agent to an authorized customer or tester number.
+
+This is different from launching a campaign. It is intended for controlled testing.
+
+### Required Information
+
+| Field | Required | Description |
+| --- | --- | --- |
+| **Select Agent** | Yes | The agent that will handle the conversation |
+| **Customer Number** | Yes | The telephone number that will receive the test call |
+| **Virtual Number** | Yes | A purchased number belonging to your workspace |
+
+Only virtual numbers owned by the current workspace are displayed.
+
+---
+
+## Start a Single Test Call
+
+You can open the outbound test through **Virtual Phone Integration** or use **Voice Test** from the agent-testing workspace.
+
+<Steps>
+  <Step title="Open the agent">
+    Open **AI Voice Agents** and select the agent you want to test.
+  </Step>
+  <Step title="Open Voice Test or Add Integration">
+    From **Test Agent**, select **Voice Test**. Alternatively, open **Add Integration** and choose the **Outgoing Calls** tab.
+  </Step>
+  <Step title="Confirm the agent">
+    Make sure the correct agent is selected.
+  </Step>
+  <Step title="Enter the customer number">
+    Enter a telephone number you own or are authorized to call.
+  </Step>
+  <Step title="Select the virtual number">
+    Choose a purchased virtual phone number from the workspace.
+  </Step>
+  <Step title="Select Start Test Call">
+    Wait while Valuez AI initiates the outbound call.
+  </Step>
+  <Step title="Answer the call">
+    Accept the incoming call on the test telephone.
+  </Step>
+  <Step title="Run the test">
+    Use a prepared script to evaluate the greeting, knowledge, voice, and ending.
+  </Step>
+</Steps>
+
+When the request is accepted, Valuez AI displays a confirmation that the outbound call was triggered.
+
+The result may include a call identifier and current call status.
+
+<Warning>
+  **Start Test Call** places a real call and can consume credits. Do not use a person’s telephone number without authorization.
+</Warning>
+
+---
+
+## Test Call Checklist
+
+During a single outbound test, confirm that:
+
+- [ ] The correct telephone rings
+- [ ] The expected virtual number is used
+- [ ] The correct agent speaks
+- [ ] The greeting identifies the business appropriately
+- [ ] The purpose of the call is clear
+- [ ] Two-way audio works
+- [ ] Speech is recognized correctly
+- [ ] The voice is understandable over the telephone
+- [ ] The agent handles interruptions
+- [ ] The agent answers approved questions correctly
+- [ ] The agent does not invent information
+- [ ] The ending is professional
+- [ ] The call appears in the appropriate history area
+
+---
+
+## Outbound Call Campaigns
+
+Use **Call Campaigns** when you need to contact multiple approved contacts.
+
+A campaign combines:
+
+- An AI voice agent
+- Products or services to discuss
+- A caller number
+- Starting language
+- Time zone and calling hours
+- Call-volume limits
+- Retry settings
+- A contact list
+- A scheduled launch time
+
+The campaign setup uses four main steps:
+
+1. Campaign Details
+2. Call Settings
+3. Add Contacts
+4. Schedule & Review
+
+---
+
+## Open Call Campaigns
+
+<Steps>
+  <Step title="Open Call Campaigns">
+    From the dashboard navigation, open **Call Campaigns**.
+  </Step>
+  <Step title="Review existing campaigns">
+    Check current campaigns before creating another campaign for the same purpose or contact list.
+  </Step>
+  <Step title="Select Create Campaign">
+    Open the campaign-creation workspace.
+  </Step>
+  <Step title="Complete each step">
+    Enter the campaign details, configure calls, add contacts, and review the schedule.
+  </Step>
+  <Step title="Save or launch">
+    Save the campaign as a draft if it is not ready, or launch it after completing all required checks.
+  </Step>
+</Steps>
+
+---
+
+## Step 1: Campaign Details
+
+The first step defines the campaign’s identity, purpose, agent, and offering.
+
+### Campaign Name
+
+Enter a clear name that helps your team identify the campaign.
+
+Good examples:
+
+```text
+October Product Follow-Up
+Enterprise Trial Qualification
+Mumbai Customer Renewal Campaign
+English Service Enquiry Follow-Up
+```
+
+Avoid vague names such as:
+
+```text
+Test
+Campaign 1
+New Calls
+Customers
+```
+
+A useful campaign name normally includes the purpose, audience, region, language, or time period.
+
+---
+
+### AI Voice Agent
+
+Select the agent that will speak with campaign contacts.
+
+The agent is required.
+
+Before continuing, confirm that the selected agent:
+
+- Is configured for the campaign language
+- Has the correct knowledge base
+- Understands the campaign purpose
+- Has approved instructions
+- Has passed browser testing
+- Has passed a telephone test
+
+<Warning>
+  Changing the selected agent can materially change the campaign conversation. Repeat testing whenever the agent changes.
+</Warning>
+
+---
+
+### Products to Offer
+
+Select the products relevant to the campaign.
+
+When multiple products are selected, arrange them in the intended priority order.
+
+The selected products should have:
+
+- Accurate names
+- Current descriptions
+- Approved prices
+- Eligibility details
+- Important limitations
+- Clear next steps
+
+Do not select unrelated products merely to increase the amount of information available to the agent.
+
+---
+
+### Services to Offer
+
+Select the services relevant to the campaign.
+
+If several services are selected, place the most important service first.
+
+Verify that each service contains:
+
+- Scope
+- Price or price range
+- Eligibility
+- Availability
+- Location limitations
+- Exclusions
+- Booking or follow-up instructions
+
+---
+
+### Campaign Purpose
+
+Describe why the campaign is being created.
+
+A useful purpose helps your team understand the intended conversation.
+
+Example:
+
+```text
+Follow up with customers who requested information about the Growth Plan,
+answer approved questions, identify interest, and explain the next available
+step without making unapproved pricing or service commitments.
+```
+
+The campaign purpose should clearly state:
+
+- Who will be contacted
+- Why they are being contacted
+- What the agent should discuss
+- What outcome the campaign is intended to produce
+
+---
+
+## Step 2: Call Settings
+
+Call Settings control how and when calls are placed.
+
+### Caller Number
+
+Select the virtual phone number used for campaign calls.
+
+The Caller Number is required.
+
+Only purchased numbers available to the workspace are shown.
+
+Before selecting a number, confirm that:
+
+- The number is active
+- It belongs to the correct workspace
+- It is approved for outbound use
+- It is not scheduled for deactivation
+- Your team recognizes its business purpose
+
+---
+
+### Starting Language
+
+Select the language the agent should use when the call begins.
+
+The selected language must be enabled for the chosen agent.
+
+If a language does not appear as available for the agent, review the agent’s language and voice configuration before continuing.
+
+<Warning>
+  Do not select a language only because it appears in the campaign form. Confirm that the agent, speech recognition, voice, and knowledge have been tested in that language.
+</Warning>
+
+---
+
+### Time Zone
+
+Select the time zone used to interpret the campaign’s calling hours and schedule.
+
+This is especially important when contacts, campaign operators, or business teams are in different locations.
+
+Before launching, confirm that:
+
+- The time zone matches the intended audience
+- The scheduled time is correct in that time zone
+- Calls comply with applicable calling-hour restrictions
+- Daylight-saving or regional time differences have been considered where relevant
+
+---
+
+### Allowed Calling Hours
+
+Set the start and end time during which campaign calls may be placed.
+
+The end time must be at least one hour after the selected start time.
+
+Example:
+
+| Setting | Example |
+| --- | --- |
+| Start time | 10:00 |
+| End time | 18:00 |
+
+Choose a time window that is:
+
+- Appropriate for the audience
+- Consistent with local regulations
+- Suitable for the campaign purpose
+- Supported by your operating team
+
+Do not use broad calling windows merely to finish a campaign faster.
+
+---
+
+### Maximum Concurrent Calls
+
+Maximum Concurrent Calls controls how many campaign calls can run simultaneously.
+
+The allowed maximum depends on your subscription plan.
+
+The interface displays the current plan limit beside the field.
+
+Examples of the configured plan limits are:
+
+| Plan | Maximum concurrent calls |
+| --- | --: |
+| **Basic or Free** | Campaign access unavailable |
+| **Silver** | Up to 5 |
+| **Gold** | Up to 10 |
+| **Platinum** | Up to 15 |
+
+Your workspace may receive limit information directly from its active plan. Use the limit displayed in the dashboard as the authoritative value.
+
+Enter a whole number from `1` to your displayed plan limit.
+
+### Choosing a Concurrency Level
+
+A higher value can process contacts faster, but it can also:
+
+- Use credits more quickly
+- Produce more simultaneous customer conversations
+- Increase the number of results your team must review
+- Increase the number of potential human follow-ups
+
+Start with a controlled concurrency level and increase it only after reviewing campaign quality.
+
+---
+
+### Daily Call Limit
+
+Daily Call Limit controls how many campaign calls should be attempted in one day.
+
+Use this setting to:
+
+- Control campaign pace
+- Manage credits
+- Match team capacity
+- Avoid contacting too many people at once
+- Spread a campaign over several days
+
+Choose a limit based on your audience, plan, budget, and operational capacity.
+
+---
+
+### Retry Unanswered Calls
+
+Enable **Retry unanswered calls** if Valuez AI should make another attempt when a contact does not answer.
+
+When enabled, configure:
+
+| Setting | Description |
+| --- | --- |
+| **Maximum Retries** | Number of additional attempts allowed |
+| **Retry Interval (Hours)** | Time Valuez AI should wait between attempts |
+
+Example:
+
+```text
+Maximum Retries: 1
+Retry Interval: 4 hours
+```
+
+Use conservative retry settings. Repeated attempts may create a poor customer experience or conflict with your organization’s calling policy.
+
+<Warning>
+  A retry should not be treated as permission to repeatedly contact someone who has declined, opted out, or requested no further calls.
+</Warning>
+
+---
+
+## Step 3: Add Contacts
+
+A campaign must contain contacts before it can be launched.
+
+Valuez AI supports two contact-entry methods:
+
+- **Upload File**
+- **Add Manually**
+
+You can review, select, edit, or remove contacts before launch.
+
+---
+
+## Upload Contacts from a File
+
+Use **Upload File** to add multiple campaign contacts from a CSV or Excel file.
+
+You can drag the file into the upload area or browse for it.
+
+### Required and Optional Data
+
+The file must contain a telephone number column.
+
+Recognized contact information includes:
+
+| Field | Requirement | Purpose |
+| --- | --- | --- |
+| **ContactNumber** or **Mobile Number** | Required | Primary telephone number |
+| **CustomerName** or **Name** | Recommended | Personalizes the conversation and reporting |
+| **AlternateContactNumber** | Optional | Additional contact number |
+| **Email** | Optional | Customer email information |
+| **Address** | Optional | Address information |
+| **City** | Optional | City |
+| **District** | Optional | District |
+| **State** | Optional | State |
+| **Country** | Optional | Country |
+| **Pincode** | Optional | Postal code |
+
+A downloadable template is available from the campaign workflow.
+
+The template uses the following column headings:
+
+```csv
+CustomerName,ContactNumber,AlternateContactNumber,Email,Address,City,District,State,Country,Pincode
+```
+
+<Tip>
+  Download the current template from Valuez AI before preparing a large import. This reduces column-name and formatting errors.
+</Tip>
+
+---
+
+### Contact Limits
+
+The number of contacts allowed in a campaign file depends on the active plan.
+
+Configured plan limits include:
+
+| Plan | Contacts per campaign file |
+| --- | --: |
+| **Basic or Free** | Campaign access unavailable |
+| **Silver** | Up to 50 |
+| **Gold** | Up to 200 |
+| **Platinum** | Up to 500 |
+
+Use the limit displayed in the dashboard because workspace-specific plan data may override the standard values.
+
+---
+
+### Prepare the Contact File
+
+Before uploading:
+
+- Remove contacts you are not authorized to call
+- Remove test or placeholder numbers
+- Check telephone numbers for typing errors
+- Remove duplicate contacts
+- Use consistent column names
+- Keep one person per row
+- Confirm names are matched with the correct numbers
+- Remove unnecessary personal information
+- Confirm the file does not exceed the plan limit
+
+<Warning>
+  Do not upload contact lists purchased from an unverified source or lists that your organization is not legally permitted to use.
+</Warning>
+
+---
+
+## Add a Contact Manually
+
+Use **Add Manually** when adding one contact or a small number of contacts.
+
+The manual form supports:
+
+| Field | Requirement |
+| --- | --- |
+| **Customer Name** | Required |
+| **Phone Number** | Required |
+| **Alternate Phone Number** | Optional |
+| **Email** | Optional |
+| **Address** | Optional |
+| **Country** | Optional |
+| **State** | Optional |
+| **District** | Optional |
+| **City** | Optional |
+| **Postal Code** | Optional |
+| **Source** | Optional |
+| **Other Source** | Required only when an additional source description is needed |
+
+The primary and alternate telephone-number fields accept valid 10-digit numbers in the current manual-contact form.
+
+Enter the customer’s name using normal letters and spacing.
+
+---
+
+## Review Imported Contacts
+
+After contacts are added, review the contacts table.
+
+The table can show:
+
+- Contact selection
+- Customer name
+- Phone number
+- Contact status
+- Available actions
+
+You can:
+
+- Search by name
+- Select or deselect contacts
+- Select all displayed contacts
+- Edit a contact
+- Delete a contact
+- Remove an uploaded file and its associated contacts
+
+Only the contacts selected for the campaign should be included when the campaign is saved or launched.
+
+### Remove an Uploaded File
+
+Removing an uploaded document also removes the contacts associated with that import.
+
+Review the confirmation carefully before proceeding.
+
+### Delete an Individual Contact
+
+Deleting a contact removes it from the campaign.
+
+Use this when:
+
+- The number is incorrect
+- The contact did not consent
+- The contact is a duplicate
+- The contact requested not to be called
+- The person is outside the intended audience
+
+---
+
+## Step 4: Schedule & Review
+
+The final step displays the campaign summary and launch settings.
+
+### Start Date
+
+Select the date when the campaign should begin.
+
+A valid start date is required before launch.
+
+### Start Time
+
+Select the campaign’s start time.
+
+The schedule is interpreted using the time zone selected in Call Settings.
+
+Review the complete date and time carefully before launching.
+
+---
+
+## Campaign Summary
+
+The review area summarizes important campaign information, including:
+
+- Campaign name
+- Selected agent
+- Number of contacts
+- Allowed calling hours
+- Retry settings
+
+Verify every item before launch.
+
+---
+
+## Estimated Usage
+
+Valuez AI can display an estimated usage summary containing:
+
+- Estimated call minutes
+- Estimated credits
+- Available credits
+- Launch readiness
+
+Estimates are planning aids. Actual usage can vary according to:
+
+- Number of answered calls
+- Conversation duration
+- Retry attempts
+- Customer behavior
+- Call failures
+- Agent response length
+
+<Warning>
+  Do not launch a campaign when available credits are insufficient for the expected activity.
+</Warning>
+
+---
+
+## Save as Draft
+
+Use **Save as Draft** when the campaign is not ready to launch.
+
+Saving a draft is useful when:
+
+- Contact approval is pending
+- The campaign schedule is not final
+- The agent needs more testing
+- Knowledge requires review
+- Credits are insufficient
+- Legal or compliance review is incomplete
+- A manager must approve the campaign
+
+A draft should not be treated as approved merely because it was saved successfully.
+
+---
+
+## Launch the Campaign
+
+A campaign requires the following before launch:
+
+- Campaign name
+- Selected AI agent
+- Caller number
+- Language enabled for the agent
+- Time zone
+- Valid concurrency setting
+- At least one campaign contact
+- Valid start date
+- Valid start time
+
+<Steps>
+  <Step title="Review the campaign purpose">
+    Confirm that the campaign has a legitimate and approved business purpose.
+  </Step>
+  <Step title="Review the agent">
+    Confirm that the selected agent has passed browser and telephone tests.
+  </Step>
+  <Step title="Review call settings">
+    Check the caller number, language, time zone, calling hours, limits, and retry configuration.
+  </Step>
+  <Step title="Review selected contacts">
+    Confirm that every selected contact is appropriate and authorized.
+  </Step>
+  <Step title="Review estimated usage">
+    Confirm that the workspace has sufficient credits.
+  </Step>
+  <Step title="Review the schedule">
+    Check the start date and time in the selected time zone.
+  </Step>
+  <Step title="Select Launch Campaign">
+    Launch only after the review area shows that the campaign is ready.
+  </Step>
+</Steps>
+
+---
+
+## Manage Existing Campaigns
+
+The **All Campaigns** page provides a list of campaigns.
+
+Campaign information can include:
+
+- Campaign name
+- Agent
+- Number of contacts
+- Start date
+- Current status
+- Available actions
+
+You can use search and status filters to locate a campaign.
+
+Available statuses can include stages such as:
+
+- Draft
+- Scheduled
+- Starting
+- Active
+- Paused
+- Completed
+- Stopped or failed states, when applicable
+
+The exact status shown depends on campaign progress.
+
+---
+
+## Campaign Actions
+
+Depending on the campaign state and your permissions, you may be able to:
+
+- Open campaign details
+- Edit the campaign
+- Reschedule it
+- Pause it
+- Resume or restart it
+- Review contacts
+- Review calls
+- Review leads
+- Review campaign performance
+
+### Pause a Campaign
+
+Pause a campaign when you need to stop new campaign activity temporarily.
+
+Common reasons include:
+
+- Incorrect information was discovered
+- The agent is giving unsuitable answers
+- The contact list requires review
+- Credits are running low
+- The business offer has changed
+- A compliance issue has been reported
+
+Pausing does not correct the underlying problem. Make the required change, retest the agent, and review the campaign before resuming.
+
+### Resume or Restart
+
+Resume or restart only after confirming:
+
+- The campaign problem has been resolved
+- The agent was retested
+- Contact selection is correct
+- The schedule remains appropriate
+- Credits are sufficient
+
+### Reschedule
+
+Use rescheduling when the campaign start needs to change.
+
+Confirm the new date, time, time zone, and calling hours before saving.
+
+---
+
+## Review Campaign Details
+
+The campaign-details area can provide access to:
+
+- Campaign overview
+- Campaign contacts
+- Call activity
+- Lead information
+- Campaign statistics
+- Recent calls
+- Recent leads
+
+Available campaign measurements can include:
+
+- Total contacts
+- Call progress
+- Call outcomes
+- Recent activity
+- Lead results
+
+Use these results to understand both campaign performance and conversation quality.
+
+A high call count does not necessarily mean the campaign was successful. Review actual customer outcomes and conversations.
+
+---
+
+## Campaign Call History
+
+Use **Campaign Call History** to review individual outbound calls.
+
+Depending on the available call data, the list or details can include:
+
+- Contact name
+- Contact number
+- Agent
+- Campaign
+- Call status
+- Call start time
+- Duration
+- Outcome
+- Transcript
+- Summary
+- Recording
+- Lead or qualification information
+
+Use call history to investigate:
+
+- Unanswered calls
+- Failed calls
+- Incorrect responses
+- Poor transcription
+- Unexpected endings
+- Long calls
+- Customer objections
+- Successful outcomes
+- Opt-out requests
+
+<Card title="Call Logs" icon="list" href="/call-logs">
+  Review campaign calls, transcripts, outcomes, and recordings.
+</Card>
+
+---
+
+## Campaign Leads
+
+Valuez AI can organize campaign-related contacts and outcomes in **Campaign Leads**.
+
+Depending on the available campaign data, lead details can include:
+
+- Customer name
+- Telephone number
+- Campaign
+- Business outcome
+- Qualification reason
+- Conversation details
+- Activity history
+- Notes
+
+Review lead information before assigning follow-up work.
+
+Do not assume that every answered call is a qualified lead.
+
+---
+
+## Outbound Campaign Checklist
+
+### Campaign Setup
+
+- [ ] Campaign name clearly identifies the purpose
+- [ ] Correct agent is selected
+- [ ] Relevant products are selected
+- [ ] Relevant services are selected
+- [ ] Campaign purpose is documented
+
+### Agent Quality
+
+- [ ] Agent passed browser testing
+- [ ] Agent passed telephone testing
+- [ ] Greeting is approved
+- [ ] Business identity is clear
+- [ ] Product and service answers are accurate
+- [ ] Objections have been tested
+- [ ] Unknown questions do not produce invented answers
+- [ ] Ending behavior is professional
+- [ ] Opt-out requests are handled appropriately
+
+### Call Settings
+
+- [ ] Caller number is correct
+- [ ] Starting language is enabled for the agent
+- [ ] Time zone is correct
+- [ ] Calling hours are appropriate
+- [ ] Concurrent-call limit is within the plan allowance
+- [ ] Daily call limit matches operational capacity
+- [ ] Retry settings are conservative and approved
+
+### Contacts
+
+- [ ] Every contact is authorized
+- [ ] Contact numbers were reviewed
+- [ ] Duplicate contacts were removed
+- [ ] Opted-out contacts were removed
+- [ ] Test numbers were removed
+- [ ] Selected contacts match the intended audience
+- [ ] File size is within the plan limit
+
+### Schedule and Usage
+
+- [ ] Start date is correct
+- [ ] Start time is correct
+- [ ] Time zone was checked
+- [ ] Estimated usage was reviewed
+- [ ] Sufficient credits are available
+- [ ] Responsible team members know the launch schedule
+
+### Governance
+
+- [ ] Campaign purpose is approved
+- [ ] Calling consent requirements were reviewed
+- [ ] Privacy requirements were reviewed
+- [ ] Recording requirements were reviewed
+- [ ] Opt-out process is available
+- [ ] Escalation and follow-up ownership are defined
+
+---
+
+## Troubleshooting
+
+### Call Campaigns Are Locked
+
+Your current plan may not include outbound campaigns.
+
+Review the plan information displayed in the dashboard and upgrade if required.
+
+---
+
+### No Caller Number Is Available
+
+Possible causes:
+
+- No virtual number has been purchased
+- The number was deactivated
+- The current workspace does not own a number
+- The plan does not permit a virtual number
+- The number list could not be loaded
+
+Open **Virtual Phone Integration** and review the workspace’s purchased numbers.
+
+---
+
+### The Starting Language Cannot Be Selected
+
+The campaign language must be enabled for the selected agent.
+
+Review:
+
+1. The selected agent
+2. The agent language
+3. Voice configuration
+4. Speech-to-text configuration
+5. Available language options
+
+Save the agent and reopen the campaign if necessary.
+
+---
+
+### Maximum Concurrent Calls Is Rejected
+
+Enter a whole number from `1` to the plan limit displayed beside the field.
+
+If the plan limit is `0`, campaign access is not currently available.
+
+---
+
+### Contact File Will Not Upload
+
+Check that:
+
+- The file is CSV or Excel
+- A telephone-number column exists
+- The header uses a recognized name
+- The number of contacts is within the plan limit
+- The file is not corrupted
+- Each row is structured consistently
+
+Download a new contact template and move your approved data into it.
+
+---
+
+### Contacts Are Required
+
+A campaign cannot be launched without contacts.
+
+Upload a file or add contacts manually, then confirm that the intended contacts are selected.
+
+---
+
+### A Contact Number Is Rejected
+
+For manual contact entry, the current form expects a valid 10-digit primary number.
+
+Remove spaces, letters, and unsupported symbols before trying again.
+
+---
+
+### Start Date and Time Are Required
+
+Select a valid future start date and start time in the final campaign step.
+
+Also confirm the selected time zone.
+
+---
+
+### The Campaign Does Not Start
+
+Check:
+
+- Campaign status
+- Start date and time
+- Time zone
+- Calling hours
+- Available credits
+- Caller number
+- Selected agent
+- Contact selection
+- Plan access
+- Concurrency setting
+
+If the campaign remains in an unexpected state, record the campaign name, scheduled time, and displayed status before contacting support.
+
+---
+
+### Calls Are Not Being Answered
+
+This does not always indicate a platform problem.
+
+Check:
+
+- Contact-number accuracy
+- Caller-number reputation
+- Calling time
+- Audience expectations
+- Retry settings
+- Call status in Campaign Call History
+
+Avoid repeatedly increasing retries without reviewing customer impact.
+
+---
+
+### Calls Fail Immediately
+
+Possible causes include:
+
+- Invalid contact numbers
+- Inactive virtual number
+- Insufficient credits
+- Calling restrictions
+- Telephone-provider rejection
+- Incomplete agent configuration
+
+Review the individual call status and available conversation details.
+
+---
+
+### The Agent Gives Incorrect Information
+
+Determine whether the problem comes from:
+
+| Problem | Where to review it |
+| --- | --- |
+| Incorrect product information | Products |
+| Incorrect service information | Services |
+| Missing common answer | FAQs |
+| Outdated policy | Knowledge Documents |
+| Wrong campaign behavior | Agent Instructions |
+| Wrong question recognized | Speech to Text |
+| Unclear pronunciation | Voice & Audio |
+| Wrong agent selected | Campaign Details |
+
+Pause the campaign if incorrect information could affect customers.
+
+Correct the issue, test the agent, and review the campaign before resuming.
+
+---
+
+### Changes Do Not Affect Active Calls
+
+Changes may not affect conversations that have already started.
+
+After changing the agent or campaign:
+
+1. Save the change.
+2. Test the agent.
+3. Confirm the campaign settings.
+4. Use a new controlled call.
+5. Review the new call record.
+
+---
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Start with a small campaign">
+    Use a limited approved contact group first. Review the results before increasing call volume.
+  </Accordion>
+
+  <Accordion title="Use one clear campaign purpose">
+    An agent performs more consistently when the campaign has a specific audience, offer, and expected outcome.
+  </Accordion>
+
+  <Accordion title="Keep the opening concise">
+    Introduce the organization and purpose quickly. Long introductions increase the chance that contacts will disconnect.
+  </Accordion>
+
+  <Accordion title="Use conservative retry settings">
+    Retry only when appropriate. Do not retry contacts who decline, opt out, or request no further communication.
+  </Accordion>
+
+  <Accordion title="Match concurrency to team capacity">
+    If successful calls create follow-up work, ensure your team can handle the resulting volume.
+  </Accordion>
+
+  <Accordion title="Review early campaign calls">
+    Inspect initial conversations before allowing a large scheduled campaign to continue.
+  </Accordion>
+
+  <Accordion title="Pause when information is wrong">
+    Do not allow an agent to continue making calls while it is giving incorrect prices, policies, or commitments.
+  </Accordion>
+
+  <Accordion title="Maintain a suppression process">
+    Remove contacts who opt out and ensure they are not reintroduced through a future upload.
+  </Accordion>
+
+  <Accordion title="Monitor credits">
+    Campaigns can use credits quickly, especially with concurrent calls and retries.
+  </Accordion>
+
+  <Accordion title="Retest after significant changes">
+    Changes to knowledge, instructions, voice, language, or products should be tested before resuming campaign activity.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Quick Reference
+
+| Task | Location |
+| --- | --- |
+| Place one controlled call | Test Agent → Voice Test |
+| Open outbound telephone test | Virtual Phone Integration → Outgoing Calls |
+| Create a campaign | Call Campaigns → Create Campaign |
+| Save incomplete setup | Save as Draft |
+| Add contacts in bulk | Add Contacts → Upload File |
+| Add one contact | Add Contacts → Add Manually |
+| Download the contact format | Download Contact Template |
+| Configure calling time | Call Settings → Allowed Calling Hours |
+| Configure retry behavior | Call Settings → Retry unanswered calls |
+| Schedule the campaign | Schedule & Review |
+| Temporarily stop activity | Campaign Details → Pause |
+| Continue paused activity | Campaign Details → Resume |
+| Change campaign timing | Campaign Details → Reschedule |
+| Review individual calls | Campaign Call History |
+| Review contact outcomes | Campaign Leads |
+| Review usage | Credit Usage |
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Inbound Calls" icon="phone-incoming" href="/inbound-calls">
+    Connect a virtual number so customers can call your AI agent.
+  </Card>
+
+  <Card title="Call Logs" icon="list" href="/call-logs">
+    Review outbound call statuses, transcripts, outcomes, and recordings.
+  </Card>
+
+  <Card title="Platform Analytics" icon="chart-line" href="/platform-analytics">
+    Review calling and campaign performance.
+  </Card>
+
+  <Card title="Troubleshooting" icon="wrench" href="/troubleshooting">
+    Resolve common agent, audio, calling, and campaign problems.
+  </Card>
+</CardGroup>

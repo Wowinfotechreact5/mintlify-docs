@@ -1,0 +1,311 @@
+---
+title: "Authentication"
+sidebarTitle: "Authentication"
+description: "Sign up, log in with email or Google, access a workspace, and authenticate Valuez API requests."
+---
+
+Valuez AI uses different authentication methods for different types of access:
+
+| Access type | Authentication method | Used by |
+| --- | --- | --- |
+| Dashboard session | Email and password or Google authentication | People using the Valuez dashboard |
+| Protected dashboard API | `Authorization: Bearer <token>` | The Valuez web application and authenticated internal clients |
+| External integration API | `x-api-key: <key>` | Server-to-server agent, STT, and TTS integrations |
+| Workspace context | `X-Organization-Key: <organization-key>` when required | Users who belong to one or more organizations |
+
+<Note>
+  Dashboard JWTs and external API keys are not interchangeable. Use the authentication method documented for the endpoint you are calling.
+</Note>
+
+## Open the Valuez dashboard
+
+The production dashboard is available at [dashboard.valuez.ai](https://dashboard.valuez.ai).
+
+<Frame caption="Valuez AI login screen">
+  ![Valuez AI login screen showing email, password, and Google sign-in options](/images/login-2026-07-09-15-10-46.png)
+</Frame>
+
+## Log in with email and password
+
+<Steps>
+  <Step title="Open the login page">
+    Visit [dashboard.valuez.ai](https://dashboard.valuez.ai) and confirm that you are on the official HTTPS domain.
+  </Step>
+  <Step title="Enter your registered email">
+    Enter the email address associated with your Valuez account or team invitation.
+  </Step>
+  <Step title="Enter your password">
+    Enter your password. Use the eye control to show or hide the value while typing.
+  </Step>
+  <Step title="Select Login">
+    Valuez validates the credentials and checks that the account is active and email verification requirements are satisfied.
+  </Step>
+  <Step title="Access the workspace">
+    After successful login, the dashboard loads your user profile, organization access, subscription entitlement, and module permissions.
+  </Step>
+</Steps>
+
+If the login link contains a team invitation, Valuez attempts to accept that invitation after authentication and then opens the associated workspace.
+
+## Log in with Google
+
+The login page includes **Sign in with Google** and supports Google's One Tap login experience where available.
+
+<Steps>
+  <Step title="Choose Sign in with Google">
+    Select the Google button and choose the Google account whose email address should be associated with Valuez.
+  </Step>
+  <Step title="Complete Google verification">
+    Google returns a signed identity token. The Valuez backend verifies that token using the configured Google client ID.
+  </Step>
+  <Step title="Complete account setup when requested">
+    A new Google user may be asked to provide an organization name, a 10-digit phone number, and a Valuez password before signup is completed.
+  </Step>
+  <Step title="Enter the dashboard">
+    After successful authentication, Valuez creates its own application session and loads your authorized workspace.
+  </Step>
+</Steps>
+
+<Info>
+  Google authentication verifies your Google identity, but Valuez still applies its own account status, workspace membership, plan entitlement, and permission checks.
+</Info>
+
+## Create an account
+
+You can register with the Valuez signup form or use **Sign up with Google**.
+
+### Email registration
+
+The standard registration flow collects your name, email address, organization, phone information, password, and other business details required by the form. You must accept the displayed terms before creating the account.
+
+The backend requires:
+
+- a valid email address;
+- an organization name between 2 and 100 characters;
+- a password between 8 and 25 characters;
+- a name between 2 and 50 characters;
+- valid invitation identifiers when registration is opened from an invitation.
+
+After registration, Valuez sends an email-verification message. Open the verification link before attempting normal email-and-password login.
+
+### Google registration
+
+Google signup verifies the Google identity first. If the account is new, Valuez displays **Complete your account** and requests the remaining workspace information.
+
+The current signup interface asks for:
+
+| Field | Requirement |
+| --- | --- |
+| Organization name | Required to create or associate the workspace |
+| Phone number | Exactly 10 digits in the current signup flow |
+| Password | 8 to 25 characters |
+| Confirm password | Must match the chosen password |
+
+The interface advises using uppercase, lowercase, number, and special-character combinations for a stronger password.
+
+## Verify your email address
+
+Email-and-password accounts may be prevented from logging in until verification is complete.
+
+<Steps>
+  <Step title="Open the verification message">
+    Find the Valuez verification email sent after registration.
+  </Step>
+  <Step title="Select the verification link">
+    The link calls the keyed email-verification endpoint and activates the verified state for the account.
+  </Step>
+  <Step title="Return to login">
+    Sign in with the verified email address and password.
+  </Step>
+</Steps>
+
+If the message is missing, use **Resend verification email** from the login flow. A new message is not required when the account is already verified.
+
+## Reset or create a password
+
+### Forgot password
+
+Use **Forgot Password** and enter the registered email address. Valuez sends a keyed password-reset link. Open the link and choose a new password between 8 and 25 characters.
+
+### Google account password setup
+
+If an account was created through Google and does not yet have a Valuez password, an email/password login attempt can offer to send a password-setup email. After setting a password, the user can continue using Google or use email and password.
+
+### Change password
+
+Authenticated users can change their password through the profile or password workflow available in the dashboard. After a suspected compromise, change the password and rotate any exposed API keys.
+
+## Dashboard session authentication
+
+After a successful login, Valuez returns an application JWT. The frontend sends it to protected dashboard APIs using the bearer scheme:
+
+```http
+Authorization: Bearer YOUR_VALUEZ_SESSION_TOKEN
+```
+
+The backend verifies:
+
+1. The token signature and expiration.
+2. The user identifier contained in the token.
+3. That the user account still exists.
+4. That the account is active.
+5. The requested organization membership.
+6. The plan and platform entitlement.
+7. The permission required by the requested route.
+
+Current login tokens are issued with a one-day expiration. A user whose account is deactivated or deleted is rejected even if an older token has not yet reached its expiry time.
+
+<Warning>
+  Do not copy dashboard JWTs into public documentation, screenshots, browser code, or support tickets. A JWT represents an authenticated user session.
+</Warning>
+
+## Workspace and organization access
+
+Users can belong to one or more organizations. When a specific organization is selected, requests can include:
+
+```http
+X-Organization-Key: YOUR_ORGANIZATION_KEY
+```
+
+The backend verifies that the authenticated user is an active member of the selected organization. If the organization key is invalid or belongs to another workspace, the request is denied.
+
+Workspace access also determines the active owner or workspace administrator, membership role, module permissions, and records visible to the user.
+
+## Roles and permissions
+
+Authentication confirms identity; permissions determine allowed actions. Valuez modules can distinguish actions such as:
+
+- view;
+- create;
+- edit;
+- delete;
+- upload;
+- download;
+- payment.
+
+For example, a member may be allowed to view campaign logs but not create campaigns, download recordings, manage billing, or invite additional members.
+
+## Device access and IMEI rules
+
+Some mobile or team workflows can provide an IMEI or device identifier during login. When device locking is enabled for that account, the first valid device can become the registered device. A login from another device can be rejected until an authorized administrator resets the stored device identifier.
+
+This behavior does not normally affect browser login when no IMEI is supplied.
+
+## External API authentication
+
+External agent and speech APIs use an API key rather than the dashboard bearer token:
+
+```http
+x-api-key: YOUR_API_KEY
+```
+
+### API key types
+
+| Key type | Typical prefix | Purpose |
+| --- | --- | --- |
+| Agent API key | `valuezai_api_...` or `wow_api_...` | Text-to-text, speech-to-text, text-to-speech, and speech-to-speech agent interactions |
+| External STT/TTS key | `ext_api_...` | Direct speech-to-text and text-to-speech access without an agent conversation |
+
+Generate these keys from **APIs and Integrations** in the dashboard. See [API Keys](/api-keys) and [Integrations](/integrations).
+
+## API base URL
+
+The production API base URL shown in the existing Valuez documentation is:
+
+```text
+https://api.dashboard.valuez.ai
+```
+
+Use the host configured for your environment when working in development or staging.
+
+## External API request example
+
+```bash
+curl -X POST "https://api.dashboard.valuez.ai/api/v1/external/chat" \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_API_KEY_HERE" \
+  -d '{
+    "connectionType": "ttt",
+    "responseMode": "sync",
+    "question": "Hello, tell me about your services.",
+    "sessionUUID": null,
+    "variables": {}
+  }'
+```
+
+## Security features
+
+| Control | How it is used |
+| --- | --- |
+| Password hashing | Password verification uses stored password hashes rather than plaintext passwords |
+| JWT verification | Protected dashboard requests require a valid signed token |
+| Account-state checks | Deleted and deactivated users are rejected after token verification |
+| Email verification | Email accounts can be required to verify before login |
+| Organization isolation | Organization context is accepted only for active members |
+| Module permissions | Protected routes enforce action-level access |
+| Plan enforcement | Team platform access can depend on subscription entitlement |
+| Rate limiting | Authentication and global API traffic are rate-limited by the server configuration |
+| Request validation | Authentication request bodies are validated before controller execution |
+
+## Security best practices
+
+<AccordionGroup>
+  <Accordion title="Use Google or a strong unique password">
+    Do not reuse a password from another service. For password accounts, use the supported 8-to-25-character range and include uppercase, lowercase, numeric, and special characters.
+  </Accordion>
+
+  <Accordion title="Never expose dashboard tokens or API keys">
+    Use dashboard JWTs only for authenticated sessions and API keys only from trusted server-side code. Never embed privileged credentials in browser JavaScript.
+  </Accordion>
+
+  <Accordion title="Store integration keys in environment variables or a secret manager">
+    Keep secrets outside source control. Use separate values for development, staging, and production.
+  </Accordion>
+
+  <Accordion title="Create separate API keys for separate integrations">
+    Separate keys limit the impact of compromise and make usage easier to audit.
+  </Accordion>
+
+  <Accordion title="Review workspace members regularly">
+    Remove former users, review role changes, and restrict billing, recordings, integrations, and invitation permissions.
+  </Accordion>
+
+  <Accordion title="Rotate credentials after exposure">
+    Revoke or delete the exposed integration, issue a new key, update the authorized client, and review API history for misuse.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+| Message or symptom | What to do |
+| --- | --- |
+| Invalid credentials | Confirm the email and password, then use password reset if needed |
+| Verify your email before logging in | Open the verification message or resend it from the login flow |
+| Google authentication failed | Confirm the selected Google account, browser permissions, and configured Google client ID |
+| Google user asked to set a password | Use the offered password-setup email if email/password login is required |
+| Account is deactivated | Contact the workspace or platform administrator |
+| Account is locked to another device | Ask an authorized administrator to reset the registered device identifier |
+| Not a member of the selected organization | Select an organization you belong to or request an invitation |
+| Access restricted after login | Review subscription, platform entitlement, membership role, and module permissions |
+| Invalid or expired token | Sign in again and retry the request with the new session |
+| External API returns `401` or `403` | Verify the API key, key type, endpoint, workspace, and integration status |
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="API Keys and Endpoints" icon="key" href="/api-keys">
+    Review external agent and speech authentication with request examples.
+  </Card>
+
+  <Card title="Dashboard Overview" icon="gauge" href="/dashboard-overview">
+    Understand the major Valuez dashboard areas.
+  </Card>
+
+  <Card title="Integrations" icon="plug" href="/integrations">
+    Create API keys and configure external services.
+  </Card>
+
+  <Card title="Agents" icon="bot" href="/agents">
+    Create and configure an AI voice agent.
+  </Card>
+</CardGroup>

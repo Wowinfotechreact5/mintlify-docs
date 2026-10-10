@@ -1,0 +1,695 @@
+---
+title: "Speech API History"
+sidebarTitle: "Speech API History"
+description: "Review Speech to Text and Text to Speech requests, usage, language, audio, input text, and transcription results."
+---
+
+Speech API History provides a record of Speech to Text and Text to Speech activity associated with your Valuez AI workspace.
+
+Use this page to identify which Speech API key was used, review the integration name and operation, check the language and request date, inspect credits consumed, play available audio, and review the related transcript or input text.
+
+<Frame caption="Speech API History">
+  ![Speech API History showing API keys, integration names, operations, languages, dates, and request actions](/images/speech-api-history.png)
+</Frame>
+
+<Info>
+  Speech API History is specifically for Speech to Text and Text to Speech requests. Agent conversations, campaign calls, and general telephone-call records are available on their respective history pages.
+</Info>
+
+---
+
+## Open Speech API History
+
+<Steps>
+  <Step title="Sign in to Valuez AI">
+    Sign in to the workspace containing your Speech API integrations.
+  </Step>
+  <Step title="Open APIs & Integrations">
+    Select **APIs & Integrations** from the main navigation.
+  </Step>
+  <Step title="Select Speech API History">
+    Click **Speech API History** under API Activity.
+  </Step>
+</Steps>
+
+The dashboard route is:
+
+```text
+/api-logs
+```
+
+---
+
+## What You Can Do
+
+Speech API History lets authorized users:
+
+- Review previous Speech API requests
+- Identify the API key used for a request
+- Review the integration name
+- Distinguish Speech to Text and Text to Speech operations
+- Check the language associated with a request
+- Review the request date
+- Sort the visible records
+- Open a request for more information
+- Review credits consumed
+- Play the associated audio when available
+- Review Speech to Text transcription output
+- Review Text to Speech input text
+- Navigate between multiple result pages
+
+---
+
+## Understanding the History Table
+
+Each row represents one recorded Speech API request.
+
+| Column | What It Shows |
+| --- | --- |
+| **API Key** | Masked API key used for the request |
+| **Integration Name** | Name assigned to the Speech API integration |
+| **Operation** | Speech operation performed, such as STT or TTS |
+| **Language** | Language associated with the request |
+| **Date** | Date when the request was recorded |
+| **Actions** | Opens the request details page |
+
+<Note>
+  The history page displays available information returned by the platform. A dash indicates that a field was unavailable for a particular request.
+</Note>
+
+---
+
+## API Key
+
+The API Key column identifies the key used for the request without exposing the complete secret.
+
+The key appears in masked form:
+
+```text
+••••••••A1B2
+```
+
+Only the final four characters are visible.
+
+This lets you:
+
+- Distinguish between multiple Speech API keys
+- Identify which integration generated a request
+- Investigate unexpected usage
+- Match a request with a configured integration
+- Review activity before rotating or revoking a key
+
+<Warning>
+  The full API key is intentionally hidden. Never include complete API keys in screenshots, documentation, support messages, or public repositories.
+</Warning>
+
+---
+
+## Integration Name
+
+The **Integration Name** identifies the Speech API integration associated with the key.
+
+Examples might include:
+
+```text
+Production Voice Service
+```
+
+```text
+Mobile Application
+```
+
+```text
+Speech Testing
+```
+
+The displayed name comes from the integration configuration created in Valuez AI.
+
+### Use clear integration names
+
+Descriptive names make history easier to investigate.
+
+Recommended names include:
+
+- Production Speech API
+- Development Speech Testing
+- Customer Support Transcription
+- Mobile App Text to Speech
+- CRM Voice Integration
+
+Avoid unclear names such as:
+
+```text
+Test
+```
+
+```text
+New Key
+```
+
+```text
+API 1
+```
+
+---
+
+## Operation
+
+The Operation column identifies which speech-processing action was performed.
+
+Common values include:
+
+| Operation | Meaning |
+| --- | --- |
+| **STT** | Speech to Text converted audio into written text |
+| **TTS** | Text to Speech converted written text into audio |
+
+Operation values appear as badges so they can be identified quickly.
+
+---
+
+## Language
+
+The Language column displays the language associated with the request.
+
+For Speech to Text, this can represent:
+
+- The language selected by the requester
+- An automatic-detection hint
+- The language information stored in the request history
+
+For Text to Speech, it represents the language used to choose and generate the voice.
+
+<Info>
+  The recorded language helps with auditing and troubleshooting, but it does not guarantee that every spoken word in the audio used that language.
+</Info>
+
+---
+
+## Date
+
+The Date column shows when the request was recorded.
+
+The table displays dates in this format:
+
+```text
+DD/MM/YYYY
+```
+
+Example:
+
+```text
+10/10/2026
+```
+
+Open the request details to see the more precise requested time when available.
+
+---
+
+## Sort the History
+
+The visible Speech API History records can be sorted by:
+
+- Integration Name
+- Operation
+- Language
+- Date
+
+Click a supported column heading to sort the records.
+
+Click it again to reverse the order.
+
+<Note>
+  Sorting is applied to the records loaded on the current result page.
+</Note>
+
+---
+
+## Navigate Between Pages
+
+Speech API History uses pagination when more records exist than can be displayed on one page.
+
+Available rows-per-page options are:
+
+- 10
+- 15
+- 25
+- 50
+
+The default is:
+
+```text
+10 rows per page
+```
+
+Changing the rows-per-page value returns the history to the first page.
+
+Use the pagination controls to move between result pages.
+
+---
+
+## Mobile View
+
+On smaller screens, each request is displayed as a card instead of a table row.
+
+The mobile card shows:
+
+- Integration name
+- Operation
+- Masked API key
+- Language
+- Date
+- Details action
+
+Select the card or **Details** to open the request.
+
+---
+
+## Open Request Details
+
+Open a request using either of these methods:
+
+- Click anywhere on the history row
+- Click the arrow under Actions
+- Select Details from the mobile card
+
+The page opens **Speech API Request Details**.
+
+<Frame caption="Speech API Request Details">
+  ![Speech API Request Details showing operation, language, credit usage, audio, and text](/images/speech-api-request-details.png)
+</Frame>
+
+Use the back arrow at the top of the details page to return to Speech API History.
+
+<Note>
+  Open request details from the history list. The current interface relies on the selected history record when loading the details screen.
+</Note>
+
+---
+
+## Request Details
+
+The request-information panel can display:
+
+| Field | Description |
+| --- | --- |
+| **Request ID** | Masked request key or key reference shown by the interface |
+| **Requested At** | Date and time when the request was recorded |
+| **Operation** | Speech operation, such as STT or TTS |
+| **Language** | Language associated with the request |
+| **Credits Used** | Credits deducted for processing the request |
+
+The requested time uses a format such as:
+
+```text
+10 Oct 2026, 02:30 PM
+```
+
+Credit usage is displayed with two decimal places when data is available.
+
+Example:
+
+```text
+2.50
+```
+
+---
+
+## Audio and Text
+
+The **Audio & Text** panel presents the input and output associated with the request.
+
+Its layout changes according to the operation.
+
+### Speech to Text request
+
+For an STT request, the panel shows:
+
+1. **Transcription** — written text produced from the audio
+2. **Audio File** — original or stored audio associated with the request
+
+### Text to Speech request
+
+For a TTS request, the panel shows:
+
+1. **Audio File** — generated spoken audio
+2. **Text** — written content used to generate the audio
+
+This makes it easier to compare the Speech API input with its output.
+
+---
+
+## Review Speech to Text Details
+
+For an STT record:
+
+<Steps>
+  <Step title="Confirm the operation">
+    Verify that the Operation field displays STT.
+  </Step>
+  <Step title="Review the language">
+    Confirm that the stored language matches the expected recording language.
+  </Step>
+  <Step title="Play the audio">
+    Listen to the available audio from the Audio File player.
+  </Step>
+  <Step title="Read the transcription">
+    Compare the transcription with the recording.
+  </Step>
+  <Step title="Check credits">
+    Review the Credits Used value.
+  </Step>
+</Steps>
+
+### What to verify
+
+When reviewing an STT request, check:
+
+- Whether speech was detected
+- Whether the complete recording was transcribed
+- Whether names and numbers are accurate
+- Whether specialist terminology was recognized
+- Whether the selected language was suitable
+- Whether the audio contains noise or overlapping speech
+- Whether the credit usage is expected
+
+<Warning>
+  Automated transcripts can contain recognition errors. Verify legal, financial, medical, contractual, or otherwise important information against the original recording.
+</Warning>
+
+---
+
+## Review Text to Speech Details
+
+For a TTS record:
+
+<Steps>
+  <Step title="Confirm the operation">
+    Verify that the Operation field displays TTS.
+  </Step>
+  <Step title="Review the language">
+    Confirm that the stored language matches the input text.
+  </Step>
+  <Step title="Read the input text">
+    Check the Text section for the content submitted to the service.
+  </Step>
+  <Step title="Play the generated audio">
+    Use the Audio File player to listen to the result.
+  </Step>
+  <Step title="Check credits">
+    Review the Credits Used value.
+  </Step>
+</Steps>
+
+### What to verify
+
+When reviewing a TTS request, check:
+
+- Whether all input text was spoken
+- Whether names and numbers were pronounced correctly
+- Whether the language was correct
+- Whether punctuation produced suitable pauses
+- Whether the resulting audio is clear
+- Whether the credit usage is expected
+
+---
+
+## Play an Audio File
+
+When audio is available, the browser audio player lets you:
+
+- Play the recording
+- Pause playback
+- Seek to another position
+- Adjust playback volume
+- Review the audio against the related text
+
+If audio is unavailable, the panel displays:
+
+```text
+No audio available
+```
+
+Possible reasons include:
+
+- No audio path was stored
+- The file is no longer available
+- Processing did not complete
+- The request failed before audio was generated
+- The browser could not access the audio resource
+
+---
+
+## No Text Available
+
+If a request does not contain usable text, the panel displays:
+
+```text
+No text available
+```
+
+This can occur when:
+
+- Speech was not detected
+- Transcription failed
+- Text was not saved in the request history
+- The request did not complete
+- The stored record is incomplete
+
+---
+
+## Review Credit Usage
+
+The request-details page displays credits used for the selected request.
+
+Use this value to investigate:
+
+- Unexpected consumption
+- High-volume API activity
+- Differences between testing and production usage
+- Requests made by different integrations
+- Usage before API-key rotation
+- Individual speech transactions
+
+For complete balance history, use the **Credit Usage** page.
+
+<Info>
+  Speech API History provides request-level context. Credit Usage provides the broader workspace credit ledger.
+</Info>
+
+---
+
+## Match a Request to an Integration
+
+When investigating a request:
+
+1. Note the final four characters of the masked API key.
+2. Note the integration name.
+3. Check whether the operation is STT or TTS.
+4. Review the language and date.
+5. Open the request details.
+6. Compare the request with the corresponding external application's records.
+7. Review Credit Usage when necessary.
+
+This workflow helps identify which application or environment generated the activity.
+
+---
+
+## Investigate Unexpected Requests
+
+If you find a request you do not recognize:
+
+<Steps>
+  <Step title="Identify the integration">
+    Review the integration name and masked API-key suffix.
+  </Step>
+  <Step title="Review request details">
+    Check the operation, language, requested time, audio, and text.
+  </Step>
+  <Step title="Check the associated application">
+    Compare the request time with your server or application logs.
+  </Step>
+  <Step title="Review recent usage">
+    Look for repeated or unusually frequent requests using the same key.
+  </Step>
+  <Step title="Notify an administrator">
+    Report suspicious usage to the workspace owner.
+  </Step>
+  <Step title="Rotate the key if necessary">
+    If exposure is suspected, replace the key from Integrations and update the authorized application.
+  </Step>
+</Steps>
+
+<Warning>
+  Treat unexplained API activity as a potential credential-security issue. Do not wait for credits to be exhausted before investigating.
+</Warning>
+
+---
+
+## Speech API History vs. Other Logs
+
+| Page | Purpose |
+| --- | --- |
+| **Speech API History** | Speech to Text and Text to Speech API requests |
+| **Agent Conversations** | Conversations handled by configured AI agents |
+| **Campaign Call History** | Calls made as part of calling campaigns |
+| **Call Logs** | General telephone-call activity |
+| **Credit Usage** | Workspace credit deductions and balance activity |
+
+Use Speech API History when investigating standalone speech-processing requests.
+
+---
+
+## History Retention
+
+The page displays Speech API records returned by the workspace history service.
+
+The exact retention period can depend on:
+
+- Workspace configuration
+- Subscription plan
+- Platform retention policy
+- Operational requirements
+- Applicable privacy requirements
+
+Do not rely on the dashboard as the only long-term record if your organization requires separate archival.
+
+---
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Use descriptive integration names">
+    Clear integration names make it easier to identify which application created a request.
+  </Accordion>
+
+  <Accordion title="Use separate keys for separate systems">
+    Use different API keys for production, development, mobile applications, and internal systems.
+  </Accordion>
+
+  <Accordion title="Review usage regularly">
+    Periodic reviews can identify failed integrations, unexpected credit consumption, or unauthorized requests.
+  </Accordion>
+
+  <Accordion title="Compare audio with text">
+    For STT, compare the transcript with the recording. For TTS, compare the audio with the submitted text.
+  </Accordion>
+
+  <Accordion title="Protect recorded content">
+    Audio and text can contain personal or confidential information. Access them only for an approved business purpose.
+  </Accordion>
+
+  <Accordion title="Rotate exposed keys">
+    Replace any API key that may have been shared publicly or included in unprotected code.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="No speech API requests are displayed">
+    Confirm that Speech to Text or Text to Speech requests have been made in the current workspace. Also confirm that you are viewing the correct organization.
+  </Accordion>
+
+  <Accordion title="A recent request is missing">
+    Refresh the page and check the next result pages. Confirm that the request used a Speech API key belonging to the current workspace.
+  </Accordion>
+
+  <Accordion title="The API key is masked">
+    This is expected. Only the final four characters are displayed to protect the credential.
+  </Accordion>
+
+  <Accordion title="The integration name is missing">
+    The request may not include an available key name, or the associated integration may have changed.
+  </Accordion>
+
+  <Accordion title="The language shows a dash">
+    Language information was not available in the returned history record.
+  </Accordion>
+
+  <Accordion title="Request details do not open">
+    Open the request directly from Speech API History. If the page remains empty, return to the list and select the row again.
+  </Accordion>
+
+  <Accordion title="The audio does not play">
+    Confirm that browser audio is enabled. The stored file may be unavailable or inaccessible.
+  </Accordion>
+
+  <Accordion title="No text is available">
+    The transcription or input text may not have been stored, or processing may not have completed successfully.
+  </Accordion>
+
+  <Accordion title="Credits display as 0.00">
+    The request may have consumed no recorded credits, or usage information may be unavailable for that record. Check Credit Usage for confirmation.
+  </Accordion>
+
+  <Accordion title="The operation is unfamiliar">
+    Common values are STT and TTS. Contact your administrator or Valuez AI support if another unexplained operation appears.
+  </Accordion>
+
+  <Accordion title="The list fails to load">
+    Confirm your network connection and active session, then refresh the page. Contact support if the problem continues.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Security and Privacy
+
+Speech API records can contain:
+
+- Masked credential information
+- Integration names
+- Audio recordings
+- Customer speech
+- Transcriptions
+- Submitted text
+- Language information
+- Usage records
+
+Your organization should:
+
+- Limit access to authorized users
+- Avoid sharing screenshots containing customer content
+- Store downloaded audio and text securely
+- Investigate unexpected requests
+- Rotate potentially exposed keys
+- Remove unused integrations
+- Retain audio and text only as required
+- Follow applicable consent and privacy requirements
+
+<Warning>
+  Do not use Speech API History to access, listen to, or share customer content without a legitimate and authorized business purpose.
+</Warning>
+
+---
+
+## Related Pages
+
+<CardGroup cols={2}>
+  <Card title="Speech to Text" icon="microphone" href="/speech-to-text">
+    Convert uploaded or live audio into written text.
+  </Card>
+
+  <Card title="Text to Speech" icon="volume-high" href="/text-to-speech">
+    Generate spoken WAV audio from written text.
+  </Card>
+
+  <Card title="Integrations" icon="plug" href="/integrations">
+    Create, review, and manage Speech API keys.
+  </Card>
+
+  <Card title="API Keys" icon="key" href="/api-keys">
+    Learn how to authenticate external requests securely.
+  </Card>
+
+  <Card title="Credit Usage" icon="coins" href="/credit-usage">
+    Review workspace credit deductions and balance activity.
+  </Card>
+
+  <Card title="Troubleshooting" icon="screwdriver-wrench" href="/troubleshooting">
+    Resolve common speech, integration, authentication, and usage issues.
+  </Card>
+</CardGroup>

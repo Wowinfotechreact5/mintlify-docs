@@ -1,0 +1,827 @@
+---
+title: "API Keys"
+sidebarTitle: "API Keys"
+description: "Authenticate and integrate with Valuez AI using agent API keys, external speech keys, REST requests, SSE streaming, and real-time WebSockets."
+---
+
+Valuez AI provides API keys for connecting external applications to AI agents and speech services.
+
+Two key families are supported:
+
+| Key family | Typical format | Purpose |
+| --- | --- | --- |
+| **Agent API key** | `valuezai_api_...` or `wow_api_...` | Communicate with a specific configured agent using Text-to-Text, Speech-to-Text, Text-to-Speech, or Speech-to-Speech |
+| **External speech key** | `valuezai_ext_api_...` or legacy `ext_api_...` | Use standalone Speech-to-Text and Text-to-Speech services without starting an agent conversation |
+
+<Warning>
+  API keys are credentials. Never paste a real key into public documentation, browser JavaScript, screenshots, Git repositories, support tickets, or client-side mobile application code.
+</Warning>
+
+## Base URL
+
+The production API base URL is:
+
+```text
+https://api.dashboard.valuez.ai
+```
+
+All endpoint paths in this guide are relative to that base URL.
+
+Development and staging environments can use different hosts. Confirm the correct base URL with your Valuez administrator before integrating.
+
+## Authentication header
+
+Send the API key in the `x-api-key` header:
+
+```http
+x-api-key: YOUR_API_KEY
+```
+
+For JSON requests, also include:
+
+```http
+Content-Type: application/json
+```
+
+For audio uploads, use `multipart/form-data`. When using `curl -F`, do not manually set the multipart `Content-Type`; `curl` adds the required boundary automatically.
+
+<Note>
+  Dashboard APIs use a JWT bearer token. The external endpoints on this page use `x-api-key`. A dashboard JWT cannot replace an external API key.
+</Note>
+
+## Choose the correct API
+
+| Requirement | Endpoint | Key type |
+| --- | --- | --- |
+| Send text to an AI agent | `POST /api/v1/external/chat` | Agent API key |
+| Send audio to an AI agent | `POST /api/v1/external/chat` | Agent API key |
+| Receive an agent response as audio | `POST /api/v1/external/chat` | Agent API key |
+| Start a real-time agent voice session | `POST /api/v1/external/chat` followed by WebSocket | Agent API key |
+| Restore an agent conversation | `GET /api/v1/external/history` | Agent API key |
+| Convert text directly to speech | `POST /api/v1/tts/external` | External speech key |
+| Transcribe audio directly | `POST /api/v1/stt/external` | External speech key |
+
+---
+
+# Agent API
+
+An Agent API key is associated with a specific Valuez agent. That agent supplies the model, prompt, knowledge base, language configuration, voice, and transcriber used by the request.
+
+## Unified agent endpoint
+
+```http
+POST /api/v1/external/chat
+```
+
+The endpoint supports four communication modes:
+
+| Mode | Meaning | Input | Output |
+| --- | --- | --- | --- |
+| `ttt` | Text-to-Text | Text | JSON text response or SSE stream |
+| `stt` | Speech-to-Text agent interaction | Audio | Transcription and agent text response |
+| `tts` | Text-to-Speech agent interaction | Text | Generated agent audio |
+| `sts` | Speech-to-Speech | Real-time audio | Real-time WebSocket voice session |
+
+## Requirements applied to every agent request
+
+Before processing a request, Valuez checks:
+
+1. The API key is present.
+2. The key format is valid.
+3. The key exists and is active.
+4. The key is associated with an agent.
+5. The individual key credit limit has not been exceeded.
+6. The account has an active subscription.
+7. The subscription includes integrations.
+8. The API key permits the requested communication mode.
+9. Voice access is available for STT, TTS, or STS requests.
+10. Sufficient account credits are available.
+11. The configured agent has the required model, knowledge, voice, and transcription settings.
+
+A valid key can still receive `403` if the requested mode is disabled for that key or unavailable under the current subscription.
+
+---
+
+## Text-to-Text
+
+Text-to-Text sends a question to the configured agent and returns an answer as text.
+
+Typical use cases include:
+
+- website chat;
+- CRM assistants;
+- internal support tools;
+- messaging integrations;
+- server-side automation;
+- testing agent knowledge.
+
+### Synchronous request
+
+A synchronous request returns the complete answer in one response.
+
+```bash
+curl -X POST "https://api.dashboard.valuez.ai/api/v1/external/chat" \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_AGENT_API_KEY" \
+  -d '{
+    "connectionType": "ttt",
+    "responseMode": "sync",
+    "question": "What services does your company provide?",
+    "sessionUUID": null,
+    "variables": {
+      "userName": "Anita Sharma",
+      "userEmail": "anita@example.com"
+    }
+  }'
+```
+
+The text can alternatively be supplied as `input.text`:
+
+```json
+{
+  "connectionType": "ttt",
+  "responseMode": "sync",
+  "input": {
+    "text": "What services does your company provide?",
+    "variables": {
+      "userName": "Anita Sharma"
+    }
+  },
+  "sessionUUID": null
+}
+```
+
+### TTT request parameters
+
+| Parameter | Type | Required | Description |
+| --- | --- | --: | --- |
+| `connectionType` | string | Recommended | Use `"ttt"`. If omitted, Text-to-Text is the default |
+| `responseMode` | string | No | `"sync"` for one response or `"stream"` for SSE |
+| `question` | string | Yes for text requests | User message sent to the agent |
+| `input.text` | string | Alternative | Alternative location for the user message |
+| `sessionUUID` | UUID or `null` | No | Existing conversation UUID or `null` for a new session |
+| `variables` | object | No | User or application context stored with the session |
+| `input.variables` | object | No | Alternative location for session variables |
+
+### Example synchronous response
+
+The exact response can include additional fields depending on the deployed version.
+
+```json
+{
+  "statusCode": 200,
+  "sessionUUID": "0f8fad5b-d9cb-469f-a165-70867728950e",
+  "connectionType": "ttt",
+  "answer": "We provide AI voice agents, outbound campaigns, and speech API services."
+}
+```
+
+Store the `sessionUUID` if the user is expected to continue the same conversation.
+
+---
+
+## Streaming Text-to-Text
+
+Set `responseMode` to `"stream"` to receive Server-Sent Events.
+
+```bash
+curl -N -X POST "https://api.dashboard.valuez.ai/api/v1/external/chat" \
+  -H "Content-Type: application/json" \
+  -H "Accept: text/event-stream" \
+  -H "x-api-key: YOUR_AGENT_API_KEY" \
+  -d '{
+    "connectionType": "ttt",
+    "responseMode": "stream",
+    "question": "Explain the available services.",
+    "sessionUUID": null
+  }'
+```
+
+The response content type is:
+
+```http
+Content-Type: text/event-stream
+```
+
+A stream can contain events similar to:
+
+```text
+data: {"text":"We provide","sessionUUID":"0f8fad5b-d9cb-469f-a165-70867728950e"}
+
+data: {"text":" AI voice automation services.","sessionUUID":"0f8fad5b-d9cb-469f-a165-70867728950e"}
+```
+
+### Streaming client requirements
+
+Your client should:
+
+- keep the HTTP connection open;
+- process each `data:` event;
+- preserve the returned `sessionUUID`;
+- concatenate text in received order;
+- detect normal completion;
+- handle connection interruption;
+- avoid automatically replaying a non-idempotent user message without confirming whether it was processed.
+
+---
+
+## Continue an existing conversation
+
+Pass the previously returned `sessionUUID`:
+
+```bash
+curl -X POST "https://api.dashboard.valuez.ai/api/v1/external/chat" \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_AGENT_API_KEY" \
+  -d '{
+    "connectionType": "ttt",
+    "responseMode": "sync",
+    "question": "Which one is best for a small support team?",
+    "sessionUUID": "0f8fad5b-d9cb-469f-a165-70867728950e"
+  }'
+```
+
+<Warning>
+  Never reuse one customer's `sessionUUID` for another customer. A session contains conversation context and can contain personal information.
+</Warning>
+
+---
+
+## Retrieve conversation history
+
+Use the history endpoint to restore a conversation after a refresh or application restart.
+
+```http
+GET /api/v1/external/history?sessionUUID=SESSION_UUID
+```
+
+```bash
+curl "https://api.dashboard.valuez.ai/api/v1/external/history?sessionUUID=0f8fad5b-d9cb-469f-a165-70867728950e" \
+  -H "x-api-key: YOUR_AGENT_API_KEY"
+```
+
+### Example response
+
+```json
+{
+  "statusCode": 200,
+  "sessionUUID": "0f8fad5b-d9cb-469f-a165-70867728950e",
+  "AgentID": 42,
+  "createdAt": "2026-10-09T08:30:00.000Z",
+  "updatedAt": "2026-10-09T08:35:00.000Z",
+  "chatHistory": [
+    {
+      "role": "user",
+      "message": "What services do you provide?",
+      "timestamp": "2026-10-09T08:30:05.000Z"
+    },
+    {
+      "role": "assistant",
+      "message": "We provide AI voice automation services.",
+      "timestamp": "2026-10-09T08:30:07.000Z"
+    }
+  ]
+}
+```
+
+The API verifies that the session belongs to the agent associated with the supplied key.
+
+| Status | Meaning |
+| --- | --- |
+| `400` | `sessionUUID` is missing |
+| `401` | API key is missing or invalid |
+| `403` | The session belongs to another agent |
+| `404` | The session was not found |
+
+---
+
+# Speech-to-Text Agent Interaction
+
+STT mode accepts user audio, transcribes it, sends the transcription to the configured agent, and returns the agent's text response.
+
+The agent must have:
+
+- a configured transcription provider;
+- a valid transcription model;
+- a connected knowledge base;
+- a configured language supported by the selected provider;
+- permission for Speech-to-Text;
+- a subscription with voice access.
+
+## Upload an audio file
+
+```bash
+curl -X POST "https://api.dashboard.valuez.ai/api/v1/external/chat" \
+  -H "x-api-key: YOUR_AGENT_API_KEY" \
+  -F "connectionType=stt" \
+  -F "responseMode=sync" \
+  -F "audioFile=@/path/to/customer-question.wav" \
+  -F "sessionUUID="
+```
+
+<Info>
+  Do not manually add `Content-Type: multipart/form-data` when using `curl -F`. Curl generates the multipart boundary automatically.
+</Info>
+
+## Submit Base64 audio
+
+```bash
+curl -X POST "https://api.dashboard.valuez.ai/api/v1/external/chat" \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_AGENT_API_KEY" \
+  -d '{
+    "connectionType": "stt",
+    "responseMode": "sync",
+    "input": {
+      "audioBase64": "BASE64_AUDIO_DATA"
+    },
+    "sessionUUID": null
+  }'
+```
+
+Send only the Base64 data unless your client and deployed API explicitly support a data-URL prefix.
+
+## Submit an audio URL
+
+```bash
+curl -X POST "https://api.dashboard.valuez.ai/api/v1/external/chat" \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_AGENT_API_KEY" \
+  -d '{
+    "connectionType": "stt",
+    "responseMode": "sync",
+    "input": {
+      "audioUrl": "https://example.com/audio/customer-question.wav"
+    },
+    "sessionUUID": null
+  }'
+```
+
+The audio URL must be reachable by the Valuez backend. Do not use expiring URLs that become invalid before the server can download the file.
+
+## STT response
+
+A successful response can include both the transcription and the agent answer:
+
+```json
+{
+  "statusCode": 200,
+  "sessionUUID": "0f8fad5b-d9cb-469f-a165-70867728950e",
+  "connectionType": "stt",
+  "transcription": "What are your business hours?",
+  "answer": "Our working hours are Monday to Saturday, 9 AM to 6 PM."
+}
+```
+
+Audio quality, language selection, background noise, sample rate, and the selected transcription provider affect accuracy.
+
+---
+
+# Text-to-Speech Agent Interaction
+
+TTS mode sends a text question to the configured agent and returns the agent's generated response as audio.
+
+This is different from the standalone TTS endpoint. Agent TTS first generates an answer using the agent's prompt and knowledge base, then synthesizes that answer using the agent's saved voice.
+
+```bash
+curl -X POST "https://api.dashboard.valuez.ai/api/v1/external/chat" \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_AGENT_API_KEY" \
+  -d '{
+    "connectionType": "tts",
+    "responseMode": "sync",
+    "question": "Tell me about your support services.",
+    "sessionUUID": null
+  }' \
+  --output agent-response.wav
+```
+
+The response can be returned as `audio/wav` or another configured audio content type.
+
+The conversation UUID can be returned through:
+
+```http
+X-Session-UUID: 0f8fad5b-d9cb-469f-a165-70867728950e
+```
+
+Store that header when continuing the same conversation.
+
+Your client should inspect the response `Content-Type` before treating the body as audio. An error response can be JSON rather than an audio file.
+
+---
+
+# Speech-to-Speech
+
+STS initializes a real-time duplex voice session. The HTTP endpoint performs the handshake and returns a WebSocket URL.
+
+## Create the STS session
+
+```bash
+curl -X POST "https://api.dashboard.valuez.ai/api/v1/external/chat" \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_AGENT_API_KEY" \
+  -d '{
+    "connectionType": "sts",
+    "responseMode": "realtime",
+    "sessionUUID": null,
+    "variables": {
+      "userName": "Anita Sharma"
+    }
+  }'
+```
+
+`responseMode: "realtime"` is treated as an STS request.
+
+## Example handshake response
+
+```json
+{
+  "statusCode": 200,
+  "sessionUUID": "a5e971cf-cb52-4754-b631-01df82a7f502",
+  "connectionType": "sts",
+  "wsUrl": "wss://api.dashboard.valuez.ai/ws/sts",
+  "message": "Connect to the provided wsUrl to begin the realtime session."
+}
+```
+
+## Connect to the WebSocket
+
+Connect to the exact `wsUrl` returned by the handshake. Do not construct the URL manually when the response provides one.
+
+The current runtime instructs the client to send a start message after connection:
+
+```json
+{
+  "type": "start",
+  "sessionUUID": "a5e971cf-cb52-4754-b631-01df82a7f502"
+}
+```
+
+Your deployed WebSocket protocol can require additional agent or session fields. Follow the handshake response and deployed API specification.
+
+## Client responsibilities
+
+A production STS client should handle:
+
+- WebSocket connection and reconnection;
+- authentication and session initialization;
+- binary audio framing;
+- supported sample rate and encoding;
+- microphone permission;
+- playback buffering;
+- interruption and barge-in;
+- server processing and error messages;
+- clean session completion;
+- network timeout and retry policy.
+
+<Warning>
+  A real-time voice session is stateful. Do not reconnect repeatedly with different session identifiers or replay stale audio after the server has finalized the call.
+</Warning>
+
+---
+
+# Standalone Speech APIs
+
+Standalone speech endpoints use an external speech key. They do not run an agent prompt, query an agent knowledge base, or maintain an agent conversation.
+
+## External key configuration
+
+An external speech key stores its selected:
+
+- STT provider;
+- STT model;
+- TTS provider;
+- TTS voice or model;
+- individual credit limit;
+- used-credit total;
+- active status.
+
+The secret is returned when the key is created. Store it immediately in a secret manager.
+
+External speech key formats include:
+
+```text
+valuezai_ext_api_<uuid>_<random>
+ext_api_<uuid>_<random>
+```
+
+The shorter `ext_api_...` format is supported for compatibility.
+
+---
+
+## Standalone Text-to-Speech
+
+```http
+POST /api/v1/tts/external
+```
+
+The endpoint synthesizes the supplied text using the provider and voice saved on the external speech key.
+
+```bash
+curl -X POST "https://api.dashboard.valuez.ai/api/v1/tts/external" \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_EXTERNAL_SPEECH_KEY" \
+  -d '{
+    "text": "Welcome to Valuez AI. How can I help you today?",
+    "language": "english",
+    "pace": 1.0
+  }' \
+  --output speech.wav
+```
+
+### TTS parameters
+
+| Parameter | Type | Required | Rules |
+| --- | --- | --: | --- |
+| `text` | string | Yes | Must contain at least one non-whitespace character |
+| `language` | string | Yes | Language hint between 2 and 50 characters |
+| `pace` | number | No | Minimum `0.5`, maximum `2.0` |
+
+<Note>
+  The current external TTS request accepts `text`, `language`, and optional `pace`. The older documentation fields `pitch` and `volume` are not accepted by the current validation schema.
+</Note>
+
+For Ganas voices, the saved voice determines the output language. Valuez can translate the supplied text to the saved voice language before synthesis. The request's `language` field does not override the saved Ganas voice.
+
+### TTS response
+
+The response is a binary attachment:
+
+```http
+Content-Type: audio/wav
+Content-Disposition: attachment; filename="speech.wav"
+```
+
+A provider can also return a compatible binary content type such as `application/octet-stream`.
+
+### TTS errors
+
+| Status | Meaning |
+| --- | --- |
+| `400` | Missing text, invalid language, or pace outside the accepted range |
+| `401` | API key missing |
+| `403` | Invalid key, disabled key, credit limit, subscription, or feature restriction |
+| `503` | Selected TTS provider or voice is unavailable |
+
+---
+
+## Standalone Speech-to-Text
+
+```http
+POST /api/v1/stt/external
+```
+
+Upload an audio file and provide the required transcription language.
+
+```bash
+curl -X POST "https://api.dashboard.valuez.ai/api/v1/stt/external?language=english" \
+  -H "x-api-key: YOUR_EXTERNAL_SPEECH_KEY" \
+  -F "audioFile=@/path/to/recording.wav"
+```
+
+The language can be provided through the accepted query or body input used by your client.
+
+### STT parameters
+
+| Parameter | Type | Required | Rules |
+| --- | --- | --: | --- |
+| `audioFile` | binary file | Yes | Audio file to transcribe |
+| `language` | string | Yes | `english`, `hindi`, or `marathi` |
+| `durationSeconds` | number | No | Positive number with a maximum of 86,400 seconds |
+
+### Example STT response
+
+```json
+{
+  "statusCode": 200,
+  "transcription": "I would like to know more about your services."
+}
+```
+
+### STT errors
+
+| Status | Meaning |
+| --- | --- |
+| `400` | Missing audio, invalid language, or invalid duration |
+| `401` | API key missing |
+| `403` | Invalid key, disabled key, credit limit, subscription, or feature restriction |
+| `503` | Selected transcription provider or model is unavailable |
+
+---
+
+# Generate an API Key
+
+API keys are created from **APIs and Integrations** in the Valuez dashboard.
+
+## Generate an Agent API key
+
+<Steps>
+  <Step title="Open Integrations">
+    Sign in to the Valuez dashboard and open **APIs and Integrations**, then **Integrations**.
+  </Step>
+  <Step title="Create an API integration">
+    Choose the Agent API integration type.
+  </Step>
+  <Step title="Select an agent">
+    Associate the key with the agent that should process external requests.
+  </Step>
+  <Step title="Configure permissions">
+    Enable only the required modes: Text-to-Text, Speech-to-Text, Text-to-Speech, or Speech-to-Speech.
+  </Step>
+  <Step title="Set a credit limit">
+    Apply an individual key limit when you need to restrict integration consumption. A configured no-limit value still remains subject to the account subscription and available credits.
+  </Step>
+  <Step title="Generate and store the key">
+    Copy the generated secret into a secure server-side secret store.
+  </Step>
+  <Step title="Test the key">
+    Start with a small synchronous Text-to-Text request before enabling voice or production traffic.
+  </Step>
+</Steps>
+
+## Generate an external speech key
+
+<Steps>
+  <Step title="Open external speech integration">
+    Open the external STT/TTS integration configuration.
+  </Step>
+  <Step title="Name the key">
+    Use a name that identifies the application and environment, such as `CRM Production Speech`.
+  </Step>
+  <Step title="Select STT configuration">
+    Choose an active transcription provider and a model belonging to that provider.
+  </Step>
+  <Step title="Select TTS configuration">
+    Choose an active voice provider and a compatible voice or model.
+  </Step>
+  <Step title="Set the credit limit">
+    Use at least the configured minimum limit or the supported no-limit value.
+  </Step>
+  <Step title="Save the generated secret">
+    The generated key is returned at creation. Store it immediately.
+  </Step>
+</Steps>
+
+Updating an external key can preserve saved provider selections when those fields are omitted. Updating the configuration does not mean the secret will be displayed again.
+
+---
+
+# API Usage Logs
+
+The Valuez dashboard provides Speech API History for standalone STT and TTS requests.
+
+Authorized dashboard users can filter logs by:
+
+- external key;
+- date range;
+- action type;
+- search text;
+- page number and page size.
+
+A log can include:
+
+| Field | Description |
+| --- | --- |
+| Key name | Friendly name of the external integration |
+| Action type | `STT` or `TTS` |
+| Language | Requested language |
+| Input text | Text supplied to TTS |
+| Transcription | Text produced by STT |
+| Audio path | Stored audio reference where available |
+| Credits deducted | Usage charged for the operation |
+| Created time | Time the API action was recorded |
+
+Detailed log access and audio download require an authenticated dashboard session and appropriate authorization.
+
+<Warning>
+  API history can contain customer text, transcripts, and audio. Apply workspace permissions, retention policies, and privacy controls.
+</Warning>
+
+---
+
+# Error Handling
+
+## Common HTTP statuses
+
+| Status | Meaning | Recommended action |
+| --- | --- | --- |
+| `200` | Request succeeded | Process the response according to its content type |
+| `400` | Invalid request or key format | Validate headers, fields, mode, language, and audio |
+| `401` | API key missing | Add the correct `x-api-key` header |
+| `402` | Insufficient credits | Review subscription and credit balance |
+| `403` | Invalid key, disabled mode, key limit, plan restriction, or unauthorized session | Review the key and integration configuration |
+| `404` | Session or resource not found | Verify the identifier and associated agent |
+| `429` | Rate limit exceeded | Apply backoff and reduce request rate |
+| `500` | Internal processing failure | Record the request time and correlation information, then retry cautiously |
+| `503` | Selected provider or model unavailable | Retry after delay or review provider configuration |
+
+## Example JSON error
+
+```json
+{
+  "statusCode": 403,
+  "errorMessage": "This API key does not have permission for Speech-to-Speech communication."
+}
+```
+
+Some middleware errors use a `message` field instead:
+
+```json
+{
+  "message": "Invalid API key"
+}
+```
+
+Clients should safely read both `errorMessage` and `message`.
+
+## Retry guidance
+
+Automatically retry only when:
+
+- the operation is safe to repeat;
+- the server returned a transient failure;
+- the client uses bounded exponential backoff;
+- the request is not already being processed.
+
+Do not endlessly retry authentication, validation, permission, credit, or subscription errors.
+
+---
+
+# Security Best Practices
+
+<AccordionGroup>
+  <Accordion title="Keep API keys on trusted servers">
+    Browser applications should call your own backend. Your backend should attach the Valuez API key and forward the authorized request.
+  </Accordion>
+
+  <Accordion title="Use one key per application and environment">
+    Separate keys make revocation, credit limiting, monitoring, and incident investigation easier.
+  </Accordion>
+
+  <Accordion title="Enable only required modes">
+    A text-only integration should not receive Speech-to-Speech permission.
+  </Accordion>
+
+  <Accordion title="Use individual credit limits">
+    A per-key limit reduces the impact of a faulty client or compromised credential.
+  </Accordion>
+
+  <Accordion title="Never log complete keys">
+    Redact credentials in application logs. If identification is necessary, log a safe key name or internal UUID.
+  </Accordion>
+
+  <Accordion title="Rotate compromised keys">
+    Disable or delete the exposed integration, create a replacement, update the trusted client, and review API history for misuse.
+  </Accordion>
+
+  <Accordion title="Protect session identifiers">
+    Session UUIDs can provide access to conversation context when combined with the correct key. Treat them as sensitive application data.
+  </Accordion>
+
+  <Accordion title="Validate downloaded audio responses">
+    Check the HTTP status and `Content-Type` before saving a response as audio. A JSON error saved as `.wav` is not a valid audio file.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+# Production Checklist
+
+Before enabling production traffic:
+
+- [ ] The key is stored in a secret manager.
+- [ ] Development and production use separate keys.
+- [ ] The key is associated with the correct agent or speech configuration.
+- [ ] Only required communication modes are enabled.
+- [ ] A suitable per-key credit limit is configured.
+- [ ] The account has an active subscription and sufficient credits.
+- [ ] Text-to-Text sync has been tested.
+- [ ] Streaming behavior has been tested if used.
+- [ ] Audio format and language have been tested.
+- [ ] Session continuation has been tested.
+- [ ] WebSocket reconnection has been tested for STS.
+- [ ] Errors and rate limits are handled safely.
+- [ ] Logs redact credentials and sensitive customer data.
+- [ ] Monitoring and key-rotation ownership are assigned.
+
+---
+
+# Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Authentication" icon="lock" href="/authentication">
+    Understand dashboard sessions, workspace access, and external API authentication.
+  </Card>
+
+  <Card title="Integrations" icon="plug" href="/integrations">
+    Create Agent API and external speech integrations from the dashboard.
+  </Card>
+
+  <Card title="Agents" icon="bot" href="/agents">
+    Configure the agent, knowledge base, voice, and transcriber used by an Agent API key.
+  </Card>
+
+  <Card title="API Logs" icon="list" href="/api-logs">
+    Review standalone STT and TTS requests, credits, transcripts, and audio history.
+  </Card>
+</CardGroup>

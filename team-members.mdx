@@ -1,0 +1,918 @@
+---
+title: "Team Members"
+sidebarTitle: "Team Members"
+description: "Review sales-team performance, inspect assigned customers and calls, and assign customers to individual team members."
+---
+
+Team Members provides a detailed view of the people performing sales-calling activities in your Valuez AI workspace.
+
+Use this page to find a team member, review assigned contacts, compare completed and interested calls, monitor total talk time, check conversion rates, assign customers, and inspect individual customer conversations.
+
+<Info>
+  Team Members is part of the **Sales Team** module. Access to this module and its customer information may depend on your workspace role and permissions.
+</Info>
+
+---
+
+## Open Team Members
+
+<Steps>
+  <Step title="Sign in to Valuez AI">
+    Sign in to the workspace containing your sales team.
+  </Step>
+  <Step title="Open Sales Team">
+    Select **Sales Team** from the main navigation.
+  </Step>
+  <Step title="Select Team Members">
+    Click **Team Members** to open the complete member list.
+  </Step>
+</Steps>
+
+You can also open this page by clicking **View Team Members** from Team Overview.
+
+<Frame>
+  ![Team Member](/images/team-member.png "Team Member")
+</Frame>
+
+---
+
+## What You Can Do
+
+The Team Members page helps authorized users:
+
+- Find a team member by name or role
+- Filter team information by date
+- Review when a member joined
+- Check the member's assigned contacts
+- Review completed calls
+- See how many contacts were interested
+- Review total talk time
+- Compare member conversion rates
+- Sort the list by member or role
+- Open an individual member's customer activity
+- Assign customers to a team member
+- Add a customer manually
+- Upload customers using CSV or Excel
+- Review customer call outcomes
+- Open individual customer call details
+
+---
+
+## Understanding the Team Members Table
+
+Each row represents one sales-team member.
+
+| Column | What It Shows |
+| --- | --- |
+| **Member** | The team member's name and the date they were added |
+| **Role** | The role assigned to the team member |
+| **Assigned Contacts** | Number of contacts assigned to the member |
+| **Completed** | Number of completed calls |
+| **Interested** | Number of interested leads associated with the member |
+| **Total Talk Time** | Combined duration of the member's recorded calls |
+| **Conversion Rate** | The member's returned lead-conversion percentage |
+| **Actions** | Opens the member's detailed customer activity |
+
+---
+
+## Member
+
+The **Member** column shows:
+
+- Team member's name
+- The date the person was added to the team
+
+The date appears in the following format:
+
+```text
+since 10 Oct 2026
+```
+
+Use this information to distinguish new members from people with a longer performance history.
+
+<Note>
+  A recently added member may have fewer contacts, calls, and completed outcomes. Consider the member's start date when comparing performance.
+</Note>
+
+---
+
+## Role
+
+The **Role** column shows the member's assigned role.
+
+Roles help explain the person's responsibilities within the sales operation. The exact roles available depend on how your workspace and team have been configured.
+
+Use the role information when:
+
+- Comparing people with similar responsibilities
+- Searching for a specific type of team member
+- Reviewing workload distribution
+- Confirming that the correct person is handling assigned contacts
+
+---
+
+## Assigned Contacts
+
+**Assigned Contacts** shows how many customer records have been assigned to the member.
+
+An assigned contact is a customer or lead that the team member is responsible for handling.
+
+The number can include contacts with outcomes such as:
+
+- Qualified
+- Callback
+- No Outcome
+- Pending
+
+A high assigned-contact count does not necessarily mean that all contacts have already been called.
+
+---
+
+## Completed
+
+**Completed** shows the number of assigned calling activities that reached a completed state.
+
+Compare Completed with Assigned Contacts to identify whether work remains pending.
+
+For example:
+
+| Assigned Contacts | Completed | General Interpretation |
+| --- | --- | --- |
+| 100 | 95 | Most assigned activity has been completed |
+| 100 | 50 | A significant portion may still require attention |
+| 20 | 0 | Assignments may be new, pending, or affected by another issue |
+
+<Info>
+  Completed does not automatically mean that the contact was interested or converted. Review Interested, Conversion Rate, and the underlying call outcomes.
+</Info>
+
+---
+
+## Interested
+
+**Interested** shows the number of leads identified as interested in the product, service, or offer.
+
+Use this metric to understand:
+
+- Which members are generating customer interest
+- Whether the assigned contact list is suitable
+- Whether additional follow-up is required
+- Whether conversation quality needs to be reviewed
+
+Before acting on an interested lead, open the member and review the customer's detailed call information.
+
+---
+
+## Total Talk Time
+
+**Total Talk Time** shows the combined duration of the member's recorded calls.
+
+Talk time can help you understand:
+
+- Overall call engagement
+- Whether conversations are progressing beyond the introduction
+- Differences between members with similar assignments
+- Whether call durations appear unusually short or long
+
+Talk time should not be treated as a quality score. A short call may produce a valid result, while a long call may not produce a qualified lead.
+
+---
+
+## Conversion Rate
+
+**Conversion Rate** displays the returned lead-conversion percentage for the member.
+
+Use conversion rate together with:
+
+- Assigned contacts
+- Completed calls
+- Interested leads
+- Total talk time
+- Customer outcomes
+- Contact-list quality
+- Time in the team
+
+<Warning>
+  Do not use conversion rate alone to evaluate a team member. A percentage based on a small number of calls may appear unusually high or low.
+</Warning>
+
+---
+
+## Search for a Team Member
+
+Use the search field in the page header to find a specific team member.
+
+The search field displays prompts such as:
+
+```text
+Search by member name
+```
+
+```text
+Find team member...
+```
+
+```text
+Search by role...
+```
+
+As you enter text, the member list refreshes using the search value.
+
+### Search tips
+
+- Enter the member's complete name for a precise result.
+- Enter part of the name if you are unsure of the spelling.
+- Try the role name when looking for members with a particular responsibility.
+- Remove the search text to return to the complete list.
+
+If no matching member is found, the table displays:
+
+```text
+No team members found
+```
+
+---
+
+## Filter Members by Date
+
+Use the date-range control to limit team information to the selected period.
+
+<Steps>
+  <Step title="Open the date selector">
+    Click the date-range control beside the search field.
+  </Step>
+  <Step title="Choose a start date">
+    Select the beginning of the period you want to review.
+  </Step>
+  <Step title="Choose an end date">
+    Select the end of the reporting period.
+  </Step>
+  <Step title="Apply the range">
+    Apply the selection to refresh the member list.
+  </Step>
+</Steps>
+
+Clear the date selection from the date-range control to return to the unfiltered view.
+
+<Tip>
+  Use equivalent date ranges when comparing team performance. For example, compare one full week with another full week.
+</Tip>
+
+---
+
+## Sort Team Members
+
+The Team Members table supports sorting for:
+
+- **Member**
+- **Role**
+
+Click a sortable column heading to change the order. Click it again to reverse the order.
+
+Sorting is useful for:
+
+- Arranging names alphabetically
+- Grouping similar roles
+- Finding a member in a large team
+- Returning to the newest or oldest available ordering
+
+The default ordering uses the member creation date, with the latest available records first.
+
+---
+
+## Navigate Between Pages
+
+Use the page controls at the bottom of the table when the member list contains multiple pages.
+
+Available rows-per-page options are:
+
+- 10
+- 15
+- 25
+- 50
+
+Changing the number of rows returns the table to the first result page.
+
+---
+
+## Open a Team Member
+
+Open a member using either of these methods:
+
+- Click anywhere on the member's row
+- Click the arrow button under **Actions**
+
+The member-detail page shows the selected person's assigned customers and call activity.
+
+<Frame>
+  ![Team Member](/images/team-member.png "Team Member")
+</Frame>
+
+---
+
+## Member Summary Cards
+
+The top of the member-detail page displays summary cards.
+
+| Summary Card | Meaning |
+| --- | --- |
+| **Assigned** | Total contacts assigned to the member |
+| **Qualified** | Contacts classified as qualified |
+| **Callback** | Contacts requiring or requesting another call |
+| **Completed** | Calls that reached a completed state |
+| **Pending** | Assigned contacts or calls that remain pending |
+
+These values summarize the member's available assigned-customer activity.
+
+<Note>
+  Summary cards are calculated from the available member activity rather than only the rows visible on the current page.
+</Note>
+
+---
+
+## Filter by Call Outcome
+
+The outcome tabs let you focus on contacts with a particular result.
+
+<Frame>
+  ![Team Member](/images/team-member.png "Team Member")
+</Frame>
+
+Available tabs include:
+
+| Tab | What It Shows |
+| --- | --- |
+| **All** | Every assigned customer returned for the member |
+| **Qualified** | Contacts that met the applicable qualification criteria |
+| **Callback** | Contacts requiring or requesting follow-up |
+| **No Outcome** | Contacts without a final call outcome |
+| **Pending** | Contacts whose calling activity remains pending |
+
+Each tab displays the corresponding available count.
+
+Selecting a tab refreshes the customer table and returns it to the first page.
+
+---
+
+## Search the Member's Customers
+
+Use the search field on the member-detail page to find a customer.
+
+You can search using:
+
+- Contact name
+- Telephone number
+
+The field displays prompts such as:
+
+```text
+Search by contact
+```
+
+```text
+Search phone number...
+```
+
+<Tip>
+  If a telephone number does not return a result, try entering only the final digits. Stored telephone numbers may use different formatting.
+</Tip>
+
+---
+
+## Filter Customer Activity by Date
+
+Use the date-range control on the member-detail page to limit customer and call activity to a selected period.
+
+The date filter works together with:
+
+- Contact search
+- Outcome tabs
+- Sorting
+- Pagination
+
+For example, you can display:
+
+- Qualified contacts from the current month
+- Callback requests from the last seven days
+- Pending calls within a selected period
+- Activity for a particular contact and date range
+
+---
+
+## Assigned Customer Table
+
+Each row represents a customer assigned to the selected team member.
+
+| Column | What It Shows |
+| --- | --- |
+| **Contact** | Customer name and telephone number |
+| **Call Direction** | Direction of the recorded call |
+| **Call Outcome** | Qualified, Callback, No Outcome, Pending, or another returned outcome |
+| **Call Status** | Current processing or completion status |
+| **Call Duration** | Length of the call |
+| **Call Start Time** | Date and time when the call began |
+| **Assigned On** | Date when the customer was assigned |
+| **Actions** | Opens the customer's detailed call record |
+
+---
+
+## Contact
+
+The Contact column shows:
+
+- Customer name
+- Customer telephone number
+
+If a customer name is unavailable, the interface can display a placeholder while retaining the telephone number when available.
+
+Treat telephone numbers and customer names as confidential information.
+
+---
+
+## Call Direction
+
+**Call Direction** shows the direction associated with the call.
+
+If no direction value is returned, the page uses:
+
+```text
+Outgoing
+```
+
+This generally indicates that the sales activity initiated the call to the assigned customer.
+
+---
+
+## Call Outcome
+
+The customer table displays an outcome badge.
+
+Supported displayed outcomes include:
+
+| Outcome | Meaning |
+| --- | --- |
+| **Qualified** | The customer met the applicable qualification requirements |
+| **Callback** | A follow-up call is required or requested |
+| **No Outcome** | No final outcome has been recorded |
+| **Pending** | The contact remains pending |
+
+If another outcome value is returned, the page can display that returned value.
+
+---
+
+## Call Status
+
+**Call Status** displays the available processing or completion status for the customer's call.
+
+The exact text depends on the call information returned to the workspace.
+
+Use Call Status together with Call Outcome:
+
+- Status explains the operational state of the call.
+- Outcome explains the business result of the conversation.
+
+These values can be different. For example, a call can be operationally completed but have no qualified business outcome.
+
+---
+
+## Call Duration
+
+**Call Duration** shows how long the recorded call lasted.
+
+Use duration to identify:
+
+- Very short conversations
+- Longer customer discussions
+- Calls that may have ended early
+- Records that may need transcript or recording review
+
+A missing duration appears as a dash.
+
+---
+
+## Call Start Time
+
+**Call Start Time** shows when the call began.
+
+The date and time are displayed in a format such as:
+
+```text
+10 Oct 2026, 14:30
+```
+
+Use the timestamp to:
+
+- Locate a customer interaction
+- Match activity with another business record
+- Investigate callback timing
+- Confirm when the member contacted the customer
+
+---
+
+## Assigned On
+
+**Assigned On** shows the date the customer was assigned to the team member.
+
+Compare Assigned On with Call Start Time to understand how quickly the customer was contacted after assignment.
+
+---
+
+## Open Customer Call Details
+
+Open a customer record by:
+
+- Clicking the customer row
+- Clicking the arrow in the Actions column
+
+The customer details page can provide deeper information about the selected call, including available transcript, analysis, outcome, and timeline information.
+
+<Info>
+  The information available in customer details depends on whether the call was placed, connected, processed, and analyzed successfully.
+</Info>
+
+---
+
+## Assign Customers
+
+Click **Assign Customers** from the member-detail page to add and assign customers to the selected member.
+
+The Assign Customers window supports two methods:
+
+1. Add Manually
+2. Upload File
+
+Both methods add contacts to a shared customer pool. You must then select the required customers and click the final **Assign Customers** button to map them to the team member.
+
+<Warning>
+  Adding or uploading a customer does not automatically complete the assignment. After adding the records, select them from the customer table and confirm the assignment.
+</Warning>
+
+---
+
+## Add a Customer Manually
+
+Select the **Add Manually** tab to create an individual customer.
+
+<Frame>
+  ![Customer Manual](/images/customer-manual.png "Customer Manual")
+</Frame>
+
+### Manual customer fields
+
+| Field | Required | Requirements |
+| --- | --- | --- |
+| **Customer Name** | No | If entered, must contain at least two characters |
+| **Phone Number** | Yes | Valid 10-digit mobile number |
+| **Alternate Phone Number** | No | Valid 10-digit number and different from the main number |
+| **Email** | No | Must use a valid email format |
+| **Address** | No | Maximum 120 characters |
+| **Country** | No | Text field |
+| **State** | No | Text field |
+| **District** | No | Text field |
+| **City** | No | Text field |
+| **Pincode** | No | Six digits |
+| **Source** | No | Origin such as Website or Referral |
+
+### Phone-number requirements
+
+The current manual-entry form accepts a 10-digit Indian mobile number beginning with:
+
+- 6
+- 7
+- 8
+- 9
+
+Example:
+
+```text
+9876543210
+```
+
+<Note>
+  Do not include spaces, hyphens, or a country code in the manual Phone Number field.
+</Note>
+
+### Add and assign the customer
+
+<Steps>
+  <Step title="Click Assign Customers">
+    Open the assignment window from the selected team member.
+  </Step>
+  <Step title="Select Add Manually">
+    Open the manual customer form.
+  </Step>
+  <Step title="Enter the phone number">
+    Enter the required valid 10-digit mobile number.
+  </Step>
+  <Step title="Add optional details">
+    Enter the customer's name, email, address, location, pincode, or source when available.
+  </Step>
+  <Step title="Click Add Customer">
+    The customer is added to the available customer pool.
+  </Step>
+  <Step title="Select the customer">
+    Find the newly added customer in the table and select its checkbox.
+  </Step>
+  <Step title="Confirm the assignment">
+    Click **Assign Customer** or **Assign Customers** to assign the selected record to the team member.
+  </Step>
+</Steps>
+
+---
+
+## Upload Customers
+
+Select the **Upload File** tab to import multiple customers.
+
+<Frame>
+  ![Upload Customer](/images/upload-customer.png "Upload Customer")
+</Frame>
+
+Accepted formats are:
+
+```text
+.csv
+.xlsx
+.xls
+```
+
+You can:
+
+- Drag the file into the upload area
+- Click the upload area and browse for a file
+
+### Download the contact template
+
+Click **Download Contact Template** to download the supported CSV header structure.
+
+The template contains:
+
+```csv
+CustomerName,ContactNumber,AlternateContactNumber,Email,Address,City,District,State,Country,Pincode,Source
+```
+
+### Upload workflow
+
+<Steps>
+  <Step title="Download the template">
+    Open Upload File and click **Download Contact Template**.
+  </Step>
+  <Step title="Enter customer information">
+    Add one customer per row without changing the column headings.
+  </Step>
+  <Step title="Save the file">
+    Save it as CSV or a supported Excel format.
+  </Step>
+  <Step title="Upload the file">
+    Drag the file into the upload area or browse for it.
+  </Step>
+  <Step title="Wait for processing">
+    Valuez AI imports the contacts and refreshes the customer pool.
+  </Step>
+  <Step title="Select imported customers">
+    Use the checkboxes to choose the customers to assign.
+  </Step>
+  <Step title="Confirm the assignment">
+    Click the assignment button at the bottom of the window.
+  </Step>
+</Steps>
+
+<Warning>
+  Uploading a file imports the contacts but does not assign them automatically. Select the imported rows and confirm the assignment before closing the window.
+</Warning>
+
+---
+
+## Customer Pool
+
+The customer pool appears below both assignment methods.
+
+It contains:
+
+| Column | Description |
+| --- | --- |
+| **Selection** | Checkbox used to select customers |
+| **Name** | Customer name |
+| **Phone Number** | Primary telephone number |
+| **Email** | Customer email address |
+| **City** | Customer city |
+| **Status** | Whether the contact is available or already assigned |
+
+Use the search field above the customer pool to find a contact by name.
+
+Previously assigned contacts cannot be assigned again through the same selection process.
+
+---
+
+## Select Customers
+
+Use the checkbox beside a customer to select the record.
+
+You can also use the checkbox in the table header to select the available customers shown on the current page.
+
+The assignment button indicates how many new customers are selected:
+
+```text
+Assign 1 Customer
+```
+
+or:
+
+```text
+Assign 5 Customers
+```
+
+The button remains unavailable until at least one new customer is selected.
+
+---
+
+## Customer Upload Best Practices
+
+<AccordionGroup>
+  <Accordion title="Start with the provided template">
+    Download the contact template before preparing a bulk upload. Keeping the expected headings reduces import errors.
+  </Accordion>
+
+  <Accordion title="Use one customer per row">
+    Do not place multiple telephone numbers or customers in the same spreadsheet row.
+  </Accordion>
+
+  <Accordion title="Keep phone numbers consistent">
+    Use valid 10-digit mobile numbers without spaces, country codes, or punctuation when preparing Indian contact data.
+  </Accordion>
+
+  <Accordion title="Remove unnecessary duplicate records">
+    Review the file before upload to reduce duplicate customer records and assignment confusion.
+  </Accordion>
+
+  <Accordion title="Assign contacts after uploading">
+    Importing and assigning are separate actions. Select the uploaded customers and confirm the assignment.
+  </Accordion>
+
+  <Accordion title="Upload only authorized contacts">
+    Ensure your organization has a lawful basis and appropriate consent to store and contact each customer.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Recommended Member Review Workflow
+
+<Steps>
+  <Step title="Find the member">
+    Search for the team member using their name or role.
+  </Step>
+  <Step title="Review high-level performance">
+    Compare assigned contacts, completed calls, interested leads, talk time, and conversion rate.
+  </Step>
+  <Step title="Open the member">
+    Click the member row to review assigned customers.
+  </Step>
+  <Step title="Check outcome counts">
+    Review Qualified, Callback, Completed, and Pending totals.
+  </Step>
+  <Step title="Filter the customer list">
+    Use the outcome tabs, contact search, and date range.
+  </Step>
+  <Step title="Open important calls">
+    Review customer call details for qualified leads, callbacks, or unexpected outcomes.
+  </Step>
+  <Step title="Assign more customers when appropriate">
+    Use Assign Customers only after reviewing the member's current workload.
+  </Step>
+</Steps>
+
+---
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Balance assignments">
+    Review current assigned and pending totals before giving a member more customers.
+  </Accordion>
+
+  <Accordion title="Prioritize callbacks">
+    Callback requests are time-sensitive. Review them regularly and complete follow-up at the requested time.
+  </Accordion>
+
+  <Accordion title="Verify qualified contacts">
+    Open the customer call details before treating an automated qualification outcome as final.
+  </Accordion>
+
+  <Accordion title="Consider the member's start date">
+    Recently added members may have limited historical activity and should not be compared directly with long-standing members without context.
+  </Accordion>
+
+  <Accordion title="Use outcomes and status together">
+    Call Status describes the operational state, while Call Outcome describes the business result.
+  </Accordion>
+
+  <Accordion title="Protect customer information">
+    Do not copy customer names, telephone numbers, transcripts, or other personal data into unauthorized systems.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="No team members are displayed">
+    Clear the search and date filter. Confirm that sales-team members exist in the current workspace and that you have permission to access the module.
+  </Accordion>
+
+  <Accordion title="Search does not find a member">
+    Try entering only part of the person's name. Clear the date range and verify that you are using the correct workspace.
+  </Accordion>
+
+  <Accordion title="A member's metrics show zero">
+    The member may not have assigned contacts or recorded calling activity for the available period. Open the member to verify their assignments.
+  </Accordion>
+
+  <Accordion title="No customers are shown for a member">
+    Clear the outcome tab, search, and date range. If the page remains empty, assign customers to the member.
+  </Accordion>
+
+  <Accordion title="The Assign Customers button does not work">
+    Confirm that the member was opened from the Team Members list and that your account has permission to assign customers.
+  </Accordion>
+
+  <Accordion title="The customer cannot be added">
+    Check that the main phone number is a valid 10-digit mobile number beginning with 6, 7, 8, or 9. Also check the optional email, alternate number, and pincode formats.
+  </Accordion>
+
+  <Accordion title="The alternate number is rejected">
+    The alternate number must be valid and different from the main contact number.
+  </Accordion>
+
+  <Accordion title="The uploaded file is rejected">
+    Confirm that the file is CSV, XLSX, or XLS. Download the contact template and verify that the expected column headings have not been changed.
+  </Accordion>
+
+  <Accordion title="Uploaded customers are not assigned">
+    Uploading imports the contacts into the customer pool. Select their checkboxes and click Assign Customers to complete the assignment.
+  </Accordion>
+
+  <Accordion title="A contact shows as already assigned">
+    The contact is already mapped and does not need to be assigned again through the current workflow.
+  </Accordion>
+
+  <Accordion title="No call details are available">
+    The customer may not have been called, the call may not have connected, or processing may not have completed.
+  </Accordion>
+
+  <Accordion title="Failed to load team members appears">
+    Refresh the page and confirm your network connection. If the problem continues, contact your workspace administrator or Valuez AI support.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Privacy and Responsible Use
+
+Team Members can contain employee-performance information and personal customer data.
+
+Workspace administrators should ensure that:
+
+- Access is limited to authorized users
+- Customer information is collected lawfully
+- Contact consent and communication preferences are respected
+- Team performance information is handled confidentially
+- Uploaded files are stored only in approved locations
+- Duplicate local copies are deleted when no longer required
+- Access is removed when a user's responsibilities change
+- Applicable calling, privacy, employment, and data-retention rules are followed
+
+<Warning>
+  Your organization is responsible for complying with applicable rules governing customer consent, automated calling, sales communications, employee monitoring, and personal-data processing.
+</Warning>
+
+---
+
+## Related Pages
+
+<CardGroup cols={2}>
+  <Card title="Team Overview" icon="chart-line" href="/team-overview">
+    Review team-wide metrics, call outcomes, trends, and top performers.
+  </Card>
+
+  <Card title="Campaign Leads" icon="address-book" href="/campaign-leads">
+    Review contacts and lead outcomes associated with calling campaigns.
+  </Card>
+
+  <Card title="Campaign Call History" icon="phone" href="/campaign-call-history">
+    Review campaign recordings, transcripts, summaries, and call timelines.
+  </Card>
+
+  <Card title="Call Logs" icon="rectangle-list" href="/call-logs">
+    Review general call activity across the workspace.
+  </Card>
+
+  <Card title="Team Management" icon="user-gear" href="/team-management">
+    Manage workspace membership and agent access.
+  </Card>
+
+  <Card title="Troubleshooting" icon="screwdriver-wrench" href="/troubleshooting">
+    Resolve common calling, customer, and platform issues.
+  </Card>
+</CardGroup>

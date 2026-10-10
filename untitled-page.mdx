@@ -1,0 +1,115 @@
+---
+title: "Introduction"
+sidebarTitle: "Introduction"
+description: "An introduction to the Valuez AI platform, its primary capabilities, intended users, and documentation structure."
+icon: "circle-info"
+---
+
+Valuez AI is a voice and conversational automation platform for creating, operating, and monitoring AI agents that interact with customers across supported communication channels.
+
+The platform brings together AI agents, business knowledge, voice calling, outbound campaigns, speech services, integrations, analytics, workspace management, and usage monitoring in one system.
+
+This documentation explains how to use Valuez AI safely and effectively based on the capabilities available in the current platform.
+
+---
+
+## Who This Documentation Is For
+
+This User Guide is intended for people who configure, operate, supervise, or review activity in a Valuez AI workspace.
+
+<Card title="Operations Teams" icon="gears">
+  Monitor calls, campaigns, usage, notifications, and day-to-day platform activity.
+</Card>
+
+<Card title="Sales Teams" icon="users">
+  Manage campaigns, leads, call activity, outcomes, and sales-team performance.
+</Card>
+
+<CardGroup cols={2}>
+  <Card title="Business Users" icon="briefcase">
+    Configure AI agents, business knowledge, phone services, and integrations without working directly with the source code.
+  </Card>
+
+  <Card title="Workspace Administrators" icon="shield">
+    Manage workspace members, account activity, subscriptions, billing information, and credits.
+  </Card>
+</CardGroup>
+
+<Info>
+  Developer implementation, source-code architecture, database design, deployment, and infrastructure will be documented separately in the Developer and Administration sections.
+</Info>
+
+---
+
+## What You Can Do with Valuez AI
+
+Valuez AI supports the following primary workflows:
+
+- Create and configure AI agents
+- Train agents using business knowledge
+- Test agent responses before production use
+- Review agent conversations and call activity
+- Handle inbound customer calls
+- Initiate outbound calls
+- Create and monitor calling campaigns
+- Manage campaign leads and call outcomes
+- Review platform analytics
+- Connect external applications through integrations
+- Use Speech-to-Text and Text-to-Speech services
+- Manage connected phone numbers
+- Review speech API activity
+- Invite workspace members
+- Review account activity
+- Manage profile and security information
+- Compare subscription plans
+- Maintain billing information
+- Monitor and export credit usage
+- Report platform problems
+
+---
+
+## Platform Areas
+
+<Card title="Voice Calling" icon="phone" href="/inbound-calls">
+  Configure and operate inbound and outbound calling workflows.
+</Card>
+
+<Card title="Call Campaigns" icon="bullhorn" href="/campaigns-overview">
+  Create outbound campaigns, manage leads, and monitor campaign calls.
+</Card>
+
+<Card title="Sales Team" icon="users" href="/team-overview">
+  Review sales activity, assigned contacts, call outcomes, and team performance.
+</Card>
+
+<Card title="APIs & Integrations" icon="plug" href="/integrations">
+  Connect Valuez AI to supported communication and business systems.
+</Card>
+
+<Card title="Analytics & Logs" icon="chart-line" href="/platform-analytics">
+  Review calls, conversations, usage, trends, and operational performance.
+</Card>
+
+<Card title="Workspace Management" icon="user-gear" href="/workspace-members">
+  Manage workspace members, roles, access, and account activity.
+</Card>
+
+<CardGroup cols={2}>
+  <Card title="AI Voice Agents" icon="robot" href="/agents">
+    Create, configure, train, test, and monitor AI agents.
+  </Card>
+
+  <Card title="Billing & Credits" icon="credit-card" href="/billing">
+    Review subscription information, billing records, receipts, and credit usage.
+  </Card>
+</CardGroup>
+
+---
+
+## How the Platform Fits Together
+
+B --> E[Inbound calls] B --> F[Outbound calls] B --> G[Website and API integrations] B --> H[Call campaigns]
+
+E --> I[Conversations and call logs] F --> I G --> I H --> I
+
+I --> J[Analytics and outcomes] I --> K[Credit usage]

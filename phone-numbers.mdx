@@ -1,0 +1,704 @@
+---
+title: "Phone Numbers"
+sidebarTitle: "Phone Numbers"
+description: "Purchase, assign, search, and review virtual phone numbers connected to your Valuez AI organization."
+---
+
+Phone Numbers lets authorized users review and purchase virtual telephone numbers connected to their Valuez AI organization.
+
+Each number can be associated with an AI agent. The page also provides assignment, rental, billing, provider, and status information.
+
+<Frame caption="Organization phone numbers">
+  ![Phone Number](/images/phone-number.png "Phone Number")
+</Frame>
+
+<Info>
+  Only phone numbers assigned to your currently selected organization are displayed. Switching organizations can change the numbers shown on this page.
+</Info>
+
+---
+
+## Open Phone Numbers
+
+<Steps>
+  <Step title="Sign in to Valuez AI">
+    Sign in to your Valuez AI workspace.
+  </Step>
+  <Step title="Select the correct organization">
+    Confirm that the organization you want to manage is active.
+  </Step>
+  <Step title="Open APIs & Integrations">
+    Select **APIs & Integrations** from the main navigation.
+  </Step>
+  <Step title="Select Phone Numbers">
+    Click **Phone Numbers** under Phone Setup.
+  </Step>
+</Steps>
+
+The dashboard route is:
+
+```text
+/phone-numbers-whitelist
+```
+
+---
+
+## What You Can Do
+
+The Phone Numbers page lets authorized users:
+
+- Review numbers assigned to the active organization
+- Search by telephone number or agent
+- Filter numbers by status
+- Review the agent assigned to each number
+- Review rental status
+- Check the next rental charge date
+- See when and by whom a number was assigned
+- Open provider and billing details
+- Purchase an available virtual number
+- Assign a purchased number to an AI agent
+- Review active and inactive records
+
+---
+
+## Active Organization
+
+The organization banner shows the currently active organization.
+
+The page explains:
+
+```text
+Only phone numbers assigned to this organization are shown.
+```
+
+This means:
+
+- Numbers from other organizations are excluded
+- Search applies only to the active organization
+- The Assigned count applies to the active organization
+- A purchased number is created in the current organization context
+
+<Warning>
+  Always confirm the active organization before purchasing a number.
+</Warning>
+
+---
+
+## Assigned Number Count
+
+The page header displays the number of telephone numbers returned for the organization.
+
+Example:
+
+```text
+Assigned: 3
+```
+
+The count can change when:
+
+- You switch organizations
+- A number is purchased
+- The status filter changes
+- A number is activated or deactivated
+- The page data is refreshed
+
+---
+
+## Search Phone Numbers
+
+Use the search field to find a telephone number or assigned agent.
+
+The field displays:
+
+```text
+Search number or agent
+```
+
+You can search using:
+
+- Full telephone number
+- Partial telephone number
+- Agent name
+- Part of an agent's name
+
+The search runs shortly after you stop typing.
+
+<Tip>
+  If the complete number does not return a result, remove spaces and punctuation or search using the final digits.
+</Tip>
+
+---
+
+## Filter by Status
+
+Available status filters are:
+
+| Filter | What It Shows |
+| --- | --- |
+| **Active** | Currently active numbers |
+| **Inactive** | Numbers that are no longer active |
+| **All statuses** | Active and inactive records |
+
+The default filter is:
+
+```text
+Active
+```
+
+---
+
+## Phone Number Table
+
+Each table row represents one organization phone number.
+
+| Column | What It Shows |
+| --- | --- |
+| **Phone number** | Telephone number and internal key |
+| **Assigned agent** | AI agent associated with the number |
+| **Rental status** | Current rental state and next charge |
+| **Assigned on** | Assignment date and the user who created it |
+| **Status** | Active or inactive state |
+| **Details** | Opens the full details panel |
+
+On mobile screens, each number is displayed as a compact record showing:
+
+- Telephone number
+- Assigned agent
+- Status
+
+---
+
+## Phone Number
+
+The Phone Number column displays:
+
+- Country code, when needed
+- Telephone number
+- Internal phone-number key
+
+The internal key is mainly useful for support and technical troubleshooting.
+
+---
+
+## Assigned Agent
+
+The Assigned Agent column shows the AI agent connected to the number.
+
+If no agent is connected, the page displays:
+
+```text
+Unassigned
+```
+
+Before using a number, confirm that the assigned agent:
+
+- Has the correct business purpose
+- Is configured for voice calling
+- Uses the correct language and voice
+- Has an appropriate opening message
+- Has access to the required knowledge
+- Has been tested successfully
+
+---
+
+## Rental Status
+
+The Rental Status column can display:
+
+- Current rental state
+- Next scheduled charge date
+
+Example:
+
+```text
+Active
+Next: 10 Nov 2026, 10:00 AM
+```
+
+The complete details can also include:
+
+- Rental start date
+- Last charge date
+- Next charge date
+- Charge-failure count
+
+<Info>
+  A number's platform status and rental status are separate. Review both when investigating availability.
+</Info>
+
+---
+
+## Assigned On
+
+The Assigned On column shows:
+
+- Date and time when the number record was created
+- User who created or purchased it
+
+Example:
+
+```text
+10 Oct 2026, 02:30 PM
+by Workspace Admin
+```
+
+---
+
+## Number Status
+
+| Status | Meaning |
+| --- | --- |
+| **Active** | The number is active in the organization |
+| **Inactive** | The number remains in the records but is not currently active |
+
+An active status does not confirm that the complete inbound-call configuration works. Test the number before providing it to customers.
+
+---
+
+## Open Phone Number Details
+
+Click a row to open **Phone number details**.
+
+<Frame caption="Phone number details">
+  ![Phone Number Details](/images/phone-number-details.png "Phone Number Details")
+</Frame>
+
+The panel contains assignment, billing, organization, and provider information.
+
+| Field | Description |
+| --- | --- |
+| **Phone number** | Complete telephone number |
+| **Status** | Active or inactive state |
+| **Organization** | Associated organization |
+| **Assigned agent** | AI agent connected to the number |
+| **Created by** | User who created or purchased the number |
+| **Creator email** | Email address of the creating user |
+| **Assigned on** | Date and time the number was added |
+| **Deactivated on** | Deactivation date, when applicable |
+| **Rental status** | Current rental state |
+| **Rental started** | Date and time the rental began |
+| **Last charged** | Most recent rental charge |
+| **Next charge** | Next scheduled rental charge |
+| **Phone Number ID** | Internal number identifier |
+| **Provider SID** | Telephony-provider identifier |
+| **Workspace ID** | Internal workspace identifier |
+| **Charge failures** | Number of recorded charge failures |
+
+Unavailable fields display a dash.
+
+---
+
+## Purchase a Virtual Phone Number
+
+Click **Buy Number** to open the purchase window.
+
+<Frame caption="Purchase a virtual phone number">
+  ![Buy Phone Number](/images/buy-phone-number.png "Buy Phone Number")
+</Frame>
+
+The current frontend labels the window:
+
+```text
+Buy an Virtual Phone Number
+```
+
+The purchase flow retrieves available ExoPhone numbers through the configured Exotel telephony service.
+
+<Warning>
+  Purchasing a number deducts workspace credits. Review the organization, agent, number, and price before confirming.
+</Warning>
+
+---
+
+## Number Availability
+
+The current frontend states:
+
+```text
+Only Mumbai (MU) numbers are available for this account.
+```
+
+The provider can return available:
+
+- Mobile numbers
+- Landline numbers
+
+Availability depends on the provider's inventory at the time of purchase.
+
+<Info>
+  A number displayed as available may not remain available indefinitely.
+</Info>
+
+---
+
+## Purchase Price
+
+The current purchase button displays:
+
+```text
+Buy for 700 credits
+```
+
+A successful purchase message confirms the actual amount deducted.
+
+<Warning>
+  The price reflects the current frontend configuration and may change. Always confirm the price displayed before purchasing.
+</Warning>
+
+---
+
+## Select an Agent
+
+When active agents are available, the purchase window displays **Assign to Agent**.
+
+Select the AI agent that should be associated with the number.
+
+The first available agent may be selected automatically. Verify that it is the correct agent before purchasing.
+
+### Before selecting an agent
+
+Confirm that the agent:
+
+- Is enabled
+- Supports voice interactions
+- Uses the correct language
+- Uses the intended voice
+- Has appropriate instructions
+- Has the required knowledge
+- Has been tested
+
+---
+
+## Buy a Number
+
+<Steps>
+  <Step title="Open Phone Numbers">
+    Confirm that the correct organization is active.
+  </Step>
+  <Step title="Click Buy Number">
+    Open the virtual-number purchase window.
+  </Step>
+  <Step title="Wait for available numbers">
+    Valuez AI retrieves available ExoPhone numbers.
+  </Step>
+  <Step title="Select an agent">
+    Choose the AI agent that should receive calls to the number.
+  </Step>
+  <Step title="Select a telephone number">
+    Choose one of the available numbers.
+  </Step>
+  <Step title="Review the price">
+    Confirm the displayed credit cost.
+  </Step>
+  <Step title="Confirm the purchase">
+    Click **Buy for 700 credits**.
+  </Step>
+  <Step title="Wait for completion">
+    Do not close the window while it displays **Buying...**.
+  </Step>
+  <Step title="Verify the number">
+    Confirm that the number appears in the Phone Numbers list.
+  </Step>
+</Steps>
+
+After a successful purchase:
+
+- The number is added to the organization
+- The number is associated with the selected agent
+- Credits are deducted
+- The workspace balance is refreshed
+- The Phone Numbers list is refreshed
+
+---
+
+## Purchase Confirmation
+
+A successful purchase displays a message similar to:
+
+```text
+ExoPhone +91XXXXXXXXXX purchased successfully. 700 credits deducted.
+```
+
+After purchase:
+
+1. Find the number in the list.
+2. Open its details.
+3. Confirm the organization.
+4. Confirm the assigned agent.
+5. Confirm the number and rental statuses.
+6. Place an approved test call.
+
+---
+
+## Cancel a Purchase
+
+Click **Cancel** or close the purchase window before confirming to leave without purchasing.
+
+The window cannot normally be closed while the purchase request is processing.
+
+This prevents uncertainty about whether the transaction completed.
+
+---
+
+## No Available Numbers
+
+If no numbers are returned, the purchase window can display:
+
+```text
+No ExoPhones are currently available.
+```
+
+or:
+
+```text
+No ExoPhones are currently available for this search.
+```
+
+Possible reasons include:
+
+- Provider inventory is unavailable
+- No Mumbai numbers are available
+- Provider connectivity is unavailable
+- The telephony configuration requires attention
+- The provider returned an error
+
+Wait and try again later. Contact your administrator or Valuez AI support if the issue continues.
+
+---
+
+## No Assigned Numbers
+
+If the organization has no numbers, the page displays:
+
+```text
+No assigned phone numbers
+```
+
+and:
+
+```text
+Numbers assigned through your telephony integration will appear here.
+```
+
+Click **Buy Number** to begin the purchase process.
+
+---
+
+## Test a Newly Purchased Number
+
+Complete these checks before sharing the number with customers:
+
+<Steps>
+  <Step title="Confirm the assignment">
+    Check the organization, selected agent, active status, and rental status.
+  </Step>
+  <Step title="Review the agent">
+    Confirm the agent's instructions, language, voice, opening message, and knowledge base.
+  </Step>
+  <Step title="Place a test call">
+    Call the number from an approved test telephone.
+  </Step>
+  <Step title="Verify the greeting">
+    Confirm that the expected agent answers with the correct opening message.
+  </Step>
+  <Step title="Test typical questions">
+    Use representative customer questions and scenarios.
+  </Step>
+  <Step title="Check call history">
+    Confirm that the call record, transcript, and other expected information are created.
+  </Step>
+</Steps>
+
+<Warning>
+  Do not publish a newly purchased number before completing a successful test call.
+</Warning>
+
+---
+
+## Active and Inactive Numbers
+
+### Active numbers
+
+Review active numbers to confirm:
+
+- An agent is assigned
+- Rental status is current
+- The next charge date is expected
+- No charge failures are reported
+- Test calls reach the correct agent
+
+### Inactive numbers
+
+Review inactive numbers to:
+
+- Investigate historical assignments
+- Check deactivation dates
+- Support billing investigations
+- Confirm customers are no longer directed to the number
+
+<Note>
+  The current page provides a details panel but does not display direct activation, deactivation, deletion, or reassignment actions.
+</Note>
+
+---
+
+## Rental and Credit Management
+
+Administrators should periodically review:
+
+- Number of active rentals
+- Rental statuses
+- Last charge dates
+- Next charge dates
+- Charge failures
+- Numbers no longer required
+- Numbers assigned to outdated agents
+- Available workspace credits
+
+A purchase charge and a recurring rental charge may be separate billing events.
+
+---
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Confirm the organization">
+    Verify the active organization before purchasing or reviewing numbers.
+  </Accordion>
+
+  <Accordion title="Use descriptive agent names">
+    Names such as Customer Support Agent reduce the risk of assigning a number incorrectly.
+  </Accordion>
+
+  <Accordion title="Test every new number">
+    Place a controlled test call before sharing the number with customers.
+  </Accordion>
+
+  <Accordion title="Monitor rental dates">
+    Review next-charge dates and available credits to prevent interruptions.
+  </Accordion>
+
+  <Accordion title="Investigate charge failures">
+    Repeated charge failures can affect number availability.
+  </Accordion>
+
+  <Accordion title="Review unassigned numbers">
+    An unassigned number may not provide the intended AI calling experience.
+  </Accordion>
+
+  <Accordion title="Protect provider identifiers">
+    Internal IDs and provider SIDs should only be shared with authorized administrators or support.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The expected number is not displayed">
+    Confirm the active organization and status filter. Search using part of the number and select All statuses.
+  </Accordion>
+
+  <Accordion title="Search returns no results">
+    Remove spaces and punctuation or search using part of the agent name.
+  </Accordion>
+
+  <Accordion title="No assigned numbers are shown">
+    Confirm that numbers have been purchased or assigned through the organization's telephony integration.
+  </Accordion>
+
+  <Accordion title="Buy Number is unavailable">
+    Confirm your workspace permissions and feature availability.
+  </Accordion>
+
+  <Accordion title="No agents appear">
+    Confirm that the organization has at least one active, enabled AI agent.
+  </Accordion>
+
+  <Accordion title="The wrong agent is selected">
+    Review Assign to Agent before purchasing. The first available agent can be selected automatically.
+  </Accordion>
+
+  <Accordion title="No ExoPhones are available">
+    Provider inventory may be temporarily unavailable. Close the window and try again later.
+  </Accordion>
+
+  <Accordion title="The purchase button is disabled">
+    Wait for the list to load, select a number, and select an agent when required.
+  </Accordion>
+
+  <Accordion title="The purchase fails">
+    Check the credit balance, confirm the selected agent, and retry.
+  </Accordion>
+
+  <Accordion title="The purchased number is missing">
+    Clear the search, select Active or All statuses, and confirm the active organization.
+  </Accordion>
+
+  <Accordion title="The number shows Unassigned">
+    Contact your workspace administrator or support. The current page does not provide direct reassignment.
+  </Accordion>
+
+  <Accordion title="The number is active but calls do not reach the agent">
+    Confirm the assigned agent and telephony setup. Test the agent and provide the Provider SID to support if needed.
+  </Accordion>
+
+  <Accordion title="The rental charge failed">
+    Review the credit balance and Credit Usage. Contact support if failures continue.
+  </Accordion>
+
+  <Accordion title="Unable to load organization phone numbers">
+    Confirm your connection, active organization, and session, then refresh the page.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Security and Privacy
+
+Administrators should:
+
+- Limit access to authorized users
+- Avoid exposing internal IDs publicly
+- Protect creator email addresses
+- Review number assignments regularly
+- Remove access when responsibilities change
+- Monitor unusual purchases and credit deductions
+- Test recording and consent behavior
+- Follow applicable telecommunications rules
+- Protect call logs, recordings, and transcripts
+
+<Warning>
+  Your organization is responsible for complying with applicable telecommunications, automated-calling, recording, consent, number-rental, and personal-data requirements.
+</Warning>
+
+---
+
+## Related Pages
+
+<CardGroup cols={2}>
+  <Card title="Integrations" icon="plug" href="/integrations">
+    Review and manage external platform and API connections.
+  </Card>
+
+  <Card title="Agents" icon="robot" href="/agents">
+    Configure and test agents assigned to phone numbers.
+  </Card>
+
+  <Card title="Inbound Calls" icon="phone-arrow-down-left" href="/inbound-calls">
+    Understand how incoming customer calls are handled.
+  </Card>
+
+  <Card title="Call Logs" icon="rectangle-list" href="/call-logs">
+    Review calls, outcomes, recordings, and conversation details.
+  </Card>
+
+  <Card title="Credit Usage" icon="coins" href="/credit-usage">
+    Review number-purchase, rental, speech, and other credit activity.
+  </Card>
+
+  <Card title="Troubleshooting" icon="screwdriver-wrench" href="/troubleshooting">
+    Resolve common number, agent, calling, and integration issues.
+  </Card>
+</CardGroup>

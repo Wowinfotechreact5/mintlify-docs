@@ -1,0 +1,774 @@
+---
+title: "Campaign Call History"
+sidebarTitle: "Campaign Call History"
+description: "Review campaign calls, inspect outcomes, listen to recordings, read transcripts, and export call activity."
+---
+
+Campaign Call History provides a complete record of calls made or received through your Valuez AI campaigns.
+
+Use this page to review campaign performance, investigate individual conversations, confirm call outcomes, listen to available recordings, read transcripts, and understand what happened during each customer interaction.
+
+<Info>
+  Campaign Call History is specifically for calls associated with campaigns. For non-campaign conversations and agent testing activity, use the relevant conversation or call-log page instead.
+</Info>
+
+---
+
+## Open Campaign Call History
+
+To open the page:
+
+<Steps>
+  <Step title="Sign in to Valuez AI">
+    Sign in to your Valuez AI workspace.
+  </Step>
+  <Step title="Open Call Campaigns">
+    In the left sidebar, open the **Call Campaigns** section.
+  </Step>
+  <Step title="Select Campaign Call History">
+    Click **Campaign Call History** to view campaign-related calls.
+  </Step>
+</Steps>
+
+<Frame>
+  ![Camp Call His](/images/camp-call-his.png "Camp Call His")
+</Frame>
+
+<Note>
+  Campaign features may depend on your subscription plan and workspace permissions. If campaign access is locked, Valuez AI will prompt you to upgrade your plan.
+</Note>
+
+---
+
+## What You Can Do
+
+Campaign Call History helps campaign managers and workspace users:
+
+- Find a call by contact name, telephone number, or conversation information
+- Filter calls by campaign
+- Filter calls by direction
+- Filter calls by outcome
+- Review the agent assigned to a call
+- Check call duration and credits used
+- Open an individual call for detailed review
+- Listen to a recording when one is available
+- Read the conversation transcript
+- Review the AI-generated summary
+- Inspect the chronological call timeline
+- Export campaign call records to Excel
+
+---
+
+## Understanding the Call History Screen
+
+The page is divided into four primary areas:
+
+| Area | Purpose |
+| --- | --- |
+| **Search** | Find calls using conversation, contact, or telephone information |
+| **Filters** | Narrow the results by campaign, direction, or outcome |
+| **Call history table** | Review the key details for each campaign call |
+| **Export Call Logs** | Export campaign call records to an Excel workbook |
+
+The information shown depends on the data available for each call. For example, a recording or AI summary may not appear if it has not been generated or returned for that call.
+
+---
+
+## Search Campaign Calls
+
+Use the search box at the top of the page to locate a specific campaign call.
+
+The search field supports information such as:
+
+- Contact name
+- Telephone number
+- Conversation-related information
+
+The search box displays:
+
+```text
+Search conversation, phone or contact
+```
+
+### Search examples
+
+You can search using values such as:
+
+```text
+Anita Sharma
+```
+
+```text
+9876543210
+```
+
+```text
++91 98765 43210
+```
+
+<Tip>
+  If a complete telephone number does not return a result, try entering only the last several digits. This can help when telephone numbers are stored with a country code or different spacing.
+</Tip>
+
+---
+
+## Filter Campaign Calls
+
+Filters help you focus on a particular group of calls without reviewing the entire call history.
+
+### Campaign Filter
+
+Use the **Campaign** filter to display calls associated with a specific campaign.
+
+This is useful when:
+
+- Comparing individual campaigns
+- Reviewing the results of a recent campaign
+- Investigating calls made to a specific lead list
+- Checking the activity of an active or completed campaign
+
+Select a campaign from the dropdown to apply the filter.
+
+### Direction Filter
+
+Use the **Direction** filter to distinguish between:
+
+| Direction | Meaning |
+| --- | --- |
+| **Outbound** | The campaign or agent initiated the call to the contact |
+| **Inbound** | The contact initiated the call into the connected system |
+
+Most campaign activity may be outbound, but the available records depend on how your workspace and calling integrations are configured.
+
+### Outcome Filter
+
+Use the **Outcome** filter to display calls with a particular result.
+
+Available outcome values can include:
+
+| Outcome | General Meaning |
+| --- | --- |
+| **Qualified** | The contact met the configured qualification requirements |
+| **Interested** | The contact expressed interest during the conversation |
+| **Callback Requested** | The contact requested another call |
+| **Not Interested** | The contact indicated they were not interested |
+| **Converted** | The conversation achieved the configured conversion objective |
+| **Completed** | The call completed normally |
+| **Voicemail** | The call reached a voicemail service |
+| **No Answer** | The contact did not answer |
+| **Failed** | The call could not be completed |
+| **No Outcome** | No final outcome was available for the call |
+
+<Note>
+  The outcomes available in your workspace depend on the information returned by the call and the campaign configuration. Not every campaign will use every outcome.
+</Note>
+
+### Reset Filters
+
+Click **Reset Filters** to clear your selected campaign, direction, outcome, and search criteria.
+
+Resetting the filters returns the page to the default call-history view.
+
+---
+
+## Call History Table
+
+Each table row represents one campaign call.
+
+| Column | What It Shows |
+| --- | --- |
+| **Contact** | The contact's name and telephone number |
+| **Agent** | The Valuez AI agent that handled the call |
+| **Campaign** | The campaign associated with the call |
+| **Outcome** | The recorded result of the conversation |
+| **Duration (Seconds)** | The total duration of the call |
+| **Credits Used** | The number of platform credits consumed by the call |
+| **Date & Time** | When the call occurred |
+| **Actions** | Opens the detailed record for the selected call |
+
+### Contact
+
+The Contact column helps you identify the customer or lead involved in the conversation.
+
+Depending on the information available, it can contain:
+
+- Contact name
+- Telephone number
+- Both the name and telephone number
+
+If a name is unavailable, use the telephone number to identify the contact.
+
+### Agent
+
+The Agent column shows which AI agent handled the interaction.
+
+Use this field to:
+
+- Confirm that the correct agent was assigned
+- Compare conversations handled by different agents
+- Identify which agent configuration may require improvement
+- Trace unexpected responses back to the responsible agent
+
+### Campaign
+
+The Campaign column identifies the campaign that produced the call.
+
+This is particularly useful if your workspace runs multiple campaigns using the same agent.
+
+### Outcome
+
+The Outcome badge provides a quick indication of the conversation result.
+
+The outcome should be treated as a review aid. For important leads or unexpected outcomes, open the full call details and confirm the result using the transcript and summary.
+
+### Duration
+
+The Duration column shows how long the call lasted.
+
+Duration can help you identify:
+
+- Very short calls that may not have connected properly
+- Longer conversations that may contain strong customer interest
+- Calls that ended before the expected workflow was completed
+- Unusually long calls that may need review
+
+A short call does not always indicate a technical failure. The contact may have ended the call, voicemail may have answered, or the conversation may have reached an early conclusion.
+
+### Credits Used
+
+The Credits Used column shows the credits consumed by the call.
+
+Credit usage can vary according to factors such as:
+
+- Call duration
+- Services used during the conversation
+- Workspace configuration
+- Calling and AI processing activity
+
+If credit information is unavailable, the page may display `0.00`.
+
+### Date and Time
+
+This column shows when the call occurred.
+
+Use it to:
+
+- Locate calls from a specific campaign period
+- Match call activity with customer records
+- Investigate time-sensitive complaints or follow-ups
+- Review the most recent campaign activity
+
+---
+
+## Sort Call Records
+
+Supported table headings can be used to change the order of the results.
+
+Sortable information includes:
+
+- Contact
+- Agent
+- Campaign
+- Date and time
+
+Click a supported column heading to change the sort order. Click it again to reverse the order.
+
+For example, sorting by date and time helps you switch between the newest and oldest campaign calls.
+
+---
+
+## Navigate Between Pages
+
+Campaign Call History uses pagination when the number of records exceeds the current page size.
+
+You can select the number of rows displayed on each page:
+
+- 10
+- 15
+- 25
+- 50
+
+Use the pagination controls to move between result pages.
+
+<Tip>
+  Apply filters before moving through multiple pages. A focused result set is easier to review and reduces the chance of overlooking an important call.
+</Tip>
+
+---
+
+## Identify Failed Calls
+
+Calls marked as failed may be visually highlighted in the table.
+
+A failed call can occur for several reasons, including:
+
+- The destination could not be reached
+- The telephone number was invalid
+- The calling provider rejected the request
+- The recipient's network was unavailable
+- The call ended before a normal connection was established
+- A configuration or integration issue prevented completion
+
+A failed call is not the same as a contact declining an offer. Review the detailed record and campaign lead information before deciding whether to retry it.
+
+---
+
+## Open Call Details
+
+Select a call from the table or use its available action to open the detailed call record.
+
+<Frame>
+  ![Logs Details 2026 10 10 11 20 22](/images/logs-details-2026-10-10-11_20_22.png "Logs Details 2026 10 10 11 20 22")
+</Frame>
+
+The call details page can show:
+
+| Field | Description |
+| --- | --- |
+| **Contact** | The contact's name and telephone number |
+| **Campaign** | The campaign associated with the conversation |
+| **Agent** | The AI agent that handled the call |
+| **Direction** | Whether the call was outbound or inbound |
+| **Duration** | The formatted call length |
+| **Credits Used** | Credits consumed by the call |
+
+If the record cannot be loaded, the page may display **No call details available**.
+
+---
+
+## Review the Call Recording
+
+When a recording is available, the call details page provides recording controls.
+
+You can:
+
+- Play the call
+- Pause playback
+- Listen while reviewing the transcript
+- Open the recording using **Download Recording**
+
+<Warning>
+  Call recordings may contain personal, confidential, or regulated information. Only download and share recordings according to your organization's privacy, retention, and access-control policies.
+</Warning>
+
+### Download a recording
+
+<Steps>
+  <Step title="Open the call">
+    Select the required call from Campaign Call History.
+  </Step>
+  <Step title="Confirm recording availability">
+    Look for the recording controls or the **Download Recording** button.
+  </Step>
+  <Step title="Open the recording">
+    Click **Download Recording**. The recording opens in a new browser tab or window.
+  </Step>
+  <Step title="Save it if required">
+    Use your browser's media or download controls to save the recording, if permitted.
+  </Step>
+</Steps>
+
+<Note>
+  The Download Recording button only appears when a recording URL is available. Browser settings determine whether the recording opens, plays, or downloads immediately.
+</Note>
+
+---
+
+## Read the Transcript
+
+The transcript presents the conversation as messages between the customer and the AI agent.
+
+<Frame>
+  ![Logs Details 2026 10 10 11 20 22](/images/logs-details-2026-10-10-11_20_22.png "Logs Details 2026 10 10 11 20 22")
+</Frame>
+
+Transcript messages identify the speaker as:
+
+| Speaker | Meaning |
+| --- | --- |
+| **AI** | A response generated by the Valuez AI agent |
+| **USER** | A message or response from the customer |
+
+Use the transcript to:
+
+- Confirm what the customer said
+- Understand why an outcome was assigned
+- Verify whether the agent followed the intended conversation
+- Identify unclear questions or responses
+- Review objections and customer interests
+- Improve future campaign prompts
+- Investigate customer complaints
+
+If transcript data is unavailable, the page displays:
+
+```text
+No transcript available.
+```
+
+### Recommended transcript review
+
+For meaningful quality reviews:
+
+1. Read the transcript from beginning to end.
+2. Compare important sections with the recording.
+3. Confirm whether the agent understood the customer correctly.
+4. Check whether the agent followed the expected prompt and business rules.
+5. Confirm that the recorded outcome matches the actual conversation.
+6. Note recurring customer questions or objections.
+7. Update the agent or knowledge base when repeated gaps are found.
+
+<Warning>
+  AI-generated transcripts can contain recognition errors, especially when there is background noise, poor audio quality, overlapping speech, or unfamiliar terminology. Verify important information against the recording or your source systems.
+</Warning>
+
+---
+
+## Review the AI Summary
+
+The **AI Summary** section provides a structured overview of the call.
+
+Depending on the information available, it can include:
+
+| Summary Field | Description |
+| --- | --- |
+| **Outcome** | The result assigned to the conversation |
+| **Summary** | A concise description of what happened |
+| **Primary Interest** | The product, service, or topic that interested the contact |
+| **Qualification Reason** | Why the contact was or was not considered qualified |
+| **Callback Requested** | Whether the contact requested another call |
+| **Preferred Callback Time** | The requested time for a follow-up call |
+
+Only fields available for the selected call are displayed.
+
+If no summary has been generated, the page displays:
+
+```text
+Summary not generated yet.
+```
+
+<Info>
+  Use the AI summary as a quick review tool. For decisions involving sales qualification, customer commitments, disputes, or compliance, confirm the information using the transcript and recording.
+</Info>
+
+---
+
+## Understand the Call Timeline
+
+The **Call Timeline** displays the available stages of the call in chronological order.
+
+Timeline information helps you understand the sequence in which call events occurred.
+
+Depending on the call, the timeline can help you identify:
+
+- When processing began
+- When calling activity started
+- When the conversation progressed
+- When the interaction ended
+- The order in which recorded call stages occurred
+
+The timeline is especially useful when investigating calls that:
+
+- Failed unexpectedly
+- Ended earlier than expected
+- Have missing transcript information
+- Show an unexpected duration
+- Require operational troubleshooting
+
+---
+
+## Review Qualified Leads
+
+For calls marked **Qualified**:
+
+<Steps>
+  <Step title="Open the call details">
+    Review the selected call from Campaign Call History.
+  </Step>
+  <Step title="Check the AI summary">
+    Review the qualification reason, primary interest, and callback information.
+  </Step>
+  <Step title="Verify the conversation">
+    Read the transcript and listen to important sections of the recording.
+  </Step>
+  <Step title="Confirm the contact record">
+    Make sure the contact information belongs to the correct campaign lead.
+  </Step>
+  <Step title="Continue the follow-up process">
+    Use your organization's approved sales or customer-management process to follow up with the lead.
+  </Step>
+</Steps>
+
+---
+
+## Review Callback Requests
+
+When the summary indicates that a callback was requested:
+
+1. Confirm that **Callback Requested** is marked appropriately.
+2. Check whether a preferred callback time is available.
+3. Read the transcript to understand the customer's request.
+4. Confirm the customer's time zone when necessary.
+5. Assign the follow-up according to your team's process.
+6. Record the result in the appropriate business system.
+
+<Tip>
+  Do not rely on the callback label alone. The transcript may contain additional details, such as the person to contact, preferred department, or reason for the callback.
+</Tip>
+
+---
+
+## Review No Answer and Voicemail Calls
+
+A call that was not answered does not necessarily require the same action as a failed call.
+
+| Result | Recommended Review |
+| --- | --- |
+| **No Answer** | Confirm the number and use your campaign's retry policy |
+| **Voicemail** | Check whether the workflow left a message and whether another attempt is appropriate |
+| **Failed** | Investigate the number, provider, configuration, or technical cause |
+| **Completed** | Review the outcome, summary, and transcript |
+| **Callback Requested** | Arrange follow-up using the requested time when available |
+
+Follow your organization's contact-frequency, consent, and calling-time policies before attempting another call.
+
+---
+
+## Export Call Logs
+
+Click **Export Call Logs** to export campaign call records to an Excel workbook.
+
+The exported filename follows this format:
+
+```text
+call-logs-export-YYYY-MM-DD_HHmm.xlsx
+```
+
+The workbook contains a worksheet named:
+
+```text
+Call Logs
+```
+
+### Exported fields
+
+The exported workbook can include:
+
+| Column | Description |
+| --- | --- |
+| **Call Log ID** | Internal identifier for the call record |
+| **Conversation ID** | Identifier associated with the conversation |
+| **Campaign** | Campaign name |
+| **Agent** | Agent name |
+| **Contact Name** | Name of the contact |
+| **Phone Number** | Contact telephone number |
+| **Direction** | Inbound or outbound |
+| **Outcome** | Result of the call |
+| **Qualified** | Whether the call was identified as qualified |
+| **Call Status** | Available call completion status |
+| **Duration** | Length of the call |
+| **Credits Used** | Credits consumed |
+| **Attempt #** | Campaign attempt number, when available |
+| **Call Start** | Start date and time |
+| **Call End** | End date and time |
+
+<Warning>
+  The export operation retrieves the complete campaign call-log dataset available to the workspace rather than only the currently filtered table view. Review and securely store the exported workbook because it can contain customer names, telephone numbers, campaign activity, and other sensitive information.
+</Warning>
+
+### Export steps
+
+<Steps>
+  <Step title="Open Campaign Call History">
+    Navigate to the campaign call-history page.
+  </Step>
+  <Step title="Click Export Call Logs">
+    Click the export button in the upper area of the page.
+  </Step>
+  <Step title="Wait for the export">
+    The button displays **Exporting...** while Valuez AI prepares the workbook.
+  </Step>
+  <Step title="Open the downloaded file">
+    Open the generated `.xlsx` file using Microsoft Excel or another compatible spreadsheet application.
+  </Step>
+</Steps>
+
+If the export button is locked, your current subscription plan may not include campaign access.
+
+---
+
+## Campaign Leads vs. Campaign Call History
+
+These pages serve different purposes.
+
+| Page | Use It For |
+| --- | --- |
+| **Campaign Leads** | Reviewing the people or telephone numbers included in a campaign |
+| **Campaign Call History** | Reviewing the individual call attempts and conversations generated by campaigns |
+| **Agent Conversations** | Reviewing broader agent conversations and non-campaign interaction history |
+| **Call Logs** | Reviewing general calling activity available elsewhere in the platform |
+
+A single lead may have more than one call-history record if multiple call attempts were made.
+
+---
+
+## Recommended Quality Review Workflow
+
+Use this workflow when checking campaign performance:
+
+<Steps>
+  <Step title="Select the campaign">
+    Filter the call history to the campaign you want to evaluate.
+  </Step>
+  <Step title="Review the outcome distribution">
+    Look for qualified, interested, callback, no-answer, voicemail, and failed calls.
+  </Step>
+  <Step title="Inspect representative calls">
+    Open examples from successful and unsuccessful outcomes.
+  </Step>
+  <Step title="Compare transcript and outcome">
+    Confirm that the recorded outcome accurately reflects the conversation.
+  </Step>
+  <Step title="Listen to recordings">
+    Review the call audio when transcript accuracy, tone, or customer experience needs verification.
+  </Step>
+  <Step title="Identify recurring patterns">
+    Look for repeated objections, misunderstood questions, knowledge gaps, or early call endings.
+  </Step>
+  <Step title="Improve the agent">
+    Update the agent prompt, knowledge base, or campaign configuration when repeated problems are identified.
+  </Step>
+  <Step title="Test before the next large campaign">
+    Test the updated agent with representative questions and scenarios.
+  </Step>
+</Steps>
+
+---
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Review a mix of successful and unsuccessful calls">
+    Do not review only qualified or converted calls. Failed, short, no-answer, and not-interested calls can reveal campaign targeting issues, technical problems, or opportunities to improve the agent.
+  </Accordion>
+
+  <Accordion title="Verify important outcomes">
+    Before taking action on a qualified lead or callback request, compare the summary with the transcript and recording.
+  </Accordion>
+
+  <Accordion title="Investigate repeated short calls">
+    A group of unusually short calls may indicate incorrect numbers, early customer hang-ups, an unclear introduction, or a calling configuration issue.
+  </Accordion>
+
+  <Accordion title="Use exports carefully">
+    Exported workbooks may contain customer data. Store them only in approved locations and delete unnecessary copies according to your organization's retention policy.
+  </Accordion>
+
+  <Accordion title="Limit recording access">
+    Call recordings should only be accessible to authorized team members with a legitimate business reason to review them.
+  </Accordion>
+
+  <Accordion title="Document campaign improvements">
+    When call reviews lead to prompt, knowledge-base, or campaign changes, record what changed and why. This makes future performance comparisons more reliable.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="No calls appear in Campaign Call History">
+    Confirm that the campaign has processed at least one call. Clear the search and filters, verify that the correct campaign was selected, and refresh the page. Also confirm that your account has access to the campaign.
+  </Accordion>
+
+  <Accordion title="A campaign does not appear in the filter">
+    Confirm that the campaign exists in the current workspace. Refresh the page and verify that you are signed into the correct account.
+  </Accordion>
+
+  <Accordion title="Search does not find a contact">
+    Try searching with only part of the contact's name or the final digits of the telephone number. Clear the other filters to ensure they are not excluding the record.
+  </Accordion>
+
+  <Accordion title="The outcome looks incorrect">
+    Open the call details and compare the AI summary with the full transcript and recording. Automated outcomes should be verified before they are used for important business decisions.
+  </Accordion>
+
+  <Accordion title="The transcript is unavailable">
+    The call may not have produced transcript data, processing may still be incomplete, or the conversation may not have connected successfully. Check the call outcome and timeline.
+  </Accordion>
+
+  <Accordion title="The AI summary is unavailable">
+    If the page displays **Summary not generated yet**, summary information has not been returned for that call. Use the transcript and recording when available.
+  </Accordion>
+
+  <Accordion title="The recording button is missing">
+    The Download Recording button only appears when a recording is available. Calls that did not connect or calls without a recording URL may not provide playback or download controls.
+  </Accordion>
+
+  <Accordion title="The recording opens instead of downloading">
+    The platform opens the recording in a new browser tab. Use the browser's media controls or download option to save it, if your permissions and organizational policy allow it.
+  </Accordion>
+
+  <Accordion title="Export Call Logs is locked">
+    Campaign functionality may not be included in your current subscription plan. Review your plan or contact your Valuez AI administrator.
+  </Accordion>
+
+  <Accordion title="The exported workbook contains more calls than the filtered table">
+    The export retrieves the complete campaign call-log dataset available to the workspace. The search and filters used on the visible table may not limit the exported workbook.
+  </Accordion>
+
+  <Accordion title="Credits show 0.00">
+    Credit information may be unavailable for the selected record. This does not necessarily mean that the call consumed no platform resources.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Privacy and Responsible Use
+
+Campaign records can contain customer names, telephone numbers, recordings, transcripts, and conversation summaries.
+
+Workspace administrators should ensure that:
+
+- Campaign contacts have been collected and used lawfully
+- Calling activity follows applicable consent and communication rules
+- Recordings are enabled only where permitted
+- Users understand when recording disclosure is required
+- Access is limited to authorized team members
+- Exports are stored in approved systems
+- Customer data is retained only for the required period
+- Sensitive information is not shared through unsecured channels
+
+<Warning>
+  Legal requirements for automated calls, telephone marketing, call recording, consent, and data retention vary by country and region. Your organization is responsible for determining and following the requirements that apply to its operations.
+</Warning>
+
+---
+
+## Related Pages
+
+<CardGroup cols={2}>
+  <Card title="Campaigns Overview" icon="bullhorn" href="/campaigns-overview">
+    Understand campaign statuses, controls, and campaign-level activity.
+  </Card>
+
+  <Card title="Create a Campaign" icon="circle-plus" href="/create-campaign">
+    Configure a new outbound calling campaign.
+  </Card>
+
+  <Card title="Campaign Leads" icon="users" href="/campaign-leads">
+    Review contacts, lead information, and campaign participation.
+  </Card>
+
+  <Card title="Agents" icon="robot" href="/agents">
+    Review and improve the AI agents used by campaigns.
+  </Card>
+
+  <Card title="Prompt Engineering" icon="message-pen" href="/prompt-engineering">
+    Improve agent instructions using evidence from real conversations.
+  </Card>
+
+  <Card title="Troubleshooting" icon="screwdriver-wrench" href="/troubleshooting">
+    Resolve common calling, configuration, and integration problems.
+  </Card>
+</CardGroup>

@@ -1,0 +1,698 @@
+---
+title: "Webhooks"
+sidebarTitle: "Webhooks"
+description: "Understand Valuez AI webhook availability and how completed agent interactions can be shared with another business system."
+---
+
+Webhooks are designed to send information from Valuez AI to another business system automatically after an agent interaction is completed.
+
+For example, a webhook can help your organization send completed interaction information to:
+
+- A customer-management system
+- An internal business application
+- A reporting system
+- A workflow-automation service
+- A customer-support platform
+- An approved data-processing service
+
+<Warning>
+  Webhook setup is not currently available as a self-service option in the Valuez AI dashboard. The Webhooks integration is visible in the platform configuration but is currently disabled.
+</Warning>
+
+If your organization requires webhook access, contact your Valuez AI account representative or support team to confirm:
+
+- Whether Webhooks are included in your subscription
+- Whether the feature can be enabled for your workspace
+- Which interaction types are available
+- Whether your receiving system meets the required security and availability standards
+
+---
+
+## What Is a Webhook?
+
+A webhook is an automatic notification sent from one system to another.
+
+When a supported interaction is completed, Valuez AI can send information about that interaction to a configured destination.
+
+Without a webhook, a team member or another application may need to check Valuez AI manually. With a webhook, the receiving system can be notified automatically.
+
+### Simple Example
+
+A customer completes a conversation with a Valuez AI agent.
+
+After the interaction:
+
+1. Valuez AI prepares the completed interaction information.
+2. Valuez AI sends it to the configured business system.
+3. The receiving system accepts the information.
+4. The receiving system decides what to do with it.
+
+The receiving system might:
+
+- Store the conversation result
+- Update an internal customer record
+- Notify a team
+- Start an approved follow-up process
+- Add the interaction to a report
+
+<Info>
+  Valuez AI sends the interaction information. The external system is responsible for deciding how to store or use it.
+</Info>
+
+---
+
+## Current Feature Availability
+
+The current Valuez AI dashboard does not allow users to create a Webhook integration directly.
+
+In **APIs & Integrations**, Webhooks are currently displayed as an unavailable integration option.
+
+This means users cannot currently configure:
+
+- A webhook destination
+- Webhook events
+- Delivery settings
+- A webhook secret
+- Webhook retry behavior
+- Webhook delivery history
+
+directly from the dashboard.
+
+<Note>
+  Do not follow documentation that instructs you to select **Add Integration → Webhooks** and complete the setup yourself. That workflow is not currently enabled in the production user interface.
+</Note>
+
+---
+
+## Currently Supported Webhook Purpose
+
+The implemented webhook behavior is associated with a completed agent interaction.
+
+The currently implemented event is:
+
+```text
+interaction_completed
+```
+
+This means the webhook is sent after a supported agent interaction has completed processing.
+
+### Supported Interaction Types
+
+The current implementation supports:
+
+| Interaction type | Meaning |
+| --- | --- |
+| **Text to Text** | A text-based conversation between a user and an agent |
+| **Speech to Speech** | A voice conversation in which the user speaks and receives a spoken response |
+
+A webhook must be enabled for the relevant interaction type before Valuez AI sends that interaction's information.
+
+---
+
+## Events Not Currently Available
+
+The current source code does not provide general self-service webhook events for:
+
+- Appointment scheduled
+- Lead created
+- Contact updated
+- Customer enquiry received
+- Campaign launched
+- Campaign completed
+- Workflow completed
+- Payment completed
+- Team member added
+- Knowledge document uploaded
+- Agent created
+- Agent updated
+- Agent deleted
+- Call transferred
+
+These activities may exist elsewhere in the Valuez AI platform, but they are not currently exposed as selectable user webhook events.
+
+<Warning>
+  Do not design an important business process around an event until Valuez AI confirms that the event is available for your workspace.
+</Warning>
+
+---
+
+## Information Sent After an Interaction
+
+For an enabled completed-interaction webhook, Valuez AI can send information such as:
+
+| Information | Description |
+| --- | --- |
+| **Event name** | Identifies the notification as a completed interaction |
+| **Interaction type** | Indicates whether the interaction used text or speech |
+| **Time** | Shows when Valuez AI prepared the notification |
+| **Agent** | Identifies the agent associated with the interaction |
+| **Session** | Identifies the conversation session |
+| **User message** | Contains the user's processed message |
+| **Agent response** | Contains the response produced by the agent |
+| **Conversation history** | Contains the available conversation context |
+
+<Warning>
+  Webhook information can contain customer conversation data. Your organization must review privacy, consent, storage, access, and retention requirements before enabling the feature.
+</Warning>
+
+---
+
+## What a Webhook Does Not Do
+
+A webhook does not automatically decide what happens in the receiving system.
+
+For example, receiving a completed interaction does not automatically mean that Valuez AI:
+
+- Creates a lead
+- Updates a customer record
+- Schedules an appointment
+- Sends an email
+- Sends a text message
+- Creates a support ticket
+- Assigns a salesperson
+- Approves a refund
+- Changes an order
+- Starts a campaign
+
+Those actions must be configured in the external system or workflow connected to the webhook.
+
+### Example
+
+Suppose a completed agent conversation contains a customer's request for a callback.
+
+Valuez AI can send the completed interaction information to an approved receiving system.
+
+The receiving system must then decide whether to:
+
+- Create a callback task
+- Notify a salesperson
+- Store the request
+- Reject incomplete information
+- Ask for manual review
+
+---
+
+## Common Business Uses
+
+When Webhooks are enabled for a workspace, they can support workflows such as the following.
+
+### Notify a Team
+
+The receiving system can notify a support or sales team after a completed interaction.
+
+Example:
+
+```text
+A customer finishes a conversation requesting more product information.
+The external workflow sends an alert to the assigned team.
+```
+
+### Store Interaction Results
+
+An organization can store completed interaction information in an approved business system.
+
+Example:
+
+```text
+The completed interaction is attached to an existing customer record for review.
+```
+
+### Start an Approved Follow-Up
+
+The receiving system can create a follow-up task based on the information provided.
+
+Example:
+
+```text
+A customer asks for a callback. The receiving system creates a task for
+an authorized team member.
+```
+
+### Add Data to Reporting
+
+Completed interactions can be added to an internal reporting process.
+
+Example:
+
+```text
+The receiving system records interaction volume and the responsible agent.
+```
+
+<Info>
+  These are examples of what an external system can do after receiving webhook information. They are not automatic Valuez AI features.
+</Info>
+
+---
+
+## Before Requesting Webhook Access
+
+Prepare the following information before contacting Valuez AI.
+
+| Requirement | What to prepare |
+| --- | --- |
+| **Business objective** | Explain why the organization needs the webhook |
+| **Agent** | Identify which agent's interactions should be sent |
+| **Interaction type** | Text to Text, Speech to Speech, or both |
+| **Receiving system** | Identify the application receiving the information |
+| **Destination address** | Obtain the secure webhook destination from the receiving-system owner |
+| **Data owner** | Identify who is responsible for the received data |
+| **Security owner** | Identify who will review security requirements |
+| **Privacy approval** | Confirm that conversation data can be shared |
+| **Test environment** | Provide a safe destination for testing |
+| **Production owner** | Assign responsibility for monitoring the integration |
+
+---
+
+## Questions to Ask Your System Provider
+
+If another company manages the destination system, ask them:
+
+- Can your system receive webhook notifications?
+- Can it receive information securely over HTTPS?
+- Can it accept information from Valuez AI?
+- How will it confirm successful receipt?
+- How will it verify that the notification came from Valuez AI?
+- What happens when the destination is unavailable?
+- Does the destination store full conversation content?
+- Who can access the stored information?
+- How long is the information retained?
+- Is a test destination available?
+- Who should be contacted when delivery fails?
+
+You may need help from your organization's technical or integration team to answer these questions.
+
+---
+
+## Webhook Secret
+
+When a webhook integration is created, a secret is generated for the integration.
+
+The secret helps the receiving system verify that a request is associated with the configured Valuez AI integration.
+
+<Warning>
+  Treat the webhook secret like a password. Do not share it in email, chat messages, screenshots, support tickets, documents, or public code.
+</Warning>
+
+The secret is intended to be copied when it is created. It may not be displayed again later.
+
+Recommended handling:
+
+- Copy it immediately
+- Store it in an approved password or secret-management system
+- Share it only with authorized integration personnel
+- Do not paste it into the agent's Knowledge Base
+- Do not include it in Agent Instructions
+- Do not expose it on a public website
+
+If you believe the secret has been exposed, contact your workspace administrator or Valuez AI support.
+
+---
+
+## Workspace and Plan Requirements
+
+Webhook access can depend on:
+
+- The workspace subscription
+- Webhook feature availability
+- The user's permissions
+- The selected agent
+- Workspace-level feature limits
+- Valuez AI activation
+
+A user may be unable to configure Webhooks because:
+
+- The feature is currently disabled
+- The plan does not include Webhooks
+- The user lacks integration permissions
+- The workspace is not approved for the feature
+- The integration has not been enabled by Valuez AI
+
+---
+
+## Privacy and Customer Data
+
+Completed interaction information can include customer messages and conversation history.
+
+Before enabling Webhooks, confirm:
+
+- Customers have received appropriate privacy information
+- Your organization has a valid reason to share the data
+- Only necessary information is transferred
+- The receiving system is approved
+- Access is limited to authorized users
+- Retention rules are documented
+- Deletion requirements are understood
+- Sensitive information is not collected unnecessarily
+- Cross-border data requirements have been reviewed
+- Your privacy and compliance teams have approved the workflow
+
+<Warning>
+  Do not use Webhooks to send passwords, one-time passwords, payment-card details, authentication secrets, or other highly sensitive information.
+</Warning>
+
+---
+
+## Preparing for Testing
+
+Webhook testing should use safe, non-sensitive sample conversations.
+
+Create a test plan containing:
+
+| Test area | Example |
+| --- | --- |
+| **Agent** | Customer Support - Test |
+| **Interaction type** | Speech to Speech |
+| **Test message** | “What are your working hours?” |
+| **Expected agent response** | Approved working-hours answer |
+| **Expected notification** | One completed-interaction notification |
+| **Sensitive information** | None |
+| **Receiving-system result** | Test record created |
+| **Owner** | Integration testing team |
+
+### Recommended Test Scenarios
+
+Test:
+
+- A short interaction
+- A longer conversation
+- A conversation with several questions
+- An unknown question
+- A completed text interaction
+- A completed voice interaction
+- A destination that accepts the notification
+- A destination that is temporarily unavailable
+- A repeated or duplicate test
+- A conversation without personal information
+
+---
+
+## What to Verify During Testing
+
+After completing a test interaction, ask the receiving-system owner to confirm:
+
+- The notification arrived
+- It was associated with the correct agent
+- The interaction type was correct
+- The session identifier was present
+- The user message was present
+- The agent response was present
+- The conversation history was readable
+- The time was recorded correctly
+- The receiving system did not create duplicate records
+- The receiving system handled missing fields safely
+- No unnecessary sensitive information was stored
+
+---
+
+## Delivery Behavior
+
+The completed-interaction notification is sent separately from the customer's main conversation.
+
+If the receiving destination is unavailable or rejects the notification, the agent conversation can still continue or complete.
+
+<Info>
+  A webhook-delivery failure does not necessarily mean that the customer interaction failed.
+</Info>
+
+Because the current dashboard does not provide a user-facing webhook-delivery history, your receiving system should maintain its own logs and alerts.
+
+The receiving-system owner should monitor:
+
+- Successful receipt
+- Failed receipt
+- Invalid information
+- Duplicate processing
+- Processing delays
+- Security failures
+- Storage failures
+
+---
+
+## Avoid Duplicate Actions
+
+A receiving system should be designed so that the same interaction does not accidentally create the same business action more than once.
+
+For example, one completed conversation should not create:
+
+- Multiple leads
+- Multiple support tickets
+- Repeated customer notifications
+- Duplicate appointment requests
+- Duplicate callback tasks
+
+Business users should confirm with the receiving-system owner that duplicate protection is included.
+
+---
+
+## Do Not Use Webhooks as the Only Record
+
+A webhook is a notification mechanism. It should not be the only place where your organization expects to find the original interaction.
+
+Use Valuez AI's conversation records to review the original interaction where available.
+
+The external system should store only the information required for its approved business purpose.
+
+---
+
+## Business Readiness Checklist
+
+Before requesting production activation:
+
+### Purpose
+
+- [ ] The business objective is documented
+- [ ] The selected agent is identified
+- [ ] Required interaction types are identified
+- [ ] Expected external action is documented
+
+### Ownership
+
+- [ ] A business owner is assigned
+- [ ] A receiving-system owner is assigned
+- [ ] A security owner is assigned
+- [ ] A support contact is assigned
+
+### Privacy
+
+- [ ] Data sharing is approved
+- [ ] Customer notices are reviewed
+- [ ] Sensitive information is excluded
+- [ ] Access controls are defined
+- [ ] Retention rules are documented
+
+### Receiving System
+
+- [ ] Secure destination is available
+- [ ] Test destination is available
+- [ ] Secret can be stored securely
+- [ ] Successful receipt is logged
+- [ ] Failures generate an alert
+- [ ] Duplicate actions are prevented
+
+### Testing
+
+- [ ] Text interaction tested, if required
+- [ ] Voice interaction tested, if required
+- [ ] Correct agent verified
+- [ ] Received information verified
+- [ ] Failure behavior tested
+- [ ] Production owner approved activation
+
+---
+
+## Troubleshooting
+
+### Webhooks Option Is Disabled
+
+This is expected in the current self-service dashboard.
+
+Contact your Valuez AI account representative or support team to confirm whether the feature can be enabled for your workspace.
+
+---
+
+### Webhooks Do Not Appear in Integrations
+
+Possible reasons include:
+
+- The feature is disabled
+- The workspace plan does not include it
+- Your account lacks integration permissions
+- The workspace has not been approved for Webhooks
+
+Ask the workspace owner to review the subscription and your integration permissions.
+
+---
+
+### The External System Did Not Receive Anything
+
+Ask the receiving-system owner to check:
+
+- The correct destination was supplied
+- The destination is active
+- The destination accepts secure requests
+- The selected agent matches the tested agent
+- The correct interaction type was enabled
+- The interaction completed successfully
+- The receiving system did not reject the information
+- The receiving system did not place the request in an error queue
+
+Because the current dashboard does not expose delivery history, Valuez AI support may need to assist with further investigation.
+
+---
+
+### Text Interactions Work but Voice Interactions Do Not
+
+The integration may be enabled only for Text to Text.
+
+Confirm that Speech to Speech interactions were included in the approved webhook configuration.
+
+---
+
+### Voice Interactions Work but Text Interactions Do Not
+
+The integration may be enabled only for Speech to Speech.
+
+Confirm that Text to Text interactions were included in the approved webhook configuration.
+
+---
+
+### The Wrong Agent's Information Is Received
+
+Verify:
+
+- The agent selected during webhook setup
+- The agent used during testing
+- The active workspace
+- Whether another webhook exists for a similarly named agent
+
+Use clear agent names that identify the purpose and environment.
+
+Example:
+
+```text
+Customer Support - English - Production
+```
+
+---
+
+### The External System Creates Duplicate Records
+
+The receiving system must use the interaction or session identifier to recognize information it has already processed.
+
+Ask the receiving-system owner to add duplicate protection before continuing production use.
+
+---
+
+### Information Is Missing
+
+Confirm whether the missing information was actually part of the completed conversation.
+
+For example:
+
+- A user's email cannot be expected if it was never collected
+- Lead information cannot be expected if no lead process was configured
+- Appointment information cannot be expected if the conversation did not collect it
+
+Update the agent's instructions and test the conversation again if approved information must be collected.
+
+---
+
+### External Actions Do Not Occur
+
+Receiving a webhook does not automatically create a lead, ticket, notification, or appointment.
+
+The external system must be configured to perform the required action after receiving the interaction.
+
+Ask the external-system owner to review its workflow.
+
+---
+
+### The Secret Was Exposed
+
+If the webhook secret appears in an email, screenshot, document, public page, or shared chat:
+
+1. Stop using the exposed secret.
+2. Notify the workspace administrator.
+3. Notify the receiving-system owner.
+4. Contact Valuez AI support.
+5. Replace the integration secret before resuming production use.
+6. Review whether unauthorized notifications were received.
+
+---
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Start with a test agent">
+    Validate the complete workflow using a non-production agent and non-sensitive sample conversations.
+  </Accordion>
+
+  <Accordion title="Send only necessary information">
+    Do not collect or transfer customer information that the external workflow does not need.
+  </Accordion>
+
+  <Accordion title="Protect the secret">
+    Store the webhook secret in an approved secure system and limit access.
+  </Accordion>
+
+  <Accordion title="Assign an owner">
+    Every production webhook should have a named business owner and receiving-system owner.
+  </Accordion>
+
+  <Accordion title="Monitor the destination">
+    The receiving system should record successful and failed notifications and alert its owner when processing stops.
+  </Accordion>
+
+  <Accordion title="Prevent duplicate actions">
+    Make sure repeated notifications cannot create duplicate leads, tickets, messages, or tasks.
+  </Accordion>
+
+  <Accordion title="Do not depend on unsupported events">
+    Confirm event availability before designing workflows for appointments, leads, contacts, campaigns, or other activities.
+  </Accordion>
+
+  <Accordion title="Review privacy before activation">
+    Completed interactions can contain customer conversation data and must be handled according to your organization's privacy requirements.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Current Webhook Reference
+
+| Item | Current behavior |
+| --- | --- |
+| **Dashboard availability** | Disabled for self-service setup |
+| **Implemented event** | Completed interaction |
+| **Text support** | Text to Text, when enabled |
+| **Voice support** | Speech to Speech, when enabled |
+| **Agent association** | Webhook is associated with a selected agent |
+| **Secret** | Generated when the integration is created |
+| **Delivery history in dashboard** | Not currently available |
+| **Appointment events** | Not currently exposed |
+| **Lead events** | Not currently exposed |
+| **Contact events** | Not currently exposed |
+| **Campaign events** | Not currently exposed |
+| **Automatic external actions** | Must be configured in the receiving system |
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Integrations" icon="plug" href="/integrations">
+    Review the integrations currently available in your workspace.
+  </Card>
+
+  <Card title="Agents" icon="robot" href="/agents">
+    Configure the agent whose completed interactions may be shared.
+  </Card>
+
+  <Card title="Test Your AI" icon="flask" href="/test-your-ai">
+    Test the agent before connecting any external workflow.
+  </Card>
+
+  <Card title="Conversation History" icon="messages" href="/call-logs">
+    Review completed conversations and their available details.
+  </Card>
+</CardGroup>

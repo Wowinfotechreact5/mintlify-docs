@@ -1,0 +1,1096 @@
+---
+title: "Integrations"
+sidebarTitle: "Integrations"
+description: "Connect Valuez AI to telephone services, external applications, and speech-processing workflows."
+---
+
+Integrations connect Valuez AI with external systems and communication channels.
+
+The current self-service integration options are:
+
+- **Phone Calls** — configure incoming and outgoing telephone calls
+- **Agent API** — allow an external application to communicate with a selected AI agent
+- **Speech API** — use speech-to-text and text-to-speech services directly
+
+The Integrations page also lets you:
+
+- Review existing integrations
+- Search by integration name
+- Sort the integration list
+- Edit supported integration settings
+- Review the provider or integration type
+- Check when an integration was created
+
+<Warning>
+  CRM and Webhook options can appear as unavailable or **Coming Soon** in the current integration selector. Do not follow older setup instructions that describe these as active self-service integrations.
+</Warning>
+
+---
+
+## Open Integrations
+
+<Steps>
+  <Step title="Sign in to Valuez AI">
+    Open the Valuez AI dashboard and confirm that you are in the correct workspace.
+  </Step>
+  <Step title="Open Integrations">
+    Select **Integrations** from the dashboard navigation.
+  </Step>
+  <Step title="Review existing integrations">
+    Check whether an integration already exists for the same application, agent, or business purpose.
+  </Step>
+  <Step title="Select Add Integration">
+    Select **Add Integration** to open the available integration options.
+  </Step>
+</Steps>
+
+<Frame caption="Valuez AI Integrations">
+  ![Valuez AI Integrations page](/images/Screenshot-from-2026-07-11-14-07-59.png)
+</Frame>
+
+---
+
+## Integrations List
+
+The Integrations page displays existing integrations in a table or responsive card layout.
+
+The list includes:
+
+| Column | Description |
+| --- | --- |
+| **Icon** | Visual indicator for the integration type |
+| **Integration Name** | Name assigned when the integration was created |
+| **Provider** | Type of integration |
+| **Created On** | Date associated with the integration record |
+| **Actions** | Opens the integration for supported editing |
+
+Provider values can include names such as:
+
+- Agent API Key
+- TTS-STT API Key
+- Website Integration
+- IVR or other existing integration types
+
+The exact label depends on the integration record.
+
+<Note>
+  Some older integration types may remain visible in the list even when new integrations of that type are not currently available from the Add Integration window.
+</Note>
+
+---
+
+## Search Integrations
+
+Use the search field in the page header to find an integration.
+
+Search is useful when your workspace contains:
+
+- Multiple API keys
+- Separate development and production integrations
+- Several agents
+- Multiple telephone configurations
+- Integrations created for different business applications
+
+Use descriptive integration names to make searching easier.
+
+Examples:
+
+```text
+Production CRM Agent API
+Customer Portal Voice API
+Mobile App Speech API
+Support Telephone Integration
+Development Test Key
+```
+
+Avoid names such as:
+
+```text
+New Integration
+Test
+API Key
+Key 1
+```
+
+---
+
+## Sorting and Pagination
+
+The Integrations list supports sorting on fields such as:
+
+- Integration Name
+- Provider
+- Created On
+
+For larger integration inventories, choose the number of rows displayed per page:
+
+- 10
+- 15
+- 25
+- 50
+
+Use pagination to move through the complete list.
+
+---
+
+## Add Integration Window
+
+Select **Add Integration** to open the integration selector.
+
+The current selector contains these categories:
+
+- **All Integrations**
+- **API**
+- **Phone Calls**
+
+<Frame caption="Select an integration type">
+  ![Valuez AI Add Integration window](/images/Screenshot-from-2026-07-11-14-08-12.png)
+</Frame>
+
+The currently selectable options are:
+
+| Category | Integration | Availability |
+| --- | --- | --- |
+| **API** | Agent API | Available according to plan |
+| **API** | Speech API | Available according to plan and speech access |
+| **Phone Calls** | IVR / Virtual Phone Integration | Available according to plan |
+| **CRM** | Customer Management | Coming Soon in the current selector |
+| **Webhooks** | Webhooks | Coming Soon in the current selector |
+
+Select an available integration and then select **Continue**.
+
+---
+
+## Choose the Correct Integration
+
+| Your goal | Use |
+| --- | --- |
+| Let an external application communicate with a Valuez AI agent | Agent API |
+| Allow text or voice agent conversations through an application | Agent API |
+| Convert speech into text without a full agent conversation | Speech API |
+| Convert text into generated speech | Speech API |
+| Receive customer calls on a virtual number | Phone Calls |
+| Place a controlled outbound telephone test | Phone Calls |
+| Use the same number for incoming and outgoing activity | Phone Calls with call type set to Both |
+| Connect a CRM through the current self-service selector | Not currently available |
+| Create a webhook through the current self-service selector | Not currently available |
+| Create a new website widget through the current selector | Not currently listed as a new self-service option |
+
+<Info>
+  If you need an integration that is not available in the selector, contact Valuez AI support before relying on older documentation or an existing legacy workflow.
+</Info>
+
+---
+
+## Agent API
+
+The **Agent API** creates a key connected to a selected Valuez AI agent.
+
+Use it when an approved external application needs to:
+
+- Send text to an agent and receive a text response
+- Start supported voice conversations
+- Use speech-to-text access allowed by the key
+- Use text-to-speech access allowed by the key
+- Maintain separate credentials for different applications
+
+The Agent API option can be restricted on Basic or Free plans.
+
+If it is locked, Valuez AI displays an upgrade message.
+
+<Frame caption="Create an Agent API integration">
+  ![Valuez AI Agent API integration](/images/Screenshot-from-2026-07-11-14-09-55.png)
+</Frame>
+
+---
+
+## Create an Agent API Key
+
+<Steps>
+  <Step title="Open Add Integration">
+    Open the Integrations page and select **Add Integration**.
+  </Step>
+  <Step title="Select API">
+    Choose the **API** category.
+  </Step>
+  <Step title="Select Agent API">
+    Select **Agent API**, then select **Continue**.
+  </Step>
+  <Step title="Select an agent">
+    Choose the AI agent that this key should access.
+  </Step>
+  <Step title="Enter an integration name">
+    Use a name that identifies the application, environment, and purpose.
+  </Step>
+  <Step title="Set a monthly credit limit">
+    Enter a monthly limit, or leave the field empty only when unlimited usage is appropriate for your organization.
+  </Step>
+  <Step title="Select endpoint access">
+    Enable only the capabilities required by the application.
+  </Step>
+  <Step title="Create the key">
+    Select **Create API Key**.
+  </Step>
+  <Step title="Copy the secret">
+    Copy the generated key immediately and store it in an approved secret-management system.
+  </Step>
+</Steps>
+
+---
+
+## Agent API Fields
+
+| Field | Required | Description |
+| --- | --- | --- |
+| **Select Agent** | Yes | Agent that external requests can use |
+| **Integration Name** | Yes | Name used to identify the key |
+| **Monthly Credit Limit** | No | Maximum monthly credits assigned to this integration |
+| **Endpoints** | Yes | Capabilities the key can access |
+
+The key cannot be created until an available agent and a non-empty integration name are provided.
+
+---
+
+## Select an Agent
+
+The API key is linked to one selected agent.
+
+The application using the key receives behavior and knowledge from that agent, including:
+
+- Agent instructions
+- Connected knowledge base
+- AI provider and model
+- Language
+- Conversation settings
+- Voice configuration, where applicable
+- Speech-to-text configuration, where applicable
+
+Before creating the key:
+
+1. Confirm that the agent is the correct one.
+2. Review its knowledge base.
+3. Test it through Test Agent.
+4. Confirm that it does not expose restricted information.
+5. Confirm that its instructions match the external application’s purpose.
+
+<Warning>
+  Do not use one agent API key for unrelated applications when those applications require different knowledge, permissions, or behavior.
+</Warning>
+
+---
+
+## Integration Name
+
+Use a descriptive name that helps administrators understand where the key is used.
+
+Recommended format:
+
+```text
+Application - Environment - Purpose
+```
+
+Examples:
+
+```text
+Customer Portal - Production - Support Agent
+Mobile App - Production - Voice Assistant
+CRM - UAT - Lead Qualification
+Internal Tool - Development - Agent Testing
+```
+
+A descriptive name makes credential rotation and incident response easier.
+
+---
+
+## Monthly Credit Limit
+
+The monthly credit limit helps control how many credits an integration can consume.
+
+Use a limit to:
+
+- Protect the workspace from unexpected usage
+- Separate production and test budgets
+- Limit a development application
+- Control a third-party integration
+- Identify unusual consumption
+
+Before choosing a limit, consider:
+
+- Expected request volume
+- Text or voice usage
+- Average conversation length
+- Number of application users
+- Testing volume
+- Available workspace credits
+
+<Note>
+  A monthly integration limit does not add credits to the workspace. The workspace must still have sufficient available credits.
+</Note>
+
+Leaving the field empty is stored as no integration-specific limit in the current setup. Use this only when your organization has approved unrestricted integration usage.
+
+---
+
+## Agent API Endpoint Access
+
+The Agent API key allows you to control access separately for four capabilities:
+
+| Capability | Display name | Purpose |
+| --- | --- | --- |
+| **Text-to-Text** | Chat (Text to Text) | Sends text questions and receives text responses from the selected agent |
+| **Speech-to-Speech** | Voice Conversations (Speech to Speech) | Supports real-time spoken conversations with the selected agent |
+| **Speech-to-Text** | Speech to Text | Converts supported audio input into text |
+| **Text-to-Speech** | Text to Speech | Converts text into generated audio |
+
+Each capability can be set to:
+
+- **Access**
+- **No Access**
+
+Enable only what the external application requires.
+
+### Least-Access Examples
+
+| Application | Recommended access |
+| --- | --- |
+| Text customer-support application | Text-to-Text only |
+| Real-time voice assistant | Speech-to-Speech |
+| Transcription application | Speech-to-Text only |
+| Voice-generation application | Text-to-Speech only |
+| Application needing multiple modes | Enable only the required combination |
+
+<Warning>
+  Enabling a capability does not automatically make the external application secure. Protect the API key and validate all application input.
+</Warning>
+
+---
+
+## Copy and Store the API Key
+
+After creation, Valuez AI displays the generated secret API key.
+
+The interface warns:
+
+> Copy this secret key now. You won’t be able to see it again.
+
+Store the key in:
+
+- A server-side environment variable
+- An approved secret manager
+- A protected deployment configuration
+- Another organization-approved credential store
+
+Do not store the key in:
+
+- Browser JavaScript
+- Public source code
+- Screenshots
+- Shared documents
+- Email
+- Chat messages
+- Support tickets
+- Public repositories
+
+<Warning>
+  If the full key is lost, create a replacement rather than asking another user to send an exposed copy.
+</Warning>
+
+---
+
+## Edit an Agent API Integration
+
+Open the integration from the Integrations list to edit supported settings.
+
+Editable information can include:
+
+- Selected agent
+- Integration name
+- Monthly credit limit
+- Endpoint access
+
+The complete secret is not displayed again.
+
+After changing access:
+
+1. Save the changes.
+2. Test the external application.
+3. Confirm that required modes still work.
+4. Confirm that disabled modes no longer work.
+5. Monitor API and credit usage.
+
+---
+
+## Speech API
+
+The **Speech API** creates a key for direct speech processing without requiring a complete AI-agent conversation.
+
+It includes both:
+
+- Speech-to-Text
+- Text-to-Speech
+
+Use Speech API when an external application needs speech processing rather than an agent’s knowledge and conversation behavior.
+
+Examples include:
+
+- Transcribing recorded or live speech
+- Converting approved text into generated voice
+- Building a speech-enabled application
+- Testing available speech providers and voices
+
+<Frame caption="Create a Speech API integration">
+  ![Valuez AI Speech API integration](/images/Screenshot-from-2026-07-11-14-10-25.png)
+</Frame>
+
+---
+
+## Speech-to-Text and Text-to-Speech
+
+| Service | What it does |
+| --- | --- |
+| **Speech-to-Text (STT)** | Converts supported speech or audio into written text |
+| **Text-to-Speech (TTS)** | Converts written text into generated speech |
+
+Speech API does not automatically:
+
+- Answer business questions
+- Use an agent knowledge base
+- Apply agent instructions
+- Manage a complete customer conversation
+- Qualify leads
+
+Use Agent API when you need full agent behavior.
+
+---
+
+## Create a Speech API Key
+
+<Steps>
+  <Step title="Open Add Integration">
+    Open Integrations and select **Add Integration**.
+  </Step>
+  <Step title="Select API">
+    Choose the **API** category.
+  </Step>
+  <Step title="Select Speech API">
+    Select **Speech API**, then select **Continue**.
+  </Step>
+  <Step title="Enter an integration name">
+    Use a descriptive name for the application and environment.
+  </Step>
+  <Step title="Select a Speech-to-Text provider">
+    Choose an available transcription provider.
+  </Step>
+  <Step title="Select a Speech-to-Text model">
+    Choose a model belonging to the selected provider.
+  </Step>
+  <Step title="Select a Text-to-Speech provider">
+    Choose an available voice provider.
+  </Step>
+  <Step title="Select a voice">
+    Choose an available voice or voice model belonging to the provider.
+  </Step>
+  <Step title="Set a monthly credit limit">
+    Enter a limit appropriate for the application.
+  </Step>
+  <Step title="Create the key">
+    Select **Create API Key**, then securely copy the generated secret.
+  </Step>
+</Steps>
+
+---
+
+## Speech API Fields
+
+| Field | Required | Description |
+| --- | --- | --- |
+| **Integration Name** | Yes | Name used to identify the integration |
+| **Speech-to-Text Provider** | Yes | Provider used for transcription |
+| **Speech-to-Text Model** | Yes | Model available for the selected provider |
+| **Text-to-Speech Provider** | Yes | Provider used to generate speech |
+| **Voice Model / Voice** | Yes | Voice available for the selected provider |
+| **Monthly Credit Limit** | No | Monthly credit limit for this integration |
+
+All speech provider and model selections must be completed before the key can be created.
+
+If a provider is temporarily unavailable, Valuez AI can display an availability warning.
+
+---
+
+## Select Providers and Models
+
+Provider and model selections are dependent.
+
+This means:
+
+- Selecting an STT provider controls which STT models are available
+- Selecting a TTS provider controls which voices are available
+- Changing a provider clears the previously selected model or voice
+
+Before using a provider in production:
+
+- Test expected languages
+- Test business and product names
+- Test numbers, dates, and prices
+- Review audio quality
+- Confirm latency is acceptable
+- Confirm the provider remains available
+- Monitor credit usage
+
+The available providers, models, languages, and voices are loaded from your current Valuez AI environment and can change.
+
+---
+
+## Phone Calls
+
+The **Phone Calls** integration opens **Virtual Phone Integration**.
+
+Use it to:
+
+- Purchase a virtual number
+- Assign an agent to incoming calls
+- Select an existing workspace number
+- Configure inbound-only, outbound-only, or combined use
+- Place a controlled outbound test call
+- Release a virtual number when it is no longer needed
+
+The Phone Calls integration can be restricted by your plan.
+
+If it is locked, Valuez AI displays:
+
+> Upgrade your plan to access IVR
+
+---
+
+## Incoming Calls
+
+The **Incoming Calls** tab connects a purchased virtual number to an AI agent.
+
+Required fields are:
+
+| Field | Description |
+| --- | --- |
+| **Select Agent** | Agent that answers the call |
+| **Virtual Number** | Purchased number belonging to the workspace |
+| **Call Type** | Inbound Only, Outbound Only, or Both |
+
+The inbound integration cannot be saved until a valid agent and purchased virtual number are selected.
+
+<Card title="Inbound Calls" icon="phone-incoming" href="/inbound-calls">
+  Follow the complete virtual-number purchase, assignment, testing, and launch process.
+</Card>
+
+---
+
+## Outgoing Calls
+
+The **Outgoing Calls** tab places one controlled outbound telephone call.
+
+Required fields are:
+
+| Field | Description |
+| --- | --- |
+| **Select Agent** | Agent that handles the call |
+| **Customer Number** | Authorized telephone number receiving the call |
+| **Virtual Number** | Purchased number used to place the call |
+
+Select **Start Test Call** after completing the fields.
+
+This workflow is designed for individual testing. Use **Call Campaigns** for managed contact lists and scheduled campaign activity.
+
+<Card title="Outbound Calls" icon="phone-call" href="/outbound-calls">
+  Learn about test calls and full outbound campaigns.
+</Card>
+
+---
+
+## Purchase a Virtual Number
+
+Phone integration requires a virtual number belonging to the workspace.
+
+<Steps>
+  <Step title="Select an agent">
+    An agent must be selected before opening the number-purchase workflow.
+  </Step>
+  <Step title="Select Buy New Number">
+    Open the available virtual-number list.
+  </Step>
+  <Step title="Choose a number">
+    Select one of the currently available numbers.
+  </Step>
+  <Step title="Review the cost">
+    Confirm the credit charge displayed in the dashboard.
+  </Step>
+  <Step title="Complete the purchase">
+    Purchase the number and wait for confirmation.
+  </Step>
+</Steps>
+
+The current interface displays a purchase cost of **700 credits**.
+
+<Warning>
+  Number pricing and availability can change. Use the amount shown in the dashboard as the current value.
+</Warning>
+
+---
+
+## Deactivate a Virtual Number
+
+Deactivating a number:
+
+- Releases the number
+- Disables its call routing
+- Removes it from the active workspace list
+- Does not refund the original purchase credits
+
+Before deactivation, confirm that the number is not used by:
+
+- Inbound customers
+- Outbound test calls
+- Active campaigns
+- Websites
+- Business directories
+- Marketing material
+- Customer communications
+
+---
+
+## Website Integration Status
+
+Older Valuez AI versions and existing records may reference **Website Integration**.
+
+The codebase contains website-widget configuration for:
+
+- Agent selection
+- Chat or voice modality
+- Widget, popover, or embedded chat layouts
+- Full, compact, or expanded voice layouts
+- Left or right placement
+- Side and bottom spacing
+- Appearance settings
+- Approved domains
+- Optional legal disclaimer
+- Transcript-saving preference
+- Installation code
+
+However, **Website** is not currently listed as a selectable option in the current Add Integration window.
+
+<Warning>
+  Do not tell users to create a new website integration through the current picker unless the Website option is visible in their workspace. Contact Valuez AI support for availability.
+</Warning>
+
+If an existing Website Integration appears in your integration list, open it to review the available configuration and installation information.
+
+---
+
+## CRM Integration Status
+
+**Customer Management (CRM)** is present as an unavailable option and displays **Coming Soon**.
+
+Do not enter or share CRM credentials based on old setup instructions unless Valuez AI has explicitly enabled and approved the integration for your workspace.
+
+---
+
+## Webhook Integration Status
+
+**Webhooks** are currently shown as unavailable or **Coming Soon** in the self-service integration selector.
+
+Do not document or configure unverified event types such as:
+
+- Appointment scheduled
+- Lead created
+- Contact updated
+- Campaign completed
+- Customer enquiry received
+
+unless those events are explicitly available in your workspace.
+
+<Card title="Webhooks" icon="webhook" href="/webhooks">
+  Review the current webhook availability and supported scope.
+</Card>
+
+---
+
+## Manage Existing Integrations
+
+### Edit
+
+Select the edit action for an integration to open its supported settings.
+
+Available editing depends on the type:
+
+| Integration type | Examples of editable settings |
+| --- | --- |
+| **Agent API Key** | Agent, name, credit limit, endpoint access |
+| **TTS-STT API Key** | Name, providers, models, voice, credit limit |
+| **Website Integration** | Existing widget settings and installation details, where available |
+| **Disabled integration** | Editing may be unavailable |
+
+A disabled integration displays **Disabled** instead of an active edit action.
+
+### Search
+
+Use the header search to find an integration by name or other supported list information.
+
+### Integration Limits
+
+Your subscription can limit the number of integrations available to the workspace.
+
+When the limit is reached, Valuez AI displays a message asking you to upgrade the subscription.
+
+---
+
+## Before Editing an Integration
+
+Before changing a production integration:
+
+1. Identify every application using it.
+2. Record the current configuration.
+3. Confirm who owns the connected application.
+4. Schedule a suitable test period.
+5. Make one controlled change.
+6. Test the connected application.
+7. Review API or conversation logs.
+8. Inform affected owners if behavior changed.
+
+<Warning>
+  Changing an agent, provider, model, voice, or endpoint permission can immediately affect the application using that integration.
+</Warning>
+
+---
+
+## Credential Security
+
+### Never Expose an API Key
+
+Do not place an API key in:
+
+- Browser source code
+- Public mobile-app configuration
+- Public repositories
+- Screenshots
+- Documentation examples
+- Client-side environment files
+- Support messages
+
+API keys should be used only by an authorized server-side application.
+
+---
+
+### Use Separate Keys
+
+Create separate keys for:
+
+- Development
+- Testing
+- Staging
+- Production
+- Different applications
+- Different business owners
+
+This allows one integration to be changed or replaced without affecting every system.
+
+---
+
+### Use the Minimum Required Access
+
+If an application requires only Text-to-Text access, do not enable voice and speech capabilities.
+
+Minimum access reduces:
+
+- Accidental misuse
+- Unexpected credit consumption
+- Security exposure
+- Troubleshooting complexity
+
+---
+
+### Set Credit Limits
+
+Apply monthly credit limits according to expected application usage.
+
+Review limits after:
+
+- Launching a new application
+- Increasing user volume
+- Enabling voice
+- Changing providers
+- Detecting unusual traffic
+
+---
+
+### Replace Exposed Keys
+
+If a key may have been exposed:
+
+1. Stop using the key.
+2. Create a replacement integration or credential.
+3. Update the authorized server-side application.
+4. Test the replacement.
+5. Remove or disable the exposed credential according to the available management workflow.
+6. Review usage for unexpected activity.
+
+---
+
+## Integration Testing Checklist
+
+### Agent API
+
+- [ ] Correct agent selected
+- [ ] Integration name identifies the application
+- [ ] Monthly credit limit reviewed
+- [ ] Only required endpoints enabled
+- [ ] Secret stored securely
+- [ ] Key is used only server-side
+- [ ] Application tested successfully
+- [ ] Conversation appears in logs
+- [ ] Credit usage reviewed
+
+### Speech API
+
+- [ ] STT provider selected
+- [ ] STT model selected
+- [ ] TTS provider selected
+- [ ] Voice selected
+- [ ] Expected language tested
+- [ ] Names and numbers tested
+- [ ] Generated voice reviewed
+- [ ] Monthly credit limit reviewed
+- [ ] Secret stored securely
+- [ ] API activity reviewed
+
+### Phone Calls
+
+- [ ] Correct agent selected
+- [ ] Virtual number belongs to the workspace
+- [ ] Call type is correct
+- [ ] Inbound test completed
+- [ ] Outbound test completed where required
+- [ ] Two-way audio works
+- [ ] Correct agent answers
+- [ ] Call record is available
+- [ ] Credit usage reviewed
+
+---
+
+## Troubleshooting
+
+### Add Integration Is Unavailable
+
+Possible reasons:
+
+- Your plan does not include integrations
+- The workspace reached its integration limit
+- Your account lacks permission
+- The subscription is inactive
+
+Review the displayed message, plan, and team permissions.
+
+---
+
+### Agent API Is Locked
+
+Agent API access is restricted on Basic or Free plans in the current interface.
+
+Upgrade to an eligible plan if required.
+
+---
+
+### Phone Calls Is Locked
+
+The Phone Calls option can be unavailable when:
+
+- The current plan is Basic or Free
+- The plan does not include inbound-number access
+- The workspace’s virtual-number limit is less than one
+
+Review the current plan.
+
+---
+
+### No Agents Are Available
+
+Check that:
+
+- At least one agent exists
+- The agent is not disabled
+- You are in the correct workspace
+- You have permission to view the agent
+
+Create and test an agent before creating an Agent API or Phone Calls integration.
+
+---
+
+### API Key Was Not Copied
+
+The full secret is shown only during creation.
+
+If it was not stored securely, create a replacement key.
+
+Do not attempt to recover it from screenshots, browser storage, or another user’s message.
+
+---
+
+### API Application Returns an Authentication Error
+
+Check:
+
+- The correct API key is being used
+- The key was copied without extra spaces
+- The application uses the correct request header
+- The key belongs to the intended environment
+- The integration has the required endpoint access
+- The integration still exists
+- The workspace has available credits
+
+See the API documentation for request examples.
+
+---
+
+### Endpoint Access Is Denied
+
+Open the Agent API integration and confirm that the required capability is set to **Access**.
+
+For example:
+
+- Text chat requires Chat access
+- Voice conversation requires Voice Conversations access
+- Transcription requires Speech to Text access
+- Generated audio requires Text to Speech access
+
+---
+
+### Speech Provider or Model Is Empty
+
+Possible reasons:
+
+- Provider information is still loading
+- The provider is temporarily unavailable
+- No model is available for the selected provider
+- A previous provider was changed
+- The plan does not include the required speech feature
+
+Select the provider again and wait for the matching model list.
+
+---
+
+### Virtual Number Is Missing
+
+Check:
+
+- The number was purchased successfully
+- The number was not deactivated
+- You are in the correct workspace
+- The plan includes virtual-number access
+- The number list finished loading
+
+---
+
+### Existing Integration Cannot Be Edited
+
+The record may be disabled or belong to an integration type that is not currently editable through the available interface.
+
+Contact your workspace administrator or Valuez AI support.
+
+---
+
+### Website Option Is Missing
+
+The current Add Integration selector does not list Website as a new integration option.
+
+If you need a website widget, contact Valuez AI support to confirm availability for your workspace.
+
+---
+
+### CRM or Webhook Shows Coming Soon
+
+These integrations are not currently available through the self-service selector.
+
+Do not attempt to complete setup using outdated screenshots or documentation.
+
+---
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Name integrations by application and environment">
+    Names such as “Customer Portal - Production” are easier to manage than “API Key 1.”
+  </Accordion>
+
+  <Accordion title="Create one key per application">
+    Separate credentials make usage easier to understand and reduce the impact of credential replacement.
+  </Accordion>
+
+  <Accordion title="Enable only required capabilities">
+    Keep unused Agent API endpoint permissions set to No Access.
+  </Accordion>
+
+  <Accordion title="Use monthly limits">
+    Credit limits help contain accidental loops, excessive testing, and unexpected application traffic.
+  </Accordion>
+
+  <Accordion title="Store secrets in an approved system">
+    Do not rely on personal notes, screenshots, or chat history for credential storage.
+  </Accordion>
+
+  <Accordion title="Test before production use">
+    Verify authentication, allowed capabilities, agent behavior, logging, and credit usage in a controlled environment.
+  </Accordion>
+
+  <Accordion title="Maintain an integration inventory">
+    Record the integration name, owner, application, environment, agent, permitted endpoints, and review date.
+  </Accordion>
+
+  <Accordion title="Review old integrations">
+    Remove or disable credentials that no longer have an active owner or business purpose using the management options available to your workspace.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Quick Reference
+
+| Task | Location |
+| --- | --- |
+| View integrations | Integrations |
+| Find an integration | Search field |
+| Create an integration | Add Integration |
+| Connect an external app to an agent | API → Agent API |
+| Create direct speech access | API → Speech API |
+| Configure a telephone number | Phone Calls |
+| Edit supported settings | Actions → Edit Integration |
+| Review Agent API requests | API Logs, where available |
+| Review conversations | Call Logs |
+| Review credits | Credit Usage |
+| Configure incoming calls | Phone Calls → Incoming Calls |
+| Place a test telephone call | Phone Calls → Outgoing Calls |
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="API Keys" icon="key" href="/api-keys">
+    Review API authentication, endpoint access, and request examples.
+  </Card>
+
+  <Card title="Inbound Calls" icon="phone-incoming" href="/inbound-calls">
+    Configure a virtual number for customer-initiated calls.
+  </Card>
+
+  <Card title="Outbound Calls" icon="phone-call" href="/outbound-calls">
+    Place outbound tests and create calling campaigns.
+  </Card>
+
+  <Card title="Call Logs" icon="list" href="/call-logs">
+    Review conversations created through your integrations.
+  </Card>
+
+  <Card title="Webhooks" icon="webhook" href="/webhooks">
+    Review current webhook availability and limitations.
+  </Card>
+
+  <Card title="Troubleshooting" icon="wrench" href="/troubleshooting">
+    Resolve common integration, calling, and API problems.
+  </Card>
+</CardGroup>

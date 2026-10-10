@@ -1,0 +1,642 @@
+---
+title: "Notifications"
+sidebarTitle: "Notifications"
+description: "Review account updates, setup reminders, campaign events, subscription alerts, and other important Valuez AI activity."
+---
+
+Notifications help you stay informed about important activity across your Valuez AI workspace.
+
+Valuez AI can notify you about:
+
+- Account setup
+- AI agent configuration
+- Integration setup
+- Campaign creation
+- Subscription activation and expiration
+- Plan status
+- Credit usage
+- Recommended account actions
+
+Select **Notifications** from the navigation menu to open the complete notification history available to your account.
+
+<Info>
+  The notifications you can view depend on your workspace access. A workspace member must have permission to view the Notifications module.
+</Info>
+
+---
+
+## Open Notifications
+
+You can access notifications in several ways.
+
+### From the navigation menu
+
+Select **Notifications** from the main navigation.
+
+If unread notifications are available, a badge appears beside the Notifications item.
+
+### From the unread badge
+
+The notification badge displays the number of unread notifications.
+
+If the unread count is greater than 99, the badge displays:
+
+```text
+99+
+```
+
+Select **Notifications** to open the complete list.
+
+### From a new-notification popup
+
+When a new unread notification is detected, Valuez AI may display a temporary popup in the lower-right area of the dashboard.
+
+The popup includes:
+
+- Notification title
+- Short message
+- Time received
+- **View notification** action
+- Close button
+
+Select the popup to open Notifications.
+
+<Note>
+  The popup is designed for recent unread notifications. Closing the popup hides that popup for your current browser session, but it does not necessarily mark the underlying notification as read.
+</Note>
+
+---
+
+## Notifications Screen
+
+<Frame>
+  ![Valuez AI Notifications screen](/images/Screenshot-from-2026-07-11-17-27-58.png)
+</Frame>
+
+The Notifications screen contains three filters:
+
+| Filter | What It Shows |
+| --- | --- |
+| **All** | All loaded notifications, whether read or unread |
+| **Unread** | Notifications that have not been marked as read |
+| **Read** | Notifications that have already been read or completed |
+
+The count beside each filter represents the notifications currently loaded on the page.
+
+<Note>
+  When your account has many notifications, use **Load More** at the bottom of the page to retrieve additional records. Filter counts can increase as more notifications are loaded.
+</Note>
+
+---
+
+## Information in a Notification
+
+Each notification can contain:
+
+| Information | Description |
+| --- | --- |
+| **Category icon** | Indicates whether the notification relates to an agent, integration, campaign, billing, account, or system event |
+| **Title** | A short description of the event or required action |
+| **Message** | Additional explanation about what happened or what you should do |
+| **Unread indicator** | A colored dot displayed while the notification is unread |
+| **Timestamp** | Shows how long ago the notification occurred |
+| **Action destination** | Opens the relevant Valuez AI page when the notification supports navigation |
+| **Mark as read** | Closes the active notification and updates its read state |
+
+Unread notifications use stronger visual emphasis than read notifications.
+
+---
+
+## Notification Time
+
+Notification timestamps are displayed as relative time.
+
+Examples include:
+
+| Display | Meaning |
+| --- | --- |
+| **Just now** | The event occurred less than one minute ago |
+| **5m ago** | The event occurred approximately five minutes ago |
+| **2h ago** | The event occurred approximately two hours ago |
+| **3d ago** | The event occurred approximately three days ago |
+
+Relative timestamps make it easier to identify recent and time-sensitive events.
+
+---
+
+## Supported Notification Categories
+
+Valuez AI groups notifications by their purpose.
+
+| Category | Examples |
+| --- | --- |
+| **Account** | Account successfully created |
+| **AI Agent** | Reminder to create your first agent |
+| **Integration** | Integration setup reminder or successful integration creation |
+| **Campaign** | Campaign successfully created |
+| **Plan and Billing** | Plan status, upgrade recommendation, or subscription activation |
+| **Subscription Expiration** | Upcoming expiration, expiration-day notice, or post-expiration reminder |
+| **Credit Usage** | Credits running low, usage threshold reached, or credits exhausted |
+| **System** | Other platform-generated reminders or operational notices |
+
+The title and message in the notification provide the details for the specific event.
+
+---
+
+## Account Notifications
+
+### Account created successfully
+
+Valuez AI creates this notification after an account has been successfully created and verified.
+
+The message confirms that the account is ready.
+
+A typical notification may contain:
+
+```text
+Account created successfully
+Your account has been verified and created successfully. Welcome to ValuezAI.
+```
+
+Selecting an account-created notification can return you to the main dashboard.
+
+---
+
+## AI Agent Reminders
+
+### Create your first agent
+
+If your workspace does not yet contain an AI agent, Valuez AI may remind you to create one.
+
+Selecting this notification opens the AI Agents area, where you can begin the agent-creation process.
+
+After an agent is created, the related setup reminder is no longer applicable.
+
+<Tip>
+  Before creating an agent, prepare its purpose, language, voice, business instructions, and expected customer workflows.
+</Tip>
+
+---
+
+## Integration Notifications
+
+Integration notifications help you connect agents to channels and external systems.
+
+### Create an integration
+
+After an AI agent is created, Valuez AI may remind you to connect that agent to an integration.
+
+The reminder is associated with an agent that does not yet have the required integration.
+
+Selecting the notification opens **Integrations**.
+
+Depending on the capabilities configured for your workspace, integrations can be used for areas such as:
+
+- API access
+- Website experiences
+- Webhooks
+- Calling connections
+- Other supported external channels
+
+<Note>
+  You may receive separate integration reminders for different agents. Review the notification message to identify which agent requires attention.
+</Note>
+
+### Integration created
+
+Valuez AI can also notify you after an integration is created successfully.
+
+This provides confirmation that the integration record was created and directs you back to the Integrations page for review.
+
+<Warning>
+  An “integration created” notification confirms creation of the integration record. You should still test the integration before relying on it in production.
+</Warning>
+
+---
+
+## Campaign Notifications
+
+### Campaign created
+
+Valuez AI can create a notification after an outbound campaign is created successfully.
+
+Selecting the notification opens the campaign area.
+
+After creating a campaign, review:
+
+- Assigned agent
+- Campaign contacts or leads
+- Calling schedule
+- Calling configuration
+- Campaign status
+- Any remaining setup requirements
+
+<Note>
+  A campaign-created notification confirms the campaign was created. It does not, by itself, confirm that every call was successfully completed.
+</Note>
+
+---
+
+## Subscription Notifications
+
+Valuez AI provides notifications for subscription activation, current plan status, and expiration.
+
+### Subscription activated
+
+This notification confirms that a subscription has been activated.
+
+The notification can include plan-related information and opens the subscription page for review.
+
+After activation, confirm:
+
+- Plan name
+- Subscription status
+- Start date
+- Expiration date
+- Available credits
+- Features and limits included with the plan
+
+### Subscription expiration reminders
+
+Valuez AI can notify you before, on, and after a subscription expiration date.
+
+Depending on timing, the notification may indicate:
+
+- The number of days remaining
+- That the subscription expires tomorrow
+- That the subscription expires today
+- How many days ago the subscription expired
+- Whether you should renew or purchase a plan
+
+Selecting the notification opens **Plans & Billing** or the subscription details page.
+
+<Warning>
+  An expired subscription can affect access to paid functionality. Review expiration reminders promptly to avoid service interruption.
+</Warning>
+
+---
+
+## Plan Status and Upgrade Reminders
+
+Valuez AI may create plan-related notifications when your current plan or usage requires attention.
+
+These can include:
+
+- Current plan status
+- Recommendation to upgrade
+- Basic-plan credits exhausted
+- Features unavailable under the current plan
+- Additional capacity required
+
+Selecting the notification opens subscription details, where you can review available plans and account limits.
+
+<Info>
+  A plan notification does not automatically change your subscription. Plan changes require an authorized user to complete the appropriate billing or upgrade action.
+</Info>
+
+---
+
+## Credit Usage Notifications
+
+Credit notifications help you monitor available usage.
+
+Notifications may be created when:
+
+- A usage threshold is reached
+- Most plan credits have been consumed
+- Credits fall below a configured level
+- Credits are exhausted
+
+The notification message identifies the condition and directs you to subscription details.
+
+### What to do when credits are low
+
+1. Review current credit usage
+2. Confirm which services or campaigns are consuming credits
+3. Pause unnecessary activity if appropriate
+4. Add credits or upgrade the plan
+5. Confirm that sufficient credits are available before starting large campaigns
+
+<Warning>
+  Low or exhausted credits can interrupt AI processing, calling, or other usage-based operations.
+</Warning>
+
+---
+
+## Read and Unread Notifications
+
+Notifications use a read state to help you identify items that still require review.
+
+### Unread notification
+
+An unread notification typically has:
+
+- Stronger title styling
+- A colored status dot
+- A **Mark as read** action
+- Inclusion in the **Unread** filter
+- Inclusion in the navigation badge count
+
+### Read notification
+
+After a notification is read:
+
+- Its unread indicator is removed
+- It no longer contributes to the unread badge
+- It appears under the **Read** filter
+- Its visual emphasis is reduced
+
+---
+
+## Mark a Notification as Read
+
+<Steps>
+  <Step title="Open Notifications">
+    Select **Notifications** from the navigation menu.
+  </Step>
+  <Step title="Find an unread notification">
+    Open the **Unread** filter or locate a notification with an unread indicator.
+  </Step>
+  <Step title="Review the message">
+    Read the title and description. Complete the recommended action first if necessary.
+  </Step>
+  <Step title="Select Mark as read">
+    Select **Mark as read** on the notification.
+  </Step>
+  <Step title="Confirm the badge update">
+    The unread count is updated after the action is processed.
+  </Step>
+</Steps>
+
+<Note>
+  The current Notifications screen provides a per-notification **Mark as read** action. Do not expect a visible **Mark all as read** button.
+</Note>
+
+---
+
+## Open a Notification Destination
+
+Some notifications include an internal destination.
+
+Examples include:
+
+| Notification | Destination |
+| --- | --- |
+| Account created | Dashboard |
+| Create an agent | AI Agents |
+| Create an integration | Integrations |
+| Integration created | Integrations |
+| Campaign created | Campaigns |
+| Plan status | Subscription details |
+| Plan upgrade | Subscription details |
+| Subscription activated | Subscription details |
+| Subscription expiration | Subscription details |
+| Low credit | Subscription details |
+
+To open the related area:
+
+1. Select the notification
+2. Valuez AI marks it as read when applicable
+3. The related dashboard page opens
+
+If a notification does not have a destination, selecting it may leave you on the Notifications screen.
+
+---
+
+## Recent Notification Popup
+
+Valuez AI periodically checks for recent unread notifications while you use the dashboard.
+
+A popup may appear when:
+
+- The notification is unread
+- It was created on the current day
+- It has not already been shown during the current browser session
+- You have permission to view notifications
+- You are not already on the Notifications page
+
+The popup closes automatically after a short period. You can also:
+
+- Select it to open Notifications
+- Use the close button to dismiss the popup
+- Continue working and review it later from Notifications
+
+<Info>
+  Closing a popup and marking a notification as read are different actions. Closing hides the popup; marking as read updates the notification's read state.
+</Info>
+
+---
+
+## Notification Access for Workspace Members
+
+Notifications are permission-controlled.
+
+A workspace owner can give a member **View** access to the Notifications module from Workspace Members.
+
+A member without this permission may:
+
+- Not see Notifications in the navigation
+- Not see the unread badge
+- Not receive in-dashboard notification popups
+- Be unable to open the Notifications page
+
+If you need access, ask the workspace owner to review your module permissions.
+
+---
+
+## Notifications and Email
+
+Some Valuez AI reminders may also be delivered by email when email delivery applies to that reminder and account.
+
+In-dashboard and email delivery should be treated as separate channels:
+
+- Marking a dashboard notification as read does not remove an email already delivered
+- Reading an email may not automatically mark the dashboard notification as read
+- Email delivery can be affected by spam filtering or organizational mail-security rules
+
+<Tip>
+  For important subscription and credit reminders, ensure your registered email address is correct and allow messages from Valuez AI through your organization's email filters.
+</Tip>
+
+---
+
+## Notification Lifecycle
+
+A notification can move through several states:
+
+```text
+Event occurs
+   ↓
+Notification is created
+   ↓
+Unread notification appears
+   ↓
+User reviews or opens it
+   ↓
+Notification is marked as read
+   ↓
+Related action is completed, when required
+```
+
+Some reminder notifications can stop being relevant automatically after the required action is completed.
+
+Examples include:
+
+- Creating the first agent
+- Connecting an agent to an integration
+- Renewing a subscription
+- Adding credits
+- Upgrading the plan
+
+<Note>
+  Marking a reminder as read acknowledges the message. It does not necessarily complete the business action described by that reminder.
+</Note>
+
+---
+
+## Recommended Daily Workflow
+
+<Steps>
+  <Step title="Check the unread badge">
+    Review the number displayed beside Notifications.
+  </Step>
+  <Step title="Open the Unread filter">
+    Start with notifications that have not yet been reviewed.
+  </Step>
+  <Step title="Review urgent account items">
+    Prioritize subscription, credit, and service-interruption warnings.
+  </Step>
+  <Step title="Complete required actions">
+    Open the linked Valuez AI page and resolve the issue or setup task.
+  </Step>
+  <Step title="Mark the notification as read">
+    Mark the item as read after it has been reviewed.
+  </Step>
+  <Step title="Review older notifications">
+    Use **Load More** when you need earlier history.
+  </Step>
+</Steps>
+
+---
+
+## Notification Priority Guidance
+
+| Priority | Examples | Recommended response |
+| --- | --- | --- |
+| **Immediate** | Subscription expired, credits exhausted | Review and resolve immediately |
+| **High** | Subscription nearing expiration, credits running low | Plan corrective action promptly |
+| **Operational** | Campaign created, integration created | Verify configuration and test |
+| **Setup** | Create agent, create integration | Complete onboarding when ready |
+| **Informational** | Account created, subscription activated | Review and retain for confirmation |
+
+This table is operational guidance. The notification screen does not necessarily display these priority labels.
+
+---
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Review unread notifications regularly">
+    Check the Unread filter at the beginning of each work session, especially before starting campaigns or high-volume operations.
+  </Accordion>
+
+  <Accordion title="Act before marking critical reminders as read">
+    For subscription, credit, and configuration reminders, complete or assign the required action before marking the notification as read.
+  </Accordion>
+
+  <Accordion title="Test successful setup events">
+    Notifications confirming an integration or campaign was created do not replace functional testing. Verify the configuration before production use.
+  </Accordion>
+
+  <Accordion title="Restrict notification access appropriately">
+    Give Notifications access to team members who are responsible for monitoring workspace status and operational events.
+  </Accordion>
+
+  <Accordion title="Monitor subscription and credit alerts">
+    Treat expiration and low-credit reminders as time-sensitive because they can affect service availability.
+  </Accordion>
+
+  <Accordion title="Keep your account email current">
+    Maintain a valid email address so that eligible email reminders and account communications reach the correct person.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I cannot see Notifications in the navigation">
+    Your workspace permissions may not include **View** access for Notifications. Ask the workspace owner to review your access in Workspace Members.
+  </Accordion>
+
+  <Accordion title="The unread badge is not displayed">
+    The badge appears only when unread notifications are available and you have notification access. Refresh the page if you recently changed a notification's state.
+  </Accordion>
+
+  <Accordion title="The unread count looks incorrect">
+    Open Notifications and review the Unread filter. The navigation badge represents unread active reminders, while the page filters operate on notifications currently loaded into the screen.
+  </Accordion>
+
+  <Accordion title="A notification disappeared after I selected Mark as read">
+    Marking a notification as read closes its active reminder state. Check the Read filter or reload the page if you need to review available notification history.
+  </Accordion>
+
+  <Accordion title="A notification opens a different page">
+    Some notifications include a destination associated with the required action. For example, integration reminders open Integrations and credit reminders open subscription details.
+  </Accordion>
+
+  <Accordion title="The popup disappeared before I selected it">
+    New-notification popups close automatically. Open Notifications from the navigation menu to review the item.
+  </Accordion>
+
+  <Accordion title="Closing the popup did not reduce the unread count">
+    Closing a popup only hides that popup for the current browser session. Open Notifications and mark the underlying notification as read.
+  </Accordion>
+
+  <Accordion title="I completed the action but still see the reminder">
+    Refresh the Notifications screen. Some setup and plan reminders are updated during scheduled platform checks rather than immediately after every action.
+  </Accordion>
+
+  <Accordion title="Notifications failed to load">
+    Refresh the page and try again. If other dashboard areas also fail, check your connection and sign in again. Contact your workspace administrator or Valuez AI support if the problem continues.
+  </Accordion>
+
+  <Accordion title="I did not receive a notification email">
+    Check spam, junk, quarantine, and filtered folders. Confirm that your account email is correct. Not every dashboard notification is necessarily accompanied by an email.
+  </Accordion>
+
+  <Accordion title="Load More is not displayed">
+    Load More appears only when another page of notification records may be available.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Related Pages
+
+<CardGroup cols={2}>
+  <Card title="AI Agents" icon="robot" href="/agents">
+    Create and configure the AI agents referenced by setup reminders.
+  </Card>
+
+  <Card title="Integrations" icon="plug" href="/integrations">
+    Connect agents to supported channels and external systems.
+  </Card>
+
+  <Card title="Outbound Calls" icon="phone-arrow-up-right" href="/outbound-calls">
+    Configure campaigns associated with campaign notifications.
+  </Card>
+
+  <Card title="Workspace Members" icon="users" href="/team-management">
+    Control which workspace members can view notifications.
+  </Card>
+
+  <Card title="Dashboard Overview" icon="gauge" href="/dashboard-overview">
+    Return to the main workspace dashboard.
+  </Card>
+
+  <Card title="Troubleshooting" icon="wrench" href="/troubleshooting">
+    Resolve common workspace, calling, and configuration problems.
+  </Card>
+</CardGroup>

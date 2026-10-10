@@ -1,0 +1,863 @@
+---
+title: "Speech to Text"
+sidebarTitle: "Speech to Text"
+description: "Convert uploaded audio or live microphone speech into searchable text using the Valuez AI Speech to Text playground."
+---
+
+Speech to Text converts spoken audio into written text.
+
+The Valuez AI Speech to Text playground lets you upload a recording or use your microphone, select transcription settings, run a request, and review the resulting transcript directly from your dashboard.
+
+You can also copy or download the transcript and view ready-to-use code examples for external integrations.
+
+<Info>
+  You do not need programming experience to test Speech to Text from the dashboard. The Code tab is available for developers who want to integrate the same capability into another application.
+</Info>
+
+---
+
+## Open Speech to Text
+
+<Steps>
+  <Step title="Sign in to Valuez AI">
+    Sign in to your Valuez AI workspace.
+  </Step>
+  <Step title="Open APIs & Integrations">
+    Select **APIs & Integrations** from the main navigation.
+  </Step>
+  <Step title="Select Speech to Text">
+    Click **Speech to Text** under API Testing.
+  </Step>
+</Steps>
+
+<Frame>
+  ![Speech To Text](/images/speech-to-text.png "Speech To Text")
+</Frame>
+
+---
+
+## What You Can Do
+
+The Speech to Text playground lets you:
+
+- Upload a WAV, MP3, FLAC, or OGG recording
+- Record live audio using your microphone
+- Automatically detect the spoken language
+- Provide a specific language hint
+- Process audio using standard API mode
+- Receive transcription results progressively using Streaming API mode
+- Transcribe live microphone audio using WSS mode
+- Detect and label multiple speakers in supported recordings
+- Adjust advanced transcription settings
+- Review duration and credit usage
+- Identify low-confidence transcript sections
+- Copy the resulting transcript
+- Download the transcript as a text file
+- Generate JavaScript, Python, and cURL examples
+
+---
+
+## Understanding the Playground
+
+The Speech to Text screen contains two main panels:
+
+| Panel | Purpose |
+| --- | --- |
+| **Configuration panel** | Select the request type, language, speaker detection, audio file, and advanced settings |
+| **Preview panel** | Review code examples or view the transcription output |
+
+A divider separates the panels. Drag the divider to resize them.
+
+Double-click the divider to return to the default panel sizes.
+
+---
+
+## Basic Transcription Workflow
+
+For most users, the standard workflow is:
+
+<Steps>
+  <Step title="Select API mode">
+    Keep **Type** set to **API** for a standard uploaded-audio transcription.
+  </Step>
+  <Step title="Choose a language">
+    Use **Auto-detect** or select the expected spoken language.
+  </Step>
+  <Step title="Choose speaker detection">
+    Select whether the transcript should include speaker labels.
+  </Step>
+  <Step title="Upload a recording">
+    Drop a supported file into the upload area or click **Browse**.
+  </Step>
+  <Step title="Run the request">
+    Click **Run request**.
+  </Step>
+  <Step title="Review the transcript">
+    The playground automatically opens the Output tab while processing.
+  </Step>
+  <Step title="Copy or download the result">
+    Copy the transcript or download it as a text file.
+  </Step>
+</Steps>
+
+---
+
+## Select a Request Type
+
+The **Type** setting determines how audio is submitted and how transcription results are returned.
+
+| Type | Best For | Audio Source | Result Behavior |
+| --- | --- | --- | --- |
+| **API** | Complete recordings and optional speaker detection | Uploaded file | Returns the completed transcript |
+| **Streaming API** | Progressive processing of uploaded audio | Uploaded file | Displays transcript content as it becomes available |
+| **WSS** | Live speech and microphone testing | Microphone | Displays a live transcript during the session |
+
+---
+
+## API Mode
+
+Use **API** mode for standard file transcription.
+
+This mode is appropriate when:
+
+- You already have a complete recording
+- You want one completed transcript
+- You want to detect multiple speakers
+- You want to upload a large WAV file
+- Real-time transcription is not required
+
+API mode is the default selection.
+
+### API mode supports
+
+- WAV
+- MP3
+- FLAC
+- OGG
+- Automatic language detection
+- Language hints
+- Speaker detection for supported WAV files
+- Advanced output-token settings
+- Transcript copy and download
+
+---
+
+## Streaming API Mode
+
+Use **Streaming API** mode when you want uploaded audio to be processed progressively.
+
+As transcription information becomes available, it appears in the Output panel instead of waiting for the complete request to finish.
+
+Streaming mode is helpful for:
+
+- Longer WAV recordings
+- Monitoring transcription progress
+- Applications that process transcript segments incrementally
+- Testing an external streaming integration
+
+<Info>
+  For WAV recordings, streaming results are processed in approximately 25-second portions. Other supported audio formats can return a single transcription result.
+</Info>
+
+Speaker labels are not available in Streaming API mode.
+
+---
+
+## WSS Mode
+
+Use **WSS** mode for live microphone transcription.
+
+WSS refers to a secure WebSocket connection that sends microphone audio while you speak.
+
+<Frame>
+  ![Web Socket](/images/web-socket.png "Web Socket")
+</Frame>
+
+WSS mode uses:
+
+```text
+Mono PCM16 audio
+16 kHz sample rate
+Maximum session: 5 minutes
+```
+
+### Start live transcription
+
+<Steps>
+  <Step title="Select WSS">
+    Choose **WSS** from the Type menu.
+  </Step>
+  <Step title="Choose a language">
+    Keep Auto-detect or select a language hint.
+  </Step>
+  <Step title="Click Start recording">
+    Your browser asks for permission to use the microphone.
+  </Step>
+  <Step title="Allow microphone access">
+    Approve the browser's microphone request.
+  </Step>
+  <Step title="Speak naturally">
+    Finalized speech appears progressively in the Output panel.
+  </Step>
+  <Step title="Stop the recording">
+    Click **Stop recording** when finished.
+  </Step>
+  <Step title="Wait for the final transcript">
+    Valuez AI finishes processing the remaining audio before completing the session.
+  </Step>
+</Steps>
+
+<Warning>
+  Do not refresh or close the page during a live transcription session. Doing so ends the active microphone connection.
+</Warning>
+
+### Browser requirements
+
+Live microphone transcription requires:
+
+- A supported modern browser
+- Microphone permission
+- A secure HTTPS connection or localhost
+- Browser support for audio worklets
+- Stable network connectivity
+- Support for 16 kHz audio capture
+
+---
+
+## Speech-to-Text Model
+
+The current playground displays:
+
+| Setting | Value |
+| --- | --- |
+| **Provider** | Ganas |
+| **Model** | Ganas STT |
+| **Version** | v1 |
+
+These fields are fixed in the current playground and do not require configuration.
+
+---
+
+## Select a Language
+
+The Language setting provides the expected spoken language.
+
+Available options are:
+
+| Option | Use |
+| --- | --- |
+| **Auto-detect** | Let the transcription service identify the spoken language |
+| **English** | Provide English as the language hint |
+| **Hindi** | Provide Hindi as the language hint |
+| **Marathi** | Provide Marathi as the language hint |
+| **Kannada** | Provide Kannada as the language hint |
+| **Telugu** | Provide Telugu as the language hint |
+
+<Info>
+  Ganas can recognize the spoken language automatically. The selected language is also saved as a hint in the corresponding request history.
+</Info>
+
+### Auto-detect or specific language?
+
+Use **Auto-detect** when:
+
+- The recording language is unknown
+- Different files may contain different languages
+- You are testing general recognition behavior
+
+Select a specific language when:
+
+- You know the primary spoken language
+- The audio uses regional names or terminology
+- You want the request history to retain the expected language
+- Auto-detection produces inconsistent results
+
+---
+
+## Speaker Detection
+
+Speaker detection separates a conversation into labeled speaker segments.
+
+In API mode, you can choose:
+
+| Option | Behavior |
+| --- | --- |
+| **No speaker labels** | Returns one continuous transcript |
+| **Auto-detect · up to 8 speakers** | Detects and labels different speakers automatically |
+
+<Frame>
+  ![Speech To Text 2](/images/speech-to-text-2.png "Speech To Text 2")
+</Frame>
+
+### Speaker detection requirements
+
+Speaker detection:
+
+- Is available only in standard API mode
+- Requires a WAV recording
+- Can detect up to eight speakers
+- Produces speaker-labeled transcript sections
+- Includes start and end times for detected turns
+
+When speaker detection is enabled, the upload area accepts WAV files only.
+
+<Note>
+  Speaker identities are generic labels. The system distinguishes speakers but does not determine their real names.
+</Note>
+
+### Example result
+
+```text
+Speaker 1   0.0s – 4.8s
+Hello. I am calling to ask about your services.
+
+Speaker 2   5.1s – 9.6s
+Certainly. Which service would you like to know about?
+```
+
+Speaker detection may be less accurate when:
+
+- People speak at the same time
+- The recording contains significant background noise
+- Voices are faint or distant
+- Speakers sound very similar
+- The audio has strong echo
+- The recording switches devices or channels
+
+---
+
+## Upload an Audio File
+
+For API and Streaming API modes, upload a recording through the audio drop zone.
+
+<Frame>
+  ![Speech To Text](/images/speech-to-text.png "Speech To Text")
+</Frame>
+
+You can:
+
+- Drag a file into the upload area
+- Click **Browse** and select a file
+- Click **Replace** to choose a different file
+- Click the remove icon to clear the current file
+
+---
+
+## Supported Audio Formats and Limits
+
+| Format | Maximum Size | Additional Requirements |
+| --- | --: | --- |
+| **WAV** | 100 MiB | Required for speaker detection |
+| **MP3** | 25 MiB | Maximum duration shown by the playground: 30 seconds |
+| **FLAC** | 25 MiB | Maximum duration shown by the playground: 30 seconds |
+| **OGG** | 25 MiB | Maximum duration shown by the playground: 30 seconds |
+
+<Warning>
+  A file with the correct extension can still fail if its audio data is damaged, unsupported, empty, or incorrectly encoded.
+</Warning>
+
+### Recommended audio quality
+
+For better transcription results:
+
+- Use clear speech
+- Reduce background noise
+- Keep the microphone close to the speaker
+- Avoid overlapping speech
+- Avoid loud music
+- Use a consistent recording volume
+- Prefer WAV when quality is important
+- Confirm that the recording plays correctly before uploading
+
+---
+
+## Audio Settings
+
+Expand **Audio settings** to review or adjust transcription parameters.
+
+### Sample Rate
+
+For uploaded files, the playground displays:
+
+```text
+Auto-detect → 16000
+```
+
+For live WSS mode, the sample rate is fixed at:
+
+```text
+16000 Hz
+```
+
+### Input Audio Codec
+
+For uploaded files, the codec is detected automatically.
+
+For live WSS mode, the audio format is:
+
+```text
+PCM16 · mono
+```
+
+---
+
+## Maximum Output Tokens
+
+**Maximum output tokens** controls the maximum transcription-output allowance for supported requests.
+
+The accepted range is:
+
+```text
+1 to 512
+```
+
+The default value is:
+
+```text
+256
+```
+
+If a transcript is cut off, increase this value and run the request again.
+
+<Note>
+  Maximum output tokens is unavailable when using speaker detection or WSS mode.
+</Note>
+
+---
+
+## Repetition Penalty
+
+**Repetition penalty** helps reduce repeated output.
+
+The accepted range is:
+
+```text
+1.0 to 2.0
+```
+
+The default value is:
+
+```text
+1.2
+```
+
+For most recordings, keep the default value. Adjust it only if the transcript contains repeated words or phrases that are not present in the audio.
+
+---
+
+## Run a Transcription
+
+After selecting the settings and audio source, use the main action button.
+
+The button changes according to the current state:
+
+| Button | Meaning |
+| --- | --- |
+| **Run request** | Start transcribing an uploaded file |
+| **Start recording** | Start a live microphone session |
+| **Cancel request** | Stop the current file-transcription request |
+| **Stop recording** | Stop microphone capture and finalize the transcript |
+| **Finishing transcript...** | Remaining audio is being processed |
+
+The Output tab opens automatically when processing starts.
+
+---
+
+## Reset the Playground
+
+Click the reset icon beside the main action button to restore the defaults.
+
+Resetting clears:
+
+- Selected request type
+- Language changes
+- Speaker-detection changes
+- Uploaded file
+- Transcript output
+- Streaming segments
+- Error messages
+- Credit information
+- Advanced-setting changes
+
+If a request is active, resetting also stops the current session.
+
+---
+
+## Review the Output
+
+The Output tab displays the transcription result.
+
+<Frame>
+  ![Logs Details 2026 10 10 11 20 22](/images/logs-details-2026-10-10-11_20_22.png "Logs Details 2026 10 10 11 20 22")
+</Frame>
+
+Depending on the request, the output can include:
+
+| Information | Description |
+| --- | --- |
+| **Transcript** | Recognized speech converted into text |
+| **Credits used** | Workspace credits consumed by the request |
+| **Duration** | Duration of the processed audio |
+| **Speaker count** | Number of detected speakers |
+| **Speaker segments** | Speaker labels with start and end times |
+| **Review warnings** | Notices about low confidence, truncation, or untranscribed segments |
+
+---
+
+## Transcription Status
+
+The Output panel can display statuses such as:
+
+| Status | Meaning |
+| --- | --- |
+| **Live transcript** | The request is still processing and text is arriving |
+| **Transcription complete** | The request finished successfully |
+| **Incomplete transcript** | Processing encountered an error or returned partial information |
+| **Request cancelled** | The active request was cancelled |
+
+If no recognizable speech is found, the output displays:
+
+```text
+No speech was detected in this recording.
+```
+
+---
+
+## Copy the Transcript
+
+Click the copy icon in the Output toolbar to copy the complete transcript.
+
+You can then paste it into an approved:
+
+- Customer record
+- Meeting note
+- Support ticket
+- Document
+- Internal collaboration system
+
+<Warning>
+  Transcripts can contain personal or confidential information. Do not copy them into unauthorized applications.
+</Warning>
+
+If browser clipboard access is unavailable, select the transcript manually and copy it using your operating system's copy command.
+
+---
+
+## Download the Transcript
+
+Click the download icon to save the transcript.
+
+The file is downloaded as:
+
+```text
+transcript.txt
+```
+
+If speaker detection was used, the downloaded file includes speaker labels with the related text.
+
+Example:
+
+```text
+Speaker 1: I would like information about your services.
+Speaker 2: Certainly. Which service are you interested in?
+```
+
+---
+
+## Review Warnings
+
+The playground can display warnings when the transcript needs additional review.
+
+### Low Confidence
+
+A low-confidence notice means the service was uncertain about some recognized speech.
+
+Possible causes include:
+
+- Background noise
+- Unclear pronunciation
+- Low recording volume
+- Overlapping speakers
+- Unsupported terminology
+- Poor microphone quality
+
+Compare important text with the original recording.
+
+### Truncated Transcript
+
+A truncated result means the maximum output-token limit stopped part of the transcript from being returned.
+
+To resolve it:
+
+1. Open Audio settings.
+2. Increase Maximum output tokens.
+3. Run the transcription again.
+
+### Untranscribed Segments
+
+The result can report that one or more segments could not be transcribed.
+
+Review the audio around those sections and check for:
+
+- Silence
+- Distortion
+- Unsupported speech
+- Multiple people speaking simultaneously
+- Loud background sounds
+
+---
+
+## Credit Usage
+
+Speech-to-Text requests use workspace credits.
+
+After processing, the Output panel can show:
+
+```text
+2.50 credits used
+```
+
+The exact usage depends on the processed request and platform configuration.
+
+Use **Credit Logs** or **Credit Usage** to review detailed balance activity.
+
+<Info>
+  Cancelling a request does not guarantee that no credits were used. Processing that already occurred may still be reflected in your credit history.
+</Info>
+
+---
+
+## Code Examples
+
+Open the **Code** tab to view an example based on the selected settings.
+
+<Frame>
+  ![Three Panel API Code Documentation UI](/images/Three-Panel-API-Code-Documentation-UI.png "Three Panel API Code Documentation UI")
+</Frame>
+
+Available languages include:
+
+| Request Type | JavaScript | Python | cURL |
+| --- | --- | --- | --- |
+| **API** | Available | Available | Available |
+| **Streaming API** | Available | Available | Available |
+| **WSS** | Available | Available | Not shown |
+
+Click **Copy** to copy the generated example.
+
+The code changes automatically when you change:
+
+- Request type
+- Language
+- Speaker detection
+- Maximum output tokens
+- Repetition penalty
+
+<Info>
+  Dashboard tests use your signed-in Valuez AI session. External code examples require a Speech API key.
+</Info>
+
+<Warning>
+  Never place an API key directly in browser-based frontend code, public repositories, screenshots, or shared documents. Store it securely on your server using environment variables or an approved secret-management system.
+</Warning>
+
+---
+
+## Dashboard Test vs. External Integration
+
+| Method | Authentication | Intended Use |
+| --- | --- | --- |
+| **Dashboard playground** | Your signed-in session and active workspace | Manual testing and evaluation |
+| **External code example** | Speech API key | Integrating Speech to Text into another system |
+
+A successful dashboard test confirms that the feature works with your account. It does not automatically configure an external application.
+
+---
+
+## Speech to Text vs. Agent Conversations
+
+| Feature | Speech to Text | Agent Conversations |
+| --- | --- | --- |
+| Primary purpose | Convert audio into text | Review complete customer-agent interactions |
+| Input | Uploaded file or microphone | Conversation generated through an agent |
+| AI response | No conversational response is generated | Agent can reply to the customer |
+| Output | Transcript | Messages, transcript, outcome, summary, and other interaction data |
+| Speaker detection | Available for supported WAV files | Depends on the conversation record |
+| Developer examples | Included | Documented through agent APIs |
+
+Use Speech to Text when you only need transcription. Use an AI agent when you need an interactive customer conversation.
+
+---
+
+## Recommended Testing Workflow
+
+<Steps>
+  <Step title="Start with a short recording">
+    Use a clear sample containing 10–30 seconds of speech.
+  </Step>
+  <Step title="Use Auto-detect">
+    Confirm that the expected language is recognized.
+  </Step>
+  <Step title="Review the transcript">
+    Compare the result carefully with the original recording.
+  </Step>
+  <Step title="Select a language hint">
+    Run the request again with a specific language when necessary.
+  </Step>
+  <Step title="Test speaker detection">
+    Use a WAV conversation containing two clearly separated speakers.
+  </Step>
+  <Step title="Check usage">
+    Review credits consumed by the tests.
+  </Step>
+  <Step title="Review the code">
+    Provide the generated example to your development team if an integration is required.
+  </Step>
+</Steps>
+
+---
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Use clear audio">
+    Speech recognition performs best when voices are clear, close to the microphone, and louder than the background noise.
+  </Accordion>
+
+  <Accordion title="Use WAV for important recordings">
+    WAV supports the highest playground upload limit and is required for speaker detection.
+  </Accordion>
+
+  <Accordion title="Provide a language hint">
+    Select the expected language when automatic detection produces inconsistent results.
+  </Accordion>
+
+  <Accordion title="Review names and specialist terms">
+    Company names, product names, abbreviations, and industry terminology may require manual verification.
+  </Accordion>
+
+  <Accordion title="Verify important information">
+    Do not rely solely on automated transcription for legal, financial, medical, contractual, or compliance-sensitive information.
+  </Accordion>
+
+  <Accordion title="Monitor credit usage">
+    Repeated testing, large files, and live sessions can consume workspace credits.
+  </Accordion>
+
+  <Accordion title="Protect recordings and transcripts">
+    Upload only audio that your organization is authorized to process.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Run request does not start">
+    Confirm that you selected a nonempty supported audio file. Also check that you are still signed in to Valuez AI.
+  </Accordion>
+
+  <Accordion title="The file format is rejected">
+    Use WAV, MP3, FLAC, or OGG. Other file extensions are not supported by the current playground.
+  </Accordion>
+
+  <Accordion title="The file is too large">
+    WAV files must not exceed 100 MiB. MP3, FLAC, and OGG files must not exceed 25 MiB.
+  </Accordion>
+
+  <Accordion title="Speaker detection rejects my file">
+    Speaker detection requires a WAV recording. Replace the file with a valid WAV file or select No speaker labels.
+  </Accordion>
+
+  <Accordion title="The transcript is empty">
+    Play the original file and confirm that it contains audible speech. Check the volume, file integrity, and background noise.
+  </Accordion>
+
+  <Accordion title="The transcript is cut off">
+    Increase Maximum output tokens in Audio settings and run the request again.
+  </Accordion>
+
+  <Accordion title="The transcript contains repeated text">
+    Review the recording first. If the repetition is not present in the audio, adjust the repetition penalty slightly and retry.
+  </Accordion>
+
+  <Accordion title="Microphone access is denied">
+    Open the browser's site permissions and allow microphone access for the Valuez AI dashboard. Then reload the page.
+  </Accordion>
+
+  <Accordion title="Live transcription is unavailable">
+    Use a modern browser over HTTPS. Confirm that microphone access and audio-worklet support are available.
+  </Accordion>
+
+  <Accordion title="The live connection timed out">
+    Check your internet connection and retry. A firewall or network policy may also block secure WebSocket connections.
+  </Accordion>
+
+  <Accordion title="The network is too slow for live transcription">
+    Stop the session and retry using a stable connection. Alternatively, record the audio locally and upload it using API mode.
+  </Accordion>
+
+  <Accordion title="The stream ended before completion">
+    Retry the request. If the problem continues, use standard API mode or upload a shorter recording.
+  </Accordion>
+
+  <Accordion title="Copy does not work">
+    Your browser may have blocked clipboard access. Select the transcript or code manually and use your system's copy command.
+  </Accordion>
+
+  <Accordion title="Credits were used after cancellation">
+    Audio already received or processed before cancellation may still consume credits. Review Credit Usage for the recorded transaction.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Privacy and Responsible Use
+
+Audio recordings and transcripts may contain personal, confidential, or regulated information.
+
+Before uploading or recording audio, ensure that:
+
+- You are authorized to process the recording
+- Required participant consent has been obtained
+- Recording notices have been provided where required
+- Customer information is handled according to organizational policy
+- Downloaded transcripts are stored securely
+- Access is limited to authorized users
+- Audio and transcripts are retained only as long as necessary
+- Sensitive information is not pasted into unapproved systems
+
+<Warning>
+  Laws governing recording, consent, biometric information, employee monitoring, and personal-data processing vary by country and region. Your organization is responsible for determining and following the requirements that apply.
+</Warning>
+
+---
+
+## Related Pages
+
+<CardGroup cols={2}>
+  <Card title="Integrations" icon="plug" href="/integrations">
+    Create and manage API keys and external connections.
+  </Card>
+
+  <Card title="Text to Speech" icon="volume-high" href="/text-to-speech">
+    Convert written text into downloadable spoken audio.
+  </Card>
+
+  <Card title="Speech API History" icon="clock-rotate-left" href="/speech-api-history">
+    Review previous Speech to Text and Text to Speech requests.
+  </Card>
+
+  <Card title="Credit Usage" icon="coins" href="/credit-usage">
+    Review credits consumed by speech and other platform services.
+  </Card>
+
+  <Card title="API Keys" icon="key" href="/api-keys">
+    Learn how to authenticate external Valuez AI API requests.
+  </Card>
+
+  <Card title="Troubleshooting" icon="screwdriver-wrench" href="/troubleshooting">
+    Resolve common account, integration, audio, and API issues.
+  </Card>
+</CardGroup>

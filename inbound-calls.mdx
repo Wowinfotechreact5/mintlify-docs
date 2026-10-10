@@ -1,0 +1,844 @@
+---
+title: "Inbound Calls"
+sidebarTitle: "Inbound Calls"
+description: "Connect a virtual phone number to a Valuez AI agent so customers can call and speak with the agent."
+---
+
+Inbound calling allows customers to call a virtual phone number and speak directly with a Valuez AI voice agent.
+
+When someone calls the assigned number, the connected AI agent answers the call using its configured:
+
+- Business knowledge
+- Agent instructions
+- Language
+- Greeting and conversation settings
+- Speech-recognition settings
+- Voice and speaking speed
+
+Inbound calling is suitable for customer support, product enquiries, service enquiries, lead qualification, frequently asked questions, and other approved customer conversations.
+
+<Info>
+  Inbound calling requires a virtual phone number purchased and assigned through the **Virtual Phone Integration** area.
+</Info>
+
+---
+
+## How Inbound Calling Works
+
+The customer calls your virtual phone number. Valuez AI identifies the agent assigned to that number and starts a voice conversation.
+
+The normal customer experience is:
+
+1. The customer calls the virtual number.
+2. The assigned Valuez AI agent answers.
+3. The agent listens to the customer’s question.
+4. The agent uses its instructions and knowledge base to prepare a response.
+5. The customer hears the response through the telephone.
+6. The conversation continues until the call ends.
+7. Call information is made available in the relevant conversation or call-history area when successfully recorded.
+
+A virtual number acts as the connection between the caller and your AI agent.
+
+---
+
+## Common Uses
+
+Inbound AI calling can support business scenarios such as:
+
+| Use case | Example |
+| --- | --- |
+| **Customer support** | Answering common product, account, or service questions |
+| **Product enquiries** | Explaining products, features, prices, and availability |
+| **Service enquiries** | Describing services, eligibility, service areas, and next steps |
+| **Lead qualification** | Asking approved questions to understand customer interest |
+| **Business information** | Providing working hours, addresses, email addresses, and contact details |
+| **Appointment enquiries** | Explaining how a customer can request or arrange an appointment |
+| **Frequently asked questions** | Answering repeat questions from the connected knowledge base |
+| **Initial customer assistance** | Collecting the customer’s request before further follow-up |
+
+The agent can answer only according to its available knowledge and configured instructions. It should not be treated as having access to information that has not been provided to it.
+
+---
+
+## Before You Configure Inbound Calling
+
+Complete the following preparation before assigning a telephone number.
+
+### 1. Create and Configure an Agent
+
+The agent should have:
+
+- A clear name
+- The correct language
+- An approved AI provider and model
+- Agent instructions
+- Conversation settings
+- A selected voice provider
+- A selected voice
+- Speech-to-text configuration
+- An appropriate speaking speed
+
+<Card title="Configure an Agent" icon="robot" href="/agents">
+  Learn how to create and configure a Valuez AI voice agent.
+</Card>
+
+---
+
+### 2. Connect a Knowledge Base
+
+The agent must be connected to the knowledge base containing the information it is allowed to use.
+
+Review:
+
+- Business name and description
+- Business type and industry
+- Website information
+- Contact information
+- Office address
+- Working hours
+- Services
+- Products
+- Frequently asked questions
+- Uploaded PDF documents
+
+<Card title="Train Your AI" icon="book-open" href="/train-your-ai">
+  Add and maintain the business information used by your agent.
+</Card>
+
+---
+
+### 3. Test the Agent
+
+Test the agent through the browser before connecting it to a telephone number.
+
+Confirm that:
+
+- Speech is recognized correctly
+- The greeting is appropriate
+- Business information is accurate
+- Prices and conditions are correct
+- The selected voice is clear
+- Responses are suitable for telephone conversations
+- Unknown questions are handled safely
+- The agent does not reveal restricted information
+- The conversation ends professionally
+
+<Card title="Test Your AI" icon="microphone" href="/test-your-ai">
+  Run browser voice tests before activating telephone access.
+</Card>
+
+---
+
+### 4. Check Your Plan and Credits
+
+Virtual-number availability can depend on your Valuez AI plan.
+
+Your workspace also needs sufficient credits to:
+
+- Purchase a virtual number
+- Use inbound voice services
+- Continue handling calls
+
+The number of virtual phone numbers available to a workspace may be limited by its current subscription plan.
+
+<Warning>
+  Confirm your current plan, virtual-number allowance, and credit balance before publishing the number to customers.
+</Warning>
+
+---
+
+## Open Virtual Phone Integration
+
+Inbound calling is configured through the **Virtual Phone Integration** window.
+
+Depending on where you are working, you can open this from the agent or integration area.
+
+<Steps>
+  <Step title="Sign in to Valuez AI">
+    Open the Valuez AI dashboard and confirm that you are in the correct workspace.
+  </Step>
+  <Step title="Open AI Voice Agents">
+    Select **AI Voice Agents** and open the agent that should answer incoming calls.
+  </Step>
+  <Step title="Review the agent">
+    Confirm that the selected agent has the correct knowledge, language, voice, and instructions.
+  </Step>
+  <Step title="Open Add Integration">
+    Select **Add Integration** from the agent workspace.
+  </Step>
+  <Step title="Open Virtual Phone Integration">
+    Open the virtual phone integration and select the **Incoming Calls** tab.
+  </Step>
+</Steps>
+
+The integration window separates telephone configuration into:
+
+- **Incoming Calls**
+- **Outgoing Calls**
+
+Use **Incoming Calls** when assigning a virtual number to an agent for customer-initiated calls.
+
+---
+
+## Inbound Configuration Fields
+
+The current inbound integration requires the following settings:
+
+| Field | Required | Description |
+| --- | --- | --- |
+| **Select Agent** | Yes | The AI agent that will answer calls |
+| **Virtual Number** | Yes | A purchased number belonging to the current workspace |
+| **Call Type** | Yes | Controls whether the number is used for inbound calls, outbound calls, or both |
+
+The integration cannot be saved until a valid agent and a purchased virtual number have been selected.
+
+---
+
+## Select an Agent
+
+Use **Select Agent** to choose which voice agent answers the number.
+
+Only available agents are shown in the selection list.
+
+Before selecting an agent, verify:
+
+- The agent is active and available
+- The correct knowledge base is selected
+- The agent’s language matches the intended callers
+- The agent’s voice is appropriate
+- The greeting identifies the correct organization
+- The agent has been tested successfully
+
+<Warning>
+  Assigning the wrong agent can cause callers to receive information belonging to a different business process, product, language, or department.
+</Warning>
+
+### Changing the Assigned Agent
+
+If you select a different agent and save the integration, future calls to that number will use the newly assigned agent configuration.
+
+After changing the agent:
+
+1. Place a controlled inbound test call.
+2. Confirm the correct agent answers.
+3. Check the greeting and language.
+4. Ask several knowledge questions.
+5. Review the resulting conversation record.
+
+---
+
+## Select a Virtual Number
+
+The **Virtual Number** list shows phone numbers already purchased by the current workspace.
+
+A virtual number is required because it receives the customer’s telephone call and routes it to the selected AI agent.
+
+If the list is empty, you must purchase a number before saving the inbound integration.
+
+<Note>
+  Only virtual numbers owned by your current workspace appear in the selection list.
+</Note>
+
+---
+
+## Purchase a Virtual Number
+
+If your workspace does not already have a suitable number, use **Buy New Number**.
+
+<Steps>
+  <Step title="Select an agent">
+    Choose the agent that will be associated with the virtual number. An agent must be selected before purchasing.
+  </Step>
+  <Step title="Select Buy New Number">
+    Open the list of currently available virtual phone numbers.
+  </Step>
+  <Step title="Review the available numbers">
+    Valuez AI displays available numbers returned for your workspace.
+  </Step>
+  <Step title="Choose a number">
+    Select the number you want to purchase.
+  </Step>
+  <Step title="Review the displayed cost">
+    Confirm the credit charge shown in the purchase window.
+  </Step>
+  <Step title="Complete the purchase">
+    Select the purchase action and wait for confirmation.
+  </Step>
+  <Step title="Confirm the selection">
+    The purchased number should become available in the Virtual Number list.
+  </Step>
+</Steps>
+
+The current interface displays a purchase cost of **700 credits**.
+
+<Warning>
+  Pricing and number availability can change. Always use the price displayed in your dashboard as the current price.
+</Warning>
+
+After a successful purchase, Valuez AI displays a confirmation containing:
+
+- The purchased number
+- The credits deducted
+
+The workspace credit balance is then refreshed.
+
+### Number Availability
+
+The number-purchase window displays numbers currently available through the connected telephone provider.
+
+The interface may show both mobile and landline numbers when returned by the provider. Availability depends on the provider and workspace configuration.
+
+If no numbers are available, try again later or contact Valuez AI support.
+
+---
+
+## Choose the Call Type
+
+The **Call Type** setting controls how the virtual number can be used.
+
+| Option | Meaning |
+| --- | --- |
+| **Inbound Only** | The number is configured for incoming customer calls |
+| **Outbound Only** | The number is intended for outgoing calls |
+| **Both** | The number can be used for incoming and outgoing calling |
+
+For a dedicated customer-support or enquiry number, choose **Inbound Only**.
+
+Choose **Both** only when the same virtual number is intentionally used for inbound and outbound activity.
+
+<Tip>
+  Use a dedicated inbound number when you want simpler reporting, clearer ownership, and fewer routing mistakes.
+</Tip>
+
+---
+
+## Save the Inbound Integration
+
+After selecting the agent, virtual number, and call type, save the configuration.
+
+<Steps>
+  <Step title="Confirm the selected agent">
+    Verify that the intended AI agent appears in **Select Agent**.
+  </Step>
+  <Step title="Confirm the virtual number">
+    Verify that the correct purchased number is selected.
+  </Step>
+  <Step title="Select the call type">
+    Choose **Inbound Only** or **Both**, according to your intended use.
+  </Step>
+  <Step title="Select Save Integration">
+    Wait while Valuez AI saves the inbound telephone configuration.
+  </Step>
+  <Step title="Check for confirmation">
+    A successful configuration displays an inbound setup confirmation and the button changes to **Saved**.
+  </Step>
+</Steps>
+
+If the save action is unavailable, confirm that:
+
+- An agent is selected
+- The number belongs to the workspace
+- The purchased number is active
+- Your account has permission to manage the integration
+
+---
+
+## Test the Inbound Number
+
+Do not publish the number immediately after saving it.
+
+First, perform a controlled test from a telephone you are authorized to use.
+
+### Recommended Test Procedure
+
+<Steps>
+  <Step title="Prepare a test script">
+    Write down the greeting, common questions, expected answers, fallback question, and ending behavior you want to test.
+  </Step>
+  <Step title="Call the virtual number">
+    Use an authorized phone that is not the same as the virtual number.
+  </Step>
+  <Step title="Confirm the greeting">
+    Verify that the correct agent, business, and language are used.
+  </Step>
+  <Step title="Ask business questions">
+    Test working hours, services, products, contact information, and other essential knowledge.
+  </Step>
+  <Step title="Ask follow-up questions">
+    Confirm that the agent maintains the correct conversational context.
+  </Step>
+  <Step title="Ask an unknown question">
+    Confirm that the agent does not invent information.
+  </Step>
+  <Step title="Test interruptions">
+    Interrupt a longer response and confirm that the agent handles the interruption appropriately.
+  </Step>
+  <Step title="End the call">
+    Confirm that the ending is professional and that the call closes normally.
+  </Step>
+  <Step title="Review the call record">
+    Open the appropriate conversation or call-history area and review the available details.
+  </Step>
+</Steps>
+
+---
+
+## Inbound Test Checklist
+
+Before publishing the number, confirm that:
+
+### Number and Routing
+
+- [ ] The correct virtual number was called
+- [ ] The number connects successfully
+- [ ] The correct agent answers
+- [ ] The selected call type supports inbound calls
+- [ ] The call has clear two-way audio
+- [ ] The call ends correctly
+
+### Agent Experience
+
+- [ ] The greeting is accurate
+- [ ] The business name is correct
+- [ ] The language is correct
+- [ ] The selected voice is clear
+- [ ] The speaking speed is suitable
+- [ ] The agent’s tone matches the business
+- [ ] Responses are short enough for telephone use
+
+### Knowledge
+
+- [ ] Business hours are correct
+- [ ] Address and contact details are correct
+- [ ] Services are described accurately
+- [ ] Product information is accurate
+- [ ] Prices include relevant conditions
+- [ ] FAQs are answered correctly
+- [ ] Unknown information is not invented
+
+### Conversation Behavior
+
+- [ ] Follow-up questions retain the correct context
+- [ ] Unclear questions produce clarification
+- [ ] Interruptions work as expected
+- [ ] Silence does not create an unwanted response loop
+- [ ] The agent follows approved boundaries
+- [ ] The conversation ends professionally
+
+### Privacy and Safety
+
+- [ ] Confidential information is not disclosed
+- [ ] The agent does not reveal private instructions
+- [ ] The number is published only through approved channels
+- [ ] Recording and consent requirements have been reviewed
+- [ ] The organization’s privacy notice covers telephone interactions
+
+---
+
+## Publish the Number
+
+Publish the virtual number only after inbound testing has passed.
+
+You may add the number to approved customer channels such as:
+
+- Your official website
+- Customer-support pages
+- Business profiles
+- Email signatures
+- Customer onboarding material
+- Product documentation
+- Approved advertising
+- Internal support directories
+
+When publishing the number, clearly explain:
+
+- What assistance is available
+- Which business or department the number represents
+- Supported hours, where applicable
+- Supported languages
+- Whether the caller may speak with an AI agent
+- Applicable privacy or recording information
+
+<Warning>
+  Do not describe the number as providing emergency assistance, guaranteed service, or 24/7 availability unless your configuration and business operations support that claim.
+</Warning>
+
+---
+
+## Review Inbound Conversations
+
+After customers begin calling, review conversation records regularly.
+
+Depending on the call and available data, the record may include:
+
+- Conversation or call identifier
+- Agent
+- Customer number
+- Call direction
+- Call status
+- Start time
+- End time
+- Duration
+- Transcript
+- Summary
+- Outcome
+- Credits used
+- Recording, when available
+
+Use these records to identify:
+
+- Questions the agent could not answer
+- Incorrect or outdated information
+- Speech-recognition problems
+- Unclear agent instructions
+- Repeated fallback responses
+- Calls that ended unexpectedly
+- Common customer intentions
+- Opportunities to improve FAQs
+
+<Card title="Call Logs" icon="list" href="/call-logs">
+  Learn how to review call records, transcripts, results, and available recordings.
+</Card>
+
+---
+
+## Update the Agent After Launch
+
+Customer questions may reveal missing knowledge or unclear behavior.
+
+When you find a problem:
+
+1. Identify whether the issue came from transcription, knowledge, or agent behavior.
+2. Update the relevant configuration.
+3. Save the change.
+4. Test the change in the browser.
+5. Place another controlled inbound call.
+6. Review the new call record.
+7. Confirm that related scenarios still work.
+
+| Problem | Where to correct it |
+| --- | --- |
+| Incorrect business details | Business Information |
+| Missing service information | Services |
+| Missing product information | Products |
+| Missing common answer | FAQs |
+| Outdated policy | Knowledge Documents |
+| Incorrect agent behavior | Agent Instructions |
+| Wrong voice or pronunciation | Voice & Audio |
+| Incorrectly understood speech | Speech to Text |
+| Wrong agent answers the call | Virtual Phone Integration |
+
+---
+
+## Deactivate a Virtual Number
+
+A purchased virtual number can be deactivated from the integration window.
+
+Deactivating the number:
+
+- Releases the selected virtual number
+- Disables its inbound call routing
+- Removes it from the workspace’s active number list
+- Does not refund the credits charged when it was purchased
+
+<Warning>
+  Deactivation can immediately prevent customers from reaching the connected agent. Confirm that the number is no longer in use before proceeding.
+</Warning>
+
+Before deactivating, check whether the number appears in:
+
+- Your website
+- Customer emails
+- Marketing material
+- Business directories
+- Active outbound calling
+- Internal support documentation
+- Existing customer records
+
+### Deactivation Procedure
+
+<Steps>
+  <Step title="Open Virtual Phone Integration">
+    Open the integration containing the number.
+  </Step>
+  <Step title="Select the number">
+    Confirm the exact number you intend to release.
+  </Step>
+  <Step title="Select Deactivate">
+    Open the deactivation confirmation.
+  </Step>
+  <Step title="Read the warning">
+    Confirm that call routing will be disabled and that the original credit charge will not be refunded.
+  </Step>
+  <Step title="Confirm deactivation">
+    Proceed only when the number is no longer required.
+  </Step>
+</Steps>
+
+After deactivation, remove the number from every customer-facing location.
+
+---
+
+## Credits and Usage
+
+Inbound telephone calls use workspace credits.
+
+Credit usage may depend on factors such as:
+
+- Call duration
+- Speech recognition
+- AI response generation
+- Voice generation
+- Telephone usage
+
+To manage usage:
+
+- Monitor the workspace credit balance
+- Review call duration
+- Keep agent responses concise
+- Investigate unusually long calls
+- Review repeated or abandoned calls
+- Remove outdated published numbers
+- Deactivate unused virtual numbers
+- Maintain enough credits for expected inbound volume
+
+<Warning>
+  An active published number may receive calls at any time. Monitor available credits to avoid interruptions to customer service.
+</Warning>
+
+---
+
+## Troubleshooting
+
+### No Virtual Numbers Are Available
+
+Possible reasons:
+
+- No numbers are currently available from the provider
+- Your plan does not allow another virtual number
+- The workspace has reached its number limit
+- The number list could not be loaded
+- Your account lacks the required permission
+
+Try:
+
+1. Confirming the correct workspace.
+2. Checking your subscription plan.
+3. Checking your available credits.
+4. Closing and reopening the integration.
+5. Trying again later.
+6. Contacting Valuez AI support if the problem continues.
+
+---
+
+### Buy New Number Does Not Open
+
+Confirm that an agent has been selected first.
+
+The current integration requires an agent selection before opening the number-purchase workflow.
+
+---
+
+### Number Purchase Fails
+
+Check:
+
+- A number was selected
+- An agent was selected
+- The workspace has sufficient credits
+- The number is still available
+- The workspace has not reached its number limit
+- Your account can manage integrations
+
+If the number became unavailable during purchase, return to the list and choose another available number.
+
+---
+
+### Save Integration Is Disabled
+
+The save action requires:
+
+- A selected agent
+- A purchased virtual number belonging to the workspace
+
+Selecting or manually entering an unowned number is not sufficient.
+
+---
+
+### The Number Does Not Connect
+
+Check:
+
+1. The integration was saved successfully.
+2. The virtual number is still active.
+3. The call type is **Inbound Only** or **Both**.
+4. The correct agent is assigned.
+5. The workspace has sufficient credits.
+6. You dialled the correct number.
+7. Your telephone network can reach the number.
+
+If the problem continues, record the attempted number, time, and displayed call information before contacting support.
+
+---
+
+### The Wrong Agent Answers
+
+1. Open **Virtual Phone Integration**.
+2. Select **Incoming Calls**.
+3. Check the assigned agent.
+4. Select the correct agent.
+5. Save the integration.
+6. Place another controlled test call.
+
+---
+
+### The Agent Answers but Gives Incorrect Information
+
+Check the conversation record to determine whether the question was understood correctly.
+
+Then review:
+
+- Connected knowledge base
+- Business Information
+- Services
+- Products
+- FAQs
+- Knowledge Documents
+- Agent Instructions
+
+Save the correction and place a new inbound test call.
+
+---
+
+### The Agent Cannot Hear the Caller
+
+Possible causes include:
+
+- Poor telephone signal
+- Caller microphone problems
+- Background noise
+- Unsupported language
+- Speech-to-text configuration
+- Telephone-provider audio problems
+
+Test from another telephone and location. If the issue occurs consistently, review the agent’s Speech to Text configuration.
+
+---
+
+### The Caller Cannot Hear the Agent
+
+Check:
+
+- The agent’s Voice & Audio configuration
+- The selected voice
+- Available credits
+- Whether browser testing produces voice correctly
+- Whether the issue occurs from multiple telephones
+
+If browser testing works but inbound calls repeatedly have no audio, contact support with the call time and available call identifier.
+
+---
+
+### The Call Ends Unexpectedly
+
+Possible causes include:
+
+- Insufficient credits
+- Telephone network interruption
+- Caller disconnection
+- Voice-session error
+- Invalid agent configuration
+- Temporary service interruption
+
+Review the available call record and retry using a controlled test number.
+
+---
+
+### Changes Are Not Reflected
+
+1. Confirm that the agent change was saved.
+2. Confirm that the correct agent is assigned.
+3. Confirm that the correct knowledge base is connected.
+4. Test the agent in the browser.
+5. Start a new inbound call.
+6. Review the new conversation record.
+
+Existing call records will continue to show the information generated during those earlier calls.
+
+---
+
+## Operational Best Practices
+
+<AccordionGroup>
+  <Accordion title="Use a dedicated inbound agent">
+    Give the agent a clear purpose and only the knowledge needed for the inbound customer experience.
+  </Accordion>
+
+  <Accordion title="Keep telephone responses concise">
+    Long answers are harder to follow over the telephone. Place the most important information first.
+  </Accordion>
+
+  <Accordion title="Test after every important change">
+    Changes to knowledge, instructions, voice, language, or routing should be followed by a browser test and an inbound telephone test.
+  </Accordion>
+
+  <Accordion title="Review conversations regularly">
+    Use real customer questions to improve services, products, FAQs, pronunciation, and agent instructions.
+  </Accordion>
+
+  <Accordion title="Monitor credit balance">
+    Maintain enough credits for expected call volume so customers are not affected by insufficient balance.
+  </Accordion>
+
+  <Accordion title="Protect customer information">
+    Add only necessary information to the knowledge base and follow your organization’s privacy and retention requirements.
+  </Accordion>
+
+  <Accordion title="Document number ownership">
+    Keep an internal record of each virtual number, assigned agent, business purpose, and published locations.
+  </Accordion>
+
+  <Accordion title="Deactivate carefully">
+    Before releasing a number, remove it from customer-facing channels and confirm that it is not used for outbound calling.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Quick Reference
+
+| Task | Where to perform it |
+| --- | --- |
+| Configure the answering agent | AI Voice Agents |
+| Add business knowledge | Knowledge Base |
+| Test before telephone activation | Test Agent |
+| Assign a virtual number | Virtual Phone Integration → Incoming Calls |
+| Purchase a number | Buy New Number |
+| Allow incoming calls only | Call Type → Inbound Only |
+| Allow incoming and outgoing calls | Call Type → Both |
+| Save routing | Save Integration |
+| Review completed calls | Conversation History or Call Logs |
+| Release a number | Deactivate virtual number integration |
+| Review credit activity | Credit Usage |
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Outbound Calls" icon="phone-call" href="/outbound-calls">
+    Learn how to place individual test calls and create outbound calling campaigns.
+  </Card>
+
+  <Card title="Test Your AI" icon="microphone" href="/test-your-ai">
+    Validate your agent’s knowledge, voice, and conversation behavior.
+  </Card>
+
+  <Card title="Integrations" icon="plug" href="/integrations">
+    Review and manage Valuez AI integrations.
+  </Card>
+
+  <Card title="Call Logs" icon="list" href="/call-logs">
+    Review call records, transcripts, outcomes, and recordings.
+  </Card>
+</CardGroup>

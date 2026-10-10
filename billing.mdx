@@ -1,0 +1,865 @@
+---
+title: "Billing"
+sidebarTitle: "Billing"
+description: "Manage Valuez AI billing details, review payment history, download receipts, monitor credits, and purchase additional credits."
+---
+
+The **Billing** page brings together your workspace’s subscription summary, available credit balance, payment records, billing identity, tax information, and invoicing address.
+
+Use this page to:
+
+- Review your active plan
+- Open the available subscription plans
+- Check your current credit balance
+- Purchase additional credits
+- Open detailed credit-usage logs
+- Review previous payments
+- Check payment status
+- Download available payment receipts
+- Add or update billing details
+- Maintain GST and tax information
+- Control the legal information used on invoices
+
+<Info>
+  Billing information belongs to the active Valuez AI workspace. If your account can access multiple workspaces, confirm that the correct workspace is active before changing billing information or making a purchase.
+</Info>
+
+---
+
+## Open the Billing Page
+
+<Steps>
+  <Step title="Sign in to Valuez AI">
+    Sign in using an account that has access to the required workspace.
+  </Step>
+  <Step title="Open Billing">
+    Open **Billing** from the dashboard navigation.
+  </Step>
+  <Step title="Review the workspace summary">
+    The top of the page displays your active plan and available credit balance.
+  </Step>
+  <Step title="Choose a billing section">
+    Select **Payment history** or **Billing details** to review the corresponding information.
+  </Step>
+</Steps>
+
+<Frame>
+  <img
+    src="/images/billing-overview.png"
+    alt="Valuez AI Billing page showing the current plan, credit balance, payment history, and billing details tabs"
+  />
+</Frame>
+
+---
+
+## Billing Overview
+
+The top of the Billing page contains two summary cards.
+
+<Tabs>
+  <Tab title="Current Plan">
+    The first card identifies the plan associated with the active workspace.
+
+    Depending on the plan, it can display:
+
+    - Pay as you go
+    - Silver Plan
+    - Gold Plan
+    - Platinum Plan
+    - Another plan name returned for the workspace
+    - Active status
+
+    The **View plans** button opens the Subscription & Plans page.
+
+    <Note>
+      The Basic plan is presented as **Pay as you go** on the Billing page.
+    </Note>
+  </Tab>
+  <Tab title="Credit Balance">
+    The second card displays the workspace’s currently available credit balance.
+
+    From this card, you can:
+
+    - Select **Add credits** to purchase additional credits
+    - Select **View usage logs** to review detailed credit activity
+
+    The displayed balance is formatted to two decimal places.
+  </Tab>
+</Tabs>
+
+---
+
+## Current Plan Summary
+
+The current-plan card provides a quick billing status for the workspace.
+
+| Information | Description |
+| --- | --- |
+| **Plan name** | The subscription currently associated with the workspace |
+| **Active badge** | Indicates that the displayed plan is active |
+| **Plan description** | A short explanation of the current subscription level |
+| **View plans** | Opens the complete Subscription & Plans page |
+
+For paid plans, the page indicates that the workspace is subscribed to higher-tier rate limits, custom agents, and priority voice queues.
+
+For Basic, the page identifies the workspace as using the pay-as-you-go level and recommends reviewing paid plans for higher limits.
+
+### Review other plans
+
+<Steps>
+  <Step title="Find the current-plan card">
+    Locate the plan summary at the top of the Billing page.
+  </Step>
+  <Step title="Select View plans">
+    Click **View plans**.
+  </Step>
+  <Step title="Compare available plans">
+    Valuez AI opens the Subscription & Plans page, where you can compare plan limits, pricing, credits, and included features.
+  </Step>
+</Steps>
+
+For detailed plan information, see [Subscription & Plans](/subscription-plans).
+
+---
+
+## Available Credit Balance
+
+The credit-balance card displays the credits currently available to your workspace.
+
+Credits can be consumed by supported Valuez AI operations, depending on your plan and the services used.
+
+Examples of credit-consuming activity can include:
+
+- Voice-agent conversations
+- Speech processing
+- API operations
+- Outbound campaign calls
+- Inbound calls
+- Other metered AI services
+
+<Warning>
+  Credit consumption can vary according to the services used. Do not estimate remaining capacity only from the number of calls or interactions.
+</Warning>
+
+### Open credit usage logs
+
+<Steps>
+  <Step title="Open Billing">
+    Navigate to the Billing page.
+  </Step>
+  <Step title="Find the credit-balance card">
+    Review the currently available credit balance.
+  </Step>
+  <Step title="Select View usage logs">
+    Click **View usage logs**.
+  </Step>
+  <Step title="Review credit activity">
+    Valuez AI opens the Credit Usage page, where you can inspect detailed credit activity.
+  </Step>
+</Steps>
+
+---
+
+## Billing Sections
+
+The Billing page has two main tabs:
+
+<Tabs>
+  <Tab title="Payment History">
+    Displays previous payment records and available receipt downloads.
+  </Tab>
+  <Tab title="Billing Details">
+    Displays the legal identity, tax details, billing contact, and registered billing address used for receipts and invoices.
+  </Tab>
+</Tabs>
+
+The selected tab is stored in the page URL. This means a direct Billing link can open either Payment History or Billing Details.
+
+---
+
+## Payment History
+
+The **Payment history** tab lists billing transactions associated with your Valuez AI account.
+
+<Frame>
+  <img
+    src="/images/payment-history.png"
+    alt="Valuez AI Payment History tab showing plans, receipt numbers, amounts, statuses, and receipt download actions"
+  />
+</Frame>
+
+The table contains the following columns:
+
+| Column | Description |
+| --- | --- |
+| **No.** | Sequential record number for the current page |
+| **Plan Name** | Plan associated with the transaction |
+| **Receipt Number** | Unique receipt or invoice reference |
+| **Amount** | Transaction amount displayed in Indian rupees |
+| **Status** | Current payment status |
+| **Actions** | Provides the receipt PDF download when available |
+
+---
+
+## Payment Statuses
+
+A payment record can display one of the following statuses:
+
+<Tabs>
+  <Tab title="Success">
+    The payment record was completed successfully.
+  </Tab>
+  <Tab title="Paid">
+    The transaction is recorded as paid.
+  </Tab>
+  <Tab title="Pending">
+    The payment has not yet reached a final successful or failed state.
+
+    Wait before attempting the same payment again.
+  </Tab>
+  <Tab title="Failed">
+    The payment did not complete successfully.
+
+    Check whether any amount was deducted before making another payment.
+  </Tab>
+</Tabs>
+
+If no status is available for a record, the current interface displays it as **Pending**.
+
+<Warning>
+  A Pending status does not automatically mean that the payment failed. Avoid submitting duplicate payments until the original transaction reaches a final state.
+</Warning>
+
+---
+
+## Sort Payment Amounts
+
+The **Amount** column includes a sorting control.
+
+Select the sort indicator to alternate between:
+
+- Ascending amount order
+- Descending amount order
+
+The default payment-history sorting direction is descending.
+
+<Note>
+  Sorting applies to the payment records displayed by the table. Pagination may still divide the complete payment history across multiple pages.
+</Note>
+
+---
+
+## Payment History Pagination
+
+The Payment History table loads up to ten records per page in the current interface.
+
+If more than one page is available, pagination controls appear beneath the table.
+
+Use the pagination controls to:
+
+- Open the next page
+- Return to the previous page
+- Move to another available page
+
+The row number is calculated using the current page and page size, so numbering continues across pages.
+
+---
+
+## Download a Receipt
+
+When a receipt PDF is available, the **Actions** column displays **Download PDF**.
+
+<Steps>
+  <Step title="Open Payment history">
+    Select the **Payment history** tab on the Billing page.
+  </Step>
+  <Step title="Find the transaction">
+    Locate the transaction using its plan name, receipt number, amount, or status.
+  </Step>
+  <Step title="Select Download PDF">
+    Click **Download PDF** in the Actions column.
+  </Step>
+  <Step title="Review the receipt">
+    The receipt opens in a new browser tab when a valid receipt URL is available.
+  </Step>
+  <Step title="Save the document">
+    Use your browser’s download or print controls to save a local copy if required.
+  </Step>
+</Steps>
+
+<Info>
+  The Download PDF control works only when the transaction includes a valid receipt or invoice URL.
+</Info>
+
+<Warning>
+  Confirm that the receipt opens from the official Valuez AI billing interface before downloading or sharing it.
+</Warning>
+
+---
+
+## No Payment History
+
+If the workspace has no available payment records, the table displays:
+
+**No payment history found**
+
+This can occur when:
+
+- The workspace has not completed a paid transaction
+- The workspace currently uses the Basic plan
+- A recent payment has not yet been added to the billing history
+- You are viewing a different workspace
+- Payment records could not be retrieved
+
+If you recently completed a payment, refresh the page after a short wait.
+
+---
+
+## Billing Details
+
+The **Billing details** tab stores the business, tax, contact, and address information used for billing documents.
+
+<Frame>
+  <img
+    src="/images/billing-details.png"
+    alt="Valuez AI Billing Details tab showing legal name, GSTIN, tax ID, billing contact, and invoicing address"
+  />
+</Frame>
+
+Saved billing information is organised into three groups:
+
+<Tabs>
+  <Tab title="Tax & Registration">
+    Displays:
+
+    - Legal name
+    - GSTIN
+    - PAN or Tax ID
+  </Tab>
+  <Tab title="Billing Contacts">
+    Displays:
+
+    - Contact person
+    - Billing email
+    - Phone number
+  </Tab>
+  <Tab title="Billing Address">
+    Displays:
+
+    - Street address
+    - Postal code
+    - City
+    - State or province
+    - Country
+  </Tab>
+</Tabs>
+
+<Info>
+  Tax invoices and recharge receipts use the legal billing profile saved for the active workspace.
+</Info>
+
+---
+
+## Add Billing Details
+
+If billing information has not been configured, the Billing Details tab displays **No billing details yet**.
+
+<Steps>
+  <Step title="Open Billing Details">
+    Select the **Billing details** tab.
+  </Step>
+  <Step title="Select Add billing details">
+    Click **Add billing details**.
+  </Step>
+  <Step title="Enter business and tax information">
+    Provide your legal name and any applicable tax information.
+  </Step>
+  <Step title="Enter billing contact information">
+    Provide the billing email, mobile number, and optional contact person.
+  </Step>
+  <Step title="Enter the billing address">
+    Provide the street address, country, state, city, and postal code.
+  </Step>
+  <Step title="Save the information">
+    Review the details and click **Save Details**.
+  </Step>
+</Steps>
+
+<Frame>
+  <img
+    src="/images/add-billing-details.png"
+    alt="Valuez AI Add Billing Details window showing business, tax, contact, and address fields"
+  />
+</Frame>
+
+---
+
+## Edit Billing Details
+
+When billing details already exist, the page displays an **Edit Details** button.
+
+<Steps>
+  <Step title="Open Billing Details">
+    Select the **Billing details** tab.
+  </Step>
+  <Step title="Select Edit Details">
+    Click **Edit Details** in the billing-profile header.
+  </Step>
+  <Step title="Update the required fields">
+    Correct the business, contact, tax, or address information.
+  </Step>
+  <Step title="Review the updated profile">
+    Confirm that the information matches the legal details required for future receipts and invoices.
+  </Step>
+  <Step title="Save the changes">
+    Click **Save Details**.
+  </Step>
+</Steps>
+
+After a successful update, Valuez AI displays:
+
+**Billing details updated successfully!**
+
+<Warning>
+  Changes to billing details are intended for future billing operations. Do not assume that editing the billing profile automatically changes a previously generated receipt.
+</Warning>
+
+---
+
+## Billing Detail Fields
+
+<Tabs>
+  <Tab title="Business & Tax">
+    | Field | Required? | Description |
+    | --- | --- | --- |
+    | **Legal / Company Name** | Yes | Legal name used for invoices and receipts |
+    | **GSTIN** | No | Indian Goods and Services Tax Identification Number |
+    | **PAN / Tax ID** | No | PAN or another applicable tax identifier |
+  </Tab>
+  <Tab title="Contact Information">
+    | Field | Required? | Description |
+    | --- | --- | --- |
+    | **Contact Person** | No | Person responsible for billing matters |
+    | **Billing Email** | Yes | Email address used for billing communication |
+    | **Mobile Number** | Yes | Mobile number associated with billing activity |
+  </Tab>
+  <Tab title="Billing Address">
+    | Field | Required? | Description |
+    | --- | --- | --- |
+    | **Street Address** | Yes | Complete registered billing address |
+    | **Country** | Yes | Billing country |
+    | **State / Province** | No in the saved-details form | State or province associated with the address |
+    | **City** | No in the saved-details form | City associated with the address |
+    | **Postal Code / PIN** | Yes | Postal or PIN code for the billing address |
+  </Tab>
+</Tabs>
+
+<Note>
+  The subscription checkout can require additional address fields even when the standalone Billing Details form does not mark them as required.
+</Note>
+
+---
+
+## Billing Detail Validation
+
+Valuez AI validates key fields before saving billing information.
+
+| Field | Validation behavior |
+| --- | --- |
+| **Legal / Company Name** | Cannot be empty |
+| **Billing Email** | Cannot be empty and must use a valid email format |
+| **Mobile Number** | Cannot be empty |
+| **Street Address** | Cannot be empty |
+| **Country** | Must be selected |
+| **Postal Code / PIN** | Cannot be empty |
+| **GSTIN** | If provided, must match the valid 15-character GSTIN structure |
+| **PAN / Tax ID** | Accepts up to 10 characters |
+| **Mobile Number input** | Accepts up to 10 digits and must begin with 6, 7, 8, or 9 |
+
+GSTIN and PAN or Tax ID values are converted to uppercase while you enter them.
+
+<Warning>
+  The Billing Details form checks that the mobile field is not empty, but you should still enter a complete and accurate 10-digit mobile number.
+</Warning>
+
+---
+
+## Country, State, and City
+
+The current Billing Details form limits the country selection to **India**.
+
+After selecting India:
+
+1. The State or Province list becomes available.
+2. Selecting a state loads the corresponding city list.
+3. If no predefined cities are available, the city can be entered manually.
+
+Changing the country clears the previously selected state and city.
+
+Changing the state clears the previously selected city.
+
+<Tip>
+  Select the country and state before entering the city to avoid having the city value cleared.
+</Tip>
+
+---
+
+## GSTIN
+
+GSTIN is optional in the Billing Details form.
+
+If provided, it must follow the standard 15-character GSTIN structure.
+
+An example format displayed by the application is:
+
+```text
+27AAAAA0000A1Z5
+```
+
+The field:
+
+- Accepts up to 15 characters
+- Converts letters to uppercase
+- Rejects values that do not match the expected format
+
+<Warning>
+  The documentation example demonstrates formatting only. Do not use it as your organisation’s GSTIN.
+</Warning>
+
+---
+
+## PAN or Tax ID
+
+The **PAN / Tax ID** field is optional.
+
+The field:
+
+- Accepts up to 10 characters
+- Converts letters to uppercase
+- Appears on the saved billing profile when provided
+
+Confirm the correct tax identifier with your organisation’s finance or accounting team.
+
+---
+
+## Billing Email
+
+The billing email can be different from the account sign-in email.
+
+Use an address monitored by the person or team responsible for:
+
+- Payment communication
+- Receipts
+- Tax invoices
+- Subscription questions
+- Credit-purchase records
+
+Examples include a finance, billing, or accounts-payable address.
+
+<Warning>
+  Changing the billing email does not change the email used to sign in to Valuez AI.
+</Warning>
+
+---
+
+## Add Credits
+
+The Billing page provides an **Add credits** button beside the available credit balance.
+
+<Steps>
+  <Step title="Open Billing">
+    Navigate to the Billing page.
+  </Step>
+  <Step title="Select Add credits">
+    Click **Add credits** in the credit-balance card.
+  </Step>
+  <Step title="Enter the top-up amount">
+    Enter the amount you want to purchase or select an available preset.
+  </Step>
+  <Step title="Review the credit quantity">
+    The top-up interface uses the displayed conversion of ₹1 to 1 credit.
+  </Step>
+  <Step title="Review billing information">
+    Confirm the business, tax, contact, and address details.
+  </Step>
+  <Step title="Review GST and total">
+    Confirm the base amount, GST amount, and final payment amount.
+  </Step>
+  <Step title="Proceed to payment">
+    Click the payment button and complete the transaction through the hosted payment page.
+  </Step>
+</Steps>
+
+<Frame>
+  <img
+    src="/images/billing-add-credits.png"
+    alt="Valuez AI Add Credits window showing top-up amount, GST, total, and billing information"
+  />
+</Frame>
+
+---
+
+## Credit Top-Up Amounts
+
+The current Add Credits form supports:
+
+| Setting | Value |
+| --- | --- |
+| **Minimum top-up** | ₹100 |
+| **Maximum top-up** | ₹10,00,000 |
+| **Conversion shown by the interface** | ₹1 = 1 credit |
+| **GST** | Calculated separately |
+| **Payment method** | Completed through the hosted payment flow |
+
+The final total is calculated as:
+
+```text
+Base top-up amount + applicable GST = Total payment
+```
+
+<Info>
+  The number entered as the top-up amount represents both the base rupee amount and the number of credits before tax.
+</Info>
+
+---
+
+## After Purchasing Credits
+
+When the Add Credits window closes, the Billing page requests refreshed credit information.
+
+If the payment completed successfully:
+
+1. Wait for payment processing to finish.
+2. Return to the Billing page.
+3. Refresh the page if necessary.
+4. Confirm that the available credit balance has increased.
+5. Open **View usage logs** to review related credit activity.
+6. Open **Payment history** to look for the payment record and receipt.
+
+<Note>
+  A payment can take time to appear if the payment provider has not yet returned a final transaction status.
+</Note>
+
+---
+
+## Receipt and Invoice Safety
+
+Follow these practices when working with billing documents:
+
+- Download receipts only from the Valuez AI Billing page
+- Confirm the workspace and receipt number
+- Check the plan name and transaction amount
+- Store downloaded documents securely
+- Avoid sharing receipts publicly
+- Hide tax identifiers when sharing screenshots
+- Never share payment credentials or OTPs
+- Confirm that the payment page uses a secure HTTPS connection
+
+---
+
+## Billing Best Practices
+
+<AccordionGroup>
+  <Accordion title="Use the legal company name">
+    Enter the company or legal name that should appear on billing records.
+
+    Avoid informal abbreviations unless they are part of the registered legal name.
+  </Accordion>
+
+  <Accordion title="Verify tax information before payment">
+    Confirm GSTIN and PAN or Tax ID values with your finance team before completing a transaction.
+  </Accordion>
+
+  <Accordion title="Use a monitored billing email">
+    Use an address regularly monitored by the person or team responsible for payments and invoices.
+  </Accordion>
+
+  <Accordion title="Review the active workspace">
+    If your account belongs to multiple workspaces, confirm the active workspace before editing billing information or purchasing credits.
+  </Accordion>
+
+  <Accordion title="Download receipts after successful payments">
+    Save a copy of available receipts for internal accounting and reconciliation.
+  </Accordion>
+
+  <Accordion title="Avoid duplicate payments">
+    If a payment remains pending, confirm its status before attempting the transaction again.
+  </Accordion>
+
+  <Accordion title="Monitor available credits">
+    Review the credit balance before starting campaigns or other high-volume activity.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The Billing page does not load">
+    Refresh the page and confirm that your internet connection is working.
+
+    If the problem continues:
+
+    1. Sign out and sign in again.
+    2. Confirm that the correct workspace is active.
+    3. Try another supported browser.
+    4. Contact Valuez AI support with a screenshot.
+  </Accordion>
+
+  <Accordion title="The displayed plan is incorrect">
+    Confirm that you are viewing the correct workspace.
+
+    Open Subscription & Plans and refresh the plan information. If you recently completed a purchase, allow time for payment confirmation.
+  </Accordion>
+
+  <Accordion title="The available credit balance is incorrect">
+    Refresh the Billing page and open the Credit Usage page.
+
+    If you recently purchased credits, check Payment History for the transaction status before contacting support.
+  </Accordion>
+
+  <Accordion title="No payment history is displayed">
+    Payment history may be empty if no paid transactions exist for the account or workspace.
+
+    Also confirm that:
+
+    - You are viewing the correct workspace
+    - The payment completed successfully
+    - The payment is no longer pending
+    - The page finished loading
+  </Accordion>
+
+  <Accordion title="Download PDF does not open anything">
+    A valid receipt URL may not yet be available for that transaction.
+
+    Confirm that the payment status is successful or paid, refresh the page, and try again later.
+  </Accordion>
+
+  <Accordion title="The receipt opens but does not download">
+    The receipt opens in a new browser tab. Use the browser’s download or print control to save it.
+
+    Check whether the browser blocked the new tab.
+  </Accordion>
+
+  <Accordion title="Billing details do not load">
+    Refresh the page and confirm that the correct workspace is active.
+
+    If the details still do not load, you can re-enter them only after confirming the correct legal and tax information.
+  </Accordion>
+
+  <Accordion title="I cannot save billing details">
+    Check every required field:
+
+    - Legal or company name
+    - Billing email
+    - Mobile number
+    - Street address
+    - Country
+    - Postal code
+
+    Correct any field highlighted with an error and try again.
+  </Accordion>
+
+  <Accordion title="My GSTIN is rejected">
+    Enter a valid 15-character GSTIN without spaces or punctuation.
+
+    Confirm the value with your organisation’s official tax registration record.
+  </Accordion>
+
+  <Accordion title="My mobile number is rejected">
+    Enter an Indian mobile number using digits only.
+
+    The number can contain up to 10 digits and must begin with 6, 7, 8, or 9.
+  </Accordion>
+
+  <Accordion title="The state or city list is empty">
+    Select India as the country first, then select the state.
+
+    If a city list is unavailable, enter the city manually when the text field appears.
+  </Accordion>
+
+  <Accordion title="Add credits does not complete">
+    Verify all billing fields and check your internet connection.
+
+    If the hosted payment page does not open, confirm that the browser permits redirects and pop-ups from Valuez AI.
+  </Accordion>
+
+  <Accordion title="Payment succeeded but credits are missing">
+    Do not immediately repeat the purchase.
+
+    Instead:
+
+    1. Refresh the Billing page.
+    2. Review Payment History.
+    3. Open Credit Usage.
+    4. Record the payment reference.
+    5. Contact support if the balance remains unchanged.
+  </Accordion>
+
+  <Accordion title="The payment status is Pending">
+    Wait for the payment provider to complete processing.
+
+    Avoid making the same payment again until the first transaction has reached a final status.
+  </Accordion>
+
+  <Accordion title="The payment status is Failed">
+    Check whether any amount was deducted.
+
+    If an amount was deducted despite a Failed status, keep the transaction reference and contact support before retrying.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Before Contacting Support
+
+Prepare the following information:
+
+- Workspace or organisation name
+- Account email address
+- Billing email address
+- Current plan
+- Receipt number
+- Payment reference
+- Transaction amount
+- Approximate transaction date and time
+- Payment status
+- Description of the problem
+- Screenshot of the error
+- Whether money was deducted
+- Whether credits were added
+
+<Warning>
+  Never share your complete card number, CVV, OTP, bank password, UPI PIN, or Valuez AI password.
+</Warning>
+
+---
+
+## Related Pages
+
+<CardGroup cols={2}>
+  <Card title="Subscription & Plans" icon="credit-card" href="/subscription-plans">
+    Compare plan prices, monthly credits, feature limits, and subscription options.
+  </Card>
+
+  <Card title="Credit Usage" icon="coins" href="/credit-usage">
+    Review detailed credit activity and understand credit consumption.
+  </Card>
+
+  <Card title="My Profile" icon="user" href="/my-profile">
+    Review your account identity, organisation, role, and subscription tier.
+  </Card>
+
+  <Card title="Account Activity" icon="clock-rotate-left" href="/account-activity">
+    Review important account and workspace activity.
+  </Card>
+
+  <Card title="Call Campaigns" icon="phone" href="/call-campaigns">
+    Understand campaigns that can consume workspace credits.
+  </Card>
+
+  <Card title="Report a Problem" icon="triangle-exclamation" href="/report-a-problem">
+    Report a payment, receipt, invoice, or credit-allocation problem.
+  </Card>
+</CardGroup>

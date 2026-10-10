@@ -1,0 +1,1337 @@
+---
+title: "Troubleshooting"
+sidebarTitle: "Troubleshooting"
+description: "Diagnose and resolve common Valuez AI login, agent, knowledge, voice, calling, campaign, integration, analytics, and account issues."
+---
+
+This guide provides practical solutions for common problems in the Valuez AI dashboard.
+
+Start with the section that matches the area where the issue occurred:
+
+- Login and workspace access
+- Agent creation and configuration
+- Knowledge Base
+- Test Agent
+- Voice and microphone
+- Inbound calls
+- Outbound calls and campaigns
+- Call Logs
+- Integrations and API keys
+- Dashboard analytics
+- Credits, plans, and permissions
+
+<Info>
+  When an error message appears, record the exact wording before refreshing or closing the page. It is often the fastest way to identify the cause.
+</Info>
+
+---
+
+## Start With These Checks
+
+Before changing your agent or integration, complete these basic checks:
+
+1. Confirm that you are in the correct workspace.
+2. Confirm that your internet connection is stable.
+3. Refresh the dashboard.
+4. Sign out and sign in again if your session may have expired.
+5. Check the selected agent.
+6. Check the selected date range.
+7. Confirm that your plan includes the feature.
+8. Confirm that your account has the required permission.
+9. Check the available credit balance.
+10. Try a current desktop version of Chrome or Edge.
+
+If the problem continues, avoid making several unrelated changes at once. Change one setting, save it, and test again.
+
+---
+
+## Login and Access
+
+<AccordionGroup>
+  <Accordion title="I cannot sign in with my email and password">
+    Check the following:
+
+    1. Confirm that the email address is typed correctly.
+    2. Confirm that Caps Lock is not affecting the password.
+    3. Use the password-reset option if you do not remember the password.
+    4. Check whether the account was originally created with Google.
+    5. If it was created with Google, use **Sign in with Google**.
+    6. Confirm that any required email verification was completed.
+    7. Clear the browser’s Valuez AI cookies and try again.
+    8. Try an incognito or private browser window.
+
+    Do not repeatedly guess the password if your organization has an account-lockout policy.
+  </Accordion>
+
+  <Accordion title="Sign in with Google is not working">
+    Try:
+
+    1. Confirming that browser pop-ups are allowed.
+    2. Selecting the same Google account originally used for Valuez AI.
+    3. Allowing required cookies for the authentication process.
+    4. Trying an incognito window.
+    5. Signing out of other Google accounts temporarily.
+    6. Trying another supported browser.
+
+    If your organization restricts Google sign-in, ask your administrator whether the Valuez AI application is permitted.
+  </Accordion>
+
+  <Accordion title="My session expired">
+    Sign in again and reopen the required workspace.
+
+    If expiration happens repeatedly:
+
+    - Check whether the dashboard was left inactive
+    - Confirm that browser cookies are allowed
+    - Avoid using aggressive privacy extensions for the dashboard
+    - Check whether the same account is being used in several browser sessions
+    - Ask your IT team whether a security policy is clearing browser sessions
+  </Accordion>
+
+  <Accordion title="I can sign in, but I see the wrong workspace">
+    Use the workspace or organization selector to choose the correct workspace.
+
+    Before making changes, verify:
+
+    - Organization name
+    - Available agents
+    - Integration list
+    - Campaign list
+    - Team members
+
+    Do not recreate missing agents or integrations until you confirm that you are not simply viewing another workspace.
+  </Accordion>
+
+  <Accordion title="I do not have permission to view or change something">
+    Valuez AI uses workspace and module permissions.
+
+    Ask a workspace administrator to review your access to the relevant area, such as:
+
+    - Dashboard
+    - Agents
+    - Campaigns
+    - Campaign Call History
+    - Integrations
+    - Team Management
+    - Notifications
+
+    View access does not always include permission to create, edit, download, or manage records.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Agent Creation and Configuration
+
+<AccordionGroup>
+  <Accordion title="I cannot create another agent">
+    Possible causes include:
+
+    - The workspace reached its agent limit
+    - Your plan does not include another agent
+    - You have view permission but not create permission
+    - The workspace or subscription information has not finished loading
+
+    Check the message displayed near **Create Agent**.
+
+    If you see an agent-limit message, review your plan or remove an unused agent only after confirming that it is not connected to an integration, number, or campaign.
+  </Accordion>
+
+  <Accordion title="Agent details will not save">
+    Check all required fields.
+
+    The agent description must contain at least 10 words in the current creation workflow.
+
+    Also check:
+
+    - Agent name
+    - Agent purpose
+    - Language
+    - Industry or other required selections
+    - Leading or trailing blank spaces
+    - Whether the page is still loading lookup values
+
+    If Valuez AI displays “Unable to save agent details,” close and reopen the form, then try again.
+  </Accordion>
+
+  <Accordion title="Valuez AI cannot identify or load the agent">
+    If you see a message such as:
+
+    > Unable to identify this agent. Close and reopen to try again.
+
+    or:
+
+    > Unable to load agent details. Close and reopen to try again.
+
+    Try:
+
+    1. Close the agent editor.
+    2. Return to the Agents list.
+    3. Confirm the agent still appears.
+    4. Reopen the agent.
+    5. Refresh the dashboard if the issue continues.
+    6. Confirm you still have access to the agent.
+
+    Do not create a duplicate agent until you confirm that the original agent was not saved.
+  </Accordion>
+
+  <Accordion title="The agent is giving an incorrect answer">
+    First check what the agent understood.
+
+    1. Open the relevant conversation in **Call Logs**.
+    2. Read the Caller / User transcript.
+    3. Listen to the recording if available.
+    4. Confirm whether the question was transcribed correctly.
+
+    If the question was understood correctly, review:
+
+    | Problem | Where to correct it |
+    | --- | --- |
+    | Wrong business information | Business Information |
+    | Missing service | Services |
+    | Missing product | Products |
+    | Missing common answer | FAQs |
+    | Outdated policy | Knowledge Documents |
+    | Incorrect behavior | Agent Instructions |
+    | Excessively long answer | Conversation settings or Agent Instructions |
+
+    Save the correction and use a fresh Test Agent session.
+  </Accordion>
+
+  <Accordion title="The agent does not follow its instructions">
+    Review the Agent Instructions for:
+
+    - Conflicting rules
+    - Vague responsibilities
+    - Missing restrictions
+    - Several instructions describing the same behavior differently
+    - Instructions that conflict with the knowledge base
+    - Unclear escalation conditions
+    - Overly broad requests such as “answer everything”
+
+    Rewrite the instructions using clear, direct rules.
+
+    Test the exact failed scenario in a new conversation.
+  </Accordion>
+
+  <Accordion title="The greeting is wrong">
+    Open the agent’s conversation settings and review the greeting or welcome message.
+
+    Confirm:
+
+    - Correct business name
+    - Correct agent identity
+    - Correct language
+    - Appropriate opening length
+    - No unsupported 24/7 claim
+    - No old product or department name
+
+    Save the change, reset the browser test, and test again.
+  </Accordion>
+
+  <Accordion title="The agent sounds unnatural">
+    Review:
+
+    - Selected voice
+    - Speaking speed
+    - Response length
+    - Punctuation
+    - Product-name pronunciation
+    - Agent instructions
+    - Whether responses contain long lists
+
+    Use shorter, conversational responses for telephone use.
+
+    Test several voices before changing a production agent.
+  </Accordion>
+
+  <Accordion title="My recent agent changes are not reflected">
+    Try:
+
+    1. Confirming that the change was saved.
+    2. Checking that you edited the correct agent.
+    3. Confirming that the correct knowledge base is selected.
+    4. Opening **Test Agent**.
+    5. Selecting **Reset Conversation**.
+    6. Starting a new test.
+    7. Refreshing the dashboard if necessary.
+
+    Existing conversations and call records will not be rewritten after an agent change.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Knowledge Base
+
+<AccordionGroup>
+  <Accordion title="The agent says it does not know the answer">
+    Check whether the information exists in the connected knowledge base.
+
+    Review:
+
+    - Business Information
+    - Services
+    - Products
+    - FAQs
+    - Knowledge Documents
+    - Connected website page
+
+    Also confirm that the agent is connected to the intended knowledge base under its AI model settings.
+  </Accordion>
+
+  <Accordion title="The agent uses outdated information">
+    Search every knowledge source that may contain the old value.
+
+    For example, an outdated price could appear in:
+
+    - Product details
+    - FAQs
+    - A PDF document
+    - Business description
+    - Connected website page
+    - Agent Instructions
+
+    Update or remove conflicting information, save, and begin a fresh test.
+  </Accordion>
+
+  <Accordion title="The website information is incomplete">
+    The website knowledge feature reads the exact public page entered in Business Information. It does not crawl the entire website.
+
+    Check that:
+
+    - The URL is correct
+    - The page is publicly accessible
+    - The required information appears on that page
+    - The page does not require sign-in
+    - The content is not loaded only after a restricted interaction
+
+    Add important information directly to Business Information, Services, Products, FAQs, or a PDF instead of assuming the full website will be searched.
+  </Accordion>
+
+  <Accordion title="A PDF will not upload">
+    The Knowledge Documents area accepts PDF files.
+
+    Check that:
+
+    - The file is a PDF
+    - The file is no larger than 10 MB
+    - The file is not empty
+    - The file opens normally on your computer
+    - The file is not password protected
+    - You have permission to edit the knowledge base
+
+    Try saving a fresh copy of the PDF and uploading it again.
+  </Accordion>
+
+  <Accordion title="The uploaded PDF does not improve the answer">
+    Review the document itself.
+
+    Make sure:
+
+    - The relevant text is readable
+    - The information is not only in an unclear image
+    - The answer is stated explicitly
+    - The document does not conflict with another source
+    - The correct knowledge base is selected
+    - The agent was tested in a fresh session
+
+    For critical FAQs, add a direct FAQ entry even when the information also exists in a PDF.
+  </Accordion>
+
+  <Accordion title="I see “Select and save a knowledge base in LLM Model first”">
+    Open **Agent Settings**, locate the AI model configuration, and select the intended knowledge base.
+
+    Save the configuration before returning to the Knowledge Base tab.
+  </Accordion>
+
+  <Accordion title="I cannot delete or update knowledge">
+    Confirm that:
+
+    - You have edit permission
+    - The correct agent and knowledge base are open
+    - The item is not still loading
+    - The form contains valid values
+    - Your session has not expired
+
+    Refresh the page before repeating a delete action. Do not click Delete repeatedly while the first request is processing.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Test Agent
+
+<AccordionGroup>
+  <Accordion title="I see “Knowledge Base Required”">
+    The agent does not have a selected knowledge base.
+
+    1. Open **Agent Settings**.
+    2. Select the intended knowledge base in the AI model area.
+    3. Save the agent.
+    4. Add the required knowledge.
+    5. Return to **Test Agent**.
+  </Accordion>
+
+  <Accordion title="I see “Configuration Incomplete”">
+    Complete the required settings in:
+
+    - Voice & Audio
+    - Speech to Text
+
+    Check for:
+
+    - Voice provider
+    - Voice or voice model
+    - Speaking speed
+    - Speech-to-text provider
+    - Speech-to-text model
+
+    Save the agent and reopen Test Agent.
+  </Accordion>
+
+  <Accordion title="The voice test does not begin">
+    Confirm that:
+
+    1. You selected **Yes** on the consent screen.
+    2. Microphone permission is allowed.
+    3. A knowledge base is selected.
+    4. Voice and speech-to-text settings are complete.
+    5. The workspace has available credits.
+    6. The browser has a stable internet connection.
+
+    The current consent flow starts the test after acceptance. It does not require a separate name and email form.
+  </Accordion>
+
+  <Accordion title="The test remains on Connecting">
+    Try:
+
+    1. Waiting briefly.
+    2. Selecting **Reset Conversation**.
+    3. Refreshing the dashboard.
+    4. Signing in again.
+    5. Trying a current version of Chrome or Edge.
+    6. Testing another internet connection.
+    7. Asking your IT team whether real-time browser connections are blocked.
+
+    If the problem affects every browser and network, record the agent name and time of the attempt.
+  </Accordion>
+
+  <Accordion title="The agent stopped responding during a test">
+    Check the current status.
+
+    If the interface returned to **Listening**, repeat the question clearly.
+
+    If an error appears:
+
+    - Reset the conversation
+    - Confirm available credits
+    - Check the internet connection
+    - Test a shorter question
+    - Refresh and start again
+
+    Review Conversation History to determine whether the partial test was recorded.
+  </Accordion>
+
+  <Accordion title="Reset Conversation removed my transcript">
+    This is expected.
+
+    Reset Conversation clears the current test context and starts a fresh session.
+
+    Use it when:
+
+    - Retesting after a configuration change
+    - Starting a new customer scenario
+    - Removing earlier conversation context
+
+    Save screenshots or test notes before resetting if you need them for comparison.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Microphone and Audio
+
+<AccordionGroup>
+  <Accordion title="The browser cannot access my microphone">
+    If Valuez AI displays:
+
+    > Error: Could not access microphone. Please check permissions.
+
+    complete these steps:
+
+    1. Select the permissions icon beside the browser address bar.
+    2. Change Microphone to **Allow**.
+    3. Select the correct input device.
+    4. Reload the dashboard.
+    5. Start a new test session.
+
+    Also close applications that may be using the microphone exclusively.
+  </Accordion>
+
+  <Accordion title="Valuez AI does not detect my speech">
+    Check:
+
+    - Browser microphone permission
+    - Computer input device
+    - Headset mute button
+    - Valuez AI mute control
+    - Input volume
+    - Configured language
+    - Background noise
+    - Speech-to-text provider and model
+
+    Use your operating system’s microphone test to confirm that the device works.
+  </Accordion>
+
+  <Accordion title="The transcript is incorrect">
+    Try:
+
+    - Moving to a quiet room
+    - Using a headset
+    - Speaking at a natural pace
+    - Avoiding speaker echo
+    - Testing the configured language
+    - Repeating unusual names clearly
+    - Testing another microphone
+    - Reviewing Speech to Text settings
+
+    Always distinguish a transcription problem from a knowledge problem.
+  </Accordion>
+
+  <Accordion title="I cannot hear the agent">
+    Check:
+
+    - Computer volume
+    - Browser-tab mute state
+    - Selected audio-output device
+    - Headphone connection
+    - Voice provider
+    - Selected voice
+    - Speaking speed
+    - Available credits
+
+    Play another browser audio source to confirm that your output device works.
+  </Accordion>
+
+  <Accordion title="The agent continues talking when interrupted">
+    Confirm that:
+
+    - Allow Interruptions is enabled
+    - The microphone is not muted
+    - Your interruption appears in the transcript
+    - You are using headphones
+    - Background noise is not masking your speech
+
+    Retest with:
+
+    ```text
+    Stop. I have a different question.
+    ```
+  </Accordion>
+
+  <Accordion title="The agent interrupts itself or reacts to background noise">
+    Use headphones and move to a quieter environment.
+
+    Also check:
+
+    - Speaker echo
+    - Television or nearby conversation
+    - Microphone sensitivity
+    - Fan or keyboard noise
+    - Whether the selected microphone is the intended one
+
+    Test again before changing the agent instructions.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Inbound Calls
+
+<AccordionGroup>
+  <Accordion title="No virtual number is available">
+    Possible causes include:
+
+    - No number has been purchased
+    - No numbers are currently available from the provider
+    - The plan does not include virtual numbers
+    - The workspace reached its number limit
+    - The number list failed to load
+
+    Check your plan, credits, workspace, and Virtual Phone Integration.
+  </Accordion>
+
+  <Accordion title="Buy New Number does not open">
+    Select an agent first.
+
+    The current number-purchase workflow requires an agent before available numbers can be loaded.
+  </Accordion>
+
+  <Accordion title="The number purchase failed">
+    Check:
+
+    - A number was selected
+    - An agent was selected
+    - Sufficient credits are available
+    - The number is still available
+    - The plan allows another number
+    - You have permission to manage integrations
+
+    If another user purchased the same number first, choose another available number.
+  </Accordion>
+
+  <Accordion title="Save Integration is disabled">
+    The incoming-call configuration requires:
+
+    - A selected agent
+    - A purchased virtual number belonging to the workspace
+
+    An unavailable or unowned number cannot be used.
+  </Accordion>
+
+  <Accordion title="The inbound number does not connect">
+    Confirm that:
+
+    1. The integration was saved.
+    2. The number is still active.
+    3. Call Type is **Inbound Only** or **Both**.
+    4. The correct agent is assigned.
+    5. Credits are available.
+    6. You dialled the correct number.
+
+    Test from another authorized telephone.
+  </Accordion>
+
+  <Accordion title="The wrong agent answers">
+    Open **Virtual Phone Integration → Incoming Calls**, select the correct agent, and save the integration.
+
+    Place another controlled test call before publishing the number.
+  </Accordion>
+
+  <Accordion title="The inbound call connects but has no audio">
+    Test the agent in the browser first.
+
+    If browser audio works:
+
+    - Confirm the telephone is not muted
+    - Test from another telephone
+    - Review the call log
+    - Note the call time and identifier
+    - Report the issue if it occurs repeatedly
+
+    If browser audio also fails, review Voice & Audio settings.
+  </Accordion>
+
+  <Accordion title="Customers can no longer reach a published number">
+    Check whether the number was deactivated or released.
+
+    Also check:
+
+    - Credit balance
+    - Subscription status
+    - Inbound call type
+    - Assigned agent
+    - Provider availability
+
+    Do not republish a replacement number until it has passed an inbound test.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Outbound Test Calls
+
+<AccordionGroup>
+  <Accordion title="Start Test Call is disabled">
+    Complete all required fields:
+
+    - Select Agent
+    - Customer Number
+    - Virtual Number
+
+    The virtual number must belong to the current workspace.
+  </Accordion>
+
+  <Accordion title="The customer number is rejected">
+    Enter digits only in the current test-call field and confirm the complete number format expected by your workspace.
+
+    For manually created campaign contacts, the current form expects a valid 10-digit primary number.
+  </Accordion>
+
+  <Accordion title="The telephone does not ring">
+    Check:
+
+    - Customer-number accuracy
+    - Virtual-number status
+    - Available credits
+    - Whether the destination can receive calls
+    - Whether the call request produced an error
+    - The resulting Call Log status
+
+    Avoid repeatedly calling the number until you understand the failure.
+  </Accordion>
+
+  <Accordion title="The telephone rings but there is no agent audio">
+    Confirm that the agent passes a browser voice test.
+
+    Then check:
+
+    - Selected agent
+    - Voice provider
+    - Selected voice
+    - Call record
+    - Telephone audio
+    - Whether the issue occurs on another phone
+
+    Record the call identifier if the issue persists.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Call Campaigns
+
+<AccordionGroup>
+  <Accordion title="Call Campaigns is locked">
+    The current plan may not include Sales Campaigns.
+
+    Basic or Free plans can be restricted from campaign access. Review the upgrade message and current plan.
+  </Accordion>
+
+  <Accordion title="I cannot continue from Campaign Details">
+    Campaign Details requires:
+
+    - Campaign Name
+    - AI Voice Agent
+
+    Enter a clear campaign name and select an available agent.
+  </Accordion>
+
+  <Accordion title="The selected language is rejected">
+    The Starting Language must be enabled for the selected agent.
+
+    Review the agent’s:
+
+    - Language
+    - Voice
+    - Speech-to-text provider
+    - Speech-to-text model
+
+    Save the agent and reopen the campaign.
+  </Accordion>
+
+  <Accordion title="Maximum Concurrent Calls is rejected">
+    Enter a whole number between `1` and the plan limit displayed beside the field.
+
+    If the maximum is `0`, the current plan does not allow campaign calling.
+  </Accordion>
+
+  <Accordion title="The contact file will not upload">
+    Check that:
+
+    - The file is CSV or Excel
+    - It contains ContactNumber or Mobile Number
+    - Rows are structured consistently
+    - The file is within the plan’s contact limit
+    - The file is not corrupted
+
+    Download the current template and copy approved contact data into it.
+  </Accordion>
+
+  <Accordion title="I see “Contacts are required”">
+    Upload a contact file or add contacts manually.
+
+    Confirm that:
+
+    - Contacts appear in the table
+    - The intended contacts are selected
+    - An uploaded file was not removed
+    - The contact list finished loading
+  </Accordion>
+
+  <Accordion title="The campaign requires a start date and time">
+    Select a valid start date and start time in **Schedule & Review**.
+
+    Also confirm the selected time zone.
+  </Accordion>
+
+  <Accordion title="The campaign does not start">
+    Check:
+
+    - Campaign status
+    - Start date and time
+    - Time zone
+    - Allowed calling hours
+    - Virtual caller number
+    - Selected contacts
+    - Agent
+    - Language
+    - Concurrency
+    - Credits
+    - Plan access
+
+    Review Campaign Call History for any attempted calls.
+  </Accordion>
+
+  <Accordion title="The campaign has many unanswered calls">
+    Review:
+
+    - Calling time
+    - Contact time zone
+    - Contact-list quality
+    - Caller-number recognition
+    - Retry settings
+    - Whether numbers are current
+
+    Do not increase retries automatically. Review consent and customer impact first.
+  </Accordion>
+
+  <Accordion title="The campaign has many failed calls">
+    Pause the campaign if failures are widespread.
+
+    Then check:
+
+    - Contact-number format
+    - Virtual-number status
+    - Credits
+    - Agent configuration
+    - Campaign schedule
+    - Call timeline
+    - Provider status
+
+    Resume only after a controlled test succeeds.
+  </Accordion>
+
+  <Accordion title="A contact was called but should not have been">
+    Pause the campaign if necessary.
+
+    Then:
+
+    1. Remove or deselect the contact.
+    2. Check uploaded files for duplicates.
+    3. Add the contact to your organization’s suppression process.
+    4. Review retry behavior.
+    5. Confirm the contact is not present in another active campaign.
+
+    Follow your organization’s opt-out and compliance process.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Call Logs and Recordings
+
+<AccordionGroup>
+  <Accordion title="No conversations are displayed">
+    Check:
+
+    - Correct agent
+    - Date range
+    - Search text
+    - Current workspace
+    - Conversation completion
+    - Permission to view logs
+
+    Run a controlled Test Agent conversation, end it normally, and refresh Conversation History.
+  </Accordion>
+
+  <Accordion title="Campaign Call History is empty">
+    Select **Reset Filters**.
+
+    Then check:
+
+    - Campaign filter
+    - Direction filter
+    - Outcome filter
+    - Search text
+    - Current page
+    - Campaign plan access
+
+    Confirm that the calls were campaign calls rather than browser tests.
+  </Accordion>
+
+  <Accordion title="The transcript is missing">
+    A transcript may be unavailable when:
+
+    - The call did not connect
+    - No usable speech was captured
+    - Speech recognition failed
+    - The call ended too quickly
+    - Processing is incomplete
+
+    Review the call status, recording, and timeline.
+  </Accordion>
+
+  <Accordion title="The recording is missing">
+    A recording may not exist for every channel or interaction.
+
+    It may be unavailable because:
+
+    - No audio interaction occurred
+    - The call did not connect
+    - Recording was not available for that channel
+    - The audio is still processing
+    - The file is no longer available
+    - Access is restricted
+  </Accordion>
+
+  <Accordion title="The recording will not play">
+    Try:
+
+    - Checking device volume
+    - Unmuting the browser tab
+    - Refreshing the detail page
+    - Trying another supported browser
+    - Testing another recording
+    - Downloading it if permitted
+
+    The current interface can display:
+
+    > This recording is no longer available. Please restore the audio file to play it.
+
+    If only one recording fails, record its Conversation ID or Call Log ID.
+  </Accordion>
+
+  <Accordion title="Credit usage appears high">
+    Review:
+
+    - Call duration
+    - Number of responses
+    - Response length
+    - Retry attempts
+    - Campaign concurrency
+    - Whether the call remained connected
+    - Speech and voice usage
+
+    Compare the conversation record with Credit Usage before reporting a billing concern.
+  </Accordion>
+
+  <Accordion title="The response-time gauge looks incorrect">
+    Do not use the visual gauge alone as evidence of actual conversation latency.
+
+    Review the complete conversation experience, transcript timing, call status, and available technical records. Report persistent delays with the relevant Conversation IDs.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Integrations and API Keys
+
+<AccordionGroup>
+  <Accordion title="Add Integration is unavailable">
+    Possible causes include:
+
+    - The plan does not include integrations
+    - The workspace reached its integration limit
+    - Your account lacks permission
+    - The subscription is inactive
+
+    Review the message displayed by Valuez AI.
+  </Accordion>
+
+  <Accordion title="Agent API is locked">
+    Agent API is restricted on Basic or Free plans in the current interface.
+
+    Review your subscription plan.
+  </Accordion>
+
+  <Accordion title="Phone Calls is locked">
+    Phone Calls can be unavailable when:
+
+    - The plan is Basic or Free
+    - Inbound-number access is not included
+    - The plan’s number limit is zero
+
+    Review the current plan before attempting to purchase a number.
+  </Accordion>
+
+  <Accordion title="My API key is not working">
+    Check:
+
+    1. The request uses the `x-api-key` header.
+    2. The key was copied without spaces or line breaks.
+    3. The correct base URL and endpoint are used.
+    4. The key belongs to the correct environment.
+    5. The integration has access to the required capability.
+    6. The integration’s credit limit was not reached.
+    7. The workspace has available credits.
+    8. The integration still exists.
+
+    Agent API and Speech API keys should be used only for their intended integration.
+  </Accordion>
+
+  <Accordion title="I lost the API key">
+    The complete secret is shown only when it is created.
+
+    Create a replacement key, update the authorized application, test it, and retire the lost credential using the management options available to your workspace.
+  </Accordion>
+
+  <Accordion title="An API capability returns No Access">
+    Open the Agent API integration and review endpoint permissions.
+
+    Capabilities are controlled separately:
+
+    - Chat
+    - Voice Conversations
+    - Speech to Text
+    - Text to Speech
+
+    Change only the access required by the application.
+  </Accordion>
+
+  <Accordion title="Speech providers or models are missing">
+    Check:
+
+    - Provider options finished loading
+    - A provider was selected
+    - A matching model exists
+    - The provider is not temporarily unavailable
+    - Your plan includes the required speech access
+
+    Changing a provider clears the previous model or voice selection.
+  </Accordion>
+
+  <Accordion title="Website integration is missing">
+    Website is not currently listed as a new self-service option in the Add Integration selector.
+
+    Existing Website Integration records may still appear. Contact Valuez AI support to confirm availability before following older widget instructions.
+  </Accordion>
+
+  <Accordion title="CRM or Webhooks shows Coming Soon">
+    These options are not currently available through the self-service selector.
+
+    Do not enter external-system credentials or build workflows from outdated documentation.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Dashboard Analytics
+
+<AccordionGroup>
+  <Accordion title="The dashboard shows no data">
+    Check:
+
+    1. Select **All Agents**.
+    2. Change the range from **1 Day** to **1 Month** or **6 Months**.
+    3. Confirm that agents exist.
+    4. Confirm that calls or campaigns have occurred.
+    5. Wait for recent calls to finish processing.
+    6. Refresh the dashboard.
+    7. Confirm dashboard permission.
+
+    The current range options are 1 Day, 1 Week, 1 Month, and 6 Months.
+  </Accordion>
+
+  <Accordion title="The agent filter does not change campaign charts">
+    The agent selector primarily filters general agent and call analytics.
+
+    Campaign panels summarize workspace campaign activity and may not change when an individual agent is selected.
+  </Accordion>
+
+  <Accordion title="Live Campaign Flow is empty">
+    This can be normal when:
+
+    - No campaign calls are active
+    - No recent live events are available
+    - The campaign is scheduled for later
+    - The campaign is paused
+    - The live connection has not been established
+
+    Open Campaign Call History for stored call records.
+  </Accordion>
+
+  <Accordion title="Analytics and Call Logs show different counts">
+    Check:
+
+    - Date range
+    - Agent filter
+    - Campaign scope
+    - Whether recent calls are still processing
+    - Whether the Call Logs page has active filters
+    - Whether browser tests and campaign calls are being compared
+
+    Dashboard summaries and detailed logs can use different scopes.
+  </Accordion>
+
+  <Accordion title="Lead totals look incorrect">
+    Review the relevant Campaign Leads and call records.
+
+    Confirm:
+
+    - Interested and Qualified are not being treated as the same
+    - Qualification criteria are correct
+    - Calls completed processing
+    - Duplicate contacts are not influencing interpretation
+    - The selected date range is correct
+
+    Verify important classifications against transcripts.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Credits, Plans, and Billing
+
+<AccordionGroup>
+  <Accordion title="My credits are low or exhausted">
+    Review your available balance and recent Credit Usage.
+
+    Low credits can prevent:
+
+    - Agent conversations
+    - Voice tests
+    - API processing
+    - Telephone calls
+    - Campaign activity
+    - Virtual-number purchases
+
+    Add credits or change the subscription through the billing area available to your account.
+  </Accordion>
+
+  <Accordion title="A feature asks me to upgrade">
+    The feature is not included in the current plan or the plan limit has been reached.
+
+    Common restricted areas include:
+
+    - Sales Campaigns
+    - Agent API
+    - IVR and Virtual Numbers
+    - Credit Logs
+    - Additional agents
+    - Additional integrations
+
+    Review the exact upgrade message before changing configuration.
+  </Accordion>
+
+  <Accordion title="A virtual-number purchase deducted 700 credits">
+    The current interface displays a 700-credit charge for purchasing an available virtual number.
+
+    Deactivating the number releases it but does not refund the credits already charged.
+
+    Always confirm the displayed purchase price before completing a purchase.
+  </Accordion>
+
+  <Accordion title="A payment or credit purchase failed">
+    Check:
+
+    - A valid plan or credit amount was selected
+    - Billing details are complete
+    - The entered amount is valid
+    - The payment method is accepted
+    - The payment window was not blocked
+    - The session did not expire
+
+    Do not repeat a payment immediately if your bank shows a charge. First review payment or invoice history.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Team and Permission Issues
+
+<AccordionGroup>
+  <Accordion title="A team member cannot see an agent">
+    Ask a workspace administrator to review:
+
+    - Workspace membership
+    - Agent-level access
+    - Agent module permission
+    - Configuration permission
+    - Whether the agent is disabled
+    - Whether the user is in the correct organization
+  </Accordion>
+
+  <Accordion title="A team member can view but cannot edit">
+    Their role may include VIEW without CREATE or EDIT.
+
+    Update only the permissions required for their responsibilities.
+  </Accordion>
+
+  <Accordion title="A team member cannot download call data">
+    Confirm access to:
+
+    - Campaign Call History
+    - Download or export actions
+    - The relevant campaign
+    - The correct workspace
+
+    Export access can also be restricted by the subscription plan.
+  </Accordion>
+
+  <Accordion title="A permission change is not reflected">
+    Ask the user to:
+
+    1. Refresh the dashboard.
+    2. Sign out and sign in again.
+    3. Confirm the correct workspace.
+    4. Reopen the required page.
+
+    Then verify that the administrator saved the permission change.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Browser and Network Checks
+
+If the dashboard behaves unexpectedly across several areas, try:
+
+1. Use the latest stable Chrome or Edge.
+2. Reload the page.
+3. Sign out and sign back in.
+4. Disable browser extensions temporarily.
+5. Clear Valuez AI site data.
+6. Allow cookies, pop-ups, microphone, and audio where required.
+7. Try an incognito window.
+8. Try another network.
+9. Confirm that your organization does not block real-time connections.
+10. Avoid running the same test in several tabs.
+
+<Warning>
+  Do not clear browser data until you have safely copied any newly generated secret API key currently displayed on screen.
+</Warning>
+
+---
+
+## Information to Collect Before Requesting Help
+
+Provide the following information when escalating an issue:
+
+| Information | Example |
+| --- | --- |
+| **Workspace** | Name of the affected organization |
+| **User account** | Email address used to sign in |
+| **Affected area** | Test Agent, Campaign, Integrations, Call Logs |
+| **Agent** | Exact agent name |
+| **Campaign** | Exact campaign name |
+| **Conversation ID** | Copied from Conversation History |
+| **Call Log ID** | Identifier from Campaign Call History |
+| **Telephone number** | Masked unless full disclosure is authorized |
+| **Time** | Date, time, and time zone |
+| **Error message** | Exact text shown by Valuez AI |
+| **Browser** | Browser name and version |
+| **Steps attempted** | Short sequence that reproduces the issue |
+| **Expected result** | What you expected to happen |
+| **Actual result** | What happened instead |
+| **Evidence** | Approved screenshot, transcript, or recording reference |
+
+### Safe Screenshot Guidance
+
+Before sharing a screenshot, hide or remove:
+
+- API keys
+- Passwords
+- Access tokens
+- Customer personal information
+- Payment information
+- Confidential business data
+
+Never include a full secret key in a support request.
+
+---
+
+## Recommended Escalation Format
+
+Use a concise report:
+
+```text
+Workspace:
+Affected page:
+Agent or campaign:
+Date and time:
+Conversation ID or Call Log ID:
+Expected result:
+Actual result:
+Exact error message:
+Troubleshooting already attempted:
+Business impact:
+```
+
+This gives the support team enough information to begin investigating without repeating basic questions.
+
+---
+
+## Emergency Actions
+
+Take immediate action when:
+
+- An agent reveals confidential information
+- An outbound campaign contacts unauthorized people
+- An agent makes harmful or unapproved commitments
+- A virtual number routes to the wrong agent
+- A secret API key is exposed
+- Credit usage increases unexpectedly
+- A campaign produces widespread failed calls
+
+Recommended immediate actions:
+
+1. Pause the affected campaign.
+2. Stop using the exposed integration.
+3. Remove the published number if necessary.
+4. Restrict access to the affected agent.
+5. Preserve Conversation IDs and Call Log IDs.
+6. Record the time and impact.
+7. Contact the appropriate workspace administrator or Valuez AI support channel.
+
+Do not delete evidence required for investigation.
+
+---
+
+## Quick Diagnostic Table
+
+| Symptom | First place to check |
+| --- | --- |
+| Cannot sign in | Authentication method and password reset |
+| Wrong workspace data | Workspace selector |
+| Cannot create agent | Plan limit and CREATE permission |
+| Agent gives wrong fact | Transcript and Knowledge Base |
+| Agent ignores rules | Agent Instructions |
+| Knowledge Base Required | Agent Settings → selected knowledge base |
+| Configuration Incomplete | Voice & Audio and Speech to Text |
+| Microphone blocked | Browser site permissions |
+| Test remains Connecting | Network, session, browser, and credits |
+| No virtual numbers | Plan, number limit, and credits |
+| Inbound call fails | Saved routing and Call Type |
+| Test call disabled | Agent, customer number, and virtual number |
+| Campaign locked | Subscription plan |
+| Contact upload fails | File format, headers, and contact limit |
+| Campaign does not start | Schedule, calling hours, contacts, and credits |
+| No call logs | Date, agent, filters, and processing time |
+| Recording unavailable | Channel, call status, and audio availability |
+| API authentication fails | `x-api-key`, key, endpoint, and access |
+| Website option missing | Not currently available in self-service selector |
+| Dashboard empty | All Agents and a longer date range |
+| Feature asks for upgrade | Plan access or limit |
+| User cannot edit | Workspace permissions |
+
+---
+
+## Related Guides
+
+<CardGroup cols={2}>
+  <Card title="Test Your AI" icon="microphone" href="/test-your-ai">
+    Diagnose agent knowledge, microphone, voice, and conversation behavior.
+  </Card>
+
+  <Card title="Call Logs" icon="list" href="/call-logs">
+    Review transcripts, recordings, outcomes, and call timelines.
+  </Card>
+
+  <Card title="Integrations" icon="plug" href="/integrations">
+    Review Agent API, Speech API, and telephone integrations.
+  </Card>
+
+  <Card title="Inbound Calls" icon="phone-incoming" href="/inbound-calls">
+    Resolve virtual-number and incoming-call problems.
+  </Card>
+
+  <Card title="Outbound Calls" icon="phone-call" href="/outbound-calls">
+    Resolve test-call and campaign issues.
+  </Card>
+
+  <Card title="Team Management" icon="users" href="/team-management">
+    Review team access and workspace permissions.
+  </Card>
+</CardGroup>

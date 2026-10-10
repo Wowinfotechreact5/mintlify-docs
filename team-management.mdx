@@ -1,0 +1,913 @@
+---
+title: "Workspace Members"
+sidebarTitle: "Team Management"
+description: "Invite workspace members and control their platform, AI agent, and module access."
+---
+
+Workspace Members helps workspace owners safely give colleagues access to Valuez AI.
+
+You can decide:
+
+- Whether a member can use the **Web App**, **Mobile App**, or both
+- Whether they can access all AI agents or only selected agents
+- Which Valuez AI modules they can view or manage
+- Whether an invitation should remain active
+- When an existing member's access should be changed or removed
+
+Access is assigned individually, allowing sales, support, operations, and management teams to use the same workspace without giving every person unrestricted access.
+
+<Info>
+  The options available on this page depend on your current Valuez AI subscription plan, available member seats, and your own workspace permissions.
+</Info>
+
+---
+
+## Open Workspace Members
+
+To open the page:
+
+<Steps>
+  <Step title="Sign in to Valuez AI">
+    Sign in to your Valuez AI workspace using your registered account.
+  </Step>
+  <Step title="Open Account">
+    Select **Account** from the main navigation.
+  </Step>
+  <Step title="Select Workspace Members">
+    Open **Workspace Members** to review existing members, pending invitations, and available access settings.
+  </Step>
+</Steps>
+
+<Note>
+  In some parts of the platform or older documentation, this feature may be called **Team Management**. The current dashboard page is named **Workspace Members**.
+</Note>
+
+---
+
+## What You Can Do
+
+Workspace Members provides the following controls:
+
+| Task | Description |
+| --- | --- |
+| **View workspace members** | Review people who currently have access to the workspace |
+| **Search for a member** | Find a member using their name or email address |
+| **Filter by platform** | View members with Mobile App, Web App, or combined access |
+| **Invite members** | Send invitations to one or more email addresses |
+| **Choose platform access** | Decide whether members use the Web App, Mobile App, or both |
+| **Control agent access** | Give access to all agents or only selected agents |
+| **Configure module permissions** | Decide which product areas and actions a member can use |
+| **Edit member access** | Update an active member's platform, agent, or module permissions |
+| **Revoke invitations** | Cancel pending or expired invitations |
+| **Remove members** | Remove a person's access without deleting their personal account |
+| **Reset a registered mobile device** | Clear the registered device identifier when an authorized mobile user changes devices |
+
+---
+
+## Understanding the Workspace Summary
+
+At the top of the page, Valuez AI displays information about your current plan and team capacity.
+
+The summary can include:
+
+- Current subscription plan
+- Permission level included with the plan
+- Web App seats currently in use
+- Total Web App seat allowance
+- Mobile App seats currently in use
+- Total Mobile App seat allowance
+- Subscription or access warnings
+
+For example:
+
+```text
+Web App: 2 / 4 seats
+Mobile App: 6 / 21 seats
+```
+
+The first number is the number of occupied seats. The second number is the maximum number available under the current plan.
+
+<Warning>
+  A pending invitation reserves the applicable seat even before the recipient accepts it.
+</Warning>
+
+### How combined access affects seats
+
+A member with **Web & Mobile** access uses:
+
+- One Web App seat
+- One Mobile App seat
+
+The workspace owner is not included in these member-seat counts.
+
+### When a seat limit is reached
+
+If a platform has no available seats:
+
+- New invitations for that platform are disabled
+- Invitations for another platform may still be available
+- You can revoke an unused invitation
+- You can remove a member who no longer requires access
+- You can upgrade the subscription if additional seats are needed
+
+If the subscription is inactive or expired, existing delegated member access may be disabled until the subscription is restored.
+
+---
+
+## Workspace Members List
+
+The **Workspace Members** view shows active members and invitations associated with your workspace.
+
+On desktop, the information is presented as a table. On smaller screens, the same information is displayed as member cards.
+
+| Column | What It Shows |
+| --- | --- |
+| **Member** | The member's name and email address |
+| **Platform Access** | Mobile App, Web App, or Web & Mobile |
+| **Agent Access** | A summary of the member's assigned access |
+| **Permissions** | Whether the person can access all agents or selected agents |
+| **Device ID (IMEI)** | The registered mobile device identifier, when available |
+| **Status** | Active, Pending Invite, Expired, or Disabled by plan |
+| **Actions** | Available options such as Edit, Remove, or Revoke |
+
+<Note>
+  The workspace owner appears in the member list but cannot be edited or removed using the standard member actions.
+</Note>
+
+---
+
+## Search for a Member
+
+Use the search field at the top of the page to locate a workspace member or invitation.
+
+You can search using:
+
+- Member name
+- Email address
+- Part of a name
+- Part of an email address
+
+Search results update after you stop typing.
+
+If no result appears:
+
+1. Check the spelling
+2. Remove unnecessary spaces
+3. Check the selected platform filter
+4. Search using the full email address
+5. Confirm that the invitation was sent from the current workspace
+
+---
+
+## Filter Members by Platform
+
+The platform filters allow you to narrow the member list.
+
+| Filter | Result |
+| --- | --- |
+| **All** | Shows members and invitations for every platform |
+| **Mobile App** | Shows people with mobile-only access |
+| **Web App** | Shows people with web-only access |
+| **Web & Mobile** | Shows people who can use both platforms |
+
+The number beside each filter shows how many matching records are available.
+
+<Example>
+  If **Mobile App (8)** is displayed, eight records currently have Mobile App access.
+</Example>
+
+---
+
+## Member Statuses
+
+Each member or invitation has a status.
+
+| Status | Meaning |
+| --- | --- |
+| **Active** | The invitation was accepted and the member currently has workspace access |
+| **Pending Invite** | The invitation was sent but has not yet been accepted |
+| **Expired** | The invitation can no longer be accepted |
+| **Disabled by plan** | Access is unavailable because of the current subscription or plan limits |
+
+For pending invitations, Valuez AI displays the invitation expiration date when that information is available.
+
+### Pending invitation
+
+A pending invitation:
+
+- Reserves the required platform seat
+- Cannot be edited as an active member
+- Can be revoked by an authorized workspace user
+- Becomes active after the recipient accepts it successfully
+
+### Disabled by plan
+
+A member may be shown as **Disabled by plan** when their configured access exceeds what the current subscription allows.
+
+Review:
+
+- Subscription status
+- Web and Mobile seat limits
+- Platform availability
+- Permission level included with the plan
+
+---
+
+## Invite Workspace Members
+
+Open the **Invite Members** tab to add people to the workspace.
+
+You can invite one person or multiple people in the same operation.
+
+<Steps>
+  <Step title="Open Invite Members">
+    Select **Invite Members** at the top of the Workspace Members page.
+  </Step>
+  <Step title="Enter email addresses">
+    Enter one or more valid email addresses.
+
+    Separate multiple addresses using commas, semicolons, or spaces.
+
+    ```text
+    priya@example.com, david@example.com
+    ```
+  </Step>
+  <Step title="Choose platform access">
+    Select **Mobile App**, **Web App**, or **Web & Mobile**.
+  </Step>
+  <Step title="Choose agent access">
+    Give the recipients access to all agents or, when supported by your plan, only selected agents.
+  </Step>
+  <Step title="Configure module permissions">
+    Select the modules and actions the recipients should be able to use.
+  </Step>
+  <Step title="Review the invitation">
+    Confirm the email addresses, platform, agent scope, permissions, and available seats.
+  </Step>
+  <Step title="Send the invitations">
+    Select the invitation button. Valuez AI sends an invitation to each valid recipient and adds the invitations to the member list.
+  </Step>
+</Steps>
+
+<Warning>
+  When multiple email addresses are entered together, the selected platform, agent access, and module permissions are applied to every recipient in that invitation.
+</Warning>
+
+---
+
+## Email Address Requirements
+
+Before the invitation can be sent:
+
+- At least one email address must be entered
+- Every address must use a valid email format
+- Invalid addresses must be corrected or removed
+- A supported platform must be selected
+- At least one module must be enabled
+- At least one agent must be selected when using specific-agent access
+- The workspace must have enough available seats
+
+Valuez AI displays:
+
+- The number of recipients ready to invite
+- Any invalid email addresses
+- Missing access requirements
+- Plan or seat restrictions
+
+---
+
+## Choose Platform Access
+
+Platform access determines where the member can sign in and which permission groups are available.
+
+### Mobile App
+
+Use **Mobile App** for people who need mobile sales and calling features.
+
+Mobile access can include:
+
+- Assign Customers
+- Customer Details
+- Start Call
+- Call Analytics
+- Call Follow-Up
+
+This is suitable for sales representatives and other team members who work primarily through the Valuez AI mobile application.
+
+### Web App
+
+Use **Web App** for people who work through the browser-based Valuez AI dashboard.
+
+Web access can include:
+
+- Dashboard
+- Call Campaigns
+- Sales Team
+- AI Voice Agents
+- Integrations
+- Workspace Members
+- Plans & Billing
+- Credit Usage
+- Notifications
+
+### Web & Mobile
+
+Use **Web & Mobile** when the member requires access to both platforms.
+
+This option:
+
+- Makes both Web and Mobile modules available for configuration
+- Uses one seat from each platform allowance
+- Is subject to the permissions selected for the member
+
+<Tip>
+  Grant access only to the platform required for the person's responsibilities. This keeps permissions easier to understand and avoids using unnecessary seats.
+</Tip>
+
+---
+
+## Configure Agent Access
+
+Agent access determines which AI agents a workspace member can use.
+
+### All Agents
+
+Select **All Agents** when the member should have access to every agent in the workspace.
+
+This includes:
+
+- Existing agents
+- Agents created in the future
+
+Use this option for workspace-wide administrators or team leads who need broad visibility.
+
+### Specific Agents
+
+Select **Specific agents** when the member should work only with selected AI agents.
+
+After choosing this option:
+
+1. Review the available agents
+2. Select each required agent
+3. Confirm that at least one agent is selected
+4. Continue to module permissions
+
+Specific-agent selection is available only on supported subscription plans.
+
+<Note>
+  If **Specific agents** is unavailable, your current plan may support only all-agent access. Agent-level selection is available with supported higher-tier plans.
+</Note>
+
+### Choosing an appropriate agent scope
+
+| Team responsibility | Suggested scope |
+| --- | --- |
+| Workspace owner | All agents |
+| Operations administrator | All agents |
+| Support team lead | All support agents |
+| Campaign manager | Agents used by assigned campaigns |
+| Department member | Only agents used by that department |
+| Temporary collaborator | Only the minimum required agents |
+
+---
+
+## Configure Module Permissions
+
+Module permissions determine which areas of Valuez AI a member can open and what actions they can perform.
+
+The permission editor automatically shows modules relevant to the selected platform.
+
+Use the module search field to find a module quickly.
+
+### Permission actions
+
+Depending on the module and subscription plan, the available actions can include:
+
+| Action | What It Allows |
+| --- | --- |
+| **View** | Open and review information in the module |
+| **Add** | Create new records or resources |
+| **Edit** | Change existing information or settings |
+| **Delete** | Permanently remove supported records |
+| **Download** | Export or download supported information |
+| **Upload** | Upload supported files or data |
+| **Pay** | Make payments through Plans & Billing |
+
+<Warning>
+  Payment access is highly sensitive. Grant it only to people who are authorized to make purchases or manage subscription payments.
+</Warning>
+
+### Permission dependencies
+
+Some actions require basic viewing access.
+
+For example, a person generally cannot edit information inside a module they cannot open. Valuez AI keeps permitted actions within the limits of the selected subscription and platform.
+
+---
+
+## Available Permission Areas
+
+### Mobile App modules
+
+| Module | Purpose |
+| --- | --- |
+| **Assign Customers** | Assign customers to mobile sales users |
+| **Customer Details** | Review and manage customer information in the mobile app |
+| **Start Call** | Start supported calls from the mobile application |
+| **Call Analytics** | Review mobile calling performance |
+| **Call Follow-Up** | Manage follow-up activity after calls |
+
+### Web App modules
+
+| Module | Purpose |
+| --- | --- |
+| **Dashboard** | View workspace summaries, analytics, and live call information |
+| **Call Campaigns** | Work with outbound campaigns, campaign history, and leads |
+| **Sales Team** | Manage customer assignment and human sales-call information |
+| **AI Voice Agents** | Work with agents, agent settings, knowledge sources, and activity |
+| **Integrations** | Add or maintain external integrations |
+| **Workspace Members** | Invite members and manage delegated access |
+| **Plans & Billing** | Review subscription information and, when permitted, make payments |
+| **Credit Usage** | Review credit consumption |
+| **Notifications** | View workspace notifications |
+
+The exact modules and actions displayed depend on:
+
+- Selected platform
+- Current subscription
+- Permission level provided by the plan
+- Permissions of the person managing the member
+
+---
+
+## Permission Levels by Subscription
+
+Valuez AI changes the amount of access customization according to the workspace subscription.
+
+| Plan level | Team access capability |
+| --- | --- |
+| **Basic or Free** | Team member access is unavailable |
+| **Silver** | Basic module access |
+| **Gold** | Agent-level and module-level access |
+| **Platinum** | Granular actions and reusable custom roles |
+
+<Note>
+  Your workspace summary displays the current permission level. The dashboard is the authoritative source for the limits applied to your account.
+</Note>
+
+### Basic module access
+
+With basic access, you can choose which modules a member can use. Enabled modules receive the action bundle supported by the plan.
+
+### Agent and module-level access
+
+With agent and module-level access, you can:
+
+- Choose all agents or selected agents
+- Set a module to no access
+- Grant view access
+- Grant the supported management bundle
+
+### Granular access
+
+With granular access, individual actions can be selected for each module.
+
+Examples include:
+
+- View without editing
+- View and create without deleting
+- Allow campaign downloads
+- Allow knowledge uploads
+- Allow team management without billing payment access
+
+---
+
+## Reusable Custom Roles
+
+Supported plans allow the workspace owner to save a permission configuration as a reusable custom role.
+
+A custom role can include:
+
+- Platform access
+- Agent scope
+- Selected agents
+- Module permissions
+- Individual action permissions
+
+### Save a custom role
+
+<Steps>
+  <Step title="Configure the required access">
+    Select the platform, agent scope, and module permissions.
+  </Step>
+  <Step title="Enter a role name">
+    Use a descriptive name such as `Sales Supervisor`, `Support Reviewer`, or `Campaign Operator`.
+  </Step>
+  <Step title="Save the role">
+    Select **Save as custom role**.
+  </Step>
+  <Step title="Reuse the role">
+    Choose the saved role when inviting or editing another member, and then select **Apply role**.
+  </Step>
+</Steps>
+
+<Info>
+  Applying a custom role copies the saved configuration to the invitation or member. Deleting the role template does not remove access already assigned to existing members.
+</Info>
+
+---
+
+## Accepting an Invitation
+
+After an invitation is sent, the recipient must use the invitation link delivered to their email address.
+
+The recipient should:
+
+<Steps>
+  <Step title="Open the invitation email">
+    Find the Valuez AI workspace invitation in the inbox associated with the invited address.
+  </Step>
+  <Step title="Open the invitation link">
+    Select the invitation link before it expires.
+  </Step>
+  <Step title="Complete account access">
+    Follow the displayed instructions to sign in or complete the required account setup.
+  </Step>
+  <Step title="Open the workspace">
+    After successful acceptance, the recipient becomes an active workspace member.
+  </Step>
+</Steps>
+
+The new member will only see the platforms, agents, and modules included in the invitation.
+
+<Warning>
+  Workspace invitations should not be forwarded. They are intended for the invited recipient and workspace.
+</Warning>
+
+---
+
+## Edit an Active Member
+
+You can change access for an active member without removing and reinviting them.
+
+<Steps>
+  <Step title="Find the member">
+    Search for the person by name or email address.
+  </Step>
+  <Step title="Select Edit">
+    Use the **Edit** action beside the active member.
+  </Step>
+  <Step title="Review the saved access">
+    Valuez AI loads the member's current platform, agent scope, and permissions.
+  </Step>
+  <Step title="Update platform access">
+    Choose Mobile App, Web App, or Web & Mobile.
+  </Step>
+  <Step title="Update agent access">
+    Choose all agents or selected agents.
+  </Step>
+  <Step title="Update module permissions">
+    Enable or remove the required module actions.
+  </Step>
+  <Step title="Save the changes">
+    Select **Save Changes**.
+  </Step>
+</Steps>
+
+Changes are subject to:
+
+- Available platform seats
+- Current subscription status
+- Plan permission limits
+- Your own authority to manage members
+- At least one usable module permission
+
+<Warning>
+  Changing a member from one platform to another can change which modules are available to that person. Review their module permissions before saving.
+</Warning>
+
+---
+
+## Revoke an Invitation
+
+Revoke an invitation when:
+
+- It was sent to the wrong email address
+- The recipient no longer needs access
+- The invitation has expired
+- You need to free a reserved seat
+- You plan to send a replacement invitation
+
+<Steps>
+  <Step title="Find the invitation">
+    Locate the pending or expired invitation in Workspace Members.
+  </Step>
+  <Step title="Select Revoke">
+    Use the **Revoke** or **Revoke Invite** action.
+  </Step>
+  <Step title="Confirm the action">
+    Review the email address and confirm that the invitation should be revoked.
+  </Step>
+</Steps>
+
+<Warning>
+  Revoking an invitation cannot be undone. If the person still requires access, send a new invitation.
+</Warning>
+
+---
+
+## Remove an Active Member
+
+Removing a member revokes their access to the current Valuez AI workspace.
+
+It does not delete the person's own account.
+
+<Steps>
+  <Step title="Find the active member">
+    Search for the member by name or email address.
+  </Step>
+  <Step title="Select Remove">
+    Use the remove action beside the member.
+  </Step>
+  <Step title="Review the confirmation">
+    Confirm that you selected the correct workspace member.
+  </Step>
+  <Step title="Confirm removal">
+    Select **Remove** to revoke workspace access.
+  </Step>
+</Steps>
+
+After removal:
+
+- The person can no longer use the assigned workspace access
+- Their previously occupied member seat becomes available
+- Their personal account is not deleted
+- Workspace business records are not deleted simply because the member was removed
+
+<Warning>
+  Remove access promptly when an employee, contractor, or external collaborator no longer requires access to your organization.
+</Warning>
+
+---
+
+## Reset a Registered Mobile Device
+
+A mobile user may have a registered device identifier displayed in the **Device ID (IMEI)** column.
+
+Reset the registered device when an authorized user:
+
+- Replaces their mobile device
+- Reinstalls or transfers the mobile application
+- Can no longer sign in because the previous device remains registered
+
+<Steps>
+  <Step title="Find the mobile member">
+    Locate the member with the relevant Device ID.
+  </Step>
+  <Step title="Select the Device ID">
+    Select the displayed identifier to open the reset confirmation.
+  </Step>
+  <Step title="Confirm the reset">
+    Select the confirmation option only after verifying the member's identity and request.
+  </Step>
+  <Step title="Ask the member to sign in again">
+    The member can complete mobile registration on the authorized device.
+  </Step>
+</Steps>
+
+<Warning>
+  A device reset affects account security. Confirm the request using your organization's approved identity-verification process before proceeding.
+</Warning>
+
+---
+
+## Recommended Access Examples
+
+### Mobile sales representative
+
+Suggested configuration:
+
+| Setting | Recommended value |
+| --- | --- |
+| Platform | Mobile App |
+| Agent access | Assigned agents only, if supported |
+| Customer Details | View or manage as required |
+| Start Call | Enabled |
+| Call Analytics | View |
+| Call Follow-Up | Enabled |
+| Workspace Members | No access |
+| Plans & Billing | No access |
+
+### Campaign manager
+
+Suggested configuration:
+
+| Setting | Recommended value |
+| --- | --- |
+| Platform | Web App |
+| Agent access | Campaign-related agents |
+| Call Campaigns | View, Add, and Edit |
+| Campaign history | View and Download if required |
+| Campaign leads | View and manage |
+| AI Voice Agents | View |
+| Plans & Billing | View only, if required |
+| Workspace Members | No access unless responsible for team administration |
+
+### AI agent administrator
+
+Suggested configuration:
+
+| Setting | Recommended value |
+| --- | --- |
+| Platform | Web App |
+| Agent access | All agents or assigned business-unit agents |
+| AI Voice Agents | View, Add, and Edit |
+| Agent Settings | View and Edit |
+| Knowledge Base | View, Add, Edit, and Upload as required |
+| Activity | View |
+| Integrations | Access only when responsible for connected systems |
+
+### Read-only reviewer
+
+Suggested configuration:
+
+| Setting | Recommended value |
+| --- | --- |
+| Platform | Web App |
+| Agent access | Required agents only |
+| Operational modules | View only |
+| Downloads | Enable only when required |
+| Editing actions | Disabled |
+| Deletion actions | Disabled |
+| Billing payment | Disabled |
+| Workspace Members | Disabled |
+
+---
+
+## Security Best Practices
+
+<AccordionGroup>
+  <Accordion title="Follow least-privilege access">
+    Give each person only the platforms, agents, modules, and actions required for their responsibilities. Avoid granting broad access for convenience.
+  </Accordion>
+
+  <Accordion title="Limit Workspace Members permission">
+    A member with Workspace Members management access may be able to invite, edit, or remove other members. Grant this permission only to trusted workspace administrators.
+  </Accordion>
+
+  <Accordion title="Protect billing permissions">
+    Payment access should be limited to authorized finance or account-management personnel.
+  </Accordion>
+
+  <Accordion title="Prefer specific-agent access">
+    When supported by your plan, assign only the agents required by the member's department or project.
+  </Accordion>
+
+  <Accordion title="Review pending invitations">
+    Pending invitations reserve seats. Revoke invitations that were sent incorrectly or are no longer required.
+  </Accordion>
+
+  <Accordion title="Review access regularly">
+    Periodically confirm that active members still require their current platform, agent, and module permissions.
+  </Accordion>
+
+  <Accordion title="Remove access promptly">
+    Remove workspace access when a person leaves your organization or no longer works with the relevant team.
+  </Accordion>
+
+  <Accordion title="Verify mobile-device reset requests">
+    Confirm the member's identity before resetting a registered mobile device.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I cannot open Workspace Members">
+    Your account may not have permission to view the Workspace Members module. Ask the workspace owner or an authorized administrator to review your access.
+  </Accordion>
+
+  <Accordion title="The Invite Members option is unavailable">
+    Check whether your subscription supports team access. Basic or Free plans may not allow member invitations. Also confirm that the subscription is active.
+  </Accordion>
+
+  <Accordion title="A platform option is disabled">
+    The selected platform may not be available under the current plan, or its member-seat limit may have been reached.
+  </Accordion>
+
+  <Accordion title="The invitation button is disabled">
+    Confirm that:
+
+    - At least one valid email address was entered
+    - There are no invalid email addresses
+    - The selected platform is available
+    - The workspace has enough seats
+    - At least one module is enabled
+    - At least one agent is selected when using specific-agent access
+    - Plan availability loaded successfully
+  </Accordion>
+
+  <Accordion title="An email address is reported as invalid">
+    Check for typing errors, missing domain information, spaces inside the address, or punctuation attached to the email.
+  </Accordion>
+
+  <Accordion title="The recipient did not receive the invitation">
+    Ask the recipient to check spam, junk, security quarantine, and filtered mail folders. Confirm that the correct address appears as a pending invitation.
+
+    If the invitation is no longer valid, revoke it and create a new invitation.
+  </Accordion>
+
+  <Accordion title="The invitation has expired">
+    Revoke the expired invitation and send a new invitation with the required access configuration.
+  </Accordion>
+
+  <Accordion title="Specific-agent selection is unavailable">
+    Agent-level selection requires a supported subscription. Review the plan shown at the top of the Workspace Members page.
+  </Accordion>
+
+  <Accordion title="A member cannot see an agent">
+    Edit the member and confirm that:
+
+    - The agent is included in their selected-agent list
+    - Their agent access is set to All Agents when broad access is intended
+    - The relevant AI Voice Agents module permission is enabled
+    - The member is active
+    - The subscription is active
+  </Accordion>
+
+  <Accordion title="A member can see an agent but cannot change it">
+    Agent visibility and editing rights are separate controls. Review the member's AI Voice Agents and Agent Settings permissions and enable the required Edit action if appropriate.
+  </Accordion>
+
+  <Accordion title="A member cannot use a module">
+    Confirm that the module belongs to the member's selected platform and that the required permission is enabled.
+  </Accordion>
+
+  <Accordion title="A member is disabled by plan">
+    Review the subscription status and seat limits. Restore the subscription, free the required seat, change the member's platform access, or upgrade the plan.
+  </Accordion>
+
+  <Accordion title="Plan availability could not be loaded">
+    Select **Retry plan availability**. If the problem continues, refresh the page and contact your Valuez AI administrator or support team.
+  </Accordion>
+
+  <Accordion title="The member changed phones and cannot use the Mobile App">
+    If a Device ID is shown for the member, verify the request and reset the registered device. Ask the member to sign in again using the authorized device.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Workspace Access Checklist
+
+Before inviting a person, confirm:
+
+- [ ] The email address is correct
+- [ ] The person requires access to this workspace
+- [ ] The correct platform is selected
+- [ ] Enough platform seats are available
+- [ ] The correct agent scope is selected
+- [ ] Only required agents are included
+- [ ] Only required modules are enabled
+- [ ] Sensitive actions such as Delete and Pay are restricted
+- [ ] The invitation configuration has been reviewed
+
+After the invitation is accepted:
+
+- [ ] Confirm that the member appears as Active
+- [ ] Ask the member to verify their assigned platform
+- [ ] Confirm they can access the required agents
+- [ ] Confirm they cannot access restricted modules
+- [ ] Record the access approval according to your organization's policy
+
+---
+
+## Related Pages
+
+<CardGroup cols={2}>
+  <Card title="Authentication" icon="lock" href="/authentication">
+    Learn how members sign in and how workspace access is protected.
+  </Card>
+
+  <Card title="AI Agents" icon="robot" href="/agents">
+    Create and manage the AI agents assigned to workspace members.
+  </Card>
+
+  <Card title="Integrations" icon="plug" href="/integrations">
+    Manage external systems and API integrations separately from member access.
+  </Card>
+
+  <Card title="Notifications" icon="bell" href="/notifications">
+    Review workspace notifications and important account events.
+  </Card>
+
+  <Card title="Plans & Billing" icon="credit-card" href="/billing">
+    Review the subscription and available member capacity.
+  </Card>
+
+  <Card title="Troubleshooting" icon="wrench" href="/troubleshooting">
+    Resolve common workspace and access problems.
+  </Card>
+</CardGroup>

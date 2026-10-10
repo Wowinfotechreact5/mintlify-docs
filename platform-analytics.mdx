@@ -1,0 +1,846 @@
+---
+title: "Platform Analytics"
+sidebarTitle: "Platform Analytics"
+description: "Understand the Valuez AI dashboard metrics, call trends, success rates, campaign outcomes, agent activity, lead results, and live call monitoring."
+---
+
+Platform Analytics gives you a centralized view of agent activity, call volume, campaign performance, lead outcomes, and live voice operations.
+
+Use the dashboard to answer questions such as:
+
+- How many agents are available?
+- How many calls or requests were handled?
+- Which time periods have the highest activity?
+- What percentage of interactions were successful?
+- Which call outcomes occur most frequently?
+- Which languages are used most?
+- Which agents receive the most activity?
+- Which campaigns produce the best results?
+- How many interested and qualified leads were identified?
+- What is happening in active campaign calls?
+
+<Info>
+  Platform Analytics summarizes recorded platform activity. Use Call Logs when you need to investigate an individual conversation.
+</Info>
+
+---
+
+## Open Platform Analytics
+
+Platform Analytics is presented on the main **Dashboard**.
+
+<Steps>
+  <Step title="Sign in to Valuez AI">
+    Open the Valuez AI dashboard and confirm that you are in the correct workspace.
+  </Step>
+  <Step title="Open Dashboard">
+    Select **Dashboard** from the main navigation.
+  </Step>
+  <Step title="Select a time period">
+    Choose **1 Day**, **1 Week**, **1 Month**, or **6 Months**.
+  </Step>
+  <Step title="Choose an agent">
+    Select **All Agents** for workspace-wide activity or choose an individual agent.
+  </Step>
+  <Step title="Review the summary and charts">
+    Start with the summary cards, then use the charts and campaign tables to investigate the results.
+  </Step>
+</Steps>
+
+---
+
+## Dashboard Filters
+
+The dashboard provides two main filters:
+
+| Filter | Purpose |
+| --- | --- |
+| **Agent** | Shows overall agent activity or activity associated with one selected agent |
+| **Date Range** | Controls the reporting period used by the dashboard |
+
+### Agent Filter
+
+Use the agent selector to choose:
+
+- **All Agents**
+- A specific available agent
+
+Selecting an individual agent updates the general call and success-rate analytics for that agent.
+
+Use **All Agents** when you want to understand overall workspace activity.
+
+<Tip>
+  Campaign analytics summarize campaign activity across the workspace. Selecting an individual agent primarily affects the general agent and call analytics; it does not necessarily filter every campaign panel.
+</Tip>
+
+---
+
+### Date Range
+
+The available reporting periods are:
+
+| Option | Best used for |
+| --- | --- |
+| **1 Day** | Monitoring recent activity and current operations |
+| **1 Week** | Reviewing short-term trends |
+| **1 Month** | Monthly performance and campaign analysis |
+| **6 Months** | Identifying longer-term patterns |
+
+The default selection is **1 Day**.
+
+When the period changes, Valuez AI refreshes the dashboard using the newly selected range.
+
+---
+
+## Summary Cards
+
+The top of the dashboard contains five summary cards:
+
+1. Total Agents
+2. Total Requests
+3. Campaigns
+4. Qualified Leads
+5. Interested Leads
+
+These cards provide a quick overview before you examine detailed charts.
+
+---
+
+## Total Agents
+
+**Total Agents** shows the number of agents included in the dashboard summary.
+
+Use this metric to confirm:
+
+- Agents exist in the workspace
+- The workspace is ready to process interactions
+- Your expected agent inventory is available
+
+<Note>
+  The card uses an **Active** display label. For detailed agent status and configuration, open the AI Voice Agents page.
+</Note>
+
+If the count is lower than expected:
+
+1. Confirm you are in the correct workspace.
+2. Open **AI Voice Agents**.
+3. Check whether an agent was disabled or removed.
+4. Confirm that your account has permission to view the expected agents.
+
+---
+
+## Total Requests
+
+**Total Requests** shows the total recorded calls or conversation requests included in the current dashboard selection.
+
+The card displays the value as **Calls**.
+
+Use this metric to understand overall interaction volume for the selected period.
+
+A change in Total Requests can be caused by:
+
+- More or fewer browser tests
+- Website-widget activity
+- API activity
+- Inbound calls
+- Outbound test calls
+- Campaign calls
+- Changes in the selected agent
+- Changes in the reporting period
+
+<Warning>
+  Total Requests measures activity, not successful business outcomes. A higher number can include failed, unanswered, short, or test interactions.
+</Warning>
+
+---
+
+## Campaigns
+
+**Campaigns** shows the number of campaigns included in the campaign analytics for the selected period.
+
+Use this value to understand the scale of campaign activity.
+
+To investigate campaign status, configuration, contacts, or scheduling, open **Call Campaigns**.
+
+---
+
+## Qualified Leads
+
+**Qualified Leads** shows the number of campaign leads classified as qualified during the selected period.
+
+A qualified lead should meet the criteria established by your organization and reflected in the campaign conversation.
+
+Before using this number for reporting or follow-up:
+
+- Review the qualification criteria
+- Sample relevant call transcripts
+- Verify important outcomes
+- Confirm that the agent asked the required questions
+- Check that qualification reasons are supported by the conversation
+
+<Warning>
+  Do not treat an automatically classified lead as verified without reviewing important qualification information.
+</Warning>
+
+---
+
+## Interested Leads
+
+**Interested Leads** shows contacts whose campaign outcome indicates interest.
+
+Interested and qualified are not necessarily the same:
+
+| Classification | General meaning |
+| --- | --- |
+| **Interested** | The person expressed interest in the product, service, or next step |
+| **Qualified** | The person met the campaign’s qualification criteria |
+
+A contact can be interested without meeting all qualification requirements.
+
+Use **Campaign Leads** and the associated conversation records when determining the appropriate follow-up.
+
+---
+
+## Live Campaign Flow
+
+The **Live Campaign Flow** panel displays recent real-time call activity.
+
+It can show up to a small number of the latest active or recently updated calls.
+
+Possible call stages include:
+
+| Stage | Meaning |
+| --- | --- |
+| **Queued** | The call is waiting to begin |
+| **Initiated** | The call request was accepted |
+| **Dialing** | The destination is being called |
+| **Connected** | The call connected and the agent joined |
+| **Conversation** | The voice conversation is active |
+| **Ended** | The call ended and an outcome was captured |
+| **Retry** | Another attempt is scheduled |
+| **Failed** | The call failed or was not answered |
+
+The panel can distinguish activity such as:
+
+- Inbound support
+- Outbound sales
+- Campaign calls
+
+Use **View Logs** to open Campaign Call History for a complete record.
+
+<Info>
+  Live Campaign Flow is designed for immediate operational awareness. It is not a complete historical report.
+</Info>
+
+---
+
+## Using Live Campaign Flow
+
+The panel is useful when:
+
+- A campaign has just launched
+- You want to confirm calls are progressing
+- You need to identify repeated failures
+- You want to see whether calls are connecting
+- You are monitoring activity during a controlled rollout
+
+### What to Look For
+
+| Observation | Possible meaning |
+| --- | --- |
+| Calls remain queued | Campaign capacity or scheduling may be delaying activity |
+| Calls reach dialing but not connected | Contacts may not be answering, or provider delivery may be failing |
+| Many calls fail | Review contact numbers, virtual-number status, credits, and call logs |
+| Conversations connect successfully | The calling path is working |
+| Calls end very quickly | Review recordings and transcripts for disconnects or greeting problems |
+
+Do not diagnose a call using only the live stage. Open the call log for detailed evidence.
+
+---
+
+## Interaction Volume Chart
+
+The dashboard’s interaction chart displays calls over time.
+
+The chart changes its grouping according to the selected range:
+
+| Selected range | Typical chart grouping |
+| --- | --- |
+| **1 Day** | Time-based intervals within the day |
+| **1 Week** | Daily values |
+| **1 Month** | Daily values |
+| **6 Months** | Monthly values |
+
+Use the chart to identify:
+
+- Busy periods
+- Unusually quiet periods
+- Sudden traffic increases
+- Changes after launching a campaign
+- Activity after publishing an inbound number
+- Differences between agents
+
+### Interpreting Volume Changes
+
+An increase in call volume can be positive when it follows:
+
+- A campaign launch
+- A new inbound-number publication
+- A marketing activity
+- Increased product interest
+
+It can also require investigation when caused by:
+
+- Repeated retries
+- Duplicate contacts
+- Automated test activity
+- Call loops
+- Unexpected integration traffic
+
+A decrease can be caused by:
+
+- A paused or completed campaign
+- Insufficient credits
+- Deactivated virtual numbers
+- Agent configuration problems
+- Reduced customer demand
+- A narrower date or agent filter
+
+---
+
+## Overall Success Rate
+
+The **Overall Success Rate** chart shows the percentage of calls classified as successful over time.
+
+Success rate is calculated from recorded successful calls compared with total calls for each reporting interval.
+
+Use this chart to:
+
+- Compare performance over time
+- Identify periods with declining results
+- Evaluate the effect of agent changes
+- Compare an individual agent with the overall workspace
+- Investigate campaign or calling problems
+
+### Success Rate Example
+
+If 80 of 100 recorded calls are successful:
+
+```text
+Success Rate = 80%
+```
+
+<Warning>
+  A technically successful call does not always mean the customer’s business need was resolved. Review outcomes, summaries, and transcripts for customer-quality analysis.
+</Warning>
+
+### When Success Rate Falls
+
+Check:
+
+1. Call status distribution
+2. Unanswered and failed calls
+3. Virtual-number availability
+4. Available credits
+5. Agent configuration
+6. Speech-recognition quality
+7. Campaign contacts
+8. Calling hours
+9. Recent configuration changes
+
+Use Call Logs to identify representative failed interactions.
+
+---
+
+## Campaign Call Outcomes
+
+The **Campaign Call Outcomes** chart displays the distribution of recorded campaign outcomes.
+
+The center of the chart shows the total number of campaign calls. The legend displays each outcome with its count and percentage.
+
+Outcomes can include values such as:
+
+- Connected
+- Qualified
+- Interested
+- Busy
+- No Answer
+- Failed
+- Voicemail
+- Other recorded outcomes
+
+Only outcomes with recorded activity are shown.
+
+### How Percentages Are Calculated
+
+For each outcome:
+
+```text
+Outcome Percentage = Outcome Count ÷ Total Campaign Calls × 100
+```
+
+Example:
+
+```text
+No Answer: 25 calls
+Total Campaign Calls: 100
+No Answer Percentage: 25%
+```
+
+### Using Outcome Data
+
+| High outcome | Suggested review |
+| --- | --- |
+| **Connected** | Review conversation quality and business outcomes |
+| **Qualified** | Validate qualification criteria and follow-up ownership |
+| **Interested** | Review next steps and callback handling |
+| **Busy** | Review calling times and retry settings |
+| **No Answer** | Review contact quality, calling hours, and retry policy |
+| **Failed** | Review numbers, credits, virtual-number status, and call logs |
+| **Voicemail** | Review voicemail handling and retry policy |
+
+<Note>
+  The displayed outcome labels come from the recorded campaign data. Your workspace may show additional business outcomes.
+</Note>
+
+---
+
+## Campaign Call Volume by Time
+
+The **Campaign Call Volume by Time** chart compares:
+
+- **Total Calls**
+- **Qualified Leads**
+
+The chart helps you understand whether increases in campaign activity also produce qualified leads.
+
+### Example Interpretation
+
+| Observation | Possible interpretation |
+| --- | --- |
+| Calls increase and qualified leads increase | Campaign volume is producing additional qualified opportunities |
+| Calls increase but qualified leads remain flat | Audience, offer, agent behavior, or qualification criteria may need review |
+| Calls decrease but qualification rate improves | A smaller or more targeted audience may be performing better |
+| Both values drop unexpectedly | Campaign scheduling, credits, contacts, or calling configuration may need review |
+
+Do not evaluate this chart using raw counts alone. Consider the ratio between qualified leads and total calls.
+
+---
+
+## Language Distribution
+
+The language analytics panel helps you understand which languages are associated with recorded agent activity.
+
+Use it to:
+
+- Confirm customers are using expected languages
+- Plan language-specific agents
+- Identify demand for additional language support
+- Review whether configured languages match the audience
+- Prioritize language-specific testing
+
+A high language count does not confirm that every conversation was handled correctly.
+
+Review sample transcripts for:
+
+- Speech-recognition accuracy
+- Language consistency
+- Correct pronunciation
+- Appropriate vocabulary
+- Unexpected language switching
+
+---
+
+## Most Called Agents
+
+The **Most Called Agents** panel compares activity across agents.
+
+Use it to identify:
+
+- Agents handling the most interactions
+- Agents with unexpectedly low activity
+- Workloads concentrated on one agent
+- Agents that should receive additional quality review
+- Possible routing or campaign-assignment issues
+
+A highly used agent should be reviewed more frequently because configuration problems can affect more customers.
+
+A low count can mean:
+
+- The agent is new
+- It is not assigned to a number
+- It is not included in a campaign
+- Its integration is inactive
+- The selected reporting period contains little activity
+- The agent serves a low-volume use case
+
+---
+
+## Top Performing Campaigns
+
+The **Top Performing Campaigns** table highlights campaign performance.
+
+The table can include:
+
+| Column | Description |
+| --- | --- |
+| **Campaign** | Campaign name |
+| **Type** | Inbound or outbound campaign type recorded for the campaign |
+| **Calls** | Total campaign calls |
+| **Connected** | Calls that connected |
+| **Qualified Leads** | Leads classified as qualified |
+| **Conversion** | Campaign conversion percentage |
+
+Select **View All** to open the full campaign list.
+
+### Conversion
+
+When a conversion value is not already supplied, the interface can derive it using:
+
+```text
+Qualified Leads ÷ Total Calls × 100
+```
+
+Example:
+
+```text
+Qualified Leads: 20
+Total Calls: 100
+Conversion: 20%
+```
+
+<Warning>
+  Conversion based on total calls can be affected by unanswered or failed calls. When comparing campaigns, also review connected calls, contact quality, and call outcomes.
+</Warning>
+
+---
+
+## Compare Campaigns Carefully
+
+Do not compare campaigns using conversion percentage alone.
+
+Consider:
+
+- Campaign purpose
+- Contact-list size
+- Contact source
+- Product or service
+- Audience
+- Language
+- Calling hours
+- Retry settings
+- Agent
+- Campaign duration
+- Number of connected calls
+- Qualification criteria
+
+For example, a small campaign targeting previous customers may have a higher conversion rate than a broad campaign contacting new leads. That does not automatically mean the smaller campaign’s agent is better.
+
+---
+
+## Move from Analytics to Evidence
+
+Analytics help you identify where to investigate. They do not explain every cause.
+
+Use this workflow:
+
+<Steps>
+  <Step title="Identify an unusual metric">
+    Find a drop, spike, low conversion rate, unexpected outcome, or heavily used agent.
+  </Step>
+  <Step title="Narrow the period">
+    Change the dashboard to the smallest useful reporting range.
+  </Step>
+  <Step title="Select an agent if relevant">
+    Use the agent filter to isolate general agent activity.
+  </Step>
+  <Step title="Open Call Logs">
+    Find individual calls associated with the observation.
+  </Step>
+  <Step title="Review transcripts and recordings">
+    Determine what actually occurred during the conversation.
+  </Step>
+  <Step title="Identify the cause">
+    Decide whether the issue came from contacts, knowledge, instructions, voice, speech recognition, calling configuration, or customer behavior.
+  </Step>
+  <Step title="Make one controlled change">
+    Correct the most likely source of the issue.
+  </Step>
+  <Step title="Test and monitor">
+    Test the agent, then monitor the same metric after the change.
+  </Step>
+</Steps>
+
+---
+
+## Common Analysis Scenarios
+
+### Call Volume Increased Suddenly
+
+Check:
+
+- Whether a campaign launched
+- Whether retry settings were enabled
+- Whether duplicate contacts were uploaded
+- Whether a new inbound number was published
+- Whether test activity increased
+- Whether an integration began sending requests
+
+Then review Call Logs to confirm the source.
+
+---
+
+### Success Rate Decreased
+
+Check:
+
+- Failed and unanswered call outcomes
+- Virtual-number status
+- Credit balance
+- Contact-number accuracy
+- Calling hours
+- Agent configuration
+- Recent agent changes
+- Speech recognition
+- Telephone audio
+
+---
+
+### Qualified Leads Are Low
+
+Review:
+
+- Campaign audience
+- Product or service relevance
+- Agent qualification questions
+- Contact-list quality
+- Qualification criteria
+- Greeting and campaign purpose
+- Call connection rate
+- Common objections
+- Conversation endings
+
+Read both successful and unsuccessful transcripts.
+
+---
+
+### Interested Leads Are High but Qualified Leads Are Low
+
+Possible reasons include:
+
+- Customers are interested but do not meet eligibility criteria
+- Qualification requirements are too restrictive
+- The agent is not asking all required questions
+- Contact data does not match the campaign audience
+- Qualification results require human verification
+
+Review the relevant lead records and transcripts before changing the qualification process.
+
+---
+
+### No Answer Is High
+
+Check:
+
+- Calling hours
+- Audience time zone
+- Caller-number recognition
+- Retry interval
+- Contact freshness
+- Duplicate or invalid numbers
+- Whether calls are placed at an appropriate time
+
+Do not respond by increasing retries without reviewing consent and customer impact.
+
+---
+
+### Failed Calls Are High
+
+Check:
+
+- Virtual number status
+- Available credits
+- Contact-number format
+- Campaign configuration
+- Telephone-provider status
+- Agent availability
+- Call Logs and timeline events
+
+Pause a campaign if failures are widespread and unexplained.
+
+---
+
+### One Agent Has Much Higher Activity
+
+Confirm:
+
+- The agent is intentionally assigned to high-volume campaigns
+- The agent is connected to the expected virtual number
+- Other agents are correctly configured
+- The activity is not caused by repeated testing
+- The high-volume agent receives adequate quality review
+
+---
+
+### The Dashboard Shows No Data
+
+Possible reasons include:
+
+- No recorded activity exists for the selected period
+- A specific agent with no activity is selected
+- The selected range is too short
+- Campaigns have not started
+- Calls are still being processed
+- Access is restricted
+- The dashboard could not retrieve the data
+
+Try:
+
+1. Selecting **All Agents**.
+2. Changing the period to **1 Month** or **6 Months**.
+3. Confirming that agents and campaigns exist.
+4. Reviewing Call Logs.
+5. Refreshing the dashboard.
+6. Confirming workspace permissions.
+
+---
+
+## Data Timing and Availability
+
+Dashboard information is built from recorded agent and campaign activity.
+
+Different panels may update at different times because:
+
+- Active calls are still progressing
+- Post-call outcomes are still being processed
+- Lead analysis is not complete
+- Recordings or transcripts are still being stored
+- Campaign data is being refreshed
+
+The Live Campaign Flow is intended for active operational monitoring. Summary metrics and outcome analysis depend on stored records.
+
+<Tip>
+  When checking a call that ended very recently, wait briefly and refresh the dashboard or call log before concluding that information is missing.
+</Tip>
+
+---
+
+## Permissions and Plan Access
+
+Dashboard access can depend on:
+
+- Workspace role
+- Dashboard viewing permission
+- Campaign viewing permission
+- Subscription status
+- Campaign availability in the current plan
+
+Some campaign analytics may appear restricted when campaign access is unavailable.
+
+If a team member cannot view the expected dashboard:
+
+1. Confirm that they are in the correct workspace.
+2. Review their assigned role.
+3. Review dashboard and campaign permissions.
+4. Confirm the workspace subscription is active.
+5. Confirm the current plan includes the required feature.
+
+---
+
+## Reporting Checklist
+
+Before sharing dashboard values internally:
+
+- [ ] Correct workspace selected
+- [ ] Correct date range selected
+- [ ] Correct agent filter selected
+- [ ] Campaign scope understood
+- [ ] Recent calls have finished processing
+- [ ] Important outcomes verified in Call Logs
+- [ ] Qualification criteria understood
+- [ ] Interested and qualified leads not confused
+- [ ] Failed and unanswered calls considered
+- [ ] Conversion formula understood
+- [ ] Test activity considered
+- [ ] Any missing data disclosed
+
+---
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Start with the date and agent filters">
+    Always confirm the selected scope before interpreting a number or comparing it with another report.
+  </Accordion>
+
+  <Accordion title="Use trends, not isolated values">
+    A single high or low day may not represent normal performance. Compare several reporting periods.
+  </Accordion>
+
+  <Accordion title="Use Call Logs for root-cause analysis">
+    Dashboard charts reveal patterns. Transcripts, recordings, statuses, and timelines explain individual calls.
+  </Accordion>
+
+  <Accordion title="Review both volume and quality">
+    More calls are useful only when conversations are accurate, compliant, and aligned with the business objective.
+  </Accordion>
+
+  <Accordion title="Validate lead classifications">
+    Review important qualified and interested leads before assigning follow-up actions.
+  </Accordion>
+
+  <Accordion title="Monitor new campaigns closely">
+    Review live flow, outcomes, and early transcripts before increasing campaign volume.
+  </Accordion>
+
+  <Accordion title="Record configuration changes">
+    Note when an agent, knowledge base, voice, calling schedule, or contact list changes so performance differences can be interpreted correctly.
+  </Accordion>
+
+  <Accordion title="Avoid comparing unrelated campaigns">
+    Campaigns with different audiences, purposes, languages, or qualification rules should not be ranked using one metric alone.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Quick Reference
+
+| Question | Dashboard area |
+| --- | --- |
+| How many agents are available? | Total Agents |
+| How much interaction activity occurred? | Total Requests |
+| How many campaigns are included? | Campaigns |
+| How many qualified leads were identified? | Qualified Leads |
+| How many contacts expressed interest? | Interested Leads |
+| What calls are happening now? | Live Campaign Flow |
+| When is activity highest? | Interaction Volume |
+| How is success changing? | Overall Success Rate |
+| What outcomes occur most often? | Campaign Call Outcomes |
+| Are calls producing qualified leads? | Campaign Call Volume by Time |
+| Which languages are most used? | Language Distribution |
+| Which agents receive the most calls? | Most Called Agents |
+| Which campaigns perform best? | Top Performing Campaigns |
+| Why did a specific call fail? | Call Logs |
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Call Logs" icon="list" href="/call-logs">
+    Investigate individual calls, transcripts, recordings, outcomes, and timelines.
+  </Card>
+
+  <Card title="Outbound Calls" icon="phone-call" href="/outbound-calls">
+    Create, launch, and manage outbound calling campaigns.
+  </Card>
+
+  <Card title="Agents" icon="robot" href="/agents">
+    Review and improve the agents represented in your analytics.
+  </Card>
+
+  <Card title="Troubleshooting" icon="wrench" href="/troubleshooting">
+    Resolve common calling, agent, campaign, and reporting problems.
+  </Card>
+</CardGroup>

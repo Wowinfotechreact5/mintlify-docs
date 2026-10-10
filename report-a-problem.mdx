@@ -1,0 +1,907 @@
+---
+title: "Report a Problem"
+sidebarTitle: "Report a Problem"
+description: "Report bugs, display issues, performance problems, and other unexpected behavior to the Valuez AI team."
+---
+
+The **Report a Problem** page allows you to notify the Valuez AI team about unexpected platform behavior.
+
+Use this page to report:
+
+- Platform bugs
+- Buttons or actions that do not work
+- Incorrect or missing information
+- Display and layout problems
+- Slow loading or performance issues
+- Failed operations
+- Unexpected error messages
+- Problems that do not fit another category
+
+A report includes a short summary, problem type, priority, detailed description, optional screenshot, and automatically collected technical information.
+
+<Info>
+  Use this page to report problems with the Valuez AI platform. Do not use it to submit passwords, API keys, payment credentials, private customer conversations, or other sensitive information.
+</Info>
+
+---
+
+## Open Report a Problem
+
+<Steps>
+  <Step title="Sign in to Valuez AI">
+    Sign in to the workspace where you experienced the problem.
+  </Step>
+  <Step title="Open Report a Problem">
+    Select **Report a Problem** from the dashboard navigation.
+  </Step>
+  <Step title="Complete the report">
+    Enter the required information and add a screenshot if it helps explain the problem.
+  </Step>
+  <Step title="Submit the report">
+    Review the information and click **Submit Report**.
+  </Step>
+</Steps>
+
+<Frame>
+  <img
+    src="/images/report-a-problem.png"
+    alt="Valuez AI Report a Problem form showing summary, type, priority, description, screenshot, and submission controls"
+  />
+</Frame>
+
+---
+
+## Report Form
+
+The Report a Problem form contains the following fields:
+
+| Field | Required? | Description |
+| --- | --- | --- |
+| **Problem Summary** | Yes | Short description of the problem |
+| **Problem Type** | Yes | Category that best represents the issue |
+| **Priority** | Yes | Importance or operational impact |
+| **What Happened?** | Yes | Detailed description of the problem |
+| **Screenshot** | No | Image that helps demonstrate the issue |
+| **System Information** | Automatic | Browser and device information collected by the page |
+
+The default Problem Type is **Bug**.
+
+The default Priority is **Medium**.
+
+---
+
+## Submit a Problem Report
+
+<Steps>
+  <Step title="Enter a problem summary">
+    Enter a short and specific title in **Problem Summary**.
+
+    Describe the main symptom instead of using a general title such as “Not working.”
+  </Step>
+  <Step title="Select the problem type">
+    Choose the category that most closely matches the problem.
+  </Step>
+  <Step title="Select the priority">
+    Choose a priority based on the effect on your work.
+  </Step>
+  <Step title="Describe what happened">
+    Explain what you did, what happened, and what you expected to happen.
+  </Step>
+  <Step title="Add a screenshot">
+    If useful, drag an image into the screenshot area or browse for an image on your device.
+  </Step>
+  <Step title="Review the report">
+    Remove sensitive information and confirm that all required fields are complete.
+  </Step>
+  <Step title="Submit the report">
+    Click **Submit Report**.
+
+    The button displays **Submitting...** while the report is being sent.
+  </Step>
+</Steps>
+
+After a successful submission, Valuez AI displays:
+
+```text
+Report submitted successfully
+```
+
+The form then returns to its default state for a new report.
+
+---
+
+## Problem Summary
+
+The Problem Summary should briefly identify the affected feature and visible symptom.
+
+### Good summaries
+
+```text
+Outbound campaign remains on Starting
+```
+
+```text
+Call Logs page does not load after selecting a date
+```
+
+```text
+Agent test returns an empty response
+```
+
+```text
+Billing receipt PDF does not open
+```
+
+```text
+Dashboard cards overlap on a mobile screen
+```
+
+### Summaries to avoid
+
+```text
+Problem
+```
+
+```text
+Not working
+```
+
+```text
+Please fix
+```
+
+```text
+Urgent issue
+```
+
+<Tip>
+  A useful summary usually contains the affected feature and the unexpected result.
+</Tip>
+
+---
+
+## Problem Types
+
+Select the category that best represents the issue.
+
+<Tabs>
+  <Tab title="Bug">
+    Select **Bug** when a feature behaves incorrectly or an operation does not produce the expected result.
+
+    Examples include:
+
+    - A button does not work
+    - A form cannot be submitted
+    - A page shows incorrect information
+    - A call remains in an incorrect state
+    - An agent test fails unexpectedly
+    - An error appears during normal use
+  </Tab>
+  <Tab title="Display or Layout">
+    Select **Display or Layout** when the problem affects the appearance or usability of the interface.
+
+    Examples include:
+
+    - Content overlaps
+    - Text is cut off
+    - A button is outside the visible area
+    - A table does not fit the screen
+    - A modal cannot be closed
+    - The mobile layout is difficult to use
+    - Dark-mode content is unreadable
+  </Tab>
+  <Tab title="Performance">
+    Select **Performance** when the platform is unusually slow or becomes unresponsive.
+
+    Examples include:
+
+    - A page takes a long time to load
+    - A list remains in a loading state
+    - A report takes too long to generate
+    - The interface freezes
+    - An action responds after a significant delay
+  </Tab>
+  <Tab title="Other">
+    Select **Other** when the problem does not fit Bug, Display or Layout, or Performance.
+
+    Clearly explain the issue in the description so that the team can understand and classify it.
+  </Tab>
+</Tabs>
+
+<Note>
+  If you are unsure which type to select, choose the closest category. The detailed description is more important than selecting a perfect category.
+</Note>
+
+---
+
+## Priority Levels
+
+Priority communicates how strongly the problem affects your work.
+
+<Tabs>
+  <Tab title="Low">
+    Select **Low** when the problem has little operational impact.
+
+    Examples include:
+
+    - Minor text or visual issue
+    - Cosmetic alignment problem
+    - Non-blocking usability inconvenience
+    - A problem with an available workaround
+  </Tab>
+  <Tab title="Medium">
+    Select **Medium** when the problem affects normal work but does not stop a critical operation.
+
+    Examples include:
+
+    - A feature works inconsistently
+    - A report fails but the underlying data remains accessible
+    - A task requires an inconvenient workaround
+    - A non-critical page cannot be used
+
+    Medium is the default priority.
+  </Tab>
+  <Tab title="High">
+    Select **High** when the issue significantly affects an important business operation.
+
+    Examples include:
+
+    - Multiple users cannot complete an important task
+    - A production integration repeatedly fails
+    - A campaign cannot be managed
+    - Important call data is unavailable
+    - A billing operation cannot be completed
+  </Tab>
+  <Tab title="Critical">
+    Select **Critical** only when the problem causes severe and immediate business impact.
+
+    Examples include:
+
+    - Production voice services are broadly unavailable
+    - Multiple active customer workflows have stopped
+    - A severe account-access problem affects the workspace
+    - A security-sensitive problem requires immediate investigation
+  </Tab>
+</Tabs>
+
+<Warning>
+  Do not select Critical only to request a faster response. Choose the priority that accurately represents the operational impact.
+</Warning>
+
+---
+
+## Describe What Happened
+
+The **What Happened?** field should provide enough information to reproduce and investigate the issue.
+
+A strong description answers the following questions:
+
+1. What were you trying to do?
+2. Which page or feature were you using?
+3. What steps did you perform?
+4. What did you expect to happen?
+5. What actually happened?
+6. Did an error message appear?
+7. When did the issue occur?
+8. Does the issue happen every time?
+9. Did you try refreshing or signing in again?
+10. Is there a temporary workaround?
+
+### Recommended description format
+
+```text
+Affected feature:
+Outbound Call Campaigns
+
+Steps:
+1. Opened the Sales Campaigns page.
+2. Selected the campaign named October Follow-up.
+3. Clicked Start Campaign.
+4. Waited approximately two minutes.
+
+Expected result:
+The campaign should change to Active and begin calling eligible contacts.
+
+Actual result:
+The campaign remains on Starting and no calls appear in Call Logs.
+
+Time:
+10 October 2026 at approximately 3:20 PM IST.
+
+Frequency:
+The problem occurred three times.
+
+Troubleshooting attempted:
+Refreshed the page and signed in again. The behavior remained unchanged.
+```
+
+<Tip>
+  You can copy this structure into the description field and replace the example information with your own.
+</Tip>
+
+---
+
+## Include Reproduction Steps
+
+Reproduction steps explain how to make the same issue happen again.
+
+Use numbered steps and include exact names where possible.
+
+For example:
+
+```text
+1. Open Agents.
+2. Select Customer Support Agent.
+3. Open Test Your AI.
+4. Enter “What are your opening hours?”
+5. Click Send.
+6. The loading indicator continues and no response appears.
+```
+
+Useful details include:
+
+- Agent name
+- Campaign name
+- Integration name
+- Page name
+- Selected filter
+- Date range
+- Browser action
+- Button selected
+- Error message
+- Approximate time
+
+<Warning>
+  Do not include API keys, passwords, access tokens, private prompts, or complete customer conversation content.
+</Warning>
+
+---
+
+## Add a Screenshot
+
+A screenshot is optional but can help explain visual errors, failed actions, and unexpected messages.
+
+You can add a screenshot in either of two ways:
+
+<Tabs>
+  <Tab title="Browse">
+    Click the screenshot area and select an image from your device.
+  </Tab>
+  <Tab title="Drag and Drop">
+    Drag an image from your device and drop it into the screenshot area.
+  </Tab>
+</Tabs>
+
+<Frame>
+  <img
+    src="/images/report-problem-screenshot-upload.png"
+    alt="Valuez AI screenshot upload area with drag-and-drop and image browsing controls"
+  />
+</Frame>
+
+---
+
+## Screenshot Requirements
+
+The screenshot uploader accepts:
+
+- JPG
+- JPEG
+- PNG
+- WebP
+
+The maximum accepted file size is **2 MB**.
+
+| Requirement | Value |
+| --- | --- |
+| **File category** | Image |
+| **Accepted formats** | JPG, JPEG, PNG, WebP |
+| **Maximum size** | 2 MB |
+| **Number of screenshots** | One screenshot per report |
+| **Required?** | No |
+
+If the selected file is not an image, Valuez AI displays:
+
+```text
+Please select a valid image file
+```
+
+If the image is larger than 2 MB, Valuez AI displays:
+
+```text
+Image must be less than 2MB
+```
+
+---
+
+## Screenshot Preview
+
+After selecting a valid image, the form displays:
+
+- A small image preview
+- The filename
+- A remove button
+
+Review the preview before submitting the report.
+
+To remove the screenshot:
+
+<Steps>
+  <Step title="Find the screenshot preview">
+    Locate the selected image beneath the upload area.
+  </Step>
+  <Step title="Select Remove">
+    Click the X button beside the screenshot.
+  </Step>
+  <Step title="Choose another image if required">
+    Browse for or drop another image into the upload area.
+  </Step>
+</Steps>
+
+---
+
+## Prepare a Safe Screenshot
+
+Before uploading an image, remove or hide:
+
+- Passwords
+- API keys
+- Authentication tokens
+- Payment-card details
+- CVV codes
+- OTPs
+- Bank information
+- Private customer phone numbers
+- Personal customer information
+- Confidential conversations
+- Private knowledge-base content
+- Internal business information unrelated to the issue
+
+<Tip>
+  Crop the screenshot so it shows the affected area, relevant controls, and error message without exposing unrelated information.
+</Tip>
+
+---
+
+## Reduce an Image Below 2 MB
+
+If a screenshot exceeds the upload limit, you can:
+
+- Crop unnecessary areas
+- Save the image as JPG or WebP
+- Reduce the image dimensions
+- Lower the export quality
+- Use your device’s built-in image-compression option
+- Capture only the affected portion of the screen
+
+Do not change only the filename extension. The underlying image format must also be supported.
+
+---
+
+## Automatically Collected System Information
+
+The Report a Problem page automatically collects limited technical information from your browser.
+
+This can include:
+
+| Information | Purpose |
+| --- | --- |
+| **Browser user agent** | Helps identify browser and rendering conditions |
+| **Platform** | Helps identify the operating-system environment |
+| **Browser language** | Helps identify localization conditions |
+| **Time zone** | Helps interpret the reported issue time |
+| **Screen resolution** | Helps investigate layout and display problems |
+| **Application version** | Helps identify the platform version associated with the report |
+
+You do not need to enter this information manually.
+
+<Info>
+  Automatically collected system information helps the team reproduce browser-specific, device-specific, and layout-related problems.
+</Info>
+
+---
+
+## Required Fields
+
+The following fields must contain a value before the report can be submitted:
+
+- Problem Summary
+- Problem Type
+- Priority
+- What Happened?
+
+If any required field is missing, Valuez AI displays:
+
+```text
+Please fill all required fields
+```
+
+Complete every field marked with an asterisk and submit the report again.
+
+---
+
+## What Happens During Submission
+
+When you click **Submit Report**:
+
+1. Valuez AI validates the required fields.
+2. The selected screenshot is prepared for upload.
+3. The automatically collected system information is included.
+4. The button changes to **Submitting...**.
+5. The submit button is temporarily disabled.
+6. The report is sent to the platform.
+7. A success or error message is displayed.
+
+<Warning>
+  Do not repeatedly select Submit Report while the page shows Submitting.
+</Warning>
+
+---
+
+## Successful Submission
+
+When the report is accepted, Valuez AI displays:
+
+```text
+Report submitted successfully
+```
+
+The form then resets:
+
+- Problem Summary is cleared
+- Problem Type returns to Bug
+- Priority returns to Medium
+- Description is cleared
+- Screenshot preview is removed
+
+The current interface does not display a public ticket number or report-tracking page after submission.
+
+<Note>
+  Save any details you may need later before submitting, especially timestamps, Session IDs, receipt numbers, campaign names, and error messages.
+</Note>
+
+---
+
+## Failed Submission
+
+If the report cannot be submitted, Valuez AI can display:
+
+```text
+Failed to submit issue
+```
+
+or another message returned by the reporting service.
+
+Your problem may be caused by:
+
+- Network interruption
+- Expired login session
+- Unsupported image
+- Image larger than 2 MB
+- Missing required information
+- Temporary service unavailability
+
+Review the form and try again.
+
+---
+
+## Information to Include by Problem Type
+
+<Tabs>
+  <Tab title="Agent Problem">
+    Include:
+
+    - Agent name
+    - Test mode used
+    - Input provided
+    - Expected response
+    - Actual response
+    - Approximate time
+    - Whether the issue occurs consistently
+  </Tab>
+  <Tab title="Calling Problem">
+    Include:
+
+    - Inbound or outbound call
+    - Agent name
+    - Phone number with sensitive digits hidden
+    - Approximate call time
+    - Call status
+    - Session or call identifier
+    - Error message
+  </Tab>
+  <Tab title="Campaign Problem">
+    Include:
+
+    - Campaign name
+    - Campaign status
+    - Number of contacts
+    - Scheduled time
+    - Action attempted
+    - Actual result
+    - Whether calls appear in Call Logs
+  </Tab>
+  <Tab title="API Problem">
+    Include:
+
+    - API service used
+    - Endpoint or integration type
+    - HTTP status code
+    - Sanitized request structure
+    - Sanitized response
+    - Timestamp
+    - Session identifier
+
+    Never include the API key.
+  </Tab>
+  <Tab title="Billing Problem">
+    Include:
+
+    - Active workspace
+    - Plan name
+    - Payment status
+    - Receipt or payment reference
+    - Transaction time
+    - Amount
+    - Whether money was deducted
+    - Whether credits were added
+
+    Never include complete payment credentials.
+  </Tab>
+  <Tab title="Display Problem">
+    Include:
+
+    - Page name
+    - Browser
+    - Approximate screen size
+    - Light or dark theme
+    - Whether browser zoom is enabled
+    - Screenshot showing the affected area
+  </Tab>
+</Tabs>
+
+---
+
+## Before Reporting a Problem
+
+Try the following safe checks first:
+
+<Steps>
+  <Step title="Refresh the page">
+    Reload the current page and repeat the action.
+  </Step>
+  <Step title="Confirm the active workspace">
+    Check that you are working in the intended organisation.
+  </Step>
+  <Step title="Review required fields">
+    Make sure all required information has been entered correctly.
+  </Step>
+  <Step title="Check your internet connection">
+    Confirm that other pages and services can load.
+  </Step>
+  <Step title="Sign in again">
+    If your session may have expired, sign out and sign in again.
+  </Step>
+  <Step title="Check the relevant records">
+    Review Call Logs, API history, Credit Usage, Billing, or campaign information when applicable.
+  </Step>
+  <Step title="Try another supported browser">
+    This can help identify browser-specific behavior.
+  </Step>
+</Steps>
+
+If the issue continues, submit the report with the results of these checks.
+
+---
+
+## Writing an Effective Report
+
+<AccordionGroup>
+  <Accordion title="Report one problem at a time">
+    Create a separate report for each unrelated issue.
+
+    This makes each problem easier to reproduce, classify, and investigate.
+  </Accordion>
+
+  <Accordion title="Use exact names">
+    Include the exact agent, campaign, integration, or page name instead of a general description.
+  </Accordion>
+
+  <Accordion title="Include a timestamp">
+    Add the approximate date, time, and time zone when the problem occurred.
+  </Accordion>
+
+  <Accordion title="Describe the expected result">
+    Explain what should have happened, not only what went wrong.
+  </Accordion>
+
+  <Accordion title="Include reproduction steps">
+    Numbered reproduction steps are usually more useful than a long unstructured paragraph.
+  </Accordion>
+
+  <Accordion title="Mention the frequency">
+    State whether the problem happened once, happens occasionally, or occurs every time.
+  </Accordion>
+
+  <Accordion title="Include troubleshooting already attempted">
+    Mention whether you refreshed the page, signed in again, changed the date range, or tried another browser.
+  </Accordion>
+
+  <Accordion title="Attach a focused screenshot">
+    Capture the error and surrounding context, but remove unrelated and sensitive information.
+  </Accordion>
+
+  <Accordion title="Choose priority based on impact">
+    Critical is for severe operational impact. Cosmetic or non-blocking issues should use Low or Medium.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Security and Privacy
+
+Do not include the following in any report:
+
+- Account passwords
+- Google passwords
+- API keys
+- Secret keys
+- Access tokens
+- Refresh tokens
+- OTP codes
+- UPI PINs
+- CVV codes
+- Complete card numbers
+- Bank passwords
+- Private encryption keys
+- Unredacted customer data
+- Confidential customer conversations
+- Sensitive knowledge-base documents
+
+If sensitive information is necessary to explain the issue, describe its type without providing the actual value.
+
+For example:
+
+```text
+The request included a valid API key, but the service returned an authentication error.
+```
+
+Do not write:
+
+```text
+My API key is valuezai_api_xxxxxxxxx.
+```
+
+---
+
+## Troubleshooting the Report Form
+
+<AccordionGroup>
+  <Accordion title="The form says required fields are missing">
+    Complete Problem Summary, Problem Type, Priority, and What Happened.
+
+    Make sure none of these fields contains only blank content.
+  </Accordion>
+
+  <Accordion title="I cannot upload the screenshot">
+    Confirm that the file is a JPG, JPEG, PNG, or WebP image and is smaller than 2 MB.
+  </Accordion>
+
+  <Accordion title="The screenshot is larger than 2 MB">
+    Crop the image, reduce its dimensions, or export it as a compressed JPG or WebP file.
+  </Accordion>
+
+  <Accordion title="Drag and drop does not work">
+    Click the upload area and browse for the image manually.
+  </Accordion>
+
+  <Accordion title="I selected the wrong screenshot">
+    Click the X button beside the preview, then select another image.
+  </Accordion>
+
+  <Accordion title="The screenshot preview does not appear">
+    Confirm that the image uses a supported format and is not damaged.
+
+    Try opening the file locally and exporting a new copy.
+  </Accordion>
+
+  <Accordion title="Submit Report remains on Submitting">
+    Wait briefly and check your internet connection.
+
+    If it does not complete:
+
+    1. Copy your description to a safe location.
+    2. Refresh the page.
+    3. Sign in again if necessary.
+    4. Recreate and submit the report.
+  </Accordion>
+
+  <Accordion title="The report failed to submit">
+    Check the required fields, screenshot format, screenshot size, and internet connection.
+
+    Remove the screenshot and try again to determine whether the attachment is causing the failure.
+  </Accordion>
+
+  <Accordion title="I did not receive a ticket number">
+    The current Report a Problem interface confirms successful submission but does not display a public ticket number or report-tracking page.
+  </Accordion>
+
+  <Accordion title="I need to add another screenshot">
+    The current form accepts one screenshot per report.
+
+    Submit another report only when the additional image relates to a separate issue. Otherwise, combine relevant evidence into one safe image before uploading.
+  </Accordion>
+
+  <Accordion title="I accidentally included sensitive information">
+    Treat the information as potentially exposed.
+
+    Rotate any exposed API keys, passwords, or credentials immediately, and notify the appropriate administrator.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Example Report
+
+```text
+Problem Summary:
+Payment receipt PDF does not open
+
+Problem Type:
+Bug
+
+Priority:
+Medium
+
+What Happened:
+I opened Billing and selected the Payment History tab.
+
+I found the successful Gold plan payment from 10 October 2026 and clicked
+Download PDF. The button responded, but no new browser tab opened.
+
+Expected result:
+The receipt PDF should open in a new tab.
+
+Actual result:
+No document opened and no error message appeared.
+
+Time:
+10 October 2026 at approximately 4:10 PM IST.
+
+Frequency:
+The problem occurs every time.
+
+Troubleshooting attempted:
+I refreshed the Billing page, allowed pop-ups, and tried another browser.
+The receipt still did not open.
+```
+
+---
+
+## Related Pages
+
+<CardGroup cols={2}>
+  <Card title="Troubleshooting" icon="screwdriver-wrench" href="/troubleshooting">
+    Review solutions for common platform, agent, calling, and integration problems.
+  </Card>
+
+  <Card title="Call Logs" icon="phone" href="/call-logs">
+    Find call status, timestamps, and identifiers for call-related reports.
+  </Card>
+
+  <Card title="Speech API History" icon="waveform" href="/speech-api-history">
+    Review speech requests before reporting an API or speech-processing issue.
+  </Card>
+
+  <Card title="Credit Usage" icon="coins" href="/credit-usage">
+    Find usage entries, rates, credit changes, and Session IDs.
+  </Card>
+
+  <Card title="Billing" icon="credit-card" href="/billing">
+    Review payment history, receipts, and billing details.
+  </Card>
+
+  <Card title="Account Activity" icon="clock-rotate-left" href="/account-activity">
+    Review account events that may help explain an unexpected change.
+  </Card>
+</CardGroup>

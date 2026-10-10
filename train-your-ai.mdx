@@ -1,0 +1,1414 @@
+---
+title: "Train Your AI"
+sidebarTitle: "Train Your AI"
+description: "Add and maintain the business information your Valuez AI agent uses to answer customer questions."
+---
+
+The **Knowledge Base** contains the business information your agent can use during customer conversations.
+
+You can add:
+
+- Business details
+- Contact information
+- Working hours
+- Information from a public website page
+- Services
+- Products
+- Frequently asked questions
+- PDF documents
+
+Clear and current knowledge helps the agent provide more useful and consistent answers.
+
+<Warning>
+  Always test important questions before using an agent with customers. If information is missing, outdated, or unclear, the agent may provide an incomplete or unsuitable answer.
+</Warning>
+
+---
+
+## Agent Instructions and Knowledge
+
+Agent Instructions and the Knowledge Base have different purposes.
+
+| Area | Purpose | Example |
+| --- | --- | --- |
+| **Agent Instructions** | Defines how the agent should behave | “Ask one question at a time.” |
+| **Knowledge Base** | Provides business information | “We are open from 9:00 AM to 6:00 PM.” |
+
+Use **Agent Instructions** for:
+
+- The agent's role
+- Conversation steps
+- Speaking style
+- Questions to ask
+- Restrictions
+- Human-support behavior
+
+Use the **Knowledge Base** for:
+
+- Business information
+- Products and services
+- Prices
+- Working hours
+- Locations
+- Policies
+- Common questions
+- Supporting documents
+
+<Tip>
+  Keep changing business information in the Knowledge Base. This makes prices, availability, working hours, and policies easier to update.
+</Tip>
+
+---
+
+## Before You Begin
+
+Collect approved information from the appropriate business teams.
+
+Before adding anything, confirm that it is:
+
+- Correct
+- Current
+- Approved for customers
+- Easy to understand
+- Consistent with other business information
+- Safe to share
+- Relevant to the agent's purpose
+
+### Do Not Add
+
+Never add:
+
+- Passwords
+- API keys
+- Private tokens
+- Payment-card information
+- One-time passwords
+- Private employee records
+- Confidential internal documents
+- Information customers are not allowed to receive
+- Unapproved legal, financial, or medical claims
+
+---
+
+## Open the Knowledge Base
+
+<Steps>
+  <Step title="Open AI Voice Agents">
+    Sign in to Valuez AI and select **AI Voice Agents**.
+  </Step>
+  <Step title="Select an agent">
+    Open the agent you want to update.
+  </Step>
+  <Step title="Check the selected Knowledge Base">
+    Open **Agent Settings → AI Model** and confirm that the correct Knowledge Base is selected.
+  </Step>
+  <Step title="Open Knowledge Base">
+    Select the **Knowledge Base** tab.
+  </Step>
+  <Step title="Complete the sections">
+    Add Business Information, Services, Products, FAQs, and Knowledge Documents.
+  </Step>
+  <Step title="Test the agent">
+    Open **Test Agent** and ask questions about the information you added.
+  </Step>
+</Steps>
+
+<Note>
+  An agent must have a selected Knowledge Base before it can be tested. If none is selected, Valuez AI displays **Knowledge Base Required**.
+</Note>
+
+---
+
+## Knowledge Base Sections
+
+The Knowledge Base contains five sections:
+
+| Section | What to add |
+| --- | --- |
+| **Business Information** | Business identity, contacts, website, address, time zone, and working hours |
+| **Services** | Services your business provides |
+| **Products** | Products your business sells or supports |
+| **FAQ's KB** | Approved answers to common customer questions |
+| **Knowledge Documents** | Detailed information from PDF files |
+
+The interface groups these areas under:
+
+- Company
+- Products & Services
+- Answers & Documents
+
+<Info>
+  The page is called **Train Your AI** in this documentation. In the current agent editor, the tab itself is named **Knowledge Base**.
+</Info>
+
+---
+
+## Business Information
+
+Use **Business Information** to enter the main details about your organization.
+
+<Frame caption="Add business details, website information, contact details, and working hours">
+  ![Valuez AI Business Information settings](/images/Screenshot-from-2026-07-10-18-35-04.png)
+</Frame>
+
+### Available Fields
+
+| Field | Required | What to enter |
+| --- | --- | --- |
+| **Business Name** | Yes | Your customer-facing business name |
+| **Business Type** | Yes | The type of organization you operate |
+| **Industry** | Yes | Your business sector |
+| **Website URL** | Yes in the current form | One public website page the agent can use |
+| **Business Description** | Yes | A clear explanation of your organization |
+| **Email Address** | No | A monitored customer-support or contact email |
+| **Business Phone Number** | Yes | A customer-facing telephone number |
+| **Office Address** | Yes | Your complete customer-facing address |
+| **Time Zone** | Yes | The time zone used by your business |
+| **Working Hours** | Configurable | Your opening and closing times for each day |
+
+<Warning>
+  The agent may communicate these details to customers. Double-check the phone number, email address, office address, website, and working hours.
+</Warning>
+
+---
+
+## Business Name
+
+Enter the name customers recognize.
+
+Example:
+
+```text
+Example Services
+```
+
+Use the same name in:
+
+- Agent Instructions
+- Greeting message
+- Business Information
+- Products and services
+- FAQs
+- Documents
+
+If you use both a legal name and a trading name, explain the difference clearly.
+
+---
+
+## Business Type
+
+Describe what kind of organization you operate.
+
+Examples:
+
+- Software platform
+- Healthcare clinic
+- E-commerce retailer
+- Education provider
+- Financial services company
+- Real-estate agency
+- Professional services company
+- Automobile dealership
+
+Keep this field short and clear.
+
+---
+
+## Industry
+
+Enter or select the industry that best represents your organization.
+
+Examples:
+
+- Information Technology
+- Healthcare
+- Retail
+- Education
+- Agriculture
+- Financial Services
+- Real Estate
+- Hospitality
+
+Where possible, use the same industry selected in the agent's details.
+
+---
+
+## Website URL
+
+Valuez AI can use the content from one saved public website page.
+
+<Info>
+  The website field reads the exact page you enter. It does not automatically read every page on your website.
+</Info>
+
+Good pages include:
+
+- Product overview
+- Service overview
+- Pricing page
+- Frequently asked questions
+- Contact or branch information
+- Customer-facing policy
+
+Avoid:
+
+- Login-protected pages
+- Private company pages
+- Temporary links
+- Search-result pages
+- Pages containing confidential information
+- Pages containing mostly images
+- Outdated pages
+
+### Before Saving a Website
+
+Confirm that:
+
+- The link starts with `http://` or `https://`
+- The page opens without signing in
+- The information is current
+- The information is approved for customers
+- The page does not conflict with your FAQs or PDFs
+
+The saved page is refreshed periodically. The interface can show:
+
+- Refresh status
+- Last successful refresh
+- Next scheduled refresh
+- Any refresh error
+
+<Tip>
+  If important information is spread across several pages, add it using Services, Products, FAQs, or focused PDF documents.
+</Tip>
+
+---
+
+## Business Description
+
+Explain:
+
+- What your organization does
+- Who it serves
+- Which products or services it offers
+- What the agent can help customers with
+
+Example:
+
+```text
+Example Health Clinic provides scheduled outpatient consultations,
+preventive health screenings, and follow-up support. The assistant can
+explain available services, working hours, locations, and the appointment
+request process.
+```
+
+Avoid claims that are not approved or cannot be verified.
+
+---
+
+## Email Address
+
+Enter a monitored customer-facing address.
+
+Example:
+
+```text
+support@example.com
+```
+
+Avoid:
+
+- Personal employee email addresses
+- Internal-only addresses
+- Unmonitored inboxes
+- Addresses customers should not use
+
+Test how the agent speaks the email address during a voice conversation.
+
+---
+
+## Business Phone Number
+
+Enter the number customers should use to contact your business.
+
+The current field accepts a 10-digit Indian mobile-number format beginning with `6`, `7`, `8`, or `9`.
+
+<Warning>
+  If you need to enter an international number or a differently formatted business number, contact your Valuez AI administrator or support team.
+</Warning>
+
+Confirm that the number:
+
+- Is correct
+- Is monitored
+- Is approved for customer use
+- Matches the support process described by the agent
+
+---
+
+## Office Address
+
+Enter the complete address customers may need.
+
+Include:
+
+- Building or office name
+- Street
+- Area
+- City
+- State
+- Postal code
+- Country
+
+Example:
+
+```text
+5th Floor, Example Business Centre, MG Road, Bengaluru,
+Karnataka 560001, India
+```
+
+Test the address in **Test Agent**. Abbreviations and postal codes may sound different when spoken aloud.
+
+---
+
+## Time Zone
+
+Select the time zone used for:
+
+- Working hours
+- Appointments
+- Follow-up times
+- Campaign schedules
+- Date and time questions
+
+Use the same time zone throughout your agent and business processes.
+
+---
+
+## Working Hours
+
+Set the opening and closing time for each day.
+
+For a closed day, turn off that day's availability.
+
+Example:
+
+| Day | Status | Working hours |
+| --- | --- | --- |
+| Monday | Open | 09:00–18:00 |
+| Tuesday | Open | 09:00–18:00 |
+| Wednesday | Open | 09:00–18:00 |
+| Thursday | Open | 09:00–18:00 |
+| Friday | Open | 09:00–18:00 |
+| Saturday | Open | 09:00–14:00 |
+| Sunday | Closed | — |
+
+Review the default schedule before saving it.
+
+Also consider:
+
+- Public holidays
+- Temporary closures
+- Lunch breaks
+- Seasonal changes
+- Different branch hours
+- After-hours support
+
+<Warning>
+  The weekly schedule does not automatically explain public-holiday or temporary changes. Update the relevant information when your hours change.
+</Warning>
+
+---
+
+## Save Business Information
+
+Select **Save & Next**.
+
+Before continuing, verify:
+
+- Required fields are complete
+- Website address is correct
+- Website status does not show an unresolved error
+- Phone and email are correct
+- Address is complete
+- Time zone is correct
+- Working hours are correct
+
+---
+
+## Services
+
+Use **Services** to describe what your business provides.
+
+<Frame>
+  <img
+    alt="Valuez AI Services section"
+    lightAlt="Valuez AI Services section in light mode"
+    darkAlt="Valuez AI Services section in dark mode"
+    src="/images/services-2.png"
+    className="dark:hidden"
+  />
+  <img
+    alt="Valuez AI Services section"
+    lightAlt="Valuez AI Services section in light mode"
+    darkAlt="Valuez AI Services section in dark mode"
+    src="/images/Screenshot-from-2026-07-10-18-35-15.png"
+    className="hidden dark:block"
+  />
+</Frame>
+
+Select **Add Service** to create an entry.
+
+### Service Fields
+
+| Field | Required | What to enter |
+| --- | --- | --- |
+| **Service Name** | Yes | Official customer-facing service name |
+| **Service Description** | Yes | What the service includes |
+| **Duration** | No | Typical time required |
+| **Pricing Type** | Configurable | Fixed price or price range |
+| **Currency** | Configurable | Currency used for the price |
+| **Price** | No | Fixed service price |
+| **Price Range** | No | Minimum and maximum price |
+| **Appointment** | No | Whether the service requires booking |
+| **Service Areas** | No | Locations where the service is offered |
+
+---
+
+## Add a Service
+
+<Steps>
+  <Step title="Select Add Service">
+    Open the service form.
+  </Step>
+  <Step title="Enter the service name">
+    Use the same name customers see in your website or business material.
+  </Step>
+  <Step title="Write the description">
+    Explain who the service is for, what it includes, and any important conditions.
+  </Step>
+  <Step title="Add duration">
+    Enter an approximate duration when it is useful to customers.
+  </Step>
+  <Step title="Configure pricing">
+    Select a fixed price or price range and choose the correct currency.
+  </Step>
+  <Step title="Set appointment requirements">
+    Turn on Appointment if customers must book the service.
+  </Step>
+  <Step title="Add service areas">
+    Enter the locations where the service is available.
+  </Step>
+  <Step title="Save">
+    Review the information and save the service.
+  </Step>
+</Steps>
+
+---
+
+## Service Description Example
+
+```text
+A 30-minute consultation for new business customers. It includes a
+requirements discussion and a recommended next step. Final pricing depends
+on the customer's requirements and is confirmed separately.
+```
+
+A useful description explains:
+
+- What the service does
+- Who can use it
+- What is included
+- Important conditions
+- What happens next
+
+---
+
+## Service Duration
+
+Use a clear value such as:
+
+```text
+30 minutes
+2 business days
+Approximately 1 week
+Depends on project scope
+```
+
+Do not provide an exact duration if it regularly varies.
+
+---
+
+## Service Pricing
+
+Choose:
+
+- **Fixed Price** when the same amount applies
+- **Price Range** when the amount depends on the customer's requirements
+
+Examples:
+
+| Type | Example |
+| --- | --- |
+| Fixed price | INR 1,500 |
+| Price range | INR 1,500–3,000 |
+
+If taxes, additional fees, or other conditions apply, include them in the description.
+
+<Warning>
+  Do not enter a price that could be understood as guaranteed when the final amount depends on an assessment, location, quantity, or customization.
+</Warning>
+
+---
+
+## Appointment Requirement
+
+Turn on **Appointment** when customers must book before receiving the service.
+
+Make sure the Agent Instructions explain whether the agent:
+
+- Collects an appointment request
+- Can check availability
+- Can confirm an appointment
+- Must refer the customer to a team member
+
+Do not tell customers that an appointment is confirmed unless it was actually completed.
+
+---
+
+## Service Areas
+
+Enter the areas where the service is available.
+
+Examples:
+
+- Bengaluru
+- Karnataka
+- Mumbai Metropolitan Region
+- Nationwide
+- Remote only
+
+Use consistent place names. Avoid creating duplicate entries such as “Bangalore” and “Bengaluru” unless they intentionally mean different areas.
+
+---
+
+## Manage Services
+
+The Services table can show:
+
+- Service Name
+- Description
+- Duration
+- Price
+- Actions
+
+Use the available actions to:
+
+- Edit a service
+- Delete a service
+
+Before deleting a service, confirm that it is no longer offered and that related FAQs and documents are also updated.
+
+---
+
+## Products
+
+Use **Products** to add the products your organization sells or supports.
+
+<Frame>
+  <img
+    alt="Valuez AI Products section"
+    lightAlt="Valuez AI Products section in light mode"
+    darkAlt="Valuez AI Products section in dark mode"
+    src="/images/products-2.png"
+    className="dark:hidden"
+  />
+  <img
+    alt="Valuez AI Products section"
+    lightAlt="Valuez AI Products section in light mode"
+    darkAlt="Valuez AI Products section in dark mode"
+    src="/images/Screenshot-from-2026-07-10-18-35-22.png"
+    className="hidden dark:block"
+  />
+</Frame>
+
+Select **Add Product** to create an entry.
+
+### Product Fields
+
+| Field | Required | What to enter |
+| --- | --- | --- |
+| **Product Name** | Yes | Official product name |
+| **Category** | Yes | Product category |
+| **Product Description** | Yes | Customer-facing product information |
+| **Currency** | Yes | Currency used for pricing |
+| **Price** | No | Current approved price |
+| **Product Code (SKU)** | No | Product reference code |
+| **Warranty** | No | Warranty period in years |
+| **Availability** | Configurable | Whether the product is currently available |
+
+---
+
+## Add a Product
+
+<Steps>
+  <Step title="Select Add Product">
+    Open the product form.
+  </Step>
+  <Step title="Enter the product name">
+    Use the exact name from your approved product material.
+  </Step>
+  <Step title="Enter the category">
+    Use a consistent category such as Software, Hardware, Subscription, or Accessories.
+  </Step>
+  <Step title="Write the product description">
+    Explain the product's purpose, main features, and important limitations.
+  </Step>
+  <Step title="Enter price information">
+    Select the currency and enter an approved price where appropriate.
+  </Step>
+  <Step title="Add optional details">
+    Enter a product code and warranty information if customers may need them.
+  </Step>
+  <Step title="Set availability">
+    Indicate whether the product is currently available.
+  </Step>
+  <Step title="Save">
+    Review and save the product.
+  </Step>
+</Steps>
+
+---
+
+## Product Description Example
+
+```text
+A monthly subscription intended for growing customer-support teams.
+It includes the features listed in the current plan guide. Usage limits
+and additional charges depend on the selected subscription.
+```
+
+Include:
+
+- What the product does
+- Who it is for
+- Key features
+- Important limitations
+- What is included
+- What is not included
+
+---
+
+## Product Price
+
+Enter only current and approved pricing.
+
+If the price depends on:
+
+- Subscription level
+- Usage
+- Region
+- Taxes
+- Custom requirements
+- Temporary promotions
+
+explain this clearly.
+
+Example:
+
+```text
+Pricing starts from INR 5,000 per month. The final amount depends on
+usage and selected features.
+```
+
+---
+
+## Product Code and Warranty
+
+A Product Code or SKU can help identify a specific product.
+
+Example:
+
+```text
+VAL-GROWTH-MONTHLY
+```
+
+Only include internal codes when they are useful and safe for customers.
+
+For warranty information:
+
+- Confirm the warranty period
+- Explain important conditions
+- Use an approved PDF for detailed warranty terms
+
+---
+
+## Product Availability
+
+Use **Availability** to show whether the product can currently be purchased or supplied.
+
+When availability changes:
+
+1. Update the product.
+2. Review related FAQs.
+3. Review website information.
+4. Replace outdated documents.
+5. Test the agent again.
+
+---
+
+## Manage Products
+
+The Products table can show:
+
+- Product Name
+- Category
+- Description
+- Price
+- Product Code
+- Warranty
+- Availability
+- Actions
+
+Use the available actions to edit or delete a product.
+
+Deleting a product requires confirmation.
+
+---
+
+## Frequently Asked Questions
+
+Use **FAQ's KB** to add approved answers to common customer questions.
+
+<Frame>
+  <img
+    alt="Valuez AI FAQs section"
+    lightAlt="Valuez AI FAQs section in light mode"
+    darkAlt="Valuez AI FAQs section in dark mode"
+    src="/images/faq-2.png"
+    className="dark:hidden"
+  />
+  <img
+    alt="Valuez AI FAQs section"
+    lightAlt="Valuez AI FAQs section in light mode"
+    darkAlt="Valuez AI FAQs section in dark mode"
+    src="/images/Screenshot-from-2026-07-10-18-35-26.png"
+    className="hidden dark:block"
+  />
+</Frame>
+
+Each FAQ requires:
+
+| Field | Required | What to enter |
+| --- | --- | --- |
+| **Question** | Yes | A question customers commonly ask |
+| **Answer** | Yes | Your approved customer-facing answer |
+
+---
+
+## Add an FAQ
+
+<Steps>
+  <Step title="Select Add FAQ">
+    Open the FAQ form.
+  </Step>
+  <Step title="Enter the question">
+    Write it the way customers normally ask it.
+  </Step>
+  <Step title="Enter the answer">
+    Provide a short, clear, and approved response.
+  </Step>
+  <Step title="Save">
+    Review the answer and save the FAQ.
+  </Step>
+  <Step title="Test different wording">
+    Ask the same question in several natural ways using Test Agent.
+  </Step>
+</Steps>
+
+---
+
+## Write Natural Questions
+
+Recommended:
+
+```text
+What time are you open on Saturday?
+```
+
+Less useful:
+
+```text
+Saturday operating schedule configuration
+```
+
+Add separate FAQs when different situations require different answers.
+
+For example:
+
+- What are your weekday hours?
+- Are you open on Sunday?
+- Are you open on public holidays?
+- How can I contact support after working hours?
+
+---
+
+## Write Clear Answers
+
+A good answer is:
+
+- Correct
+- Concise
+- Customer-friendly
+- Clear about conditions
+- Consistent with other information
+- Easy to understand when spoken aloud
+
+Example:
+
+```text
+Our regular support hours are Monday to Friday from 9:00 AM to 6:00 PM
+India Standard Time. Public-holiday hours may vary.
+```
+
+Avoid answers such as:
+
+```text
+Yes.
+```
+
+A very short answer may not contain enough context when used during a conversation.
+
+---
+
+## FAQ Examples
+
+| Question | Example answer |
+| --- | --- |
+| What are your working hours? | We are open Monday to Friday from 9:00 AM to 6:00 PM IST. |
+| How can I contact support? | You can contact our support team using the email address or telephone number listed in our business information. |
+| Do I need an appointment? | An appointment is required for this service. I can explain the approved next step. |
+| Is this product available? | The product is currently marked as available, but final availability may require confirmation. |
+| Can you guarantee a refund? | Refund eligibility depends on our approved refund policy and requires review. |
+
+Replace these examples with your own approved information.
+
+<Warning>
+  An FAQ helps guide the answer, but you should still test it. Do not assume that the agent will repeat every answer word for word.
+</Warning>
+
+---
+
+## Maintain FAQs
+
+Update FAQs when:
+
+- Customers repeatedly ask a new question
+- Working hours change
+- A product or service changes
+- Prices change
+- Policies change
+- The agent gives an incomplete answer
+- Customers use unexpected wording
+- Your support team identifies confusion
+
+Delete obsolete FAQs after confirming that the information is no longer needed.
+
+---
+
+## Knowledge Documents
+
+Use **Knowledge Documents** to upload detailed business information in PDF format.
+
+<Frame>
+  <img
+    alt="Valuez AI Knowledge Documents section"
+    lightAlt="Valuez AI Knowledge Documents section in light mode"
+    darkAlt="Valuez AI Knowledge Documents section in dark mode"
+    src="/images/kb-2.png"
+    className="dark:hidden"
+  />
+  <img
+    alt="Valuez AI Knowledge Documents section"
+    lightAlt="Valuez AI Knowledge Documents section in light mode"
+    darkAlt="Valuez AI Knowledge Documents section in dark mode"
+    src="/images/Screenshot-from-2026-07-10-18-35-31.png"
+    className="hidden dark:block"
+  />
+</Frame>
+
+### Upload Requirements
+
+| Requirement | Current behavior |
+| --- | --- |
+| **Accepted format** | PDF only |
+| **Maximum size** | 10 MB per file |
+| **Multiple files** | Supported |
+| **Drag and drop** | Supported |
+| **View document** | Available |
+| **Delete document** | Available with confirmation |
+
+<Warning>
+  Word files, spreadsheets, presentations, images, and plain-text files cannot be uploaded directly in the current interface. Convert approved content to PDF first.
+</Warning>
+
+---
+
+## Upload a PDF
+
+<Steps>
+  <Step title="Prepare the document">
+    Remove outdated, private, or unnecessary information.
+  </Step>
+  <Step title="Open Knowledge Documents">
+    Select **Knowledge Documents** in the Knowledge Base.
+  </Step>
+  <Step title="Choose files">
+    Drag PDF files into the upload area or select the area to browse.
+  </Step>
+  <Step title="Review validation messages">
+    Non-PDF files are rejected. Files larger than 10 MB are skipped.
+  </Step>
+  <Step title="Review the file list">
+    Confirm the names and sizes of the selected documents.
+  </Step>
+  <Step title="Select Save & Next">
+    Save the newly added files.
+  </Step>
+  <Step title="Confirm the upload">
+    Return to the section and verify that the documents appear.
+  </Step>
+  <Step title="Test the information">
+    Ask questions whose answers appear in each uploaded document.
+  </Step>
+</Steps>
+
+If you have not added a new file, the button may display **Next** instead of **Save & Next**.
+
+---
+
+## Prepare Useful PDFs
+
+Use documents that are:
+
+- Focused on one subject
+- Clearly titled
+- Divided into short sections
+- Written with descriptive headings
+- Current
+- Easy to read
+- Free from conflicting information
+- Approved for customers
+
+Avoid documents that contain:
+
+- Poor-quality scans
+- Handwritten information
+- Important details shown only in an image
+- Complex, unlabelled tables
+- Several unrelated subjects
+- Conflicting policy versions
+- Password protection
+- Confidential information
+- Large amounts of irrelevant content
+
+<Info>
+  A successfully uploaded PDF may still contain layouts, tables, images, or scans that are difficult for the agent to use. Always test important information.
+</Info>
+
+---
+
+## Use One Topic per Document
+
+Recommended:
+
+```text
+Product-Catalog-2026-10.pdf
+Pricing-Policy-2026-10.pdf
+Cancellation-Policy-2026-10.pdf
+Support-Guide-2026-10.pdf
+Branch-Locations-2026-10.pdf
+```
+
+Avoid unclear names such as:
+
+```text
+final.pdf
+latest2.pdf
+document.pdf
+new-final.pdf
+```
+
+Clear file names make documents easier to review and replace.
+
+---
+
+## View or Delete a Document
+
+Use the view action to open an uploaded document.
+
+If it does not open:
+
+1. Confirm that you are signed in.
+2. Refresh the page.
+3. Try opening it again.
+4. Confirm that you have access to the Knowledge Base.
+
+To remove a document:
+
+1. Select the delete action.
+2. Review the document name.
+3. Confirm deletion.
+
+<Warning>
+  Deleting a document removes it from the Knowledge Base. Keep an approved copy elsewhere before deleting it.
+</Warning>
+
+After deleting or replacing a document, test related questions again.
+
+---
+
+## Choose the Correct Knowledge Section
+
+| Information | Best place |
+| --- | --- |
+| Business name | Business Information |
+| Phone and email | Business Information |
+| Address | Business Information |
+| Working hours | Business Information |
+| One public website page | Business Information |
+| Service details | Services |
+| Service price or duration | Services |
+| Product details | Products |
+| Product price or availability | Products |
+| Common customer question | FAQ's KB |
+| Detailed policy or guide | Knowledge Documents |
+| Agent behavior | Agent Instructions |
+
+---
+
+## Keep Information Consistent
+
+Problems can occur when two sources contain different answers.
+
+Examples:
+
+- An FAQ says the office closes at 6:00 PM, but the website says 7:00 PM
+- A product entry says INR 5,000, but a PDF says INR 4,500
+- A product is marked unavailable, but an older document says it is available
+- Two documents contain different refund periods
+
+When you find conflicting information:
+
+<Steps>
+  <Step title="Confirm the correct information">
+    Ask the team responsible for that business information.
+  </Step>
+  <Step title="Update every affected section">
+    Correct Products, Services, FAQs, website content, and PDFs where necessary.
+  </Step>
+  <Step title="Remove obsolete information">
+    Delete or replace older documents and entries.
+  </Step>
+  <Step title="Test the question">
+    Ask the agent the same question in several different ways.
+  </Step>
+</Steps>
+
+<Warning>
+  Do not leave conflicting versions and expect the agent to know which one is correct.
+</Warning>
+
+---
+
+## Test the Knowledge Base
+
+After saving, open **Test Agent**.
+
+Use questions from every section:
+
+| Knowledge source | Example question |
+| --- | --- |
+| Business name | “Which business am I speaking with?” |
+| Working hours | “Are you open on Saturday afternoon?” |
+| Support contact | “How can I contact your support team?” |
+| Office address | “Where are you located?” |
+| Services | “What services do you provide?” |
+| Service price | “How much does this service cost?” |
+| Appointment | “Do I need to book?” |
+| Products | “What does this product include?” |
+| Availability | “Is this product available?” |
+| FAQ | “How do I cancel?” |
+| PDF | Ask about a detail found only in the document |
+| Unknown information | Ask a valid question that has not been added |
+
+When information is unavailable, the agent should not invent an answer.
+
+A suitable response is:
+
+```text
+I do not have confirmed information about that request. I can help you
+contact the appropriate team for verification.
+```
+
+---
+
+## Knowledge Base Checklist
+
+### Business Information
+
+- [ ] Business name is correct
+- [ ] Business type and industry are correct
+- [ ] Website page is public and current
+- [ ] Business description is approved
+- [ ] Support email is monitored
+- [ ] Phone number is correct
+- [ ] Office address is correct
+- [ ] Time zone is correct
+- [ ] Working hours are correct
+
+### Services
+
+- [ ] Current services are included
+- [ ] Descriptions are clear
+- [ ] Pricing conditions are explained
+- [ ] Appointment requirements are correct
+- [ ] Service areas are current
+- [ ] Obsolete services are removed
+
+### Products
+
+- [ ] Product names are correct
+- [ ] Categories are consistent
+- [ ] Descriptions are approved
+- [ ] Prices are current
+- [ ] Product codes are correct
+- [ ] Warranty details are correct
+- [ ] Availability is current
+
+### FAQs
+
+- [ ] Questions use natural customer wording
+- [ ] Answers are clear and approved
+- [ ] Important conditions are included
+- [ ] Duplicate answers are removed
+- [ ] Conflicting answers are corrected
+
+### Documents
+
+- [ ] Every file is a PDF
+- [ ] Every file is 10 MB or smaller
+- [ ] Documents are current
+- [ ] Scans are readable
+- [ ] Confidential information is removed
+- [ ] Obsolete documents are deleted
+- [ ] Important content has been tested
+
+---
+
+## Troubleshooting
+
+### Knowledge Base Required
+
+The agent does not have a selected Knowledge Base.
+
+To fix it:
+
+1. Open **Agent Settings → AI Model**.
+2. Select the correct Knowledge Base.
+3. Save the change.
+4. Return to **Knowledge Base**.
+5. Add the required information.
+6. Open **Test Agent**.
+
+---
+
+### Website Information Is Unavailable
+
+Check that:
+
+- The URL is complete
+- The page opens without signing in
+- The page is publicly accessible
+- The page contains readable text
+- The displayed refresh status does not show an error
+
+Remember that Valuez AI uses the exact page entered, not the entire website.
+
+---
+
+### Website Information Is Outdated
+
+1. Update the original website page.
+2. Update Business Information, Products, Services, or FAQs if necessary.
+3. Replace outdated PDFs.
+4. Test the corrected answer.
+5. Review the website refresh status.
+
+---
+
+### PDF Is Rejected
+
+Confirm that:
+
+- The file is a PDF
+- The file is 10 MB or smaller
+- The file is not damaged
+- You can open it on your computer
+- You have permission to update the Knowledge Base
+
+---
+
+### Some PDFs Were Skipped
+
+Files larger than 10 MB are skipped.
+
+When several files are selected, smaller valid PDFs may remain in the pending list. Review the warning and file count before saving.
+
+---
+
+### PDF Uploaded but the Agent Cannot Answer
+
+Possible reasons include:
+
+- The document contains poor-quality scanned pages
+- Important information appears only in an image
+- The layout is difficult to read
+- A table has unclear labels
+- Another source contains conflicting information
+- The document is outdated
+- The question uses very different wording
+
+Try:
+
+1. Creating a simpler PDF
+2. Using clear headings
+3. Adding the important answer as an FAQ
+4. Removing conflicting documents
+5. Testing several question variations
+
+---
+
+### Agent Gives an Old Price
+
+Check every place where the price may appear:
+
+- Product
+- Service
+- FAQ
+- Website page
+- Pricing PDF
+- Policy document
+
+Update every outdated source and test again.
+
+---
+
+### Agent Gives an Unsupported Answer
+
+Check:
+
+- Whether the correct information exists
+- Whether another source conflicts with it
+- Whether the correct Knowledge Base is selected
+- Whether the customer was understood correctly
+- Whether Agent Instructions explain what to do when information is missing
+
+Add or correct an FAQ for important recurring questions.
+
+---
+
+### Changes Do Not Appear
+
+1. Confirm that saving completed.
+2. Check for an error notification.
+3. Refresh the page.
+4. Confirm the correct agent.
+5. Confirm the correct Knowledge Base.
+6. Reset the test conversation.
+7. Start a new test session.
+
+---
+
+### Cannot Edit Knowledge
+
+You may have permission to view the Knowledge Base but not change it.
+
+Ask the workspace owner to review your access.
+
+---
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Use the correct section">
+    Add structured information such as services, products, prices, availability, contacts, and hours to their dedicated fields.
+  </Accordion>
+
+  <Accordion title="Use PDFs for detailed information">
+    Detailed policies, guides, manuals, and procedures are better suited to focused PDF documents.
+  </Accordion>
+
+  <Accordion title="Avoid unnecessary duplication">
+    Repeating the same fact in many places makes future updates more difficult and increases the chance of conflicting answers.
+  </Accordion>
+
+  <Accordion title="Write for customers">
+    Use clear language and remove internal abbreviations that customers may not understand.
+  </Accordion>
+
+  <Accordion title="Include important conditions">
+    Explain conditions related to pricing, refunds, availability, eligibility, appointments, and delivery.
+  </Accordion>
+
+  <Accordion title="Test spoken answers">
+    Listen to how the agent speaks addresses, numbers, email addresses, prices, product codes, and business names.
+  </Accordion>
+
+  <Accordion title="Review conversations">
+    Use Conversation History to find unanswered questions and outdated information.
+  </Accordion>
+
+  <Accordion title="Keep approved originals">
+    Keep your source documents in your normal business file-storage system. Do not use the Knowledge Base as the only copy.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Quick Reference
+
+| Task | Where to do it |
+| --- | --- |
+| Select a Knowledge Base | Agent Settings → AI Model |
+| Enter business details | Knowledge Base → Business Information |
+| Add one public website page | Knowledge Base → Business Information |
+| Configure working hours | Knowledge Base → Business Information |
+| Add a service | Knowledge Base → Services |
+| Add a product | Knowledge Base → Products |
+| Add a common answer | Knowledge Base → FAQ's KB |
+| Upload a PDF | Knowledge Base → Knowledge Documents |
+| Test the information | Test Agent |
+| Review customer questions | Conversation History |
+| Change agent behavior | Agent Instructions |
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Agents" icon="robot" href="/agents">
+    Configure the agent's identity, conversation settings, voice, and listening options.
+  </Card>
+
+  <Card title="Test Your AI" icon="flask" href="/test-your-ai">
+    Test the agent's knowledge and voice before customer use.
+  </Card>
+
+  <Card title="Writing Agent Instructions" icon="message-square-code" href="/prompt-engineering">
+    Define the agent's role, conversation rules, limits, and human-support behavior.
+  </Card>
+
+  <Card title="Conversation History" icon="messages" href="/call-logs">
+    Review conversations to identify missing or outdated knowledge.
+  </Card>
+</CardGroup>

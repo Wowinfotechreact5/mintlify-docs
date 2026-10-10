@@ -1,0 +1,162 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "aspen",
+  "name": "Valuez AI",
+  "colors": {
+    "primary": "#7C3AED",
+    "light": "#A78BFA",
+    "dark": "#6D28D9"
+  },
+  "favicon": {
+    "light": "/images/favicon.png",
+    "dark": "/images/favicon.png"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "User Guides",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "index",
+              "quickstart",
+              "authentication",
+              "api-keys",
+              "dashboard-overview"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "agents",
+              "train-your-ai",
+              "test-your-ai",
+              "prompt-engineering",
+              "webhooks",
+              "agent-conversations"
+            ]
+          },
+          {
+            "group": "Voice Calling",
+            "pages": [
+              "inbound-calls",
+              "outbound-calls"
+            ]
+          },
+          {
+            "group": "Platform",
+            "pages": [
+              "call-logs",
+              "platform-analytics",
+              "troubleshooting"
+            ]
+          },
+          {
+            "group": "Account",
+            "pages": [
+              "team-management",
+              "notifications"
+            ]
+          },
+          {
+            "group": "Call Campaigns",
+            "pages": [
+              "campaigns-overview",
+              "create-campaign",
+              "campaign-leads",
+              "campaign-call-history"
+            ]
+          },
+          {
+            "group": "Sales Team",
+            "pages": [
+              "team-overview",
+              "team-members"
+            ]
+          },
+          {
+            "group": "APIs & Integrations",
+            "pages": [
+              "integrations",
+              "speech-to-text",
+              "text-to-speech",
+              "phone-numbers",
+              "speech-api-history"
+            ]
+          },
+          {
+            "group": "Settings & Billing",
+            "pages": [
+              "workspace-members",
+              "account-activity",
+              "my-profile",
+              "subscription-plans",
+              "billing",
+              "credit-usage",
+              "report-a-problem"
+            ]
+          }
+        ],
+        "icon": "book-open"
+      }
+    ]
+  },
+  "logo": {
+    "light": "/images/logo.svg",
+    "dark": "/images/logo.svg",
+    "href": "https://www.valuez.ai/"
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://app.valuez.ai"
+    }
+  },
+  "contextual": {
+    "options": [
+     "copy",
+     "view",
+     "chatgpt",
+    "claude"
+  ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/valuez_ai",
+      "linkedin": "https://linkedin.com/company/valuez-ai"
+    }
+  },
+  "interaction": {
+    "drilldown": true
+  },
+  "appearance": {
+    "default": "system",
+    "strict": false
+  },
+  "fonts": {
+    "family": "Inter"
+  },
+  "banner": {
+    "content": "Start building with Valuez AI — get 2,000 complimentary credits to test your first voice agent.",
+    "dismissible": true,
+    "color": {
+      "light": "#6E56CF",
+      "dark": "#6E56CF"
+    }
+  },
+  "thumbnails": {
+    "fonts": {
+      "family": "Inter"
+    }
+  },
+  "background": {
+    "color": {
+      "dark": "#020617",
+      "light": "#FFFFFF"
+    },
+    "image": "/images/logo-watermark-transparent.png"
+  }
+}

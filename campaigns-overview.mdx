@@ -1,0 +1,607 @@
+---
+title: "Campaigns Overview"
+sidebarTitle: "Campaigns Overview"
+description: "View, search, filter, monitor, and manage outbound AI calling campaigns in Valuez AI."
+---
+
+Call Campaigns helps you organize and monitor automated outbound calling activity.
+
+A campaign combines:
+
+- An AI voice agent
+- A caller phone number
+- A list of contacts
+- Calling rules
+- Calling hours
+- Launch and scheduling settings
+
+Use the Campaigns Overview to review active campaigns, scheduled campaigns, drafts, total calls, and qualified leads.
+
+<Info>
+  The current campaign dashboard is focused on outbound campaigns. Inbound phone-number configuration is managed separately from the campaign list.
+</Info>
+
+---
+
+## Open Call Campaigns
+
+To open the campaign dashboard:
+
+<Steps>
+  <Step title="Sign in to Valuez AI">
+    Open your Valuez AI workspace.
+  </Step>
+  <Step title="Select Call Campaigns">
+    Select **Call Campaigns** from the main navigation.
+  </Step>
+  <Step title="Open All Campaigns">
+    Select **All Campaigns** to review existing campaigns.
+  </Step>
+</Steps>
+
+You can also select **Create Campaign** from the Call Campaigns navigation when you want to configure a new campaign.
+
+---
+
+## Campaigns Overview Screen
+
+<Frame>
+  ![Campaign Overview](/images/campaign-overview.png "Campaign Overview")
+</Frame>
+
+The page contains:
+
+1. Campaign summary cards
+2. Campaign-type tabs
+3. Status filter
+4. Campaign search
+5. Campaign table
+6. Sorting controls
+7. Pagination controls
+
+---
+
+## Campaign Summary
+
+The summary cards provide a quick view of current campaign activity.
+
+| Summary | What It Means |
+| --- | --- |
+| **Active Campaigns** | Campaigns currently active |
+| **Scheduled** | Campaigns configured to begin later |
+| **Total Calls** | Total calls represented in the campaign summary |
+| **Qualified Leads** | Leads identified as qualified through campaign activity |
+
+These values update from campaign data returned for the workspace.
+
+<Note>
+  Summary values are intended as an operational overview. Open an individual campaign for detailed performance and lead information.
+</Note>
+
+---
+
+## Campaign Tabs
+
+Use the campaign tabs to switch between different groups.
+
+| Tab | What It Shows |
+| --- | --- |
+| **All Campaigns** | All campaigns available to your workspace |
+| **Outbound** | Completed campaign configurations for outbound calling |
+| **Drafts** | Campaigns that have been saved but not fully launched |
+
+A count appears beside each tab.
+
+### Draft campaigns
+
+A draft is an incomplete or unlaunched campaign configuration.
+
+Drafts can be useful when:
+
+- Contact data is not ready
+- Calling settings still require approval
+- The assigned agent needs additional testing
+- The launch date has not been confirmed
+- The campaign needs review before activation
+
+Draft campaigns can be reopened and edited.
+
+---
+
+## Search Campaigns
+
+Use the search field at the top of the page to find a campaign by name.
+
+<Steps>
+  <Step title="Select the search field">
+    Click the campaign search field.
+  </Step>
+  <Step title="Enter a campaign name">
+    Enter the full name or part of the campaign name.
+  </Step>
+  <Step title="Review the results">
+    The campaign list updates to show matching campaigns.
+  </Step>
+</Steps>
+
+If no campaigns appear:
+
+- Confirm the spelling
+- Clear the status filter
+- Check the selected campaign tab
+- Try a shorter portion of the campaign name
+
+---
+
+## Filter by Status
+
+Use the status selector to display campaigns with a particular operational state.
+
+| Status | General Meaning |
+| --- | --- |
+| **Active** | The campaign is active and available for campaign operations |
+| **Running** | Campaign calling activity is currently running |
+| **Scheduled** | The campaign is configured to start at a future time |
+| **Paused** | Campaign activity is temporarily paused |
+| **Completed** | The campaign has reached its completed state |
+| **Starting** | The platform is preparing the campaign to run |
+
+Select **Select Status** to remove the status filter.
+
+<Info>
+  Campaign status is separate from campaign type. For example, an outbound campaign can be scheduled, running, paused, or completed.
+</Info>
+
+---
+
+## Campaign List
+
+The campaign table contains the following columns:
+
+| Column | Description |
+| --- | --- |
+| **Campaign Name** | Name assigned to the campaign |
+| **Type** | Campaign type, or Draft for an incomplete campaign |
+| **Agent** | AI voice agent assigned to the campaign |
+| **Caller Number** | Phone number used to place outbound calls |
+| **Contacts** | Number of contacts associated with the campaign |
+| **Start Date** | Scheduled launch date or campaign creation date |
+| **Status** | Current campaign status |
+| **Actions** | Available campaign actions |
+
+On mobile devices, campaigns are displayed as cards containing the most important information.
+
+---
+
+## Campaign Name
+
+Use clear campaign names so team members can quickly identify each campaign.
+
+Recommended naming format:
+
+```text
+[Purpose] - [Audience] - [Month or Region]
+```
+
+Examples:
+
+```text
+Renewal Reminder - Existing Customers - October
+Lead Qualification - Mumbai - Q4
+Appointment Confirmation - Clinic A
+Product Follow-Up - Trial Users
+```
+
+Avoid generic names such as:
+
+```text
+Campaign 1
+Test
+Calling
+New Campaign
+```
+
+<Tip>
+  A consistent naming convention makes searching, reporting, troubleshooting, and comparing campaigns easier.
+</Tip>
+
+---
+
+## Assigned Agent
+
+The Agent column identifies the AI voice agent used by the campaign.
+
+The assigned agent controls behavior such as:
+
+- Conversation instructions
+- Supported language
+- Voice configuration
+- Knowledge Base access
+- Response style
+- Business rules
+- Call-handling behavior
+
+Before launching a campaign, test the assigned agent with representative customer scenarios.
+
+<Warning>
+  Changes made to an agent can affect future campaign calls that use that agent. Review and test important changes before applying them to a live campaign.
+</Warning>
+
+---
+
+## Caller Number
+
+The Caller Number column shows the phone number configured to place campaign calls.
+
+A dash can appear when a caller number has not been configured or is unavailable.
+
+Before launch, confirm that:
+
+- A caller number is selected
+- The number is active
+- The number is available for the intended region
+- Calling is permitted for the campaign's use case
+- The number is correctly connected to the calling provider
+
+---
+
+## Contacts
+
+The Contacts column shows how many contacts are associated with the campaign.
+
+Contacts may be:
+
+- Added manually
+- Selected from available customer records
+- Imported from a supported file
+- Edited before launch
+- Removed from a draft campaign
+
+A campaign with no valid contacts cannot perform useful outbound calling.
+
+<Note>
+  The contact count does not necessarily represent the number of completed calls. A contact may be pending, retried, skipped, unreachable, or called more than once depending on campaign settings.
+</Note>
+
+---
+
+## Start Date
+
+The Start Date column displays the campaign's launch date and time when configured.
+
+If a launch date is unavailable, the campaign creation date can be displayed instead.
+
+Review the campaign's detailed launch settings to confirm:
+
+- Start date
+- End date
+- Start time
+- Allowed calling hours
+- Daily call limit
+- Calling time zone
+
+---
+
+## Open Campaign Details
+
+To review a campaign:
+
+<Steps>
+  <Step title="Find the campaign">
+    Use the tabs, search field, status filter, or sorting controls.
+  </Step>
+  <Step title="Open the campaign">
+    Select the campaign row or the arrow button in the Actions column.
+  </Step>
+  <Step title="Review campaign details">
+    Review the campaign summary, recent calls, leads, performance, and available controls.
+  </Step>
+</Steps>
+
+Campaign Details is documented separately because it contains additional reporting and operational information.
+
+---
+
+## Edit a Draft Campaign
+
+Only draft campaigns display the standard Edit action in the campaign list.
+
+<Steps>
+  <Step title="Open the Drafts tab">
+    Select **Drafts**.
+  </Step>
+  <Step title="Find the draft">
+    Search for the campaign by name if necessary.
+  </Step>
+  <Step title="Select Edit">
+    Use the edit icon in the Actions column.
+  </Step>
+  <Step title="Complete the campaign workflow">
+    Review campaign information, call setup, contacts, and launch settings.
+  </Step>
+  <Step title="Save or launch">
+    Save the campaign as a draft again or launch it after validation.
+  </Step>
+</Steps>
+
+<Warning>
+  Review every step before launching an older draft. Agent configuration, contact data, phone numbers, plan limits, or business requirements may have changed since it was saved.
+</Warning>
+
+---
+
+## Create a Campaign
+
+Select **Create Campaign** from the Call Campaigns navigation to start the campaign setup process.
+
+The current outbound campaign workflow contains four main stages:
+
+| Stage | Purpose |
+| --- | --- |
+| **Campaign Information** | Define the campaign name, description, type, behavior, and agent |
+| **Call Settings** | Configure the caller number, language, calling hours, concurrency, retries, and related controls |
+| **Add Contacts** | Add, import, review, edit, or remove campaign contacts |
+| **Schedule & Review** | Configure launch timing and review the campaign before launch |
+
+The complete creation process will be covered in the next page, **Create a Campaign**.
+
+---
+
+## Save as Draft
+
+Use **Save as Draft** when the campaign is not ready for launch.
+
+Common reasons include:
+
+- Contacts still need validation
+- Caller-number setup is incomplete
+- The agent needs additional training
+- Calling hours require approval
+- The launch schedule is undecided
+- The campaign needs compliance review
+
+Saving a draft preserves the campaign configuration so it can be continued later.
+
+---
+
+## Plan and Access Restrictions
+
+Campaign availability depends on the workspace subscription and member permissions.
+
+If campaign functionality is locked, the interface may display:
+
+```text
+Upgrade your plan to access campaigns
+```
+
+A member may also need permission to:
+
+- View campaigns
+- Create campaigns
+- Edit campaigns
+- View campaign history
+- Manage campaign leads
+- Download supported campaign data
+
+If an action is unavailable, ask the workspace owner to review both:
+
+1. Subscription limits
+2. Workspace member permissions
+
+---
+
+## Sorting Campaigns
+
+Supported columns can be sorted in ascending or descending order.
+
+Sortable fields include:
+
+- Campaign Name
+- Agent
+- Start Date
+
+Select the column header to change the order.
+
+Use sorting to:
+
+- Find campaigns alphabetically
+- Group campaigns by agent
+- Review the newest launches
+- Locate older campaigns
+
+---
+
+## Pagination
+
+The campaign list is divided into pages when many records are available.
+
+Use **Rows per page** to display:
+
+- 10 rows
+- 15 rows
+- 25 rows
+- 50 rows
+
+Use the pagination controls to move between pages.
+
+<Tip>
+  Use a smaller page size for quick review and a larger page size when comparing many campaigns.
+</Tip>
+
+---
+
+## Campaign Status Workflow
+
+A typical outbound campaign can move through the following states:
+
+```text
+Draft
+  ↓
+Scheduled or Starting
+  ↓
+Active / Running
+  ↓
+Paused, if required
+  ↓
+Running again
+  ↓
+Completed
+```
+
+The exact sequence depends on the campaign's launch settings and operational controls.
+
+### Draft
+
+The campaign is not fully launched.
+
+### Scheduled
+
+The campaign has a future launch schedule.
+
+### Starting
+
+The platform is preparing the campaign.
+
+### Active or Running
+
+The campaign is active or processing its configured workload.
+
+### Paused
+
+Campaign activity has been temporarily stopped.
+
+### Completed
+
+The campaign has finished its operational lifecycle.
+
+---
+
+## Preparing for a Campaign
+
+Before creating or launching a campaign, confirm that you have:
+
+- [ ] An AI voice agent
+- [ ] A tested agent prompt
+- [ ] The required Knowledge Base information
+- [ ] A valid caller number
+- [ ] A clean contact list
+- [ ] Customer phone numbers in the required format
+- [ ] Appropriate customer consent
+- [ ] Allowed calling hours
+- [ ] A confirmed time zone
+- [ ] A daily call limit
+- [ ] An appropriate concurrent-call setting
+- [ ] A retry policy
+- [ ] A start and end schedule
+- [ ] Sufficient credits
+- [ ] A process for reviewing outcomes and qualified leads
+
+---
+
+## Operational Best Practices
+
+<AccordionGroup>
+  <Accordion title="Test the agent before launch">
+    Use Test Your AI to verify greetings, qualification questions, objection handling, business information, and closing behavior.
+  </Accordion>
+
+  <Accordion title="Start with a small contact group">
+    Run an initial controlled campaign with a limited contact list. Review recordings, transcripts, outcomes, and failures before increasing volume.
+  </Accordion>
+
+  <Accordion title="Use permitted calling hours">
+    Configure calling hours appropriate for each contact's location and your organization's legal obligations.
+  </Accordion>
+
+  <Accordion title="Monitor credits">
+    Estimate campaign usage and confirm that enough credits are available before launch.
+  </Accordion>
+
+  <Accordion title="Use clean contact data">
+    Remove invalid, duplicate, outdated, or unauthorized phone numbers before adding contacts.
+  </Accordion>
+
+  <Accordion title="Monitor the campaign after launch">
+    Review status, recent calls, failed attempts, lead outcomes, recordings, and transcripts.
+  </Accordion>
+
+  <Accordion title="Pause when results are unexpected">
+    If the agent behaves incorrectly or failure rates increase, pause campaign activity and investigate before continuing.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I cannot open Call Campaigns">
+    Your subscription may not include campaigns, or your workspace permissions may not include campaign access. Contact the workspace owner.
+  </Accordion>
+
+  <Accordion title="Create Campaign is unavailable">
+    Check the current subscription, available credits, and your permission to create campaigns.
+  </Accordion>
+
+  <Accordion title="No campaigns are displayed">
+    Clear the search field, select All Campaigns, remove the status filter, and refresh the page.
+  </Accordion>
+
+  <Accordion title="I cannot edit a campaign">
+    The standard campaign-list edit action is available for drafts. Open Campaign Details to review available controls for launched campaigns.
+  </Accordion>
+
+  <Accordion title="The caller number is blank">
+    The campaign may not have a caller number configured. Open the draft and review Call Settings.
+  </Accordion>
+
+  <Accordion title="The agent name is missing">
+    The campaign may not have a valid assigned agent, or the associated agent may no longer be available. Review the campaign configuration.
+  </Accordion>
+
+  <Accordion title="The contact count is incorrect">
+    Review the campaign's contact list and any imported contact batches. Invalid or removed records may affect the usable contact total.
+  </Accordion>
+
+  <Accordion title="A scheduled campaign has not started">
+    Confirm the start date, start time, time zone, subscription status, credits, caller number, contact list, and campaign status.
+  </Accordion>
+
+  <Accordion title="A campaign is paused">
+    Open Campaign Details and review the campaign status, credits, schedule, and any operational warnings before resuming.
+  </Accordion>
+
+  <Accordion title="Search does not return a campaign">
+    Confirm that the correct campaign tab is selected and search using part of the campaign name.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Related Pages
+
+<CardGroup cols={2}>
+  <Card title="Create a Campaign" icon="plus" href="/create-campaign">
+    Configure campaign information, calling settings, contacts, and launch schedule.
+  </Card>
+
+  <Card title="Campaign Leads" icon="users" href="/campaign-leads">
+    Review campaign contacts, results, and qualified leads.
+  </Card>
+
+  <Card title="Campaign Call History" icon="phone" href="/campaign-call-history">
+    Review campaign call recordings, transcripts, and results.
+  </Card>
+
+  <Card title="AI Agents" icon="robot" href="/agents">
+    Create and configure the AI voice agent assigned to a campaign.
+  </Card>
+
+  <Card title="Outbound Calls" icon="phone-arrow-up-right" href="/outbound-calls">
+    Understand outbound calling concepts and operational requirements.
+  </Card>
+
+  <Card title="Credit Usage" icon="coins" href="/credit-usage">
+    Monitor credits consumed by calling and AI services.
+  </Card>
+</CardGroup>

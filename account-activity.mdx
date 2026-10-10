@@ -1,0 +1,957 @@
+---
+title: "Account Activity"
+sidebarTitle: "Account Activity"
+description: "Review workspace page visits, interface actions, form submissions, API activity, actors, devices, statuses, and timestamps."
+---
+
+Account Activity provides an audit-oriented history of activity recorded in your Valuez AI workspace.
+
+Authorized administrators can use it to review page visits, interface actions, field changes, form submissions, sign-outs, and supported API actions. Each record can identify what happened, where it occurred, who performed it, the client environment, the result, and the event time.
+
+<Frame caption="Account Activity">
+  ![Account Activity showing recorded events, actors, client information, statuses, and timestamps](/images/account-activity.png)
+</Frame>
+
+<Info>
+  Account Activity is designed to support operational review, troubleshooting, access governance, and security investigations. It is not a replacement for your organization's complete compliance or security-monitoring system.
+</Info>
+
+---
+
+## Open Account Activity
+
+<Steps>
+  <Step title="Sign in to Valuez AI">
+    Sign in with a workspace account authorized to review account activity.
+  </Step>
+  <Step title="Open Settings & Billing">
+    Select **Settings & Billing** from the main navigation.
+  </Step>
+  <Step title="Select Account Activity">
+    Click **Account Activity** under Workspace & Account.
+  </Step>
+</Steps>
+
+The dashboard route is:
+
+```text
+/account-activity
+```
+
+---
+
+## What You Can Review
+
+Account Activity can help you:
+
+- Review workspace page visits
+- Review button and interface clicks
+- Identify field modifications
+- Review form submissions
+- Identify sign-out activity
+- Review supported API actions
+- Search event descriptions, actions, and paths
+- Filter events by category
+- Filter by event type
+- Filter by status
+- Filter by date range
+- Identify the member who performed an action
+- Review IP address, browser, and device information
+- Review HTTP status codes when available
+- Sort activity by time
+- Refresh the activity list
+- Investigate suspicious or unexpected workspace usage
+
+---
+
+## Workspace Scope
+
+Account Activity is loaded for the currently selected organization or workspace.
+
+When you change the active organization:
+
+- The activity list reloads
+- The page returns to the first result page
+- Events from the newly selected organization are displayed
+- The previous organization's activity is no longer shown in the current view
+
+<Warning>
+  Always confirm the active organization before beginning an investigation or recording audit findings.
+</Warning>
+
+---
+
+## What Valuez AI Records
+
+The current frontend records several user-interface event types.
+
+| Event Type | What It Represents |
+| --- | --- |
+| **Page visits** | A user opened or navigated to a Valuez AI page |
+| **Button & UI clicks** | A user clicked a button, link, tab, menu item, or supported control |
+| **Field modifications** | A user changed an input, selection, or supported editable field |
+| **Form submissions** | A user submitted a form |
+| **Sign outs** | A user signed out of the application |
+| **API actions** | Supported API operations recorded by the platform |
+
+The exact records available depend on the activity sent by the frontend and backend services.
+
+---
+
+## Activity Recording
+
+Valuez AI records activity while authenticated users interact with the application.
+
+The frontend records supported events such as:
+
+- Opening a page
+- Clicking a navigation item
+- Clicking a button
+- Selecting a tab
+- Changing a supported form control
+- Submitting a form
+- Signing out
+
+Activity is sent to the server in batches.
+
+The application attempts to send pending events:
+
+- During normal background processing
+- When enough events have accumulated
+- When a form is submitted
+- When the page becomes hidden
+- When the user leaves the page
+- When the user signs out
+
+<Note>
+  Activity can take a short time to appear because events may be queued and submitted in batches.
+</Note>
+
+---
+
+## Sensitive Information Protection
+
+The activity-recording client is designed to record safe action labels rather than sensitive field values.
+
+It avoids recording labels that appear to contain:
+
+- Email addresses
+- Web URLs
+- Bearer tokens
+- Token-like values
+- Long credential-like strings
+- Long telephone-number-like values
+- Other potentially sensitive values
+
+For protected controls, the activity label can appear as:
+
+```text
+Private control
+```
+
+or:
+
+```text
+Private field
+```
+
+Dynamic identifiers in paths can also be replaced with:
+
+```text
+:id
+```
+
+<Warning>
+  Account Activity is a security aid, not a guarantee that every possible sensitive value will be removed. Administrators should still handle audit records as confidential information.
+</Warning>
+
+---
+
+## Search Account Activity
+
+Use the search field at the top of the page.
+
+The placeholder is:
+
+```text
+Search events, actions, paths...
+```
+
+You can search for information such as:
+
+- Event description
+- Action code
+- Page path
+- Module or control name
+- Other searchable event details
+
+Search begins shortly after you stop typing.
+
+### Search examples
+
+```text
+Agent
+```
+
+```text
+Billing
+```
+
+```text
+/api-logs
+```
+
+```text
+SIGN_OUT
+```
+
+<Tip>
+  Start with a short keyword, then add filters to narrow the results.
+</Tip>
+
+---
+
+## Open Filters
+
+Click **Filters** beside the search field.
+
+A number appears on the button when filters are active.
+
+Example:
+
+```text
+Filters 3
+```
+
+The count includes the active:
+
+- Category filter
+- Event Type filter
+- Status filter
+- Date Range filter
+
+<Frame caption="Account Activity filters">
+  ![Account Activity filters for category, event type, status, and date range](/images/account-activity-filters.png)
+</Frame>
+
+---
+
+## Filter by Category
+
+Category identifies the area of Valuez AI associated with an event.
+
+Available categories include:
+
+| Category | Typical Activity |
+| --- | --- |
+| **Account** | Account and security actions |
+| **AI Agents** | Agent lists, configuration, testing, and related activity |
+| **Campaigns** | Campaign management and campaign calls |
+| **Contacts** | Contact and lead activity |
+| **Sales Team** | Team and assigned-customer activity |
+| **Integrations** | Integration and API configuration |
+| **Billing** | Plans, payments, and credit-related activity |
+| **Workspace** | Workspace membership and access controls |
+| **Dashboard** | Main dashboard activity |
+| **Notifications** | Notification views and actions |
+| **Support** | Support and problem-reporting activity |
+| **Knowledge Base** | Knowledge-base and document activity |
+| **Other** | Activity that does not match another available category |
+
+Select **All Categories** to remove the category restriction.
+
+---
+
+## Filter by Event Type
+
+Available event-type filters are:
+
+| Displayed Option | Recorded Event | Meaning |
+| --- | --- | --- |
+| **Page visits** | `PAGE_VIEW` | A page was opened |
+| **Button & UI clicks** | `UI_CLICK` | A supported interface control was selected |
+| **Field modifications** | `UI_CHANGE` | A supported field value was changed |
+| **Form submissions** | `UI_SUBMIT` | A form was submitted |
+| **Sign outs** | `SIGN_OUT` | An account signed out |
+| **API actions** | `API_REQUEST` | A supported API action was recorded |
+
+Select **All Event Types** to review every available type.
+
+---
+
+## Filter by Status
+
+Available statuses include:
+
+| Status | Meaning |
+| --- | --- |
+| **Success** | The recorded action completed successfully |
+| **Failed** | The recorded action or API operation failed |
+| **Recorded** | The interaction was recorded without a separate success or failure result |
+
+Status badges use different colors to make results easier to distinguish.
+
+<Info>
+  Recorded does not mean unsuccessful. It indicates that the event was logged without a separate success or failure classification.
+</Info>
+
+---
+
+## Filter by Date Range
+
+Use Date Range to review activity within a selected period.
+
+<Steps>
+  <Step title="Open Filters">
+    Click the Filters button.
+  </Step>
+  <Step title="Open Date Range">
+    Select the date-range control.
+  </Step>
+  <Step title="Choose the start date">
+    Select the beginning of the period.
+  </Step>
+  <Step title="Choose the end date">
+    Select the end of the period.
+  </Step>
+  <Step title="Apply the range">
+    Apply the selection to reload matching activity.
+  </Step>
+</Steps>
+
+The filter panel closes after the date range is applied.
+
+---
+
+## Clear Filters
+
+When search or filters are active, a **Clear** action appears in the toolbar.
+
+Click Clear to remove:
+
+- Search text
+- Category filter
+- Event Type filter
+- Status filter
+- Date Range
+
+The page then returns to the first page of unfiltered results.
+
+---
+
+## Refresh Activity
+
+Click **Refresh** to:
+
+- Submit pending activity when possible
+- Request the latest activity records
+- Return to the first page
+- Update the current result snapshot
+
+The refresh icon rotates while the page is loading.
+
+Use Refresh when:
+
+- A recent event has not appeared
+- You are monitoring an active investigation
+- Another administrator performed a recent action
+- A recording-delay warning has cleared
+
+---
+
+## Understanding the Activity Table
+
+Each row represents one recorded event.
+
+| Column | What It Shows |
+| --- | --- |
+| **Event & Description** | Human-readable event description, page path, and HTTP status when available |
+| **Category** | Product area associated with the event |
+| **Action Code** | Internal or standardized action identifier |
+| **Performed By** | Member name and email address |
+| **IP & Client** | IP address, browser, and device |
+| **Status** | Success, Failed, or Recorded |
+| **Date & Time** | Relative and exact event time |
+
+---
+
+## Event and Description
+
+This column describes what occurred.
+
+It can include:
+
+- Action description
+- Page or API path
+- HTTP status code
+
+Example:
+
+```text
+Opened Workspace Members
+/user-management-new
+```
+
+An API-related event can also display:
+
+```text
+HTTP 200
+```
+
+or:
+
+```text
+HTTP 500
+```
+
+### HTTP status
+
+When available:
+
+- `2xx` generally indicates a successful request.
+- `4xx` generally indicates a request, authentication, access, or validation issue.
+- `5xx` generally indicates a server-side failure.
+
+HTTP status is not shown for every event.
+
+---
+
+## Page and API Paths
+
+The event path indicates where the activity occurred.
+
+Examples:
+
+```text
+/agent-list
+```
+
+```text
+/campaign-page
+```
+
+```text
+/user-management-new
+```
+
+Dynamic or sensitive path segments may be replaced with:
+
+```text
+:id
+```
+
+This helps preserve useful route context without storing every identifier.
+
+---
+
+## Category
+
+The Category badge identifies the broader module associated with the activity.
+
+Use Category to quickly distinguish:
+
+- Administrative changes
+- Agent activity
+- Campaign activity
+- Billing activity
+- Integration activity
+- Workspace-access activity
+
+---
+
+## Action Code
+
+Action Code provides a standardized identifier for the recorded action.
+
+The code may be useful when:
+
+- Comparing repeated events
+- Investigating API activity
+- Reporting a problem to support
+- Matching frontend activity with backend records
+- Reviewing failed operations
+
+If unavailable, the page displays a dash.
+
+---
+
+## Performed By
+
+Performed By identifies the member associated with the event.
+
+The column can display:
+
+- Member name
+- Member email address
+- Initial-based avatar
+
+If the actor cannot be identified, the page can display:
+
+```text
+Unknown Member
+```
+
+<Note>
+  An unknown actor does not automatically indicate unauthorized access. It can also mean that actor information was not available in the event record.
+</Note>
+
+---
+
+## IP and Client
+
+The IP & Client column can display:
+
+- IP address
+- Browser
+- Device type
+
+Example:
+
+```text
+192.0.2.10
+Chrome · Desktop
+```
+
+If unavailable, the page can display:
+
+```text
+Unknown IP
+```
+
+```text
+Unknown · Unknown
+```
+
+### Interpreting IP addresses
+
+IP addresses can help identify unexpected access, but they should not be treated as precise physical locations.
+
+A user can appear under different IP addresses because of:
+
+- Mobile networks
+- Corporate networks
+- VPN services
+- Internet-provider changes
+- Shared gateways
+- Remote-work locations
+- Cloud or proxy services
+
+---
+
+## Status
+
+Status indicates how the event was classified.
+
+| Status | Recommended Interpretation |
+| --- | --- |
+| **Success** | The recorded action completed successfully |
+| **Failed** | The action encountered an error |
+| **Recorded** | The interaction was logged without a final success/failure result |
+
+A failed event should be reviewed together with:
+
+- Event description
+- Page path
+- Action code
+- HTTP status
+- Actor
+- Time
+- Related application logs
+
+---
+
+## Date and Time
+
+The table displays both relative and exact time.
+
+Examples:
+
+```text
+Just now
+10 Oct 2026, 02:45 PM
+```
+
+```text
+15m ago
+10 Oct 2026, 02:30 PM
+```
+
+```text
+2d ago
+08 Oct 2026, 11:20 AM
+```
+
+Relative time supports quick scanning, while the exact time supports investigations and reporting.
+
+---
+
+## Sort by Date and Time
+
+The Date & Time column is sortable.
+
+Click the heading to switch between:
+
+- Newest activity first
+- Oldest activity first
+
+The default order is newest first.
+
+Sorting returns the results to the first page.
+
+---
+
+## Navigate Between Pages
+
+Account Activity uses pagination.
+
+Available rows-per-page options are:
+
+- 10
+- 15
+- 25
+- 50
+
+Use the pagination controls to move between pages.
+
+<Tip>
+  Apply search and filters before reviewing many pages. This makes investigations faster and reduces unrelated results.
+</Tip>
+
+---
+
+## Mobile View
+
+On smaller screens, events are displayed as cards.
+
+Each card can show:
+
+- Event description
+- Path
+- Status
+- Category
+- Action code
+- Actor
+- Relative event time
+
+The mobile view contains the same primary audit information in a compact layout.
+
+---
+
+## Activity Recording Warnings
+
+If activity cannot be sent normally, the page can display a warning.
+
+Examples include:
+
+```text
+Activity recording is temporarily unavailable. Recent interactions may be delayed.
+```
+
+```text
+Activity recording is delayed. Some interactions could not be queued.
+```
+
+The activity client retries temporary failures using increasing retry intervals.
+
+<Warning>
+  If an activity-recording warning remains visible, do not assume the audit history is complete for that period.
+</Warning>
+
+---
+
+## Delayed Events
+
+Activity can be delayed when:
+
+- Network connectivity is unstable
+- The activity service is temporarily unavailable
+- The browser closes before all events are submitted
+- Authentication expires
+- Workspace access is revoked
+- The local queue reaches its limit
+
+The frontend queue supports up to 1,000 pending activity entries. If that limit is reached, some interactions may not be queued.
+
+---
+
+## Investigate an Unexpected Action
+
+<Steps>
+  <Step title="Confirm the workspace">
+    Verify that you are viewing the correct organization.
+  </Step>
+  <Step title="Search for the relevant module">
+    Search using the page, action, or path.
+  </Step>
+  <Step title="Apply a date range">
+    Restrict the results to the suspected period.
+  </Step>
+  <Step title="Filter the category and event type">
+    Select the relevant product area and action type.
+  </Step>
+  <Step title="Review the actor">
+    Check the member name and email address.
+  </Step>
+  <Step title="Review the client">
+    Compare the IP, browser, and device with expected usage.
+  </Step>
+  <Step title="Review the result">
+    Check status and HTTP information.
+  </Step>
+  <Step title="Compare related records">
+    Look for page visits, clicks, field changes, submissions, and API actions around the same time.
+  </Step>
+  <Step title="Take action when necessary">
+    Contact the member, adjust permissions, remove workspace access, rotate credentials, or notify your security team.
+  </Step>
+</Steps>
+
+---
+
+## Investigate a Failed Action
+
+When a failed event appears:
+
+1. Note the exact date and time.
+2. Review the actor.
+3. Record the page or API path.
+4. Record the action code.
+5. Check the HTTP status.
+6. Look for successful or failed activity immediately before and after it.
+7. Ask the affected user what they attempted.
+8. Review the relevant troubleshooting page.
+9. Contact support with the non-sensitive event details if necessary.
+
+---
+
+## Review Workspace Access Changes
+
+For access-related investigations:
+
+- Filter Category to **Workspace**
+- Search for member or permission-related actions
+- Review form submissions
+- Review the actor
+- Compare activity with Workspace Members
+- Verify current permissions
+- Remove unexpected access immediately
+
+<Warning>
+  Account Activity can support an investigation, but the current state in Workspace Members determines who presently has access.
+</Warning>
+
+---
+
+## Review Billing Activity
+
+For billing-related investigations:
+
+- Filter Category to **Billing**
+- Set the relevant date range
+- Review API actions and form submissions
+- Identify the actor
+- Compare the results with Billing and Credit Usage
+- Escalate unexpected payment-related activity promptly
+
+---
+
+## Review Integration Activity
+
+For API and integration investigations:
+
+- Filter Category to **Integrations**
+- Filter Event Type to **API actions**
+- Search for a route or action code
+- Review HTTP statuses
+- Compare with Speech API History or other relevant integration logs
+- Rotate exposed API keys if suspicious activity is detected
+
+---
+
+## Empty States
+
+If the workspace has no events, the page displays:
+
+```text
+No account activity yet
+```
+
+If filters return no results, it displays:
+
+```text
+No matching activity records
+```
+
+Use **Reset Filters** to return to the complete available history.
+
+---
+
+## Retention and Completeness
+
+Account Activity displays the records returned by the workspace activity service.
+
+The exact available history can depend on:
+
+- Platform retention settings
+- Workspace configuration
+- Successful event delivery
+- Authentication state
+- Network availability
+- Subscription or operational policies
+
+<Note>
+  The current page does not display a guaranteed retention period. Contact your Valuez AI administrator or support team if your organization requires a specific audit-retention commitment.
+</Note>
+
+---
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Review activity regularly">
+    Periodic review can reveal unexpected access, repeated failures, or unusual administrative changes.
+  </Accordion>
+
+  <Accordion title="Use narrow investigation periods">
+    Select a focused date range and category to reduce unrelated events.
+  </Accordion>
+
+  <Accordion title="Compare related records">
+    Page views, clicks, changes, and submissions can provide a clearer sequence when reviewed together.
+  </Accordion>
+
+  <Accordion title="Treat IP information as supporting evidence">
+    IP addresses can change or be shared. Use them with actor, device, time, and action information.
+  </Accordion>
+
+  <Accordion title="Protect audit information">
+    Audit records contain member emails, IP addresses, device details, and operational information.
+  </Accordion>
+
+  <Accordion title="Document security investigations separately">
+    Record conclusions, evidence, and remediation in your approved security or compliance system.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Recent activity is missing">
+    Click Refresh and wait briefly. Events can be submitted in batches. Also confirm the active organization.
+  </Accordion>
+
+  <Accordion title="Account Activity is empty">
+    Confirm that the workspace has recorded activity and that your account has permission to review it.
+  </Accordion>
+
+  <Accordion title="Search returns no results">
+    Use a shorter keyword and clear category, status, event-type, and date filters.
+  </Accordion>
+
+  <Accordion title="The actor is Unknown Member">
+    Actor information was unavailable for that record. Compare the IP, client, path, time, and surrounding events.
+  </Accordion>
+
+  <Accordion title="The IP address changes for the same user">
+    Mobile networks, VPNs, corporate gateways, and internet-provider changes can produce different IP addresses.
+  </Accordion>
+
+  <Accordion title="An event is marked Recorded instead of Success">
+    Recorded means the interaction was logged without a separate success or failure classification.
+  </Accordion>
+
+  <Accordion title="A click description is generic">
+    Controls without a safe descriptive label can be recorded as Page control, Private control, or another generic label.
+  </Accordion>
+
+  <Accordion title="Dynamic IDs are missing from the path">
+    Sensitive or dynamic path segments can be replaced with `:id` intentionally.
+  </Accordion>
+
+  <Accordion title="Activity recording is temporarily unavailable">
+    Check your connection and click Refresh later. Some recent events may be delayed.
+  </Accordion>
+
+  <Accordion title="The page fails to load">
+    Use Try Again, confirm your account session, and verify workspace access.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Security and Privacy
+
+Account Activity can contain:
+
+- Member names
+- Member email addresses
+- IP addresses
+- Browser and device information
+- Page paths
+- Action descriptions
+- API paths
+- HTTP statuses
+- Operational timestamps
+
+Workspace administrators should:
+
+- Limit access to authorized personnel
+- Use audit records only for legitimate purposes
+- Avoid sharing screenshots unnecessarily
+- Follow internal investigation procedures
+- Protect exported or copied findings
+- Avoid treating IP addresses as exact locations
+- Follow applicable employee-monitoring and privacy requirements
+- Retain investigation records only as required
+
+<Warning>
+  Account Activity can contain personal and security-relevant information. Access and use it according to your organization's privacy, employment, security, and compliance policies.
+</Warning>
+
+---
+
+## Account Activity Limitations
+
+Account Activity should not be interpreted as:
+
+- A screen recording
+- A record of every character typed
+- A guaranteed record of every browser interaction
+- A complete network-security log
+- A replacement for server logs
+- A replacement for identity-provider audit logs
+- A replacement for a SIEM or compliance archive
+
+It records supported Valuez AI events while protecting sensitive values where possible.
+
+---
+
+## Related Pages
+
+<CardGroup cols={2}>
+  <Card title="Workspace Members" icon="users" href="/workspace-members">
+    Review current access, invitations, platforms, agents, and permissions.
+  </Card>
+
+  <Card title="My Profile" icon="user" href="/my-profile">
+    Update your personal profile and password.
+  </Card>
+
+  <Card title="Billing" icon="receipt" href="/billing">
+    Review workspace billing and payment information.
+  </Card>
+
+  <Card title="Credit Usage" icon="coins" href="/credit-usage">
+    Review credit deductions and balance activity.
+  </Card>
+
+  <Card title="Integrations" icon="plug" href="/integrations">
+    Review and secure API keys and external connections.
+  </Card>
+
+  <Card title="Report a Problem" icon="circle-question" href="/report-a-problem">
+    Report platform problems to the support team.
+  </Card>
+</CardGroup>
